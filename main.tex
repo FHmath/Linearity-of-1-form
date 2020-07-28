@@ -587,9 +587,33 @@ For $X$ being a smooth projective variety $X$ such that the topological Euler ch
 %
 %In this section, we consider the holomorphic 1-forms with zero locus of arbitrary dimension.
 
-\subsection{Higher discriminants and singularities of morphisms by Migliorini and Shende}
 
-In this subsection, we recall a very powerful tool by Migliorini  and Shende \cite{MiSh18}, which will be used in the proof of Theorem \ref{main1}.
+
+
+\subsection{Stratification of morphisms after Migliorini and Shende}
+
+For a morphism $f: X\to A$ as in Theorem \ref{main1},  we consider the following diagram 
+%$$\xymatrix{
+%T^*X 
+%& X\times_Y T^*Y \ar[l]_-{df} \ar[r]^-{\tilde{f}} &T^*Y
+%},$$
+\begin{center}
+\begin{tikzcd}
+	X\times f^*H^0(A, \Omega_A^1) \ar[r, "df"] \ar[d, "f\times \id"] & T^*X\\
+	A\times H^0(A, \Omega_A^1)\simeq T^*A\dar["\pr_2"]\\
+	H^0(A, \Omega_A^1)
+\end{tikzcd}
+\end{center}
+ where $T^*X$ and $T^*A$ are the holomorphic cotangent bundles, 
+$df$ is the usual differential. Then note
+that $pr_2(f\times \id)(df^{-1}(0_X))$ is precisely the 
+set of 1-forms of the form $f^*\omega$ for $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ admits zeros on $X$,
+i.e.\
+\[V(f) = pr_2(f_{\dagger}(0_X))\]
+where following \emph{loc.\ cit.} we write $f_{\dagger} = f\times \id)\circ df^{-1}$ and $0_X = T_X^*X$ is the zero section
+of the cotangent bundle. 
+
+We are now ready to present a for Theorem \ref{main1} and Theorem \ref{thm:smoothness}.
 
 \begin{definition}[Migliorini and Shende]
 Let $f: X\to Y$ be a proper morphism between smooth algebraic  varieties $X$ and $Y$. The higher discriminants of $f $ are defined to be
@@ -604,11 +628,7 @@ $$\Delta^i(f):=\{ y\in Y\ |\ \textnormal{no}\ (i-1)\textnormal{-dimensional subs
 (3) $\Delta^i(f)$ are closed subvarieties of $Y$, which measure how singular $f$ can be.
 \end{remark}
 
-For any morphism $f: X\to Y$,  we consider the following diagram 
-$$\xymatrix{
-T^*X 
-& X\times_Y T^*Y \ar[l]_-{df} \ar[r]^-{\tilde{f}} &T^*Y
-},$$ where $T^*X$ and $T^*Y$ are holomorphic cotangent bundle, $df$ is the usual differential, and $\tilde{f}$ is the natural projection. Now we can formulate the following theorem in \cite[Theorem C]{MiSh18}.
+
 
 \begin{theorem}[Migliorini, Shende]\label{MiSh}
 Let $f: X\to Y$ be a proper morphism between smooth algebraic varieties $X$ and $Y$. Then $$\tilde{f}(df^{-1}(0_X))=\bigcup_{i\geq0}\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y},$$ where $0_X$ is the zero section of the cotangent bundle $T^*X$, and $\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y}$ is the closure of the conormal bundle of the smooth locus $D^i(f)_{\textnormal{reg}}$ of codimension $i$ components  $D^i(f)$ of $\Delta^i(f)$ in $Y$.
