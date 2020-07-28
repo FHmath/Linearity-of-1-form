@@ -1,0 +1,875 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+%\usepackage{times} %,fullpage}%,backref}
+\usepackage{latexsym,amscd,amssymb,url}
+\pagestyle{headings}
+\usepackage{xcolor, mathtools}
+\definecolor{dblue}{rgb}{0,0,.6}
+\usepackage[colorlinks=true, linkcolor=dblue, citecolor=dblue, filecolor = dblue, menucolor = dblue, urlcolor = dblue]{hyperref}
+
+\textwidth=450pt 
+\oddsidemargin=12pt
+\evensidemargin=12pt
+\renewcommand{\baselinestretch}{1.2}
+\setlength{\footskip}{25pt}
+%
+%\setlength{\headheight}{6.15pt}
+%\setlength{\headsep}{0.5cm}
+%\setlength{\headheight}{6.15pt}
+%\setlength{\headsep}{1.0cm}
+%\usepackage[latin1]{inputenc} 	
+%\usepackage[T1]{fontenc}         
+%\usepackage{ae}									
+%\usepackage[arrow, matrix, curve]{xy}  
+\usepackage[all,cmtip]{xy}  
+\usepackage{graphicx}
+%\usepackage{MnSymbol} 
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{enumerate}
+
+	
+\usepackage[T1]{fontenc}         
+\usepackage{ae}									
+%\usepackage[arrow, matrix, curve]{xy}  
+\usepackage[all,cmtip]{xy}  
+\usepackage{graphicx}
+%\usepackage{MnSymbol} 
+\usepackage{color}
+
+\interfootnotelinepenalty=10000
+
+
+%----------------------------------------------
+% Theorem like environments
+%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theoremnocount}{Theorem}
+\theoremstyle{plain}
+\newtheorem*{acknowledgement}{Acknowledgement}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{statement}{Statement}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}{Solution}
+\newtheorem{fact}{Fact}
+\newtheorem*{convention}{Convention}
+
+\setcounter{tocdepth}{1}
+
+%---------------------------------------------------
+%newcommads
+\newcommand{\delbar}{\overline{\partial}}
+\newcommand{\del}{\partial}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Qbar}{\overline{\mathbb Q}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\CP}{\mathbb P}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\K}{\mathcal F}
+\newcommand{\D}{\operatorname{D}}
+\newcommand{\sV}{\mathcal V}
+
+
+
+\newcommand{\Card}{\operatorname{Card}}
+\newcommand{\alb}{\operatorname{alb}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\Td}{\operatorname{Td}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\Div}{\operatorname{Div}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\sign}{\operatorname{sign}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Eig}{\operatorname{Eig}}
+\newcommand{\RE}{\operatorname{Re}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\pr}{\operatorname{pr}}
+\newcommand{\NS}{\operatorname{NS}}
+\newcommand{\Sing}{\operatorname{Sing}}
+\newcommand{\Alb}{\operatorname{Alb}}
+\newcommand{\PD}{\operatorname{PD}}
+\newcommand{\SING}{\operatorname{Sing}}
+\newcommand{\TD}{\operatorname{TD}}
+\newcommand{\T}{\mathcal V}
+\newcommand{\Bir}{\operatorname{Bir}}
+\newcommand{\Amp}{\operatorname{Amp}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Nef}{\operatorname{Nef}}
+\newcommand{\NE}{\operatorname{NE}}
+\newcommand{\None}{\operatorname{N}_1}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\can}{\operatorname{can}}
+\newcommand{\var}{\operatorname{var}}
+\newcommand{\rat}{\operatorname{rat}}
+\newcommand{\Per}{\operatorname{Per}}
+\newcommand{\Br}{\operatorname{Br}}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\CH}{\operatorname{CH}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\tor}{\operatorname{tors}} 
+\newcommand{\red}{\operatorname{red}} 
+\newcommand{\Proj}{\operatorname{Proj}} 
+\newcommand{\sing}{\operatorname{sing}} 
+\newcommand{\discr}{\operatorname{discr}} 
+\newcommand{\cl}{\operatorname{cl}} 
+\newcommand{\ram}{\operatorname{ram}} 
+\newcommand{\Frac}{\operatorname{Frac}}
+%\newcommand{\char}{\operatorname{char}}
+\newcommand{\Val}{\operatorname{Val}}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Char}{\operatorname{Char}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Loc}{\operatorname{Loc}}
+\newcommand{\length}{\operatorname{length}}
+\newcommand{\Jac}{\operatorname{Jac}}
+
+ 
+\newcommand{\dashedlongrightarrow}{\xymatrix@1@=15pt{\ar@{-->}[r]&}}
+\renewcommand{\longrightarrow}{\xymatrix@1@=15pt{\ar[r]&}}
+\renewcommand{\mapsto}{\xymatrix@1@=15pt{\ar@{|->}[r]&}}
+\renewcommand{\twoheadrightarrow}{\xymatrix@1@=15pt{\ar@{->>}[r]&}}
+\newcommand{\hooklongrightarrow}{\xymatrix@1@=15pt{\ar@{^(->}[r]&}}
+\newcommand{\congpf}{\xymatrix@1@=15pt{\ar[r]^-\sim&}}
+\renewcommand{\cong}{\simeq}
+%--------------------------------------------------------
+
+
+%-----------
+%-----------Yagna's typsets--------
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+
+\PassOptionsToPackage{pdfusetitle,pagebackref,colorlinks}{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+  linkcolor={red!70!black},
+  citecolor={green!70!black},
+  urlcolor={blue!80!black}
+}
+\newtheorem{alphtheorem}{Theorem}
+\renewcommand{\thealphtheorem}{\Alph{alphtheorem}}
+
+%Mathcal Letters =====================
+\newcommand{\sA}{\mathcal{A}}
+\newcommand{\sB}{\mathcal{B}}
+\newcommand{\sD}{\mathcal{D}}
+\newcommand{\sF}{\mathcal{F}}
+\newcommand{\sG}{\mathcal{G}}
+\newcommand{\sH}{\mathcal{H}}
+\newcommand{\sK}{\mathcal{K}}
+\newcommand{\sL}{\mathcal{L}}
+\newcommand{\sM}{\mathcal{M}}
+\newcommand{\sN}{\mathcal{N}}
+\newcommand{\sO}{\mathcal{O}}
+\newcommand{\sP}{\mathcal{P}}
+\newcommand{\sQ}{\mathcal{Q}}
+\newcommand{\sT}{\mathcal{T}}
+
+%mathbb Letters======
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+
+
+%Script Letters ======================
+\newcommand{\frf}{\mathfrak{f}}
+\newcommand{\frM}{\mathfrak{M}}
+
+\newcommand{\scrL}{\mathscr{L}}
+\newcommand{\crI}{\mathscr{I}}
+\newcommand{\scrK}{\mathscr{K}}
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrI}{\mathscr{I}}
+\newcommand{\scrQ}{\mathscr{Q}}
+\newcommand{\scrR}{\mathscr{R}}
+\newcommand{\scrX}{\mathscr{X}}
+\newcommand{\scrY}{\mathscr{Y}}
+\newcommand{\scrF}{\mathscr{F}}
+\newcommand{\Dred}{\lceil D\rceil}
+
+%Arrow Style =========================
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\rightarrow\hspace*{-.14in}\rightarrow}
+
+%Math Operators ======================
+
+
+
+\DeclareMathOperator{\alg}{alg}
+\DeclareMathOperator{\BM}{BM}
+\DeclareMathOperator{\Bs}{Bs}
+\DeclareMathOperator{\Bsp}{\mathbf{B}_+}
+\DeclareMathOperator{\SB}{\mathbf{B}}
+
+\DeclareMathOperator{\coh}{coh}
+\DeclareMathOperator{\Coker}{Coker}
+ \renewcommand{\div}{\text{div}}
+
+\DeclareMathOperator{\DR}{DR}
+\DeclareMathOperator{\discrep}{discrep}
+\DeclareMathOperator{\exc}{exc}
+
+\DeclareMathOperator{\free}{free}
+
+
+\DeclareMathOperator{\HHom}{\mathcal{H}\!\mathit{om}}
+\DeclareMathOperator{\image}{Im}
+
+
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\op}{op}
+
+
+\DeclareMathOperator{\qcoh}{qcoh}
+
+\DeclareMathOperator{\reg}{reg}
+
+\DeclareMathOperator{\RHHom}{\mathbf{R}\mathcal{H}\!\mathit{om}}
+
+
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\tors}{tors}
+\DeclareMathOperator{\torsion}{torsion}
+\DeclareMathOperator{\Var}{Var}
+%\DeclareMathOperator{\Sym}{Sym}
+
+
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Aff}{\mathbf{Aff}}
+\newcommand{\tB}{\tilde{B}}
+\newcommand{\et}{{\acute{e}t}}
+
+\newcommand{\Sets}{\mathbf{Sets}}
+\newcommand{\cX}{\bar{X}}
+\newcommand{\cP}{\bar{P}}
+\newcommand{\cV}{\bar{V}}
+\newcommand{\cW}{\bar{W}}
+\newcommand{\sorry}[1]{\textcolor{red}{#1}}
+\newcommand{\dual}[1]{\sD^{\Omega}_{M^{#1}}}
+
+
+%----------------
+
+
+
+\begin{document}  
+\title[On linearity of holomorphic 1-forms with zeros]{On linearity of holomorphic 1-forms with zeros} 
+
+\author{Yajnaseni Dutta}
+
+%\address{}
+%\email{}
+
+\author{Feng Hao}
+
+%\address{}
+%\email{}
+
+\author{Yongqiang Liu}
+
+%\date{\today}
+%\date{October 10, 2017; 
+%\copyright{\ Stefan Schreieder 2017}}
+%\subjclass[2010]{primary 14E08, 14M20; secondary 14J35, 14D06} 
+%
+% 14J45 Fano varieties
+% 14J10 Families, moduli, classification: algebraic theory
+% 	14J35   	$4$-folds
+% 14M20   	Rational and unirational varieties
+% 	14M22   	Rationally connected varieties
+% 14D06   	Fibrations, degenerations
+%  	14E08   	Rationality questions
+
+%\keywords{rationality problem, stable rationality, decomposition of the diagonal, unramified cohomology, Brauer group, L\"uroth problem.} 
+
+
+
+\begin{abstract} 
+The goal of this article is two-fold, first we 
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+In this article we study the set of global holomorphic 1-forms  on smooth projective varieties that admit zeros. Interestingly, it has been
+indicated by plethora of results (\cite{HK05, LZ05, EL,
+SS19, SH19, PS14} to name just a few) that a lot of the geometry
+and topology of the variety depends on vanishing of such forms.
+We first state our result and then put it in the context of 
+the existing vast literature.
+\begin{alphtheorem}\label{thm:smooth}
+Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelian variety $A$. Then $f$ is smooth if and only if there is a holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing. 
+\end{alphtheorem}
+In fact we prove a bit more; When $A$ is not necessarily simple
+existence of a non-vanishing global holomorphic 1-form
+is equivalent to very restrictive set of strata that can show 
+up in the Whitney stratification of the morphism $f$.
+See Theorem \ref{thm:nonvanishing} for more details.
+\begin{remark}[Previous results]
+\begin{enumerate}
+\item \label{item:ps} When $X$ is of general type, it was conjectured in
+	\cite{HK05, LZ05} and was proved
+	by Popa and Schnell \cite{PS14} every global holomorphic 1-		
+	form vanishes on $X$. 
+\item \label{item:hk} On the opposite extreme for any $A$, not necessarily simple when $f$ is singular along a divisor of general
+		type in $A$, Hacon and Kov\'acs \cite[Proposition 3.5.]{HK05} show that
+		$f^*\omega$ always admits zero.
+\item The more general version of Theorem \ref{thm:smooth}
+recovers both Item (\ref{item:ps}) (see Corollary \ref{cor:ps})
+and Item (\ref{item:hk}) (see Corollary \ref{cor:hk}
+\item A special case of a result of 
+Schreider \cite[Corollary 1.5]{SS19} shows for any $A$, not necessarily simple when $X$
+admits a nowhere vanishing holomorphic 1-form of the form
+$f^*\omega$, then $f(X)$ is fibered by tori. In 
+Theorem \ref{thm:nonvanishing} we show more generally that 
+existence of non-vanishing forms is in fact equivalent to existence of subvarieties $Z\subseteq f(X)$ fibered by tori. 
+\end{enumerate}
+\end{remark}
+
+In a different direction we deal with the question
+of linearity of the set of vanishing 1-forms. This is
+inspired by the work of  \cite{CL73}, Carrell and Lieberman, who show that for a smooth complex projective variety $X$, the set of holomorphic tangent vector fields with zeros is a subvector space of $H^0(X, T_X)$. On the
+other hand its incarnation for 1-form is far from complete.
+It is known due to the theory of cohomology jump
+loci that only the forms satisfying certain resonance property (see Definition \ref{def:res} below) admitting zeros form
+a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$.
+Henceforth we call finite unions of subvector spaces as \emph{linear subvarieties}.
+In this article we complete the picture. To this end we need the 
+following notations.
+Let $X$ be a smooth complex projective variety of $\dim X=n$. The zero set of a global holomorphic 1-form $\omega$
+is given by 
+\[Z(\omega) \coloneqq \{x\in X| \omega(T_xX) = 0\}\]
+where $T_xX$ is the holomorphic tangent space of $X$ at $x$. 
+We further denote by 
+\[V^i(X):=\{ \omega\in H^0(X, \Omega_X^1) |\ \codim Z(\omega)\leq i\},\] when $i=n$ we simply use the notation $V(X)$.
+%:=V^n(X)=\{\omega\in H^0(X, \Omega^1_{X}) | \ Z(\omega)\not =\emptyset\},$$  
+Furthermore, for the morphism $f:X\to A$ from $X$ to an abelian variety $A$, we denote
+\[V^i(f):=\{ \omega\in f^*H^0(A, \Omega_A^1) |\ \codim Z(\omega)\leq i\},\]
+As before when $i=n$ we use the notation $V(f)$.
+%:=V^n(f)=\{\omega\in f^*H^0(A, \Omega_A^1) | \ Z(\omega)\not =\emptyset\},$$
+
+%and  the holomorphic resonance varieties $$R_h^i(X):=\{\omega\in H^0(X, \Omega_X^1) | \ \dim H^i(H^*(X, \C), \wedge \omega)\not=0\}.$$ Mainly we will study the linearity of $V(X)$ or $V(f)$, i.e., the following problem.
+
+%For 1-forms, 
+%by cohomology jump loci theory, we know that the set $R^i_h(X)$ of holomorphic resonant 1-forms (see the following notation) form linear subvarieties. 
+\begin{alphtheorem}\label{main1}
+Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then 
+$V(f)$ is a linear subvariety of $H^0(X, \Omega_X^1)$. In particular, $V(X)$ is a linear subvariety. Moreover, each irreducible components of $V(f)$ are $\Q$-sub Hodge structures of $H^0(X, \Omega_X^1)$. In particular, $V(f)$ and $V(X)$ are defined over $\Q$.
+
+%(2) If the discriminant locus of $f$ is not fibred by tori or of dimension 0, then $V(f)=f^*H^0(A, \Omega_A^1)$, i.e., every holomorphic 1-forms pullback from $A$ via $f$ has zeros.
+\end{alphtheorem}
+\begin{remark}
+\begin{enumerate}
+	\item When $X$ is of general type, the 
+	result of Popa and Schnell (see \ref{cor:ps}) 
+	it follows that $V(X) = H^0(X,\Omega_X^1)$ which is of course
+	linear. 
+	\item  When $\dim X\leq 3$ an immediate corollary of the main theorems in \cite{SS19} and \cite{HS19} is that $V(X)$ is linear.
+	\item \label{item:resonance} The \emph{holomorphic resonance varieties} are roughly speaking, the ``topological parts'' $R_h^i(X)$ of $V(X)$.
+	More precisely they are defined as follows
+	\[R_h^i(X):=\{\omega\in H^0(X, \Omega_X^1)|\ H^i(H^*(X, \mathbb{C}), \wedge \omega)\not= 0\}\subseteq V(X),\]
+	is linear (see, e.g., \cite{DiPa13}). Note that
+	when
+	$R_h^i(X) = V(X)$, our 	theorem is a direct consequence of
+	the linearity of the resonance variety. This 
+	for instance is the case when $\chi(X)\not=0$ (see Corollary \ref{ECNT}). 
+\end{enumerate}
+
+\end{remark}
+The equality $R_h^i(X) = V(X)$ in Item (\ref{item:resonance}) may not always be true. An example of Debarre, Jiang and Lahoz 
+\cite[Example 1.11]{DJL17} shows that the
+there exists a bi-elliptic surface $S$ admitting a 1-form 
+$\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
+is exact, yet $\omega$ admits zeros on $S$. 
+
+More generally we expect the following to be true.
+\begin{conjecture} \label{linear-vi}
+Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then $V^i(f)$ are linear subvarieties of $H^0(X, \Omega_X^1)$, i.e., $V^i(X)$ is a finite union of linear subspaces of $H^0(X, \Omega_X^1)$ for each nonnegative integer $i$. In particular $V^i(X)$ are linear.
+\end{conjecture}
+
+To this end, first using a result of Spurr \cite{Sp88}, we directly get $V^1(X)$ is linear.
+
+\begin{alphtheorem}
+Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then $V^1(f)$ is linear. In particular, $V^1(X)$ is linear.
+\end{alphtheorem}
+
+
+ %What's more, we show that $V^1(f)$ consists the resonant holomorphic 1-forms vanishing along a divisor and ``negative'' 1-forms (holomorphic 1-forms, which is not  necessarily resonant, but vanishes along a rigid divisor). Also, in this article, 
+We also generalize a result of Spurr \cite{Sp88} to quasi-projective varieties. 
+
+\begin{alphtheorem} \label{main3}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be a very ample divisor on $X$. If $(X, D)$ carries a holomorphic log 1-form $0\not=\omega\in H^0(X, \Omega_X^1(\log D))$  which pullbacks to zero on an effective divisor $E$ with $E^2\cdot H^{n-2}\geq0$, then there is a morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ (where $\bar{C}$ is the completion of $C$ and $B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(X, \Omega_{\bar{C}}^1(\log B))$.
+
+(2) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{alphtheorem}
+
+As a corollary we prove the linearity of the set of logarithmic holomorphic 1-forms admitting codimension one zeros.
+
+\begin{corollary}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Then the set $$ V^1(X,D):=\{ w \in W(U) \mid \codim_X Z(w) \leq i \}$$ is linear.
+\end{corollary}
+
+We show that $V^1(X,D)$ consists of resonant holomorphic logarithmic 1-forms vanishing along a divisor, holomorphic logarthmic 1-forms vanishing along a rigid divisor, and holomorphic logarithmic 1-forms vanishing along some components of the boundary divisor $D$.
+
+
+
+
+ 
+\subsection{Comments about the proof}
+For a morphism $f: X\to A$,  we consider the following diagram 
+\begin{center}
+\begin{tikzcd}
+	X\times f^*H^0(A, \Omega_A^1) \ar[r, "df"] \ar[d, "f\times \id"] & T^*X\\
+	A\times H^0(A, \Omega_A^1)\simeq T^*A\dar["\pr_2"]\\
+	H^0(A, \Omega_A^1)
+\end{tikzcd}
+\end{center}
+ where $T^*X$ denotes the $2n$ dimensional 
+cotangent bundle of $X$, $df$ is the usual differential, and $\tilde{f} = pr_2\circ (f\times \id)$ is the natural projection. Note that
+$V(f) \simeq \tilde{f}(df^{-1}(0))$. 
+The key ingredient of 
+Theorem \ref{thm:smooth} and \ref{main1} is
+a result of Migliorini and Shende \cite[Theorem C]{MiSh18} which ensures that $(f\times\id)(df^{-1}(0))$
+is a finite union of closures of conormal bundles
+$T^*_ZX$ along various subvarieties of $Z\subset A$.
+Then the linearity follows from the following proposition
+\begin{proposition}\label{van-nonsimple}
+Let $A$ be an abelian variety and $X$ be a proper subvariety of $A$. Then the following are equivalent
+\begin{enumerate}
+	\item $X$ is not fibred by tori or of dimension 0. 
+	\item Any holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$ restricted to $X^{\reg}$, i.e.\ $\omega|_{X_{\textnormal{reg}}}$ admits zeros on the smooth locus $X_{\textnormal{reg}}$.
+\end{enumerate}
+\end{proposition}
+When $A$ is a
+simple abelian variety this proposition says that any 1-form restricted to $X$ admits zeros on the regular locus of $X$. A proof of this statement seems to be abundantly found in the literature
+see for instance \cite[Proposition 3.1]{HK05}
+or \cite[Proposition 5.12]{LMW20}. Our contribution
+is to provide a proof in general (see \ref{proof:van-nonsimple}).
+
+\sorry{words about the proof of second part}
+
+
+%In fact Theorem\ref{main1} (2) implies  that for a variety of general type $X$, every holomorphic 1-form over $X$ admits zeros. This is proved in \cite{PS14}. Also, Theorem \ref{main1} (2) implies \cite[Proposition 3.4]{HK05}, which dealt with the codimension one case. As a corollary of our main theorem we have
+
+
+
+
+
+
+\subsection*{Notation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Acknowledgement} 
+
+Stefan, Jiang, Kovacs, Nero, Sabbah
+
+\section{Preliminary}
+
+
+
+\begin{definition}
+For $\omega\in H^0(X, \Omega_X^1)$, the zero set of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(x)=0$. The zero scheme of $\omega$ is defined by the ideal sheaf $\mathcal{I}_{\omega}$, where  $\mathcal{I}_{\omega}$ is the image of the morphism $$\mathcal{T}_X\overset{\langle\omega, \cdot\rangle}{\longrightarrow} \mathcal{O}_X$$ with $\mathcal{T}_X$ being the tangent sheaf of $X$ and $\langle\omega, \cdot\rangle$ being the pairing of tangent field with 1-form $\omega$.
+\end{definition}
+
+
+\begin{definition}
+Let $X$ be a smooth projective variety. We call a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots$$ is exact. A holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots$$ is exact for any \'etale over $\tau: X'\to X$.
+\end{definition}
+
+\begin{remark}
+
+(1) (Universally) nonresonant  holomorphic 1-forms were first studied in \cite{SS19}.
+
+(2) In general by \cite[Proposition 3.4]{GL87}, if a holomorphic $\omega$ has zero scheme of codimension greater than or equal to $k$, then the complex $$\ldots\to H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\to\ldots$$ is exact whenever $i<k.$ 
+\end{remark}
+
+The set of resonant 1-forms is very well understood {\color{red} (Provide references as much as we can)}. We recall the following theorem {\color{red} (Due to Voisin?)}. For $i=1$, this is due to Dimca, Papadima, Suciu. For higher $i$, this is due to Dimca and Papadima:
+
+\begin{theorem}{\cite[Theorem C, Corollary 1.7]{DiPa13}}\label{resonant}
+Let $X$ be a compact K\"ahler manifold. Each irreducible component of resonance varieties $R^i(X)$ is a linear subspace of $H^1(X, \C)$ defined over $\Q$, i.e., $$R^i(X)=(R^i(X)\cap H^1(X, \Q))\otimes\C.$$ Also,  each irreducible component of $R^i(X)$ carries $\Q$-Hodge substructures of $H^1(X, \C)$.
+\end{theorem} 
+
+\begin{corollary}
+Let $f:X\to A$ be a morphism from smooth projective variety $X$ to a simple abelian  variety $A$. Then $R^i(X)\cap f^*H(A, \Omega_A^1)$ is $f^*H(A, \Omega_A^1)$ or $0$.
+\end{corollary}
+
+\begin{proof}
+$R^i(X)\cap f^*H(A, \Omega_A^1)$ is a $\Q$-Hodge substructure of $H^1(X, \C)$ of the simple Hodge structure $f^*H(A, \Omega_A^1)$.
+\end{proof}
+
+\begin{corollary}\label{ECNT}
+For $X$ being a smooth projective variety $X$ such that the topological Euler characteristic class $\chi(X)\not=0$, $V(X)$ is a linear subvariety.
+\end{corollary}
+
+
+\section{Linearity of holomorphic 1-forms with zeros}
+
+In this section, we consider the holomorphic 1-forms with zero locus of arbitrary dimension.
+
+\subsection{Higher discriminants and singularities of morphisms by Migliorini and Shende}
+
+In this subsection, we recall a very powerful tool by Migliorini  and Shende \cite{MiSh18}, which will be used in the proof of Theorem \ref{main1}.
+
+\begin{definition}[Migliorini and Shende]
+Let $f: X\to Y$ be a proper morphism between smooth algebraic  varieties $X$ and $Y$. The higher discriminants of $f $ are defined to be
+$$\Delta^i(f):=\{ y\in Y\ |\ \textnormal{no}\ (i-1)\textnormal{-dimensional subspace of}\  T_yY \ \textnormal{is transversal to} \ f \},$$ for each nonnegative integer $i$.
+\end{definition}
+
+\begin{remark}
+(1) In the above definition an $i$-dimensional subspace $W$ of $T_yY$ is transversal to $f$ means $$df_x(T_xX)+W=T_yY,$$ for any closed point $x\in f^{-1}(y)$. Thus no $i$-dimensional subspace of $T_yY$ is transversal to $f$ means the rank of $f$ at some point in $f^{-1}(y)$ is less than $n-i$, where $n=\dim Y$.
+
+(2) By definition, $\Delta^1(f)$ is the usual discriminant, i.e., the locus in $Y$ such that $f$ is not smooth. Also by \cite[Proposition 10.6]{Har77}, we have the filtration  $$Y=\Delta^0(f)\supset \Delta^1(f)\supset\Delta^2(f)\supset\Delta^3(f)\supset\ldots.$$
+
+(3) $\Delta^i(f)$ are closed subvarieties of $Y$, which measure how singular $f$ can be.
+\end{remark}
+
+For any morphism $f: X\to Y$,  we consider the following diagram 
+$$\xymatrix{
+T^*X 
+& X\times_Y T^*Y \ar[l]_-{df} \ar[r]^-{\tilde{f}} &T^*Y
+},$$ where $T^*X$ and $T^*Y$ are holomorphic cotangent bundle, $df$ is the usual differential, and $\tilde{f}$ is the natural projection. Now we can formulate the following theorem in \cite[Theorem C]{MiSh18}.
+
+\begin{theorem}[Migliorini, Shende]\label{MiSh}
+Let $f: X\to Y$ be a proper morphism between smooth algebraic varieties $X$ and $Y$. Then $$\tilde{f}(df^{-1}(0_X))=\bigcup_{i\geq0}\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y},$$ where $0_X$ is the zero section of the cotangent bundle $T^*X$, and $\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y}$ is the closure of the conormal bundle of the smooth locus $D^i(f)_{\textnormal{reg}}$ of codimension $i$ components  $D^i(f)$ of $\Delta^i(f)$ in $Y$.
+\end{theorem}
+
+Since the codimension $i$ components $D^i(f)$ of $\Delta^i(f)$ will be used for many times, we give the following definition.
+
+\begin{definition}
+Let $f: X\to Y$ be a proper morphism between smooth algebraic varieties $X$ and $Y$. The pure $i$-th discriminants of $f $ are defined to be
+the union of codimension $i$ components of $\Delta^i(f)$, denoted by $D^i(f)$.
+\end{definition}
+
+From now on we will focus on a morphism $f: X\to A$ from smooth projective variety $X$ to abelian variety $A$. Also, we fix the following notation
+$$\xymatrix{
+T^*X
+& X\times T_eA \ar[l]_-{df} \ar[r]^-{\tilde{f}} &T^*A\ar@{->>}[r]^-p& T^*_e A=H^0(A, \Omega_A^1)
+},$$ where $T_eA$ is the tangent space of $A$ at a chosen origin $e$. Notice first $p(\tilde{f}(df^{-1}(0_X)))$ is exactly the set of holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ has zeros on $X$.
+
+\begin{corollary}\label{Cor:MiShCor}
+Let $f: X\to A$ be a morphism from smooth projective variety $X$ to an abelian variety. Suppose there is a nontrivial holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ has zeros. Then there exists $i\geq1$ such that the pure $i$-th discriminant $D^i(f)$ is nonempty. In other words, $f$ is smooth if and only if $D^i(f)=\emptyset$ for all $i\geq 1$.
+\end{corollary}
+
+\begin{proof}
+Assume that for all $i\geq 1$, $D^i(f)=\emptyset$, then $$\tilde{f}(df^{-1}(0_X))=\overline{T^*_{D^0(f)_{\textnormal{reg}}}Y}=\overline{T^*_{\Delta^0(f)_{\textnormal{reg}}}Y}=A\times \{0\}.$$ Hence $p(\tilde{f}(df^{-1}(0_X)))=\{0\}$, i.e., the only holomorphic 1-form admitting zeros is the trivial one, which is a contradiction.
+\end{proof}
+
+
+
+\subsection{Proof of Theorem \ref{thm:smooth}}
+
+\begin{proof}[Proof of Theorem \ref{thm:smooth}]
+``$\Rightarrow$'' is trivial.
+
+``$\Leftarrow$'' Assume $f$ is not smooth, then there is a holomorphic 1-form has zeros. Then there exist $i\geq 1$ such that $D^i(f)$ is nonempty by Corollary \ref{Cor:MiShCor}. Since $A$ is simple, $\omega|_{D^i(f)_{reg}}$ has zero for general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$ by \cite[Proposition 3.1]{HK05}, i.e.,  $p(\overline{T^*_{D^i(f)_{\textnormal{reg}}}A})=H^0(A, \Omega_A^1)$, which means every holomorphic 1-form pulled back from $A$ has zero.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Case for general abelian variety}
+
+First we generalize a proposition of Hacon and Kov\'acs \cite[Proposition 3.1]{HK05}. Part of the proof of the following proposition is due to \cite{HK05}.
+
+\begin{proposition}\label{van-nonsimple}
+Let $A$ be an abelian variety and $X$ be a proper subvariety of $A$. Then the following are equivalent
+
+(1) $X$ is not fibred by tori or of dimension 0. 
+
+(2) For general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$, the restricted holomorphic 1-form $\omega|_{X_{\textnormal{reg}}}$ admit zeros on the smooth locus $X_{\textnormal{reg}}$.
+\end{proposition}
+
+\begin{proof}\label{proof:van-nonsimple} (2)$\Rightarrow$ (1): Suppose $X$ is fibred by tori and $\dim X>0$, i.e.\ there exists a subabelian variety $B\subset A$ such that the fibres of the composition 
+$X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we can assume $A'=B\times C$ and $X':=\tau^{-1}(X)=B\times Y\subset A'$. Hence every 1-form coming from $B$ does not vanish on smooth locus of $X'$, hence on $X$. 
+
+(1)$\Rightarrow$(2): Denote $d=\dim X$, $g=\dim A$. If $d=0$ it is trivial, so we assume $d>0$. For any point $x\in X_{\textnormal{reg}}$, we have $$T_xX_{\textnormal{reg}}\cong \C^{g-d}\subset T_xA\cong H^0(A, \Omega_A^1)^{\vee}\cong \C^g.$$
+Hence we have the following diagram 
+$$\xymatrix{
+\mathbb{P}T^*_{X_{\textnormal{reg}}}A \ar[d]^{\pi} \ar@{^{(}->}[r]^-i
+&X_{\textnormal{reg}}\times \mathbb{P}H^0(A, \Omega_A^1)^{\vee}\ar[dl] \ar@{->>}[r]^-p&\mathbb{P}H^0(A, \Omega_A^1)^{\vee} \\
+X_{\textnormal{reg}}
+}.$$
+We then denote $S$ be the image of $\mathbb{P}T^*_{X_{\textnormal{reg}}}A$ in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ through the map $p\circ i$ in the above diagram. Notice that it suffices to show $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$. 
+
+Now assume $S$ is not dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ and $m:=\dim S$. Then for a general point $s\in S$, $$\dim (p\circ i)^{-1}(s)=g-m-1>0,$$ hence $$\dim \pi((p\circ i)^{-1}(s))=g-m-1>0.$$ We denote $Z_s:= \pi((p\circ i)^{-1}(s))\subset X_{\textnormal{reg}}$. For each $Z_s$, we consider the nontrivial subabelian variety $A_s:=\langle Z_s \rangle$ generated by $Z_s$.  Notice first $A_s$ is a proper subabelian variety, because for general $x\in Z_s$, and the line $L_s\subset \mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ corresponding to $s$, we have $$T_x(Z_s)\subset T_xX_{\textnormal{reg}}\subset L_s^{\perp}.$$
+Since $A$ only contains at most countably many subabelian varieties, we have for general $s\in S$, $A_s$ are isomorphic to each other.  We denote this subabelian variety to be $A_0$ with a chosen origin $e$. Notice first that $T_e(A_0)$ is perpendicular to all $L_s$, since it is true for general $s$. Also, notice that since $X$ is not fibred by tori, $Z_s$ is a proper subvariety of the translated tori $A_0+x$ for general $s$ and any $x\in Z_s$ (Notice that $A_0+x$ does not depend on the choice of $x\in Z_s$). Thus $\dim A_0>g-m-1$, i.e., $\dim T_eA_0\geq g-m$. However, $\dim \bigcup_{s\in S}L_s=m+1$ ($\dim S=m$). So $T_e(A_0)$ cannot perpendicular to all $L_s$ for $s\in S$. This proves $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ and hence the lemma.
+\end{proof}
+
+For any subvariety $X$ of an abelian variety $A$, we consider the following diagram 
+$$\xymatrix{
+T^*_{X_{\textnormal{reg}}}A\ar@{->>}[r]^-p& T^*_e A=H^0(A, \Omega_A^1)
+},$$ where $p$ is the projection given by moving the cotangent vectors to $T^*_eA$ via group action. Notice that $p(T^*_{X_{\textnormal{reg}}}A)$ is exactly the set of holomorphic 1-forms in $H^0(A, \Omega_A^1)$ whose restriction on $X_{\textnormal{reg}}$ admitting zeros. Then we have the following corollary of Proposition \ref{van-nonsimple}.
+
+\begin{corollary}\label{Main-coro}
+Let $i: X\to A$ be a subvariety of an abelian variety $A$. Then $\overline{p(T^*_{X_{\textnormal{reg}}}A)}$ is linear. 
+\end{corollary}
+
+
+\begin{proof}
+By Poincar\'e complete reducibility theorem, after passing to a \'etale covering $\tau:A'\to A$ we have a Cartesian diagram 
+$$\xymatrix{
+X'\ar[r]\ar@{^{(}->}[d]^-{i'}& X\ar@{^{(}->}[d]^-{i}\\
+A'\ar[r]& A},$$ and we may assume $A'\cong B\times C$ with $B$ and $C$ being abelian varieties, $X'\cong Y\times C$ with $Y\subset B$ being a subvariety which is not fibred by tori in B. Then we have $$T^*_{X'_{\textnormal{reg}}}A'\cong T^*_{Y_{\textnormal{reg}}}B\times C.$$ As the above, we denote $p'$ be the natural projection $$\xymatrix{
+T^*_{X'_{\textnormal{reg}}}A'\ar@{->>}[r]^-{p'}& T^*_e A'=H^0(A', \Omega_A'^1)
+}.$$  Then by Proposition \ref{van-nonsimple}, we have $\overline{p'(T^*_{X'_{\textnormal{reg}}}A')}=H^0(B, \Omega_B^1)$, which is linear. Hence $\overline{p(T^*_{X_{\textnormal{reg}}}A)}$ is linear, since $X'\to X$ is \'etale.
+\end{proof}
+
+Next we will use Corollary \ref{Main-coro} and Theorem \ref{MiSh} to prove our first main result Theorem \ref{main1}.
+
+\begin{proof}[Proof of Theorem \ref{main1}]
+%For the morphism $f: X\to A$, we consider the following diagram 
+%$$\xymatrix{
+%T^*X
+%& X\times T_eA \ar[l]_-{df} \ar[r]^-{\tilde{f}} &T^*A\ar@{->>}[r]^-p& T^*_e A=H^0(A, \Omega_A^1)
+%},$$ where $T_eA$ is the tangent space of $A$ at a chosen origin $e$. Notice first $p(\tilde{f}(df^{-1}(0_X)))$ is exactly the set of holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ has zeros on $X$.  
+By Theorem \ref{MiSh}, we have $$\tilde{f}(df^{-1}(0_X))=\bigcup_{i\geq0}\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y},$$ where $\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y}$ is the closure of the conormal bundle of the smooth locus $D^i(f)_{\textnormal{reg}}$ of pure $i$-th discriminant $D^i(f)$. By Corollary \ref{Main-coro}, we have $p(\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y)}=\overline{p(T^*_{D^i(f)_{\textnormal{reg}}}Y)}$ is linear. Hence $$p(\tilde{f}(df^{-1}(0_X)))=\bigcup_{i\geq0}p(\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y})$$ is linear. Also, by the proof of Corollary \ref{Main-coro}, it is clear that each irreducible component of $V(f)$ are $\Q$-sub Hodge structures associated to subtori which are generated by $D^i(f)$.
+\end{proof}
+
+
+
+
+{\color{red} Add two corollaries, the above main theorem implies the main theorems of [Papa Schnell], [Hacon Kovacs]}
+
+An immediate consequence of the above is the
+following
+
+\begin{proposition}
+Given a morphism $f\colon X\to A$ from a smooth 
+projective variety to an abelian variety $A$, there is a holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ has no zeros if and only
+if for all $i\geq1$, the pure $i$-th discriminant $D^i(f)$ of $f$ are
+
+(1) either empty;
+
+(2) or fibered by tori and $\dim D^i(f)>0$. 
+\label{thm:nonvanishing}
+\end{proposition}
+
+\begin{proof} ``$\Leftarrow$'' By Theorem \ref{MiSh}, (1) implies that for every holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros. By Proposition \ref{van-nonsimple}, (2) implies that there exist a holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros.
+
+
+``$\Rightarrow$'' 
+If there is $i$ such that the pure $i$-th discriminant $D^i(f)$ is not fibred by tori and $\dim\geq 0$, applying Proposition \ref{van-nonsimple}, we have for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $\omega|_{D^i(f)_{\textnormal{reg}}}$ has zeros. Hence $$p(\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y})=H^0(A, \Omega_A^1).$$ Hence $$p(\tilde{f}(df^{-1}(0_X)))=H^0(A, \Omega_A^1),$$ i.e.,$$V(f)=f^*H^0(A, \Omega_A^1).$$
+\end{proof}
+
+\sorry{This is a strengthening of a ``special case" of Stefan's Theorem 1.4 (2)}
+
+\begin{lemma}\label{Lem:inclusion-fiber-by-tori}
+Let $A$ be any abelian variety. Let $Y_1\times B_1$ and $B_2$ be two subvarieties of $A$, where $Y_1$ is not fibred by tori, $B_2$ is a simple abelian variety and $B_1$ is an abelian variety. Suppose $B_2\subset Y_1\times B_1$. Then $B_2$ is a simple factor of $B_1$ upto isogeny.
+\end{lemma}
+
+\begin{proof}
+It suffices to show that the natural map $p: B_2\to Y_1\times B_1\to Y_1$ maps $B_2$ to a point. Assume not, then we have a positive dimensional abelian variety $C:=p(B_2)$ contained in $Y_1$. Then we consider the inclusion $$C\subset Y_1\subset A.$$ Without losing of generality we can assume that $C$ contains a chosen origin $0$ by translating $C\subset Y_1$ using group action if necessary. Then we want to find contradiction from  $$0\in C\subset Y_1\subset A,$$ where $Y_1$ is not fibred by tori.
+
+In fact, since $Y_1$ is not fibred by tori, $Y_1$ is of general type 
+\end{proof}
+
+With Lemma \ref{Lem:inclusion-fiber-by-tori} and the above theorem we prove, then we have the following strong result.
+
+\begin{theorem}
+Let $X$ be any smooth complex projective variety. Then $X$ admits a nowhere vanishing holomorphic 1-form $\omega$ if and only if $X$ admits a smooth morphism to positive dimensional abelian variety $A$
+\end{theorem}
+
+\begin{proof}
+``$\Leftarrow$'' is trivial.
+
+``$\Rightarrow$'' Consider the albanese map $a: X\to A_X$ of $X$. By assumption we have a holomorphic 1-form $\omega\in H^0(A_X, \Omega_{A_X}^1)$ such that $a^*\omega$ is nowhere vanishing. By Corollary \ref{Cor:MiShCor}, we may assume that not all $D^i(f)$ are empty for $i\geq 1$. %After passing to \'etale covering $\tau: A\to A_X$, we have the following  Cartesian diagram 
+%$$\xymatrix{
+%X'\ar[r]\ar[d]^-{f}& X\ar[d]^-{a}\\
+%A\ar[r]^{\tau}& A_X},$$ $A'=A_1\times\ldots A_m$ being product of simple abelian varieties $A_i$, and a holomorphic 1-form $\omega'\in H^0(A, \Omega_{A}^1)$ such that $f^*\omega'$ is nowhere vanishing.
+Then by Theorem \ref{thm:nonvanishing}, we get all the nonempty pure $i$-th discriminants $D^i(a)$ are fibred by tori and $\dim D^i(a)>0$. Noticed also, by ({\color{red} Hartshorne generic smooth}), we have $$A_X=D^0(a)\supset D^1(a)\supset D^2(a)\supset D^3(a)\supset\ldots.$$ {\color{blue} For pure $i$-th discriminants, does this filtration stil hold? I doubt this! } Assume the highest nontrivial discriminant is $D^m(a)$, which is fibred by tori, then we can take simple abelian subvariety$A_0$ of $A_X$ so that $A_0$ is a factor of the torus part of  $\Delta^m(a)$. By Lemma \ref{Lem:inclusion-fiber-by-tori}, $A_0$ is a factor of all the discriminants. Notice that there is a \'etale covering $\tau: A_X\to A_0\times B$ with $B$ another abelian variety. Then from the proof of Corollary \ref{Main-coro}, we have all the nontrivial holomorphic 1-forms in $(\tau\circ a)^*H^0(A_0, \Omega_{A_0}^1)$ has no zeros on $X$. But since $A_0$ is simple, we have $\tau\circ a: X\to A_0$ is smooth by Theorem \ref{thm:smooth}.   
+\end{proof}
+
+
+
+\section{Linearity of holomorphic 1-forms with codimension one zeros}
+
+{\color{red} $\bullet$ Use Normal bundle also to explain nonresonant 1-forms form finite points in $\mathbb{P}H^0(X, \Omega_X^1)$.
+
+$\bullet$ Application in bounding the genus of 1-dimensional locus of nonresonant  1-forms on surfaces.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{HKLR} 
+
+
+%\bibitem[AMN]{AMN} J. Amor\'os, M. Manjar\'in,  M. Nicolau, \textit{Deformations of K\"ahler manifolds with nonvanishing holomorphic vector fields}, J. Eur. Math. Soc. \textbf{14}, (2012), 997--1040.
+
+
+%\bibitem[BeFa08]{BeFa08} K. Behrend, B. Fantechi,  \textit{Symmetric obstruction theories and Hilbert schemes of points on threefolds},  Algebra and Number Theory,  \textbf{2} (2008), 313--345.
+
+
+
+\bibitem[CL73]{CL73} J. B. Carrell, D. I. Lieberman,  \textit{Holomorphic vector fields and K\"ahler manifolds}, Invent. Math. \textbf{21} (1973), 303--309.
+
+\bibitem[DiPa13]{DiPa13}A. Dimca, S. Papadima, \textit{Nonabelian cohomology jump loci from ananalytic view point}. Commun. Contem. Math. \textbf{15} (5), 1350025 (2013).
+
+
+\bibitem[DiSu]{disu} A. Dimca, A. I. Suciu, \textit{Which 3-manifold groups are K\"ahler groups?}, J. Eur. Math. Soc., \textbf{11} (2009), no. 3, 521-528.
+
+\bibitem[GH18]{GH18} I. Glazer, Y. I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms--the general case (with an appendix joint with Gady Kozma)}, arXiv:1811.09838.
+
+\bibitem[GH19]{GH19}  I. Glazer, Y.I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms}, Selecta Mathematica (2019), 25--15
+
+
+\bibitem[GL87]{GL87} M. Green, R. Lazarsfeld, \textit{Deformation theory, generic vanishing theorems and some conjectures of Enriques, Catanese and Beauville}, Inv. Math. \textbf{90} (1987), 389--407.
+
+\bibitem[GW10]{GW10} U. G\"ortz, T. Wedhorn, \textit{Algebraic geometry I. Schemes with examples and exercises.} Advanced Lectures in Mathematics. Vieweg+Teubner, Wiesbaden, 2010. 
+
+\bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
+
+\bibitem[Har77]{Har77} R. Hartshorne, \textit{Algebraic Geometry}, Graduate Texts in Mathematics, vol. 52, Springer, New York,
+1977.
+
+\bibitem[HS19]{HS19} F. Hao, S. Schreieder, \textit{Holomorphic one-forms without zeros on threefolds}, to appear Geometry $\&$ Topology , arXiv:1906.07606.
+
+
+\bibitem[Laz04]{Laz04} R. Lazarsfeld, \textit{Positivity in algebraic geometry, II: Positivity for Vector Bundles, and Multiplier Ideals}, Ergebnisse der Mathematik und ihrer Grenzgebiete. (3) \textbf{49}, Springer, Berlin, 2004.
+
+
+%\bibitem[KM05]{KM05} J. Koll\'ar and S. Mori, \textit{Birational geometry of algebraic varieties}, Cambridge University Press, Cambridge, 2008.
+
+%\bibitem[Mo85]{Mo85} S. MORI S, \textit{Classification of higher-dimensional varieties}, in: Algebraic Geometry, Bowdoin, (1985),Brunswick, Maine, (1985), in: Proc. Sympos. Pure Math., \textbf{46}, American Mathematical Society,Providence, RI, (1987), 269--331.
+
+%\bibitem[LMW18]{LMW18} Y. Liu, L. Maxim, B. Wang, {\it Perverse sheaves on semi-abelian varieties}, arXiv: 1804.05014. 
+
+\bibitem[LMW20]{LMW20} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Koll\'ar}, arXiv:2006.09295.
+
+\bibitem[MiSh18]{MiSh18} L. Migliorini and V. Shende, \textit{Higher discriminants and the topology of algebraic maps}, Algebraic geometry, (2018), 114--130.
+
+\bibitem[Mum]{Mum} D. Mumford, \text{Abelian Varieties}, Tata Institute of Fundamental Research, (1985).
+
+\bibitem[PS14]{PS14} M. Popa and C. Schnell, \textit{Kodaira dimension and zeros of holomorphic one-forms}, Ann. of Math. \textbf{179} (2014), 1109--1120.
+
+
+\bibitem[Sha74]{Sha74} I. Shafarevich, \textit{Basic Algebraic Geometry I}. Berlin, Springer--Verlag, (1974).
+
+\bibitem[Sch15]{Sch}
+C. Schnell, {\it  Holonomic $\mathcal{D}$-modules on abelian varieties},
+Publ. Math. Inst. Hautes \'{E}tudes Sci. 121 (2015), 1--55.
+
+\bibitem[Schm76]{Schm76} W. Schmid, Variation of Hodge structure: the singularities of the period mapping, Inv. Math. \textbf{22} (1973), 211--319.
+
+\bibitem[Ste76]{Ste76} J. Steenbrink, \textit{Limits of Hodge structures}, Inv. Math. \textbf{31} (1976), 229--257.
+
+
+
+
+\bibitem[Sim93]{Sim93} C. Simpson, \textit{Lefschetz theorems for the integral leaves of a holomorphic one-form}, Compositio Math. \textbf{87} (1993), 99--113.
+
+\bibitem[Sp88]{Sp88} M. Spurr, {\it On the zero set of a holomorphic one-form on a compact complex manifold.} Trans. Am.
+Soc. \textbf{308} (1988), 329-339. 
+
+
+\bibitem[SS19]{SS19} S.Schreieder, \textit{Zeros of holomorphic one-forms and topology of K\"ahler manifolds, (Appendix written jointly with H.-Y. Lin) }, to appear IMRN. (2019).
+
+
+\end{thebibliography}
+
+\end{document}
