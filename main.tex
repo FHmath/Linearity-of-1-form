@@ -592,7 +592,7 @@ For $X$ being a smooth projective variety $X$ such that the topological Euler ch
 
 \subsection{Stratification of morphisms after Migliorini and Shende}
 
-For a morphism $f: X\to A$ as in Theorem \ref{main1},  we consider the following diagram 
+Results in this section are taken from \cite{MiSh18}. For a morphism $f: X\to A$ as in Theorem \ref{main1},  we consider the following diagram 
 %$$\xymatrix{
 %T^*X 
 %& X\times_Y T^*Y \ar[l]_-{df} \ar[r]^-{\tilde{f}} &T^*Y
@@ -613,23 +613,32 @@ i.e.\
 where following \emph{loc.\ cit.} we write $f_{\dagger} = f\times \id)\circ df^{-1}$ and $0_X = T_X^*X$ is the zero section
 of the cotangent bundle. 
 
-We are now ready to state Migliorini and Shende's
-result \cite{MiSh} in the form that will be useful in the proof of our Theorem \ref{main1} and Theorem \ref{thm:smoothness}.
+We also need the following
 
 \begin{definition}[Migliorini and Shende]
 Let $f: X\to Y$ be a proper morphism between smooth algebraic  varieties $X$ and $Y$. The higher discriminants of $f $ are defined to be
-$$\Delta^i(f):=\{ y\in Y\ |\ \textnormal{no}\ (i-1)\textnormal{-dimensional subspace of}\  T_yY \ \textnormal{is transversal to} \ f \},$$ for each nonnegative integer $i$.
+$$\Delta^i(f):=\{ y\in Y\ |\ \textnormal{no}\ (i-1)\textnormal{-dimensional subspace of}\  T_yY \ \textnormal{is transversal to} \ f_{\dagger}(0_X) \},$$ for each nonnegative integer $i$.
 \end{definition}
 
 \begin{remark}
-(1) In the above definition an $i$-dimensional subspace $W$ of $T_yY$ is transversal to $f$ means $$df_x(T_xX)+W=T_yY,$$ for any closed point $x\in f^{-1}(y)$. Thus no $i$-dimensional subspace of $T_yY$ is transversal to $f$ means the rank of $f$ at some point in $f^{-1}(y)$ is less than $n-i$, where $n=\dim Y$.
+(1) By \cite[Lemma 2.8]{MiSh18}, in the above definition an $i-1$-dimensional subspace $W$ of $T_yY$ is transversal to $f_{\dagger}(0_X)$ means 
+\[df_x(T_xX)+W=T_yY,\]
+ for any closed point $x\in f^{-1}(y)$. 
+%Thus no $i-1$-dimensional subspace of $T_yY$ is transversal to $f$ means the rank of $f$ at some point in $f^{-1}(y)$ is less than 
+This is equivalent to the condition that $\dim df_x(T_xX) \leq n-i$, where $n=\dim Y$.
 
 (2) By definition, $\Delta^1(f)$ is the usual discriminant, i.e., the locus in $Y$ such that $f$ is not smooth. Also by \cite[Proposition 10.6]{Har77}, we have the filtration  $$Y=\Delta^0(f)\supset \Delta^1(f)\supset\Delta^2(f)\supset\Delta^3(f)\supset\ldots.$$
 
-(3) $\Delta^i(f)$ are closed subvarieties of $Y$, which measure how singular $f$ can be.
+(3) $\Delta^i(f)$ are closed \sorry{reference?} subvarieties of $Y$, which measure how singular $f$ can be.
+
 \end{remark}
 
+\begin{lemma}
 
+\end{lemma}
+
+We are now ready to state Migliorini and Shende's
+result \cite{MiSh} in the form that will be useful in the proof of our Theorem \ref{main1} and Theorem \ref{thm:smoothness}.
 
 \begin{theorem}[Migliorini, Shende]\label{MiSh}
 Let $f: X\to Y$ be a proper morphism between smooth algebraic varieties $X$ and $Y$. Then $$\tilde{f}(df^{-1}(0_X))=\bigcup_{i\geq0}\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y},$$ where $0_X$ is the zero section of the cotangent bundle $T^*X$, and $\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y}$ is the closure of the conormal bundle of the smooth locus $D^i(f)_{\textnormal{reg}}$ of codimension $i$ components  $D^i(f)$ of $\Delta^i(f)$ in $Y$.
