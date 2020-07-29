@@ -350,8 +350,8 @@ Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelia
 \end{alphtheorem}
 In fact we prove a bit more; When $A$ is not necessarily simple
 existence of a non-vanishing global holomorphic 1-form
-is equivalent to very restrictive set of strata that can show 
-up in the Whitney stratification of the morphism $f$.
+is equivalent to certain restrictions on the so called \emph{higher discriminants} (see \ref{def:higherdiscriminants}) of the morphism $f$ in the sense
+of Migliorini and Shende \cite{MiSh18}.
 See Theorem \ref{thm:nonvanishing} for more details.
 \begin{remark}[Previous results]
 \begin{enumerate}
@@ -364,13 +364,13 @@ See Theorem \ref{thm:nonvanishing} for more details.
 		$f^*\omega$ always admits zero.
 \item The more general version of Theorem \ref{thm:smooth}
 recovers both Item (\ref{item:ps}) (see Corollary \ref{cor:ps})
-and Item (\ref{item:hk}) (see Corollary \ref{cor:hk}
+and Item (\ref{item:hk}) (see Corollary \ref{cor:hk}).
 \item A special case of a result of 
 Schreider \cite[Corollary 1.5]{SS19} shows for any $A$, not necessarily simple when $X$
 admits a nowhere vanishing holomorphic 1-form of the form
 $f^*\omega$, then $f(X)$ is fibered by tori. In 
 Theorem \ref{thm:nonvanishing} we show more generally that 
-existence of non-vanishing forms is in fact equivalent to existence of subvarieties $Z\subseteq f(X)$ fibered by tori. 
+existence of non-vanishing forms is in fact equivalent to existence of a higher discriminant $Z\subseteq f(X)$ fibered by tori. 
 \end{enumerate}
 \end{remark}
 
@@ -584,7 +584,7 @@ For $X$ being a smooth projective variety $X$ such that the topological Euler ch
 
 
 %\section{Linearity of holomorphic 1-forms with zeros}
-
+%
 %In this section, we consider the holomorphic 1-forms with zero locus of arbitrary dimension.
 
 
@@ -616,7 +616,7 @@ of the cotangent bundle.
 We are now ready to state Migliorini and Shende's
 result \cite{MiSh} in the form that will be useful in the proof of our Theorem \ref{main1} and Theorem \ref{thm:smoothness}.
 
-\begin{definition}[Migliorini and Shende]
+\begin{definition}[Migliorini and Shende]\label{def:higherdiscriminants}
 Let $f: X\to Y$ be a proper morphism between smooth algebraic  varieties $X$ and $Y$. The higher discriminants of $f $ are defined to be
 $$\Delta^i(f):=\{ y\in Y\ |\ \textnormal{no}\ (i-1)\textnormal{-dimensional subspace of}\  T_yY \ \textnormal{is transversal to} \ f \},$$ for each nonnegative integer $i$.
 \end{definition}
@@ -760,15 +760,8 @@ If there is $i$ such that the pure $i$-th discriminant $D^i(f)$ is not fibred by
 
 \sorry{This is a strengthening of a ``special case" of Stefan's Theorem 1.4 (2)}
 
-<<<<<<< HEAD
-=======
 
-
-
-
-
-\section{KOtschick?}
->>>>>>> parent of 5295ef9... updated some missing labels
+\section{Kotschick?}
 \begin{lemma}\label{Lem:inclusion-fiber-by-tori}
 Let $A$ be any abelian variety. Let $Y_1\times B_1$ and $B_2$ be two subvarieties of $A$, where $Y_1$ is not fibred by tori, $B_2$ is a simple abelian variety and $B_1$ is an abelian variety. Suppose $B_2\subset Y_1\times B_1$. Then $B_2$ is a simple factor of $B_1$ upto isogeny.
 \end{lemma}
