@@ -798,11 +798,36 @@ Suppose there is $i$ and an irreducible component $D_0^i(f)$ of $D^i(f)$ such th
 
 \section{Linearity of holomorphic 1-forms with codimension one zeros}
 
-
-
 {\color{red} $\bullet$ Use Normal bundle also to explain nonresonant 1-forms form finite points in $\mathbb{P}H^0(X, \Omega_X^1)$.
 
 $\bullet$ Application in bounding the genus of 1-dimensional locus of nonresonant  1-forms on surfaces.}
+
+In this section, we consider (logarithmic) holomorphic 1-forms with codimension one zeros. We will prove that $V^1(X)$ is linear and give a more finer analysis on $V^1(X)$. 
+
+\subsection{Preliminaries}
+
+We give some preliminaries, which is used in studying (logarithmic) holomorphic 1-forms with codimension one zeros, especially the linearity and finer structure of $V^1(X)$. 
+
+First we recall the definition of cohomology jump loci. Let $X$ be a connected finite CW-complex with $\pi_{1}(X)=G$. Then we have the Betti moduli of rank one local system $\textnormal{M}_B(X):= \Hom(G,\C^{\ast})$ is a commutative affine algebraic group. Each character $\rho \in \textnormal{M}_B(X)$ defines a rank one local system on $X$, denoted by $L_{\rho}$. The tangent space $T_1\textnormal{M}_B(X)$ of $\textnormal{M}_B(X)$ at trivial local system 1 is canonically isomorphic to $H^1(X, \C)$.
+The cohomology jump loci of $X$ are defined as follows:
+$$\sV^i(X)=\lbrace \rho\in \textnormal{M}_B(X) \mid  H^{i}(X, L_{\rho})\neq 0 \rbrace,$$ 
+which by structure theorem are finite union of torsion translated subtori of $\textnormal{M}_B(X)$.
+
+To study $V^1(X)$ we introduce a homotopy invariant of $X$, denoted by $T^1(X)$. 
+
+
+
+The following definition of $T^1(X)$ is based on Arapura's work One can give an equivalent definition of $R^1(X)$ based on Arapura's work. Roughly speaking, Arapura showed that every positive dimension component of $\sV^1(X)$ can be induced by a so called orbifold map. I will just give some references here. You can just read \cite[section 9,10]{Su}. Some relevant references are \cite{A,AC,ACM}.
+
+To define $R^1(X)$, one indeed only needs a smaller class of orbifold maps (by Stein factorization theorem). 
+ An algebraic map $f:X\to \Sigma$ from $X$ to a smooth projective curve $\Sigma$ is called a  {\it strict orbifold map} if $f $ is surjective, has connected fibers and one of the following condition holds:
+\begin{itemize}
+\item $g(\Sigma)\geq 2$
+\item $g(\Sigma)=1$ and $f$ has at least one multiple fiber.
+\end{itemize}
+A strict orbifold map always induces an injective map: $f^*: H^0(\Sigma, \Omega_\Sigma^1) \to H^0(X,\Omega^1_X)$. 
+There only at most finitely many equivalent strict orbifold maps. Define $$R^1(X):= \bigcup_f \im f^*,$$
+where the union runs over all possible strict orbifold maps for $X$.
 
 
 
