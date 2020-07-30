@@ -810,25 +810,22 @@ We give some preliminaries, which is used in studying (logarithmic) holomorphic 
 
 First we recall the definition of cohomology jump loci. Let $X$ be a connected finite CW-complex with $\pi_{1}(X)=G$. Then we have the Betti moduli of rank one local system $\textnormal{M}_B(X):= \Hom(G,\C^{\ast})$ is a commutative affine algebraic group. Each character $\rho \in \textnormal{M}_B(X)$ defines a rank one local system on $X$, denoted by $L_{\rho}$. The tangent space $T_1\textnormal{M}_B(X)$ of $\textnormal{M}_B(X)$ at trivial local system 1 is canonically isomorphic to $H^1(X, \C)$.
 The cohomology jump loci of $X$ are defined as follows:
-$$\sV^i(X)=\lbrace \rho\in \textnormal{M}_B(X) \mid  H^{i}(X, L_{\rho})\neq 0 \rbrace,$$ 
-which by structure theorem are finite union of torsion translated subtori of $\textnormal{M}_B(X)$.
+$$\mathcal{S}^i(X)=\lbrace \rho\in \textnormal{M}_B(X) \mid  H^{i}(X, L_{\rho})\neq 0 \rbrace,$$ 
+which by the structure theorem are finite union of torsion translated subtori of $\textnormal{M}_B(X)$.
 
-To study $V^1(X)$ we introduce a homotopy invariant of $X$, denoted by $T^1(X)$. 
-
-
-
-The following definition of $T^1(X)$ is based on Arapura's work One can give an equivalent definition of $R^1(X)$ based on Arapura's work. Roughly speaking, Arapura showed that every positive dimension component of $\sV^1(X)$ can be induced by a so called orbifold map. I will just give some references here. You can just read \cite[section 9,10]{Su}. Some relevant references are \cite{A,AC,ACM}.
-
-To define $R^1(X)$, one indeed only needs a smaller class of orbifold maps (by Stein factorization theorem). 
- An algebraic map $f:X\to \Sigma$ from $X$ to a smooth projective curve $\Sigma$ is called a  {\it strict orbifold map} if $f $ is surjective, has connected fibers and one of the following condition holds:
+To study $V^1(X)$ we introduce a homotopy invariant of $X$, denoted by $T^1(X)${\color{red} (The name TBA, translated tangent cone?)}, which is contained in $H^1(X, \C)$. The following definition of $T^1(X)$ is based on Arapura's work. Roughly speaking, Arapura \cite{Ara97} showed that every positive dimension component of $\mathcal{S}^1(X)$ can be induced by a so called strict orbifold map. A morphism $f:X\to C$ from $X$ to a smooth projective curve $C$ is called a  {\it strict orbifold map} if $f $ is surjective, has connected fibers and one of the following condition holds:
 \begin{itemize}
-\item $g(\Sigma)\geq 2$
-\item $g(\Sigma)=1$ and $f$ has at least one multiple fiber.
+\item $g(C)\geq 2$
+\item $g(C)=1$ and $f$ has at least one multiple fiber.
 \end{itemize}
-A strict orbifold map always induces an injective map: $f^*: H^0(\Sigma, \Omega_\Sigma^1) \to H^0(X,\Omega^1_X)$. 
-There only at most finitely many equivalent strict orbifold maps. Define $$R^1(X):= \bigcup_f \im f^*,$$
-where the union runs over all possible strict orbifold maps for $X$.
+A strict orbifold map always induces an injective map: $f^*: H^1(C, \C) \to H^1(X,\C)$. In fact, there are only at most finitely many equivalent strict orbifold maps. Define $$T^1(X):= \bigcup_f \im f^*,$$
+where the union runs over all possible strict orbifold maps for $X$. By another equivalent definition of Budur-Wang-Yoon \cite{BWY16} , $T^1(X)$ is a linear subvariety, which is the union of torsion translation of affine tangent space of each component of degree 1 cohomology jump loci $\mathcal{S}^1(X)$. We denote the holomorphic part of the tangent cone $T^1(X)$ to be $T^1_h(X)$.
 
+We will see that except for $T_h^1(X)$, another part of $V^1(X)$ is coming from negative divisors.
+
+\begin{definition}
+Let $X$ be a smooth projective variety of dimension $n$, with a fixed very ample line bundle $H$ and a divisor $E$ on $X$. We say that $E$ is $H$-negative if $E^2\cdot H^{n-2}<0$, where $$E^2\cdot H^{n-2}=\int_X c_1^2(E)\wedge c_1(H)^{n-2}.$$ Similarly we can define $H$-trivial and $H$-positive divisors corresponding to the above integration is zero and positive, respectively.
+\end{definition}  
 
 
 
@@ -855,6 +852,11 @@ where the union runs over all possible strict orbifold maps for $X$.
 
 
 %\bibitem[BeFa08]{BeFa08} K. Behrend, B. Fantechi,  \textit{Symmetric obstruction theories and Hilbert schemes of points on threefolds},  Algebra and Number Theory,  \textbf{2} (2008), 313--345.
+
+\bibitem[Ara97]{Ara97} D. Arapura, \textit{Geometry of cohomology support loci for local systems, I}. Journal of Algebraic Geometry \textbf{3} (1997): 563--597.
+
+
+\bibitem[BWY16]{BWY16} N. Budur, B. Wang, Y. Yoon, \textit{Rank one local systems and forms of degree one}. Int. Math. Res. Not. \textbf{13} (2016), 3849--3855.
 
 
 
