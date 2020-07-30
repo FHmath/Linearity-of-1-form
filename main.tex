@@ -754,11 +754,11 @@ if for all $i\geq1$, and the pure $i$-th discriminant $D^i(f)$ of $f$
 \label{thm:nonvanishing}
 \end{proposition}
 
-\begin{proof} ``$\Leftarrow$'' By Theorem \ref{MiSh}, (1) implies that for every holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros. By Proposition \ref{van-nonsimple}, (2) implies that there exist a holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros.
+\begin{proof} ``$\Leftarrow$'' By Theorem \ref{MiSh}, (1) implies that for every holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros. By Theorem \ref{MiSh} and Proposition \ref{van-nonsimple}, (2) implies that for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros.
 
 
 ``$\Rightarrow$'' 
-If there is $i$ such that the pure $i$-th discriminant $D^i(f)$ is not fibred by tori and $\dim\geq 0$, applying Proposition \ref{van-nonsimple}, we have for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $\omega|_{D^i(f)_{\textnormal{reg}}}$ has zeros. Hence $$p(\overline{T^*_{D^i(f)_{\textnormal{reg}}}Y})=H^0(A, \Omega_A^1).$$ Hence $$p(\tilde{f}(df^{-1}(0_X)))=H^0(A, \Omega_A^1),$$ i.e.,$$V(f)=f^*H^0(A, \Omega_A^1).$$
+Suppose there is $i$ and an irreducible component $D_0^i(f)$ of $D^i(f)$ such that $D_0^i(f)$ is not fibred by tori or $\dim D_0^i(f)=0$. If $\dim D^i_0(f)=0$, then there is a point $x\in X$ so that the rank of the tangent map $Tf_x$ is 0, thus every holomorphic 1-form pulled back from $A$ vanishes at $x$, which is a contradiction. If $D_0^i(f)$ is not fibred by tori and $\dim D_0^i(f)>0$, applying Proposition \ref{van-nonsimple}, we have for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $\omega|_{D_0^i(f)_{\textnormal{reg}}}$ has zeros. Hence $$p(\overline{T^*_{D_0^i(f)_{\textnormal{reg}}}Y})=H^0(A, \Omega_A^1).$$ Hence $$p(\tilde{f}(df^{-1}(0_X)))=H^0(A, \Omega_A^1),$$ i.e.,$$V(f)=f^*H^0(A, \Omega_A^1),$$ which is a contradiction.
 \end{proof}
 
 \sorry{This is a strengthening of a ``special case" of Stefan's Theorem 1.4 (2)}
