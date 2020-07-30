@@ -661,20 +661,17 @@ Assume that for all $i\geq 1$, $D^i(f)=\emptyset$, then $$\tilde{f}(df^{-1}(0_X)
 
 \subsection{Proof of Theorem \ref{thm:smooth}}
 
+\begin{proof}[Proof of Theorem \ref{thm:smooth}]
+``$\Rightarrow$'' is trivial.
 
-
-
-
-
-
-
-
+``$\Leftarrow$'' Assume $f$ is not smooth, then there is a holomorphic 1-form has zeros. Then there exist $i\geq 1$ such that $D^i(f)$ is nonempty by Corollary \ref{Cor:MiShCor}. Since $A$ is simple, $\omega|_{D^i(f)_{reg}}$ has zero for general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$ by \cite[Proposition 3.1]{HK05}, i.e.,  $p(\overline{T^*_{D^i(f)_{\textnormal{reg}}}A})=H^0(A, \Omega_A^1)$, which means every holomorphic 1-form pulled back from $A$ has zero.
+\end{proof}
 
 
 \begin{remark}
-(1) {\color{red}Add If the albanese variety of $X$ is simple, then Theorem A implies Kotschick's conj.........}
+(1) {\color{red}TBA If the albanese variety of $X$ is simple, then Theorem A implies Kotschick's conj.........}
 
-(2) {\color{red} Add conterexample $E_1\times E_2\times E_3$ and blowup translated $E_1$ and $E_3$............}
+(2) {\color{red} TBA conterexample $E_1\times E_2\times E_3$ and blowup translated $E_1$ and $E_3$............}
 \end{remark}
 
 \subsection{subvarieties of abelian varieties}
@@ -766,46 +763,42 @@ Suppose there is $i$ and an irreducible component $D_0^i(f)$ of $D^i(f)$ such th
 \sorry{This is a strengthening of a ``special case" of Stefan's Theorem 1.4 (2)}
 
 
-\section{Holomorphic Tischler's theorem}
+%\section{Holomorphic Tischler's theorem}
 
 
-\begin{lemma}\label{Lem:inclusion-fiber-by-tori}
-Let $A$ be any abelian variety. Let $Y_1\times B_1$ and $B_2$ be two subvarieties of $A$, where $Y_1$ is not fibred by tori, $B_2$ is a simple abelian variety and $B_1$ is an abelian variety. Suppose $B_2\subset Y_1\times B_1$. Then $B_2$ is a simple factor of $B_1$ upto isogeny.
-\end{lemma}
+%\begin{lemma}\label{Lem:inclusion-fiber-by-tori}
+%Let $A$ be any abelian variety. Let $Y_1\times B_1$ and $B_2$ be two subvarieties of $A$, where $Y_1$ is not fibred by tori, $B_2$ is a simple abelian variety and $B_1$ is an abelian variety. Suppose $B_2\subset Y_1\times B_1$. Then $B_2$ is a simple factor of $B_1$ upto isogeny.
+%\end{lemma}
 
-\begin{proof}
-It suffices to show that the natural map $p: B_2\to Y_1\times B_1\to Y_1$ maps $B_2$ to a point. Assume not, then we have a positive dimensional abelian variety $C:=p(B_2)$ contained in $Y_1$. Then we consider the inclusion $$C\subset Y_1\subset A.$$ Without losing of generality we can assume that $C$ contains a chosen origin $0$ by translating $C\subset Y_1$ using group action if necessary. Then we want to find contradiction from  $$0\in C\subset Y_1\subset A,$$ where $Y_1$ is not fibred by tori.
+%\begin{proof}
+%It suffices to show that the natural map $p: B_2\to Y_1\times B_1\to Y_1$ maps $B_2$ to a point. Assume not, then we have a positive dimensional abelian variety $C:=p(B_2)$ contained in $Y_1$. Then we consider the inclusion $$C\subset Y_1\subset A.$$ Without losing of generality we can assume that $C$ contains a chosen origin $0$ by translating $C\subset Y_1$ using group action if necessary. Then we want to find contradiction from  $$0\in C\subset Y_1\subset A,$$ where $Y_1$ is not fibred by tori.
 
-TBA
-\end{proof}
+%TBA
+%\end{proof}
 
-With Lemma \ref{Lem:inclusion-fiber-by-tori} and the above theorem we prove, then we have the following strong result.
+%With Lemma \ref{Lem:inclusion-fiber-by-tori} and the above theorem we prove, then we have the following strong result.
 
-\begin{theorem}
-Let $X$ be any smooth complex projective variety. Then $X$ admits a nowhere vanishing holomorphic 1-form $\omega$ if and only if $X$ admits a smooth morphism to positive dimensional abelian variety $A$
-\end{theorem}
+%\begin{theorem}
+%Let $X$ be any smooth complex projective variety. Then $X$ admits a nowhere vanishing holomorphic 1-form $\omega$ if and only if $X$ admits a smooth morphism to positive dimensional abelian variety $A$
+%\end{theorem}
 
-\begin{proof}
-``$\Leftarrow$'' is trivial.
+%\begin{proof}
+%``$\Leftarrow$'' is trivial.
 
-``$\Rightarrow$'' Consider the albanese map $a: X\to A_X$ of $X$. By assumption we have a holomorphic 1-form $\omega\in H^0(A_X, \Omega_{A_X}^1)$ such that $a^*\omega$ is nowhere vanishing. By Corollary \ref{Cor:MiShCor}, we may assume that not all $D^i(f)$ are empty for $i\geq 1$. %After passing to \'etale covering $\tau: A\to A_X$, we have the following  Cartesian diagram 
+%``$\Rightarrow$'' Consider the albanese map $a: X\to A_X$ of $X$. By assumption we have a holomorphic 1-form $\omega\in H^0(A_X, \Omega_{A_X}^1)$ such that $a^*\omega$ is nowhere vanishing. By Corollary \ref{Cor:MiShCor}, we may assume that not all $D^i(f)$ are empty for $i\geq 1$. %After passing to \'etale covering $\tau: A\to A_X$, we have the following  Cartesian diagram 
 %$$\xymatrix{
 %X'\ar[r]\ar[d]^-{f}& X\ar[d]^-{a}\\
 %A\ar[r]^{\tau}& A_X},$$ $A'=A_1\times\ldots A_m$ being product of simple abelian varieties $A_i$, and a holomorphic 1-form $\omega'\in H^0(A, \Omega_{A}^1)$ such that $f^*\omega'$ is nowhere vanishing.
-Then by Theorem \ref{thm:nonvanishing}, we get all the nonempty pure $i$-th discriminants $D^i(a)$ are fibred by tori and $\dim D^i(a)>0$. Noticed also, by ({\color{red} Hartshorne generic smooth}), we claim$$D^i(a)\supset D^j(a),$$ if $j>i$ and $D^i$ and $D^j$ are nonempty pure $i$-th discriminants in $\{D^k(a)\}_{k=1}^{g}$, where $g=\dim A$. {\color{blue}  I Need to think about this, which seems not OK! } Assume the highest nontrivial discriminant is $D^m(a)$, which is fibred by tori, then we can take simple abelian subvariety$A_0$ of $A_X$ so that $A_0$ is a factor of the torus part of  $\Delta^m(a)$. By Lemma \ref{Lem:inclusion-fiber-by-tori}, $A_0$ is a factor of all the discriminants. Notice that there is a \'etale covering $\tau: A_X\to A_0\times B$ with $B$ another abelian variety. Then from the proof of Corollary \ref{Main-coro}, we have all the nontrivial holomorphic 1-forms in $(\tau\circ a)^*H^0(A_0, \Omega_{A_0}^1)$ has no zeros on $X$. But since $A_0$ is simple, we have $\tau\circ a: X\to A_0$ is smooth by Theorem \ref{thm:smooth}.   
-\end{proof}
+%Then by Theorem \ref{thm:nonvanishing}, we get all the nonempty pure $i$-th discriminants $D^i(a)$ are fibred by tori and $\dim D^i(a)>0$. Noticed also, by ({\color{red} Hartshorne generic smooth}), we claim$$D^i(a)\supset D^j(a),$$ if $j>i$ and $D^i$ and $D^j$ are nonempty pure $i$-th discriminants in $\{D^k(a)\}_{k=1}^{g}$, where $g=\dim A$. {\color{blue}  I Need to think about this, which seems not OK! } Assume the highest nontrivial discriminant is $D^m(a)$, which is fibred by tori, then we can take simple abelian subvariety$A_0$ of $A_X$ so that $A_0$ is a factor of the torus part of  $\Delta^m(a)$. By Lemma \ref{Lem:inclusion-fiber-by-tori}, $A_0$ is a factor of all the discriminants. Notice that there is a \'etale covering $\tau: A_X\to A_0\times B$ with $B$ another abelian variety. Then from the proof of Corollary \ref{Main-coro}, we have all the nontrivial holomorphic 1-forms in $(\tau\circ a)^*H^0(A_0, \Omega_{A_0}^1)$ has no zeros on $X$. But since $A_0$ is simple, we have $\tau\circ a: X\to A_0$ is smooth by Theorem \ref{thm:smooth}.   
+%\end{proof}
 
-{\color{red}(This theorem covers theorem A, remember to replace this as Theorem A)}
+%{\color{red}(This theorem covers theorem A, remember to replace this as Theorem A)}
 
 
 
 \section{Linearity of holomorphic 1-forms with codimension one zeros}
 
-\begin{proof}[Proof of Theorem \ref{thm:smooth}]
-``$\Rightarrow$'' is trivial.
 
-``$\Leftarrow$'' Assume $f$ is not smooth, then there is a holomorphic 1-form has zeros. Then there exist $i\geq 1$ such that $D^i(f)$ is nonempty by Corollary \ref{Cor:MiShCor}. Since $A$ is simple, $\omega|_{D^i(f)_{reg}}$ has zero for general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$ by \cite[Proposition 3.1]{HK05}, i.e.,  $p(\overline{T^*_{D^i(f)_{\textnormal{reg}}}A})=H^0(A, \Omega_A^1)$, which means every holomorphic 1-form pulled back from $A$ has zero.
-\end{proof}
 
 {\color{red} $\bullet$ Use Normal bundle also to explain nonresonant 1-forms form finite points in $\mathbb{P}H^0(X, \Omega_X^1)$.
 
