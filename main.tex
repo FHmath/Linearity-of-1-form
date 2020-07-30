@@ -804,9 +804,9 @@ $\bullet$ Application in bounding the genus of 1-dimensional locus of nonresonan
 
 In this section, we consider (logarithmic) holomorphic 1-forms with codimension one zeros. We will prove that $V^1(X)$ is linear and give a more finer analysis on $V^1(X)$. 
 
-\subsection{Preliminaries}
+\subsection{Projective case}
 
-We give some preliminaries, which is used in studying (logarithmic) holomorphic 1-forms with codimension one zeros, especially the linearity and finer structure of $V^1(X)$. 
+%We give some preliminaries, which is used in studying (logarithmic) holomorphic 1-forms with codimension one zeros, especially the linearity and finer structure of $V^1(X)$. 
 
 First we recall the definition of cohomology jump loci. Let $X$ be a connected finite CW-complex with $\pi_{1}(X)=G$. Then we have the Betti moduli of rank one local system $\textnormal{M}_B(X):= \Hom(G,\C^{\ast})$ is a commutative affine algebraic group. Each character $\rho \in \textnormal{M}_B(X)$ defines a rank one local system on $X$, denoted by $L_{\rho}$. The tangent space $T_1\textnormal{M}_B(X)$ of $\textnormal{M}_B(X)$ at trivial local system 1 is canonically isomorphic to $H^1(X, \C)$.
 The cohomology jump loci of $X$ are defined as follows:
@@ -823,16 +823,47 @@ where the union runs over all possible strict orbifold maps for $X$. By another 
 
 We will see that except for $T_h^1(X)$, another part of $V^1(X)$ is coming from negative divisors.
 \begin{definition}
-Let $X$ be a smooth projective variety of dimension $n$, with a fixed very ample line bundle $H$ and a divisor $E$ on $X$. We say that $E$ is $H$-negative if $E^2\cdot H^{n-2}<0$, where $$E^2\cdot H^{n-2}=\int_X c_1^2(E)\wedge c_1(H)^{n-2}.$$ Similarly we can define $H$-trivial and $H$-positive divisors corresponding to the above integration is zero and positive, respectively.
+Let $X$ be a smooth projective variety of dimension $n$, with a fixed very ample line bundle $H$ and a prime divisor $E$ on $X$. We say that $E$ is $H$-negative if $E^2\cdot H^{n-2}<0$, where $$E^2\cdot H^{n-2}=\int_X c_1^2(E)\wedge c_1(H)^{n-2}.$$ Similarly we can define $H$-trivial and $H$-positive divisors corresponding to the above integration is zero and positive, respectively.
 \end{definition}  
-With the above definition, we define $$V_{H\textnormal{-neg}}(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E, \ \textnormal{with negative divisor}\  E\}$$  $$V_{\textnormal{neg}}(X):=\bigcap_{H\ \textnormal{ample divisor}}V_{H\textnormal{-neg}}(X)\subset H^0(X, \Omega_X^1),$$ where the intersection runs over all ample divisors of $X$. With the above notations, we have the following theorem which is based on Spurr \cite[Theorem 2]{Sp88}.
+With the above definition, we define $$V_{H\textnormal{-neg}}(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E, \ \textnormal{with $H$-negative divisor}\  E\}$$  $$V_{\textnormal{neg}}(X):=\bigcap_{H\ \textnormal{ample divisor}}V_{H\textnormal{-neg}}(X)\subset H^0(X, \Omega_X^1),$$ where the intersection runs over all ample divisors of $X$. With the above notations, we have the following theorem which is based on Spurr \cite[Theorem 2]{Sp88}.
 
 \begin{theorem}\label{Thm:Proj-codim1}
  Let $X$ be a complex smooth projective variety, with the above notations, we have that 
 $$V^1(X)= T_h^1(X)\cup V_{\textnormal{neg}}(X).
 $$
-Every irreducible component of $V^1(X)$ is a linear complex subvector space of $H^0(X, \Omega_X^1)$, i.e., $V^1(X)$ is a linear subvariety. Moreover, $V_{\textnormal{neg}}(X)$ is a union of  one dimensional complex vector spaces of $H^0(X, \Omega_X^1)$.
+Every irreducible component of $V^1(X)$ is a linear complex subvector space of $H^0(X, \Omega_X^1)$, i.e., $V^1(X)$ is a linear subvariety. %Moreover, $V_{\textnormal{neg}}(X)$ is a union of  one dimensional complex vector spaces of $H^0(X, \Omega_X^1)$.
 \end{theorem}
+
+\begin{remark} (1) The Theorem \ref{Thm:Proj-codim1} complements the result of Green-Lazarsfeld \cite{GL87}: $T_h^1(X) \subset V^1(X)$. In general one should not expect $T_h^1(X) = V^1(X)$. Let $X$ be a complex abelian surface and $Y$ be the blowup of $X$ along a point. Then $T_h^1(X)=T_h^1(Y)$, but  $V^1(X)\subsetneq V^1(Y)$.
+
+(2) In dimension 2, \cite[Theorem 2]{Sp88} also holds for compact K\"ahler surface and even any compact complex surface. For the compact complex surface $X$, it is not clear if $V^1(X)$ has finitely many components, since it is not algebraic in general.
+\end{remark}
+
+\begin{lemma} \label{countable} Let $X$ be a $n$-dimensional smooth complex projective variety with very ample divisor $H$. Then there are at most countablely many $H$-negative divisors in $X$.
+\end{lemma}
+
+\begin{proof}
+Let $E$ be any $H$-negative divisor. After fixing $n-2$ general hyperplanes $H_1, \ldots, H_{n-2}$ in the linear system $|H|$, we have over the complete intersection surface $S:=H_1\cap H_2\cap\ldots\cap H_{n-2}$, $E\cap S$ is a negative curve in $S$, which has no infinitesimal deformation, i.e., the normal bundle $H^0(E\cap S, \mathcal{N}_{E\cap S/S})=0$. Then they are isolated points in the Hilbert scheme $\textnormal{Hilb}_S^{P(m)}$ with some Hilbert polynomial. Note also that $\textnormal{Hilb}_X^{P(m)}$ is of finite type and $P(m)$ are polynomials with $\Q$ coefficients. Hence there are at most countably many negative curves on $S$ with above properties. Hence there are at most countably many $H$-negative divisors.
+\end{proof}
+
+\begin{proof}[Proof  of theorem \ref{Thm:Proj-codim1}]
+With the notation in theorem \ref{Thm:Proj-codim1},  for any holomorphic 1-form $\omega\in V^1(X)$, there is a integral divisor $D\subset X$ such that $\omega(D)=0$. Then by \cite[theorem 2]{Sp88}, we have either $D$ is $H$-negative or $H$-trivial for any chosen ample divisor $H$. If $D$ is $H$-negative for any ample divisor $H$ then $\omega\in V_{\textnormal{neg}}$. Still by \cite[theorem 2]{Sp88}, If $D$ is $H$-trivial for some ample divisor $H$, then $D$ is contained in a fiber of a morphism $f: X\to C$ with $C$ a smooth projective curve of positive genus and $f$ admitting connected fibers, and $\omega=f^*\eta$ for $\eta\in H^0(C, \Omega_C^1)$. Claim that $D$ is the whole fiber. In fact, if we denote $F:=f^{-1}(f(D))$ and assume by contradiction that $F=D\cup D'$ with $D'\not=\emptyset$. Then the intersection number $D'\cdot D\cdot H^{n-2}>0$. Also, note that $F\cdot D\cdot H^{n-2}=0$, thus $D^2\cdot H^{n-2}<0$, which is a contradiction. Since $D$ is a zero set of a form $\omega$ pullback from $C$ and $D$ is the whole fiber, thus (1) $D$ is multiple and genus $g(C)=1$ or (2) $g(C)>1$ and $\eta(f(D))=0$. Hence $f$ is a strict orbifold fibration. Then $\omega\in T_h^1(X)$. Notice that $T_h^1(X)\subset V^1(X)$ by \cite{GL87}. Hence $$V^1(X)= T_h^1(X)\cup V_{\textnormal{neg}}(X).
+$$
+
+By lemma \ref{countable} and $V^1(X)$ being algebraic, we have that $V_{\textnormal{neg}}$ is a linear subvariety of $H^0(X, \Omega_X)$. Also, since $T_h^1(X)$ is a linear subvariety {\color{red} (reference TBA)}, $V^1(X)$ is a linear subvariety.
+ \end{proof} 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
