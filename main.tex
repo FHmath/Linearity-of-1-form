@@ -825,7 +825,16 @@ We will see that except for $T_h^1(X)$, another part of $V^1(X)$ is coming from 
 \begin{definition}
 Let $X$ be a smooth projective variety of dimension $n$, with a fixed very ample line bundle $H$ and a divisor $E$ on $X$. We say that $E$ is $H$-negative if $E^2\cdot H^{n-2}<0$, where $$E^2\cdot H^{n-2}=\int_X c_1^2(E)\wedge c_1(H)^{n-2}.$$ Similarly we can define $H$-trivial and $H$-positive divisors corresponding to the above integration is zero and positive, respectively.
 \end{definition}  
-With the above definition, we define $$V_{H\textnormal{-neg}}(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E, \ \textnormal{with negative divisor}\  E\}$$  $$V_{\textnormal{neg}}(X):=\bigcap_{H\ \textnormal{ample divisor}}V_{H\textnormal{-neg}}(X),$$ where the intersection runs over all ample divisors of $X$.
+With the above definition, we define $$V_{H\textnormal{-neg}}(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E, \ \textnormal{with negative divisor}\  E\}$$  $$V_{\textnormal{neg}}(X):=\bigcap_{H\ \textnormal{ample divisor}}V_{H\textnormal{-neg}}(X)\subset H^0(X, \Omega_X^1),$$ where the intersection runs over all ample divisors of $X$. With the above notations, we have the following theorem which is based on Spurr \cite[Theorem 2]{Sp88}.
+
+\begin{theorem}\label{Thm:Proj-codim1}
+ Let $X$ be a complex smooth projective variety, with the above notations, we have that 
+$$V^1(X)= T_h^1(X)\cup V_{\textnormal{neg}}(X).
+$$
+Every irreducible component of $V^1(X)$ is a linear complex subvector space of $H^0(X, \Omega_X^1)$, i.e., $V^1(X)$ is a linear subvariety. Moreover, $V_{\textnormal{neg}}(X)$ is a union of finitely many 1 dimensional complex vector space of $H^0(X, \Omega_X^1)$.
+\end{theorem}
+
+
 
 
 
