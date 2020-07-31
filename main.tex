@@ -611,11 +611,10 @@ that $pr_2(f\times \id)(df^{-1}(0_X))$ is precisely the
 set of 1-forms of the form $f^*\omega$ for $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ admits zeros on $X$,
 i.e.\
 \[V(f) = pr_2(f_{\dagger}(0_X))\]
-where following \emph{loc.\ cit.} we write $f_{\dagger} = f\times \id)\circ df^{-1}$ and $0_X = T_X^*X$ is the zero section
+where following \emph{loc.\ cit.} we write $f_{\dagger} = (f\times \id)\circ df^{-1}$ and $0_X = T_X^*X$ is the zero section
 of the cotangent bundle. 
 
-We are now ready to state Migliorini and Shende's
-result \cite{MiSh} in the form that will be useful in the proof of our Theorem \ref{main1} and Theorem \ref{thm:smoothness}.
+Additionally we need the following
 
 \begin{definition}[Migliorini and Shende]\label{def:higherdiscriminants}
 Let $f: X\to Y$ be a proper morphism between smooth algebraic  varieties $X$ and $Y$. The higher discriminants of $f $ are defined to be
@@ -623,7 +622,9 @@ $$\Delta^i(f):=\{ y\in Y\ |\ \textnormal{no}\ (i-1)\textnormal{-dimensional subs
 \end{definition}
 
 \begin{remark}
-(1) In the above definition an $i$-dimensional subspace $W$ of $T_yY$ is transversal to $f$ means $$df_x(T_xX)+W=T_yY,$$ for any closed point $x\in f^{-1}(y)$. Thus no $i$-dimensional subspace of $T_yY$ is transversal to $f$ means the rank of $f$ at some point in $f^{-1}(y)$ is less than $n-i$, where $n=\dim Y$.
+(1) An $i-1$-dimensional subspace $W\subset T_yY$ for a point $y\in Y$ is said to be transversal to $f$ means $$df_x(T_xX)+W=T_yY,$$ for any closed point $x\in f^{-1}(y)$. Thus the condition in the Definition \ref{def:higherdiscriminants} means that for any such $W$, 
+there exists $x\in f^{-1}(y)$ such that $\dim df_x(T_xX) \leq n-i$.
+%Thus no $i-1$-dimensional subspace of $T_yY$ is transversal to $f$ means the rank of $f$ at some point in $f^{-1}(y)$ is less than $n-i$, where $n=\dim Y$.
 
 (2) By definition, $\Delta^1(f)$ is the usual discriminant, i.e., the locus in $Y$ such that $f$ is not smooth. Also by \cite[Proposition 10.6]{Har77}, we have the filtration  $$Y=\Delta^0(f)\supset \Delta^1(f)\supset\Delta^2(f)\supset\Delta^3(f)\supset\ldots.$$
 
