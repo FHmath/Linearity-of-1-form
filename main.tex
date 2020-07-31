@@ -414,18 +414,18 @@ $V(f)$ is a linear subvariety of $H^0(X, \Omega_X^1)$. In particular, $V(X)$ is 
 	it follows that $V(X) = H^0(X,\Omega_X^1)$ which is of course
 	linear. 
 	\item  When $\dim X\leq 3$ an immediate corollary of the main theorems in \cite{SS19} and \cite{HS19} is that $V(X)$ is linear.
-	\item \label{item:resonance} The \emph{holomorphic resonance varieties} are roughly speaking, the ``topological parts'' $R_h^i(X)$ of $V(X)$.
+	\item \label{item:resonance} The \emph{$i$-th holomorphic resonance varieties} are roughly speaking, the ``topological parts'' $R_h^i(X)$ of $V(X)$.
 	More precisely they are defined as follows
 	\[R_h^i(X):=\{\omega\in H^0(X, \Omega_X^1)|\ H^i(H^*(X, \mathbb{C}), \wedge \omega)\not= 0\}\subseteq V(X),\]
-	is linear (see, e.g., \cite{DiPa13}). Note that
+	which is linear (see, e.g., \cite{DiPa13}). We define the \emph{holomorphic resonance varieties} to be the union $$R_h(X):=\bigcup_{i} R_h^i(X).$$ Note that
 	when
-	$R_h^i(X) = V(X)$, our 	theorem is a direct consequence of
+	$R_h(X) = V(X)$, our theorem is a direct consequence of
 	the linearity of the resonance variety. This 
 	for instance is the case when $\chi(X)\not=0$ (see Corollary \ref{ECNT}). 
 \end{enumerate}
 
 \end{remark}
-The equality $R_h^i(X) = V(X)$ in Item (\ref{item:resonance}) may not always be true. An example of Debarre, Jiang and Lahoz 
+The equality $R_h(X) = V(X)$ in Item (\ref{item:resonance}) may not always be true. An example of Debarre, Jiang and Lahoz 
 \cite[Example 1.11]{DJL17} shows that the
 there exists a bi-elliptic surface $S$ admitting a 1-form 
 $\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
@@ -855,7 +855,8 @@ $$
 By lemma \ref{countable}, $V_{\textnormal{neg}}$ is a union of at most countably many linear subspaces in $H^0(X, \Omega_X^1)$ of the following type $$V_E(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E\},$$ where $E$ is a negative divisor. Since $V^1(X)$ is an algebraic set and $T_h^1(X)$ is a linear subvariety, $V^1(X)$ is a linear subvariety.
  \end{proof} 
  
- In Theorem \ref{Thm:Proj-codim1}, we can write holomorphic 1-forms with codimension one zeros s union of two parts: The 1-forms in the {\color{red} translated tangent cone?} and the one vanishes along a negative divisor.  Another way to understand  $V^1(X)$ is one can divide $V^1(X)$ into resonant 1-forms and nonresonant 1-forms.
+ In Theorem \ref{Thm:Proj-codim1}, we can write holomorphic 1-forms with codimension one zeros s union of two parts: The 1-forms in the {\color{red} translated tangent cone?} and the one vanishes along a negative divisor.  Another way to understand  $V^1(X)$ is one can divide $V^1(X)$ into set of resonant 1-forms $$V^1_r(X):=V^1(X)\cap R^1_h(X),$$ and set of nonresonant 1-forms.
+
  
  
 
