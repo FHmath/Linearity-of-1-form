@@ -563,9 +563,12 @@ Let $X$ be a smooth projective variety. We call a holomorphic 1-form $\omega\in 
 (1) (Universally) nonresonant  holomorphic 1-forms were first studied in \cite{SS19}.
 
 (2) In general by \cite[Proposition 3.4]{GL87}, if a holomorphic $\omega$ has zero scheme of codimension greater than or equal to $k$, then the complex $$\ldots\to H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\to\ldots$$ is exact whenever $i<k.$ 
+
+ 
+(3) As mentioned in \cite[1.6]{SS19}, nonresonant holomorphic 1-form exists for bielliptic surfaces with multiple fibers. 
 \end{remark}
 
-Not too much information is known for nonresonant 1-forms. The following theorem is due to S. Schreieder, which studies some properties of zeros of nonresonant 1-forms and the albanese maps of varieties admitting nonresonant 1-forms.
+Not too much information is known for nonresonant 1-forms. The following theorem is due to Schreieder \cite{SS19}, which studies some properties of zeros of nonresonant 1-forms and the albanese maps of varieties admitting nonresonant 1-forms.
 
 \begin{theorem} \label{thm:stefan}
 Let $X$ be a compact connected K\"ahler manifold with a holomorphic one-form $\omega$ such that the complex $(H^*(X, \C), \wedge\omega)$ given by cup product with $\omega$ is exact. Then
@@ -849,10 +852,6 @@ Suppose there is $i$ and an irreducible component $D_0^i(f)$ of $D^i(f)$ such th
 
 \section{Linearity of holomorphic 1-forms with codimension one zeros}
 
-{\color{red} $\bullet$ Use Normal bundle also to explain nonresonant 1-forms form finite points in $\mathbb{P}H^0(X, \Omega_X^1)$.
-
-$\bullet$ Application in bounding the genus of 1-dimensional locus of nonresonant  1-forms on surfaces.}
-
 In this section, we consider (logarithmic) holomorphic 1-forms with codimension one zeros. We will prove that $V^1(X)$ is linear and give a more finer analysis on $V^1(X)$. 
 
 \subsection{Projective case}
@@ -896,7 +895,7 @@ Every irreducible component of $V^1(X)$ is a linear complex subvector space of $
 \end{lemma}
 
 \begin{proof}
-Let $E$ be any $H$-negative divisor. After fixing $n-2$ general hyperplanes $H_1, \ldots, H_{n-2}$ in the linear system $|H|$, we have over the complete intersection surface $S:=H_1\cap H_2\cap\ldots\cap H_{n-2}$, $E\cap S$ is a negative curve in $S$, which has no infinitesimal deformation, i.e., the normal bundle $H^0(E\cap S, \mathcal{N}_{E\cap S/S})=0$. Then they are isolated points in the Hilbert scheme $\textnormal{Hilb}_S^{P(m)}$ with some Hilbert polynomial. Note also that $\textnormal{Hilb}_X^{P(m)}$ is of finite type and $P(m)$ are polynomials with $\Q$ coefficients. Hence there are at most countably many negative curves on $S$ with above properties. Hence there are at most countably many $H$-negative divisors.
+Let $E$ be any $H$-negative divisor. After fixing $n-2$ general hyperplanes $H_1, \ldots, H_{n-2}$ in the linear system $|H|$, we have over the complete intersection surface $S:=H_1\cap H_2\cap\ldots\cap H_{n-2}$, $E\cap S$ is a negative curve in $S$, which has no infinitesimal deformation, i.e., the $H^0(E\cap S, N_{E\cap S/S})=0$, where $N_{E\cap S/S}$ is the normal bundle of $E\cap S$ in $S$. Then they are isolated points in the Hilbert scheme $\textnormal{Hilb}_S^{P(m)}$ with some Hilbert polynomial{\color{red}(Hartshorne deformation theory reference)}. Note also that $\textnormal{Hilb}_X^{P(m)}$ is of finite type and $P(m)$ are polynomials with $\Q$ coefficients. Hence there are at most countably many negative curves on $S$ with above properties. Hence there are at most countably many $H$-negative divisors.
 \end{proof}
 
 \begin{proof}[Proof  of theorem \ref{Thm:Proj-codim1}]
@@ -907,15 +906,16 @@ By lemma \ref{countable}, $V_{\textnormal{neg}}$ is a union of at most countably
  
  In Theorem \ref{Thm:Proj-codim1}, we can write holomorphic 1-forms with codimension one zeros s union of two parts: The 1-forms in the {\color{red} translated tangent cone?} and the one vanishes along a negative divisor.  Another way to understand  $V^1(X)$ is one can divide $V^1(X)$ into set of resonant 1-forms $$V^1_r(X):=V^1(X)\cap R_h(X),$$ and set of nonresonant 1-forms with codimension one zeros, denoted to be $V^1_{nr}(X)$, which is locally closed. Notice that $V_r^1(X)$ is a linear subvariety, since $V^1(X)$ is linear by Theorem \ref{Thm:Proj-codim1}  and $R_h(X)$ is linear by Theorem \ref{thm: resonant}. For holomorphic nonresonant 1-forms,  we have the following proposition.
  \begin{proposition}
-Let $\omega$ be a holomorphic nonresonant 1-form. By  There are only finitely many integral divisors $D$ on $X$, such that there is a nonresonant 1-form $\omega\in H^0(X, \Omega_X^1)$ with $\omega(D)=0$.
+Let $X$ be a smooth complex projective variety of dimension $n$. There are only finitely many integral divisors $D$ on $X$, such that there is a holomorphic nonresonant 1-form $\omega\in H^0(X, \Omega_X^1)$ with $\omega(D)=0$.
  \end{proposition}
  
  \begin{proof}
-For any holomorphic Take any codimension one irreducible component of zero set of  ...................TBA
+For any holomorphic nonresonant 1-form $\omega$ such that the zero set $Z(\omega)$ contains a integral divisor $D\subset X$, by Theorem \ref{thm:stefan} (1), $H^{n-1}(D, {\omega_X}|_D)=0$, where $\omega_X$ is the canonical line bundle of $X$. Hence $H^0(D, N_{D/X})=0$ by Serre duality. Then by the same Hilbert scheme argument as that is the proof of   Lemma \ref{countable}, we have there are at most countably many integral divisors that are contained in zero locus of some holomorphic nonresonant 1-forms.  Notice also since $V^1(X)$ is algebraic and $V^1_{nr}(X)=V^1(X)\backslash V_r^1(X)$ is open in $V^1(X)$, $\overline{V_{nr}^1(X)}$ has finitely many irreducible components. Since $$\overline{V_{nr}^1(X)}=\bigcup_{D}V_D(X),$$ where the union runs over all integral divisors $D$ contained in zero loci of holomorphic nonresonant 1-forms. Hence the proposition holds.
  \end{proof}
  
- 
- 
+ \begin{remark}
+By the H.-Y. Lin and Schreieder \cite[appendix]{SS19}, the zero set of any universal nonresonant 1-form is of codimension at least two. 
+ \end{remark}
  To end this subsection, we consider nonresonant 1-forms on surfaces, which is for its own interest. Let $S$ be smooth complex surface, one can bound genus of curves along which a nonresonant 1-form may vanish.
  
  \begin{proposition}
