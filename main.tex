@@ -701,7 +701,6 @@ Let $A$ be an abelian variety and $X$ be an irreducible proper subvariety of $A$
 \end{proposition}
 
 \begin{proof}\label{proof:van-nonsimple} (2)$\Rightarrow$ (1): Suppose $X$ is fibred by tori and $\dim X>0$, i.e.\ there exists a subabelian variety $B\subset A$ such that the fibres of the composition 
-<<<<<<< HEAD
 $X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we can assume $A'=B\times C$ and $X':=\tau^{-1}(X)=B\times Y\subset A'$. Hence every 1-form coming from $B$ does not vanish on smooth locus of $X'$, hence on $X$. 
 
 (1)$\Rightarrow$(2): Denote $d=\dim X$, $g=\dim A$. If $d=0$ it is trivial, so we assume $d>0$. For any point $x\in X_{\textnormal{reg}}$, we have $$T_xX_{\textnormal{reg}}\cong \C^{g-d}\subset T_xA\cong H^0(A, \Omega_A^1)^{\vee}\cong \C^g.$$
@@ -714,42 +713,6 @@ X_{\textnormal{reg}}
 We then denote $S$ be the image of $\mathbb{P}T^*_{X_{\textnormal{reg}}}A$ in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ through the map $p\circ i$ in the above diagram. Notice that it suffices to show $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ if $X$ is not fibred by tori and $\dim X>0$.  
 
 Noticed that $S$ is irreducible, since $X$ is irreducible. By contradiction we assume $S$ is not dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$. Denote $m:=\dim S$. Claim that $\dim S=m>0$. In fact, if $m=0$, then there is a nontrivial holomorphic 1-form $\eta$ corresponding to $s\in S$ such that the restriction $\eta|_X=0$. Also, notice that since $\dim S=0,$ $\dim X=g-1$. Also, since $X$ is not fibred by tori, $X$ generates the whole abelian variety $A$. Then this implies $\eta=0$, which is a contradiction. 
-=======
-$X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we assume $A'=B\times C$ and $X':=\tau^{-1}(X)=B\times Y\subset A'$. Then the 1-forms coming from $B$ do not vanish on smooth locus of $X'$, hence also do not on the smooth locus of $X$. 
-
-(1)$\Rightarrow$(2): Denote $d=\dim X$, $g=\dim A$. If $d=0$ it is trivial, so we assume $d>0$. Denoting by $N$ the
-vector bundle on $X^{\reg}$ given by $N_{X/A}|_{X^{\reg}}$ where $N_{X/A}$ is the normal sheaf of associated to the immersion
- \cite[\href{https://stacks.math.columbia.edu/tag/01R1}{Tag 01R1}]{stacks-project}. Associated to $T_A|_{X^{\reg}}\onto N$,
-we obtain the following chain of maps
-\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP^(T_0A)=\bbP^{g-1})\]
-where for a vector bundle $E$ on $X^{\reg}$ we use the notation $\bbP(E) \coloneqq \Proj(\Sym^d(E^{\vee}))$.
-Denote by $p\colon \bbP(N)\to X^{\reg}$ the bundle map. Given
-a point $s\in \bbP^g$, by construction we may associate a hyperplane $H_s\subset T_{A,0}$. Then
-\begin{equation}
-p\colon \varphi^{-1}(s) \overset{p}{\xrightarrow{\sim}}  \{x\in X^{\reg}| T_xX^{\reg} \subset H_s\}.
-\label{eq:van-nonsimple}
-\end{equation}
-Denote by $S\coloneqq \varphi(\bbP(N))$ the image and by $m = \dim S$. If $m<g$, for all $s\in S$, a general
- fibre $Z_s \coloneqq \varphi^{-1}(s)$
-must have dimension $g - m - 1$. Let $A_0$ denote the abelian variety spanned by $Z_s$, then $\dim A_0 > g- m - 1$. Indeed,
-our assumption implies that $Z_s$ cannot itself be an abelian variety. Since for a general $s\in s$, $H_s \supset T_xA_0$
-for all $x\in p(\varphi^{-1}(s))$ by \eqref{eq:van-nonsimple}. Normalising $x$ to $0$, we obtain that $T_0A_0$
-is cut out by $g - m -1$ many hyperplanes in $T_0A$. But $\dim T_0A_0 \gneq \dim T_0A$. Hence $\varphi$ is quasi-finite
-dominant morphism which shows the claim above.
-%For any point $x\in X_{\textnormal{reg}}$, we have $$T_xX_{\textnormal{reg}}\cong \C^{g-d}\subset T_xA\cong H^0(A, \Omega_A^1)^{\vee}\cong \C^g.$$
-%Hence we have the following diagram 
-%$$\xymatrix{
-%\mathbb{P}T^*_{X_{\textnormal{reg}}}A \ar[d]^{\pi} \ar@{^{(}->}[r]^-i
-%&X_{\textnormal{reg}}\times \mathbb{P}H^0(A, \Omega_A^1)^{\vee}\ar[dl] \ar@{->>}[r]^-p&\mathbb{P}H^0(A, \Omega_A^1)^{\vee} \\
-%X_{\textnormal{reg}}
-%}.$$
-%We then denote $S$ be the image of $\mathbb{P}T^*_{X_{\textnormal{reg}}}A$ in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ through the map $p\circ i$ in the above diagram. Notice that it suffices to show $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ if $X$ is not fibred by tori and $\dim X>0$.  
-%
-%Noticed that $S$ is irreducible, since $X$ is irreducible. By contradiction we assume $S$ is not dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$. Denote $m:=\dim S$. Claim that $\dim S=m>0$. In fact, if $m=0$, then there is a nontrivial holomorphic 1-form $\eta$ corresponding to $s\in S$ such that the restriction $\eta|_X=0$. Also, notice that since $\dim S=0,$ $\dim X=g-1$. Also, since $X$ is not fibred by tori, $X$ generates the whole abelian variety $A$. Then this implies $\eta=0$, which is a contradiction. 
-%
-%Then for a general point $s\in S$, $$\dim (p\circ i)^{-1}(s)=g-m-1>0,$$ hence $$\dim \pi((p\circ i)^{-1}(s))=g-m-1>0.$$ We denote $Z_s:= \pi((p\circ i)^{-1}(s))\subset X_{\textnormal{reg}}$. For each $Z_s$, we consider the nontrivial subabelian variety $A_s:=\langle Z_s \rangle$ generated by $Z_s$.  Notice first $A_s$ is a proper subabelian variety, because for general $x\in Z_s$, and the line $L_s\subset \mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ corresponding to $s$, we have $$T_x(Z_s)\subset T_xX_{\textnormal{reg}}\subset L_s^{\perp}.$$
-%Since $A$ only contains at most countably many subabelian varieties and $S$ is irreducible, we have for general $s\in S$, $A_s$ are isomorphic to each other.  We denote this subabelian variety to be $A_0$ with a chosen origin $e$. Notice first that $T_e(A_0)$ is perpendicular to all $L_s$, since it is true for general $s$. Also, notice that since $X$ is not fibred by tori, $Z_s$ is a proper subvariety of the translated tori $A_0+x$ for general $s$ and any $x\in Z_s$ (Notice that $A_0+x$ does not depend on the choice of $x\in Z_s$). Thus $\dim A_0>g-m-1$, i.e., $\dim T_eA_0\geq g-m$. However, $\dim \bigcup_{s\in S}L_s=m+1$ ($\dim S=m$). So $T_e(A_0)$ cannot perpendicular to all $L_s$ for $s\in S$. This proves $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ and hence the lemma.
->>>>>>> parent of 39ec541... fixed typos in Prop 3.7
 
 Then for a general point $s\in S$, $$\dim (p\circ i)^{-1}(s)=g-m-1>0,$$ hence $$\dim \pi((p\circ i)^{-1}(s))=g-m-1>0.$$ We denote $Z_s:= \pi((p\circ i)^{-1}(s))\subset X_{\textnormal{reg}}$. For each $Z_s$, we consider the nontrivial subabelian variety $A_s:=\langle Z_s \rangle$ generated by $Z_s$.  Notice first $A_s$ is a proper subabelian variety, because for general $x\in Z_s$, and the line $L_s\subset \mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ corresponding to $s$, we have $$T_x(Z_s)\subset T_xX_{\textnormal{reg}}\subset L_s^{\perp}.$$
 Since $A$ only contains at most countably many subabelian varieties and $S$ is irreducible, we have for general $s\in S$, $A_s$ are isomorphic to each other.  We denote this subabelian variety to be $A_0$ with a chosen origin $e$. Notice first that $T_e(A_0)$ is perpendicular to all $L_s$, since it is true for general $s$. Also, notice that since $X$ is not fibred by tori, $Z_s$ is a proper subvariety of the translated tori $A_0+x$ for general $s$ and any $x\in Z_s$ (Notice that $A_0+x$ does not depend on the choice of $x\in Z_s$). Thus $\dim A_0>g-m-1$, i.e., $\dim T_eA_0\geq g-m$. However, $\dim \bigcup_{s\in S}L_s=m+1$ ($\dim S=m$). So $T_e(A_0)$ cannot perpendicular to all $L_s$ for $s\in S$. This proves $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ and hence the lemma.
