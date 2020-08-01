@@ -555,7 +555,7 @@ For $\omega\in H^0(X, \Omega_X^1)$, the zero set of $\omega$ is the algebraic se
 
 
 \begin{definition}
-Let $X$ be a smooth projective variety. We call a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots$$ is exact. A holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots$$ is exact for any \'etale over $\tau: X'\to X$. Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
+Let $X$ be a smooth projective variety. We call a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots$$ is exact. A holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots$$ is exact for any \'etale over $\tau: X'\to X$. Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form.
 \end{definition}
 
 \begin{remark}
@@ -564,19 +564,6 @@ Let $X$ be a smooth projective variety. We call a holomorphic 1-form $\omega\in 
 
 (2) In general by \cite[Proposition 3.4]{GL87}, if a holomorphic $\omega$ has zero scheme of codimension greater than or equal to $k$, then the complex $$\ldots\to H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\to\ldots$$ is exact whenever $i<k.$ 
 \end{remark}
-
-Not too much information is known for nonresonant 1-forms. The following theorem is due to S. Schreieder, which studies some properties of zeros of nonresonant 1-forms and the albanese maps of varieties admitting nonresonant 1-forms.
-
-\begin{theorem} \label{thm:stefan}
-Let $X$ be a compact connected K\"ahler manifold with a holomorphic one-form $\omega$ such that the complex $(H^*(X, \C), \wedge\omega)$ given by cup product with $\omega$ is exact. Then
-the zero scheme $Z(\omega)$ of $\omega\in H^0(X,\Omega_X^1)$ has the following properties.
-
-(1) For any reduced irreducible component $Z \subset Z(\omega)$ with $d=\dim Z(\omega)$, $$H^d(Z, \omega_X|_Z)=0.$$
-In particular, $\omega$ does not have any isolated zero.
-
-(2) If $f : X \to A$ is a holomorphic map to a complex torus $A$ such that $\omega \in f^*H^0(A, \Omega^1_A)$,
-then $f(X)\subset A$ is fibred by tori.
-\end{theorem}
 
 The set of resonant 1-forms is very well understood {\color{red} (Provide references as much as we can)}. We recall the following theorem {\color{red} (Due to Voisin?)}. For $i=1$, this is due to Dimca, Papadima, Suciu. For higher $i$, this is due to Dimca and Papadima:
 
@@ -868,13 +855,13 @@ $$
 By lemma \ref{countable}, $V_{\textnormal{neg}}$ is a union of at most countably many linear subspaces in $H^0(X, \Omega_X^1)$ of the following type $$V_E(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E\},$$ where $E$ is a negative divisor. Since $V^1(X)$ is an algebraic set and $T_h^1(X)$ is a linear subvariety, $V^1(X)$ is a linear subvariety.
  \end{proof} 
  
- In Theorem \ref{Thm:Proj-codim1}, we can write holomorphic 1-forms with codimension one zeros s union of two parts: The 1-forms in the {\color{red} translated tangent cone?} and the one vanishes along a negative divisor.  Another way to understand  $V^1(X)$ is one can divide $V^1(X)$ into set of resonant 1-forms $$V^1_r(X):=V^1(X)\cap R_h(X),$$ and set of nonresonant 1-forms with codimension one zeros, denoted to be $V^1_{nr}(X)$, which is locally closed. Notice that $V_r^1(X)$ is a linear subvariety, since $V^1(X)$ is linear by Theorem \ref{Thm:Proj-codim1}  and $R_h(X)$ is linear by Theorem \ref{thm: resonant}. For holomorphic nonresonant 1-forms,  we have the following proposition.
+ In Theorem \ref{Thm:Proj-codim1}, we can write holomorphic 1-forms with codimension one zeros s union of two parts: The 1-forms in the {\color{red} translated tangent cone?} and the one vanishes along a negative divisor.  Another way to understand  $V^1(X)$ is one can divide $V^1(X)$ into set of resonant 1-forms $$V^1_r(X):=V^1(X)\cap R_h(X),$$ and set of nonresonant 1-forms with codimension one zeros, denoted to be $V^1_{nr}(X)$, which is locally closed. Notice that $V_r^1(X)$ is a linear subvariety, since $V^1(X)$ is linear by Theorem \ref{Thm:Proj-codim1}  and $R_h(X)$ is linear by Theorem \ref{thm: resonant}. For $V^1_{nr}(X)$, we have the following proposition.
  \begin{proposition}
-Let $\omega$ be a holomorphic nonresonant 1-form. By  There are only finitely many integral divisors $D$ on $X$, such that there is a nonresonant 1-form $\omega\in H^0(X, \Omega_X^1)$ with $\omega(D)=0$.
+ There are only finitely many integral divisors $D$ on $X$, such that there is a nonresonant 1-form $\omega\in H^0(X, \Omega_X^1)$ with $\omega(D)=0$.
  \end{proposition}
  
  \begin{proof}
-For any holomorphic Take any codimension one irreducible component of zero set of  ...................TBA
+ For any holomorphic Take any codimension one irreducible component of zero set of  ...................TBA
  \end{proof}
  
  
