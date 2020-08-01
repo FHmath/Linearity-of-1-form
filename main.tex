@@ -693,22 +693,22 @@ $X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we assume
 
 (1)$\Rightarrow$(2): Denote $d=\dim X$, $g=\dim A$. If $d=0$ it is trivial, so we assume $d>0$. Denoting by $N$ the
 vector bundle on $X^{\reg}$ given by $N_{X/A}|_{X^{\reg}}$ where $N_{X/A}$ is the normal sheaf of associated to the immersion
- \cite[\href{https://stacks.math.columbia.edu/tag/01R1}{Tag 01R1}]{stacks-project}. Associated to $T_A|_{X^{\reg}}\onto N$,
+ \cite[\href{https://stacks.math.columbia.edu/tag/01R1}{Tag 01R1}]{stacks-project}. Associated to \[T_A|_{X^{\reg}}\onto N,\]
 we obtain the following chain of maps
-\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP^(T_0A)=\bbP^{g-1})\]
-where for a vector bundle $E$ on $X^{\reg}$ we use the notation $\bbP(E) \coloneqq \Proj(\Sym^d(E^{\vee}))$.
+\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP(T_0A)=\bbP^{g-1})\]
+where for a vector bundle $E$ on $X^{\reg}$ we use the notation $\bbP(E) \coloneqq \Proj_{X^{\reg})(\Sym^d(E^{\vee}))$.
 Denote by $p\colon \bbP(N)\to X^{\reg}$ the bundle map. Given
 a point $s\in \bbP^g$, by construction we may associate a hyperplane $H_s\subset T_{A,0}$. Then
 \begin{equation}
 p\colon \varphi^{-1}(s) \overset{p}{\xrightarrow{\sim}}  \{x\in X^{\reg}| T_xX^{\reg} \subset H_s\}.
 \label{eq:van-nonsimple}
 \end{equation}
-Denote by $S\coloneqq \varphi(\bbP(N))$ the image and by $m = \dim S$. If $m<g$, for all $s\in S$, a general
+Denote by $S\coloneqq \varphi(\bbP(N))$ the image. If $\dim S<g$, for all $s\in S$, a general
  fibre $Z_s \coloneqq \varphi^{-1}(s)$
-must have dimension $g - m - 1$. Let $A_0$ denote the abelian variety spanned by $Z_s$, then $\dim A_0 > g- m - 1$. Indeed,
-our assumption implies that $Z_s$ cannot itself be an abelian variety. Since for a general $s\in s$, $H_s \supset T_xA_0$
+must have dimension $g - 1 - \dim S$. Let $A_0$ denote the abelian variety spanned by $Z_s$, then $\dim A_0 > g- 1 - \dim S$. Indeed,
+our assumption implies that $Z_s$ cannot itself be an abelian variety. Since for a general $s\in S$, $H_s \supset T_xA_0$
 for all $x\in p(\varphi^{-1}(s))$ by \eqref{eq:van-nonsimple}. Normalising $x$ to $0$, we obtain that $T_0A_0$
-is cut out by $g - m -1$ many hyperplanes in $T_0A$. But $\dim T_0A_0 \gneq \dim T_0A$. Hence $\varphi$ is quasi-finite
+is cut out by $\dim S$ many hyperplanes in $T_0A$. But $\dim T_0A_0 \gneq g -1 - \dim S$. Hence $\varphi$ is quasi-finite
 dominant morphism which shows the claim above.
 %For any point $x\in X_{\textnormal{reg}}$, we have $$T_xX_{\textnormal{reg}}\cong \C^{g-d}\subset T_xA\cong H^0(A, \Omega_A^1)^{\vee}\cong \C^g.$$
 %Hence we have the following diagram 
