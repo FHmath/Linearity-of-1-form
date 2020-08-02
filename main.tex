@@ -924,11 +924,123 @@ By the H.-Y. Lin and Schreieder \cite[appendix]{SS19}, the zero set of any unive
  Since $C\subset Z(\omega)$, we have $H^1(C, {\omega_S}|_C)=0$ by Theorem \ref{thm:stefan} (1). Consider the normalization $\eta: \widetilde{C}\to C$ and the exact sequence $$0\to \mathcal{O}_C\to \eta_*\mathcal{O}_{\widetilde{C}}\to \delta\to 0, $$ where $\delta$ is the skyscraper sheaf defined as the coker. Then we have the short exact sequence $$0\to {\omega_S}|_C\to \eta_*{{\omega_X}|_{\widetilde{C}}}\to \delta\to 0.$$ Then we get $$\dim H^0(\widetilde{C}, {\omega_X}|_{\widetilde{C}})\leq \dim H^0(\delta);   H^1(C, {\omega_S}|_C)=H^1(\widetilde{C}, {\omega_X}|_{\widetilde{C}})=0.$$ By Riemann-Roch, $$\deg {\omega_X}|_{\widetilde{C}}+1-g(\widetilde{C})\leq \dim H^0(\delta).$$ Notice also, $$p_a(C)=g(\widetilde{C})+\dim H^0(\delta), $$ and by genus formula $$\deg {\omega_X}|_{\widetilde{C}}+C^2=2p_a(C)-2.$$ Then by \cite[Theorem 1]{Sp88}, $C^2\leq 0$. Hence $p_a(C)\leq1$.
  \end{proof}
  
- 
- 
- 
+
  \subsection{Quasi-projective case}
  
+
+Let $U$ be a smooth complex quasi-projective variety. Let $X$ be a good compactification of $U$, i.e., a smooth compactification of $U$ with boundary $D:=X-U$ a simple normal crossing divisor. Note that the space of logarithmic 1-forms $H^0(X, \Omega_X^1(\log D))$ does not depend on the choice of the good compactification, so we may denote it by $W(U)$. We write $H^0(X, \Omega_X^1(\log D))$ when we want to emphasize the boundary divisor. Similar to projective case,  one can define $$V^i(X,D):=\{ \omega\in H^0(X, \Omega_X^1(\log D)) \mid \codim_X Z(\omega) \leq i \}.$$
+where $Z(\omega)$ is the zero locus of $\omega$. Again by Chevalley's upper-semicontinuity theorem, $V^i(X, D)$ are all algebraic sets.
+
+\begin{remark} For a smooth quasi-projective variety $U$, $V^i(X,D)$ clearly depends on the good compactification $(X,D)$. For example, let $X$ be a smooth projective variety admitting a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ with isolated zero set. Let $D\subset X$ be a divisor containing one point $p \in Z(\omega)$, and $Y$ be the blowup of $X$ along $p$ with exceptional divisor $E$. Then $V^1(X, D)\subsetneq V^1(Y, D\cup E)$. To get an invariant of $U$, we define
+$$V^i(U)= \bigcap_{(X,D)} V^i(X,D) ,$$
+where the intersection runs over all possible good compactification $(X,D)$ of $U$. Clearly, $V^i(U) $ are closed algebraic varieties of $W(U)$.
+\end{remark} 
+
+For a good compactfication $(X,D)$ of $U$ where $D=\cup_{j=1}^r D_j$. Set $$V_{\textnormal{bound}}(X, D):= \{\omega\in H^0(X, \Omega_X^1(\log D)) \mid D_j \subset Z(\omega)\  \text{ for some }\  j \}.$$ Similar to projective case, we denote for a subvariety $E$, $$V_E(X, D):=\{\omega\in H^0(X, \Omega_X^1(\log D)) \mid  E \subset Z(\omega) \}$$ and 
+ $$V_{\textnormal{neg}}(X, D):= \bigcup_E V_E(X, D),$$ where the union runs over all the negative divisor $E$ in $X$ such that $E$ is not contained in $D$. 
+ 
+Define $$T_h^1(X, D):= \bigcup_f f^*H^0(C, \Omega_C^1(\log B)),$$
+where the union runs over all possible surjective morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ ($B$ can be empty), such that $f$ has  connected fibers, and one of the following condition holds when $C$ is projective:
+\begin{itemize}
+\item $g(C)\geq 2$
+\item $g(C)=1$ and $f$ has at least one multiple fiber.
+\end{itemize} 
+{\color{red} (Check the correctness on poles and zeros for $g(C)=0,1$)} 
+ 
+\begin{theorem} \label{thm:codim1quasiprojective} Let $(X, D)$ be a pair consists of an $n$-dimensional smooth complex projective variety $X$ and a simple normal crossing divisor $D$ with irreducible components $\{D_j\}_{j=1}^r$. Then 
+$$
+V^1(X,D)= T^1_h(X, D) \cup V_{\textnormal{neg}}(X, D) \cup V_{\textnormal{bound}}(X, D),
+$$
+and every irreducible component of $V^1(X,D)$ is a linear subvector space of $H^0(X, \Omega_X^1(\log D))$. 
+\end{theorem}
+
+In order to show the above theorem, we first generalize Spurr \cite[Theorem 2]{Sp88} and ideas of the proof to quasi-projective varieties. 
+
+\begin{proposition} \label{Prop:Spurr-no-intersection}
+Let $(X, D)$ be a pair with $X$ a smooth complex projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be an ample divisor on $X$. Suppose $(X, D)$ carries a nontrivial logarithmic 1-form $\omega\in H^0(X, \Omega_X^1(\log D))$  which restricts to zero on an integral divisor $E$ with $E^2\cdot H^{n-2}\geq0,$ and $E\cap D=\emptyset,$ then there is a surjective morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ ($B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(C, \Omega_C^1(\log B))$.
+
+(2) $f$ has connected fibers.
+
+(3) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{proposition}
+
+\begin{proof}
+Firstly, we prove the theorem in the case $\dim X=2$. We may assume that $\omega$ is not everywhere holomorphic, otherwise we are done by \cite[Theorem 1]{Sp88}.
+
+Denote $U=X-D$. Let $\phi: N\to E$ be the normalization map and $\varphi: N\to U$ be the natural map ($E\cap D=\emptyset$). After choosing base points $a\in N$ and $\varphi(a)\in U$, we have the following diagram 
+$$
+\xymatrix{
+ N\ar[r]^{\varphi}\ar[d]^{\alpha_N}& U \ar[d]^{\alpha_U} \\
+  A_N\ar[r]^{\psi} & A_U,}
+$$ where $\alpha_N$ and $\alpha_U$ are albanese maps for the chosen base points $a$ and $\varphi(a)$, and $\psi$ is induced by universal property of albanese map of $N$. Following the construction of $A_U$, we pick a basis $\{\theta_1,\ldots\theta_q\}$ for $H^0(X, \Omega_X^1)$ and $\{\omega_1, \ldots, \omega_r\}\in H^0(X, \Omega_X^1(\log D))$ such that $\{\theta_1, \ldots, \theta_q, \omega_1, \ldots, \omega_r\}$ is a basis of $H^0(X, \Omega_X^1(\log D))$ and $\omega_1=\omega$. Also, we pick basis $\{\gamma_1, \ldots, \gamma_{2q}\}$ for $H_1(X, \mathbb{Z})$ and a basis $\{\delta_1, \ldots, \delta_r\}$ for $\ker\{ H_1(U, \mathbb{Z})\to H_1(X, \mathbb{Z})\}$. Then we have periods as a semi-lattice for $A_U$ $$\Lambda=\sum_{i=1}^{2q}\mathbb{Z}(\int_{\gamma_i}\theta_1, \ldots, \int_{\gamma_i}\omega_r)+\sum_{i=1}^r\mathbb{Z}(\int_{\delta_i}\theta_1, \ldots, \int_{\delta_i}\omega_r).$$ The the semi-albanese map $\alpha_U$ is given by $$\alpha_U(x)=[\sum_{i=1}^q(\int_{\varphi(a)}^x\theta_i)\theta^*_i+\sum_{i=1}^r(\int_{\varphi(a)}^x\omega_i)\omega_i^*]\slash\Lambda,$$ where $\theta_i^*$ and $\omega_i^*$ are the dual bases in $H^0(X, \Omega_X^1(\log D))^{\vee}$.  Now we consider the transpose of the pullback map $$\varphi^{\vee t}: H^0(N, \Omega_N^1)^{\vee}\to H^0(X, \Omega_X^1(\log D))^{\vee},$$ which induces the morphism  $\psi$. Since $\omega|_{E}=\omega_1|_{E}=0$, $\varphi^{\vee}(\omega_1)=0$. Then we get $$\varphi^{\vee t}(H^0(N, \Omega_N^1))\subset \{z_1=0\},$$ where $z_1$ is the coefficient coordinate of $\omega_1^*$. Thus we get a proper subtorus $T_0:=\psi(A_N)$ which is contained in $\{z_1=0\}/\Lambda$.  Defining $T:=A_U/T_0$, we get morphism $\beta: U\to T$.  Since we can pick a point $x\not\in E$ such that $\int_{\varphi(a)}^x\omega_1\not=0$, hence $\beta(U)$ is not constant. Also, $\alpha_U(E)=T_0$, hence $E$ is contracted by the morphism $\beta$.
+
+Claim that $\dim\beta(U)=1$. Otherwise, we get $\beta: U\to \beta(U)$ be a generically finite morphism. Projectivize $\beta(U)$, we get a projective variety $\overline{\beta(U)}$ and rational map $U\dasharrow \overline{\beta(U)}$. Resolving the indeterminant locus, we may get a generically finite morphism $\overline{\beta}:\overline{U}\to\overline{\beta(U)}$ with $\overline{U}$ smooth and projective. %{\color{blue} and $\overline{U}-U$ a simple normal crossing divisor}. 
+Note that resolving the indeterminant locus does not affect $E$, since $E\cap D=\emptyset$. Hence $E^2<0$ in $\overline{U}$ (See e.g., \cite[Theorem 10.1]{KK}). Note that $\overline{U}$ does not need to be $X$. However, $E^2$ being negative only depends on the normal bundle of $E$ in $U$. However, this contradicts the assumption $E^2\geq 0$. 
+
+Taking the Stein factorization, we get the following commutative diagram:
+$$\xymatrix{
+\overline{U} \ar[rd] \ar[r]^f & \overline{ C} \ar[d]  \\
+& \overline{\beta(U)}
+},$$
+ where $\overline{C}$ is smooth, since it is normal and of dimension one. Let $C$ be the image of the map $f|_U$. Then we have the following commutative diagram:
+ $$ \xymatrix{
+U \ar[r]^{f|_U} \ar[d] & C \ar[r] \ar[d] & \beta(U) \ar@{^{(}->}[d] \\ 
+\Alb(U) \ar[r] & \Alb(C) \ar[r] & T }
+ $$
+Notice that the the holomorphic 1-form $dz_1$ over $T$ which pulls back to logarithmic 1-form $\omega$. Therefore to finish the proof, it suffices to show that $T$ is indeed isomorphic to $\Alb(C)$. 
+Note that since $f|_U:U\to C$ is surjective and has connected fibers, the induced map on the first homology groups $H_1(U,\Z) \to H_1(C,\Z)$ is surjective{\color{red}(Check!!!)}. It implies that $\Alb(U) \to \Alb(C)$ is surjective. Now it is clear that all the horizontal maps in the diagram are surjective. 
+%Then we have the following commutative diagram:
+%$$\xymatrix{
+%\overline{C} \ar[rd] \ar[r]^f & \overline{\beta (U)} \ar[d]  \\
+%\Alb(\overline{C})& A(T)
+%}$$
+Since $\beta(E)$ is a point in $T$, so $E$ maps to a point in $\beta(U)$. Thus $E$ maps to a point in $C$. Up to choosing a base point, we get that $ T_0$ is contained in the kernel of $A_U \to A_C$, since $\alpha_U(E)=T_0$. Hence $A_C=T$, i.e., $T$ is the Albanese variety of $C$
+
+
+%Hence $C$ cannot be $\mathbb{P}^1$ or $\mathbb{C}$ and the Albanese map of $C$ is injective. In fact, for positive genus case, this follows from the fact that the Albanese map of a positive genus smooth projective curve is an embedding; while for zero genus case, this is obvious. The case where $C$ being isomorphic to $\C$ is impossible as its image in $T$ has to be just one point.
+
+%Then  $A_C=T$ implies $C$ is isomprhic to $\beta(U)$. Hence $\beta(U)$ and $\overline{\beta(U)}$ are both smooth.
+
+%Again, $\overline{U}$ could be different from $X$. But $H^0(\overline{U},\Omega_{\overline{U}}^1(\log (\overline{U}-U)) )=H^0(X, \Omega_X^1(\log D))$. Then we are done.} 
+The higher dimensional case follows immediately from Lefschetz hyperplane theorem. (TBA more details)
+\end{proof}
+
+\begin{theorem}\label{thm:Spurr-quasi-proj}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be an ample divisor on $X$. Suppose $(X, D)$ carries a nontrivial logarithmic 1-form $\omega\in H^0(X, \Omega_X^1(\log D))$  which restricts to zero on an integral divisor $E$ with $E^2\cdot H^{n-2}\geq0$, then there is a surjective morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ ($B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(C, \Omega_C^1(\log B))$.
+
+(2) $f$ has connected fibers.
+
+(3) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{theorem}
+
+\begin{proof} With out losing of generality, we may assume that $D=\sum_{i=1}^s D_i$ and $E$ intersects each component of $\{D_1, \ldots, D_t\}_{t\leq s}$ nontrivially and does not intersect other components $D':=\sum_{i=t+1}^sD_i$.
+Consider the following commutative diagram of short exact sequences
+$$
+\xymatrix{
+ 0\ar[r]&\Omega_X^1(\log D')\otimes\mathcal{O}_X(-E) \ar[r]\ar[d]& \Omega_X^1(\log D')\ar[r]\ar[d] & \Omega_X^1(\log D')|_{E} \ar[d] \ar[r]&0\\
+   0\ar[r]& \Omega_X^1(\log D)\otimes\mathcal{O}_X(-E)\ar[r]& \Omega_X^1(\log D) \ar[r]& \Omega_X^1(\log D)|_{E}\ar[r] &0
+.  }
+$$Then it induces the following commutative diagram of exact sequences
+$$\label{holo-log-form-compare}
+\xymatrix{
+ H^0(X, \Omega_X^1(\log D')\otimes\mathcal{O}_X(-E)) \ar[r]\ar[d]& H^0(X, \Omega_X^1(\log D'))\ar[r]\ar[d] & H^0(\Omega_X^1(\log D')|_{E}) \ar[d] \\
+   H^0(X, \Omega_X^1(\log D)\otimes\mathcal{O}_X(-E))\ar[r]& H^0(X, \Omega_X^1(\log D)) \ar[r]& H^0(X, \Omega_X^1(\log D)|_{E})
+.  }
+$$
+
+Firstly, we want to show the left vertical arrow is an isomorphism under the assumption that $E$ intersects each component of $\{D_i\}_{i=1}^t$ nontrivially. Now consider the short exact sequence $$0\to\Omega_X^1(\log D')\to \Omega_X^1(log D)\to \nu_*\mathcal{O}_{\widetilde{D}}\to 0,$$ where $\widetilde{D}$ is a disjoint union of $D_1, \ldots, D_t$ and  $\nu: \widetilde{D}\to X$ is the natural map. Then we get the short exact sequence $$0\to\Omega_X^1(\log D')\otimes\mathcal{O}_X(-E)\to \Omega_X^1(log D)\otimes\mathcal{O}_X(-E)\to \nu_*\mathcal{O}_{\widetilde{D}}\otimes\mathcal{O}_X(-E)\to 0.$$ Thus to show left vertical arrow in diagram (\ref{holo-log-form-compare}) is an isomorphism, we just need to show that $$H^0(X, \nu_*\mathcal{O}_{\widetilde{D}}\otimes\mathcal{O}_X(-E))=0.$$ In fact, $$H^0(X, \nu_*\mathcal{O}_{\widetilde{D}}\otimes\mathcal{O}_X(-E))=H^0(\widetilde{D}, \nu^*\mathcal{O}_X(-E)).$$ Since $E$ intersects each component of $\{D_1, \ldots, D_t\}_{t\leq s}$ nontrivially, $\nu^*\mathcal{O}_X(E)=\nu^*\mathcal{O}_X(-E)^{\vee}$ is a nontrivial effective line bundle over each connected component of $\widetilde{D}$. Hence we get $H^0(\widetilde{D}, \nu^*\mathcal{O}_X(-E))=0$. 
+
+Then by chasing in diagram (\ref{holo-log-form-compare}), the logarithmic 1-form $$\omega\in H^0(X, \Omega_X^1(\log D')).$$ Since $D'\cap E=\emptyset$ and $H^0(X, \Omega_X^1(\log D'))\subset H^0(X, \Omega_X^1(\log D))$, the whole theorem follows from Proposition \ref{Prop:Spurr-no-intersection}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:codim1quasiprojective}]
+
+The theorem follows immediately from Theorem \ref{thm:Spurr-quasi-proj}.
+\end{proof}
 
 
 
@@ -1001,6 +1113,9 @@ By the H.-Y. Lin and Schreieder \cite[appendix]{SS19}, the zero set of any unive
 1977.
 
 \bibitem[HS19]{HS19} F. Hao, S. Schreieder, \textit{Holomorphic one-forms without zeros on threefolds}, to appear Geometry $\&$ Topology , arXiv:1906.07606.
+
+\bibitem[KK]{KK} J. Koll\'ar, S. Kov\'acs {\it Singularities of the Minimal Model Program.}
+Series: Cambridge Tracts in Mathematics (No. 200)
 
 
 \bibitem[Laz04]{Laz04} R. Lazarsfeld, \textit{Positivity in algebraic geometry, II: Positivity for Vector Bundles, and Multiplier Ideals}, Ergebnisse der Mathematik und ihrer Grenzgebiete. (3) \textbf{49}, Springer, Berlin, 2004.
