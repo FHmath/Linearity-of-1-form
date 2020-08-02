@@ -901,23 +901,17 @@ For any holomorphic nonresonant 1-form $\omega$ such that the zero set $Z(\omega
  \begin{remark}
 By the H.-Y. Lin and Schreieder \cite[appendix]{SS19}, the zero set of any universal nonresonant 1-form is of codimension at least two. 
  \end{remark}
+
  To end this subsection, we consider nonresonant 1-forms on surfaces, which is for its own interest. Let $S$ be smooth complex surface, one can bound genus of curves along which a nonresonant 1-form may vanish.
  
  \begin{proposition}
- Let $S$ be smooth complex projective surface and $C$ be a curve on $S$. Suppose there is a nonresonant holomorphic 1-form $\omega\in H^0(S, \Omega_S^1)$ such that $\omega(C)=0$ Then $C$ is a rational curve or elliptic curve.
+ Let $S$ be smooth complex projective surface and $C$ be a curve on $S$. Suppose there is a nonresonant holomorphic 1-form $\omega\in H^0(S, \Omega_S^1)$ such that $\omega(C)=0$ Then $C$ is a rational curve or an elliptic curve.
  \end{proposition}
  
  
  \begin{proof}
- TBA
+ Since $C\subset Z(\omega)$, we have $H^1(C, {\omega_S}|_C)=0$ by Theorem \ref{thm:stefan} (1). Consider the normalization $\eta: \widetilde{C}\to C$ and the exact sequence $$0\to \mathcal{O}_C\to \eta_*\mathcal{O}_{\widetilde{C}}\to \delta\to 0, $$ where $\delta$ is the skyscraper sheaf defined as the coker. Then we have the short exact sequence $$0\to {\omega_S}|_C\to \eta_*{{\omega_X}|_{\widetilde{C}}}\to \delta\to 0.$$ Then we get $$\dim H^0(\widetilde{C}, {\omega_X}|_{\widetilde{C}})\leq \dim H^0(\delta);   H^1(C, {\omega_S}|_C)=H^1(\widetilde{C}, {\omega_X}|_{\widetilde{C}})=0.$$ By Riemann-Roch, $$\deg {\omega_X}|_{\widetilde{C}}+1-g(\widetilde{C})\leq \dim H^0(\delta).$$ Notice also, $$p_a(C)=g(\widetilde{C})+\dim H^0(\delta), $$ and by genus formula $$\deg {\omega_X}|_{\widetilde{C}}+C^2=2p_a(C)-2.$$ Then by \cite[Theorem 1]{Sp88}, $C^2\leq 0$. Hence $p_a(C)\leq1$.
  \end{proof}
- 
- 
- 
- 
- 
- 
- 
  
  
  
