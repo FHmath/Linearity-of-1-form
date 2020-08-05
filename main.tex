@@ -8,7 +8,8 @@
 \hypersetup{
   linkcolor={red!70!black},
   citecolor={green!70!black},
-  urlcolor={teal!80!black}
+  urlcolor={teal!80!black},
+	linkcolor={teal!80!black}
 }
 %\definecolor{dblue}{rgb}{0,0,.6}
 %\usepackage[colorlinks=true, linkcolor=dblue, citecolor=dblue, filecolor = dblue, menucolor = dblue, urlcolor = dblue]{hyperref}
@@ -350,12 +351,11 @@ In this article we study the set of global holomorphic 1-forms  on smooth projec
 indicated by plethora of results (\cite{GL87, HK05, LZ05,
 SS19, HS19, PS14} to name just a few) that a lot of the geometry
 and topology of the variety depends on vanishing of such forms.
-We first state our result and then put it in the context of 
+We first state our result in this direction and then put it in the context of 
 the existing vast literature.
 \begin{alphtheorem}\label{thm:smooth}
-Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelian variety $A$. Then $f$ is smooth if and only if there is a holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing. 
+Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelian variety $A$. Then $f$ is smooth if and only if there is a global holomorphic 1-form $\omega	$ on $A$ such that $f^*\omega$ is nowhere vanishing. 
 \end{alphtheorem}
-\sorry{1. subject to change if Tischler can be proved. 2. Add the remark about Tischler for simple albanese case}
 In fact we prove a bit more; When $A$ is not necessarily simple
 existence of a non-vanishing global holomorphic 1-form
 is equivalent to certain restrictions on the so called \emph{higher discriminants} (see \ref{def:higherdiscriminants}) of the morphism $f$ in the sense
@@ -373,14 +373,15 @@ See Theorem \ref{thm:nonvanishing} for more details.
 \item The more general version of Theorem \ref{thm:smooth}
 recovers both Item (\ref{item:ps}) (see Corollary \ref{cor:ps})
 and Item (\ref{item:hk}) (see Corollary \ref{cor:hk}).
-\item A special case of a result of 
-Schreider \cite[Corollary 1.5]{SS19} shows for any $A$, not necessarily simple when $X$
-admits a nowhere vanishing holomorphic 1-form of the form
-$f^*\omega$, then $f(X)$ is fibered by tori. In 
-Theorem \ref{thm:nonvanishing} we show more generally that 
-existence of non-vanishing forms is in fact equivalent to existence of a higher discriminant $Z\subseteq f(X)$ fibered by tori. 
+%\item A special case of a result of 
+%Schreider \cite[Corollary 1.5]{SS19} shows for any $A$, not necessarily simple when $X$
+%admits a nowhere vanishing holomorphic 1-form of the form
+%$f^*\omega$, then $f(X)$ is fibered by tori. In 
+%Theorem \ref{thm:nonvanishing} we show more generally that 
+%existence of non-vanishing forms is in fact equivalent to existence of a higher discriminant $Z\subseteq f(X)$ fibered by tori. 
 \end{enumerate}
 \end{remark}
+
 
 In a different direction we deal with the question
 of linearity of the set of vanishing 1-forms. This is
@@ -474,16 +475,20 @@ We show that $V^1(X,D)$ consists of resonant holomorphic logarithmic 1-forms van
 
  
 \subsection{Comments about the proof}
-For a morphism $f: X\to A$,  we consider the following diagram 
+Much like in \cite{PS14}, for a morphism $f: X\to A$ our idea is to use a description of the set of global holomorphic 1-forms
+on $X$ admitting zeros
+in terms of the corresponding incidence set
+\[\{(x,f^*\omega)\in X\times H^0(A,\Omega_A^1)| f^*\omega(T_xX) = 0\} \subset f^*T^*A.\] More
+precisely,  we consider the following diagram 
 \begin{center}
 \begin{tikzcd}
-	X\times f^*H^0(A, \Omega_A^1) \ar[r, "df"] \ar[d, "f\times \id"] & T^*X\\
+	X\times f^*H^0(A, \Omega_A^1) \ar[r, "df"] \ar[d, "\tilde{f}"] & T^*X\\
 	A\times H^0(A, \Omega_A^1)\simeq T^*A\dar["\pr_2"]\\
 	H^0(A, \Omega_A^1)
 \end{tikzcd}
 \end{center}
  where $T^*X$ denotes the $2n$ dimensional 
-cotangent bundle of $X$, $df$ is the usual differential, and $\tilde{f} = pr_2\circ (f\times \id)$ is the natural projection. Note that
+cotangent bundle of $X$, $df$ is the usual differential, and $\tilde{f} = pr_2\circ \tilde{f}$ is the natural projection. Note that
 $V(f) \simeq \tilde{f}(df^{-1}(0))$. 
 The key ingredient of 
 Theorem \ref{thm:smooth} and \ref{main1} is
@@ -501,8 +506,8 @@ Let $A$ be an abelian variety and $X$ be a proper subvariety of $A$. Then the fo
 When $A$ is a
 simple abelian variety this proposition says that any 1-form restricted to $X$ admits zeros on the regular locus of $X$. A proof of this statement seems to be abundantly found in the literature
 see for instance \cite[Proposition 3.1]{HK05}
-or \cite[Proposition 5.12]{LMW20}. Our contribution
-is to provide a proof in general (see \ref{proof:van-nonsimple}).
+or \cite[Proposition 5.12]{LMW20}. In general, this result seem to be expected however we could not find a proof in the existing literature. 
+Therefore we provide a complete proof (see \ref{proof:van-nonsimple}).
 
 \sorry{words about the proof of second part}
 
@@ -631,7 +636,7 @@ For a morphism $f: X\to A$ as in Theorem \ref{main1},  we consider the following
 \end{center}
  where $T^*X$ and $T^*A$ are the holomorphic cotangent bundles, 
 $df$ is the usual differential. Then note
-that $pr_2(f\times \id)(df^{-1}(0_X))$ is precisely the 
+that $pr_2\tilde{f}(df^{-1}(0_X))$ is precisely the 
 set of 1-forms of the form $f^*\omega$ for $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ admits zeros on $X$,
 i.e.\
 \[V(f) = pr_2(f_{\dagger}(0_X))\]
