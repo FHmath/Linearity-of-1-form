@@ -202,6 +202,7 @@
 \newcommand{\sP}{\mathcal{P}}
 \newcommand{\sQ}{\mathcal{Q}}
 \newcommand{\sT}{\mathcal{T}}
+\newcommand{\sZ}{\mathcal{Z}}
 
 %mathbb Letters======
 \newcommand{\bbA}{\mathbb{A}}
@@ -592,13 +593,14 @@ the 1-form $\omega$.
 Recall from \S \ref{intro} that \[V(X):=\{ \omega\in H^0(X, \Omega_X^1) |\ Z(\omega)\neq \emptyset\}.\]
 
 \begin{definition}[Resonant and (universally) nonresonant forms]\label{def:resonance}
-We call a holomorphic 1-form $\omega\in V(X)$ (non)\emph{resonant} if the complex 
+We call a 1-form $\omega\in V(X)$ (non)\emph{resonant} if the complex 
 \[(H^{\bullet}(X,\bbC), \wedge\omega)\coloneqq [\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots]\]
  is (exact) not exact. 
 
-Such a 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the complex 
-\[\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots\]
- is exact for any \'etale over $\tau: X'\to X$. 
+Moreover a 1-form $\omega\in V(X)$ is called \emph{universally nonresonant} if the complex
+\newline $(H^{\bullet}(X',\bbC), \wedge\tau^*\omega)$
+%\[\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots\]
+ is exact for any \'etale over $\tau\colon X'\to X$. 
 
 We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the \emph{resonance sequence}.
 %Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
@@ -606,25 +608,28 @@ We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the
 
 \begin{remark}
 \begin{enumerate}
-\setcounter{enumi}{-1}
-	\item  For any 1-form $\omega$ for which the resonance sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ is not exact, it must be the case that $\omega\in V(X)$. This is a consequence of the generic vanishing package. Since we do not use this theory much, we only 
-	outline an argument here with relevant references. Assuming the contrary,
-	otherwise the Koszul complex (see e.g.\ \cite[B.2 Complexes]{Laz04a} associated to the global section $\omega$ 
-	\[K^{\bullet}\coloneqq [\sO_X\xrightarrow{\wedge\omega}\Omega_X^1\xrightarrow{\wedge\omega}\cdots\xrightarrow{\wedge\omega}\Omega_X^{n-1}\xrightarrow{\wedge\omega} \omega_X]\]
-	must be exact. Then from spectral sequence $H^p(X, \sH^q(K^{\bullet})) \Rightarrow H^{p+q}(X, \bbL_{\omega})$ with $\bbL_{\omega}$
-	denoting the local system associated to $\omega$ (see e.g.\ \cite[\S 2.2]{SS19} for a definition) we obtain
-	$H^i(X, \bbL_{\omega}) = 0$ for all $i$. Then the exactness of the resonance sequence follows from Hodge decomposition, together
-	with \cite[Theorem 3]{Ara92}. 
-	\item  (Universally) nonresonant  holomorphic 1-forms were first studied in \cite{SS19}.
+	%\item  For any 1-form $\omega$ for which the resonance sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ is not exact, it must be the case that $\omega\in V(X)$. This is a consequence of the generic vanishing package. Since in what follows we do not use this theory much, we only 
+	%outline an argument here with relevant references. Assuming the contrary, we have that
+ %the Koszul complex (see e.g.\ \cite[B.2 Complexes]{Laz04a} associated to the global section $\omega$ 
+	%\[K^{\bullet}\coloneqq [\sO_X\xrightarrow{\wedge\omega}\Omega_X^1\xrightarrow{\wedge\omega}\cdots\xrightarrow{\wedge\omega}\Omega_X^{n-1}\xrightarrow{\wedge\omega} \omega_X]\]
+	%must be exact. Then from spectral sequence $H^p(X, \sH^q(K^{\bullet})) \Rightarrow H^{p+q}(X, \bbL_{\omega})$ with $\bbL_{\omega}$
+	%denoting the local system associated to $\omega$ (see e.g.\ \cite[\S 2.2]{SS19} for a definition) we obtain
+	%$H^i(X, \bbL_{\omega}) = 0$ for all $i$. Then the exactness of the resonance sequence follows from Hodge decomposition, together
+	%with \cite[Theorem 3]{Ara92}. 
+	%\item  (Universally) nonresonant  holomorphic 1-forms were first studied in \cite{SS19}.
 
-\item In general by \cite[Proposition 3.4]{GL87}, if a holomorphic $\omega$ has zero scheme of codimension greater than or equal to $k$, then the complex $$\ldots\to H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\to\ldots$$ is exact whenever $i<k.$ 
+\item In general by \cite[Proposition 3.4]{GL87}, if a holomorphic $\omega$ has zero scheme of codimension $\geq k$, then the complex $$\ldots\to H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\to\ldots$$ is exact whenever $i<k.$ 
+In particular, $(H^{\bullet}(X,\bbC), \wedge\omega)$ is exact whenever $Z(\omega) = \emptyset$. 
 
  
-\item As mentioned in \cite[1.6]{SS19}, nonresonant holomorphic 1-form exists for bielliptic surfaces with multiple fibers. 
+\item As mentioned in the introduction, an example of \cite{DJL} shows that
+%\cite[1.6]{SS19}, 
+nonresonant holomorphic 1-form exists for bielliptic surfaces with multiple fibers. 
 \end{enumerate}
 \end{remark}
 
-Not too much information is known for nonresonant 1-forms. The following theorem is due to Schreieder \cite{SS19}, which studies some properties of zeros of nonresonant 1-forms and the albanese maps of varieties admitting nonresonant 1-forms.
+%Not too much information is known for nonresonant 1-forms. T
+Since we are specifically interested in the nonresonant 1-forms, we collect here some of the results known about them. The following theorem is due to Schreieder \cite{SS19}, which studies some properties of zeros of nonresonant 1-forms and the albanese maps of varieties admitting nonresonant 1-forms.
 
 \begin{theorem} \label{thm:stefan}
 Let $X$ be a compact connected K\"ahler manifold with a holomorphic one-form $\omega$ such that the complex $(H^*(X, \C), \wedge\omega)$ given by cup product with $\omega$ is exact. Then
