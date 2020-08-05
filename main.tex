@@ -346,7 +346,7 @@ The goal of this article is two-fold, first we
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction}\label{intro}
 
 In this article we study the set of global holomorphic 1-forms  on smooth projective varieties that admit zeros. Interestingly, it has been
 indicated by plethora of results (\cite{GL87, HK05, LZ05,
@@ -445,8 +445,8 @@ $V(f)$ is a linear subvariety of $H^0(X, \Omega_X^1)$. In particular, $V(X)$ is 
 To put our results in the appropriate context of the linearity results from generic vanishing package developed
 in \cite{Ara92, GL87, Sim93b}
 we remark that a 1-form $\omega$ does \emph{not} satisfy this resonance property if and only if its associated local
-system $\bbL_\omega$ (for a definition see \cite[\S 2.2]{SS19}) does not
-admit cohomologies in any degree (see \textit{loc.\ cit.} or \cite[Theorem 4.2]{Sim93b} for a proof). Therefore, these forms are precisely the ones that do not fall in the
+system $\bbL_\omega$ does not
+admit cohomologies in any degree (see \cite[Theorem 3]{Ara92} for a proof). Therefore, these forms are precisely the ones that do not fall in the
 realm of the generic vanishing theory. 
 
 We also want to emphasize that the equality $R_h(X) = V(X)$ in Item (\ref{item:resonance}) may not always be true. An example of Debarre, Jiang and Lahoz 
@@ -580,28 +580,48 @@ In this subsection we establish terminologies and notations that will enable us 
 specified by 1-forms we will mean global holomorphic 1-forms on a smooth complex projective variety $X$.
 
 \begin{definition}[Zero scheme of 1-forms]\label{def:zeroscheme}
-For $\omega\in H^0(X, \Omega_X^1)$, the \emph{zero set} of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(v)=0$
+For $\omega\in H^0(X, \Omega_X^1)$, the \emph{zero set} $Z(\omega)$ of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(v)=0$
 for all tangent vectors $v\in T_xX$ at $x$. 
 
-The \emph{zero scheme} of $\omega$ is the closed subscheme defined by the ideal sheaf $\mathcal{I}_{\omega}$ given by the image of the morphism 
+The \emph{zero scheme} of $\omega$ is the closed subscheme $\sZ(\omega)$ defined by the ideal sheaf $\mathcal{I}_{\omega}$ given by the image of the morphism 
 \[\mathcal{T}_X\overset{\langle\omega, \cdot\rangle}{\longrightarrow} \mathcal{O}_X.\] 
 Here $\mathcal{T}_X$ is the tangent sheaf of $X$ and $\langle\omega, \cdot\rangle$ denotes the pairing of tangent field with 
 the 1-form $\omega$.
 \end{definition}
 
+Recall from \S \ref{intro} that \[V(X):=\{ \omega\in H^0(X, \Omega_X^1) |\ Z(\omega)\neq \emptyset\}.\]
 
-\begin{definition}[Resonant and non-resonant forms]\label{def:resonance}
-We call a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots$$ is exact. A holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots$$ is exact for any \'etale over $\tau: X'\to X$. Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
+\begin{definition}[Resonant and (universally) nonresonant forms]\label{def:resonance}
+We call a holomorphic 1-form $\omega\in V(X)$ (non)\emph{resonant} if the complex 
+\[(H^{\bullet}(X,\bbC), \wedge\omega)\coloneqq [\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots]\]
+ is (exact) not exact. 
+
+Such a 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the complex 
+\[\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots\]
+ is exact for any \'etale over $\tau: X'\to X$. 
+
+We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the \emph{resonance sequence}.
+%Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
 \end{definition}
 
 \begin{remark}
+\begin{enumerate}
+\setcounter{enumi}{-1}
+	\item  For any 1-form $\omega$ for which the resonance sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ is not exact, it must be the case that $\omega\in V(X)$. This is a consequence of the generic vanishing package. Since we do not use this theory much, we only 
+	outline an argument here with relevant references. Assuming the contrary,
+	otherwise the Koszul complex (see e.g.\ \cite[B.2 Complexes]{Laz04a} associated to the global section $\omega$ 
+	\[K^{\bullet}\coloneqq [\sO_X\xrightarrow{\wedge\omega}\Omega_X^1\xrightarrow{\wedge\omega}\cdots\xrightarrow{\wedge\omega}\Omega_X^{n-1}\xrightarrow{\wedge\omega} \omega_X]\]
+	must be exact. Then from spectral sequence $H^p(X, \sH^q(K^{\bullet})) \Rightarrow H^{p+q}(X, \bbL_{\omega})$ with $\bbL_{\omega}$
+	denoting the local system associated to $\omega$ (see e.g.\ \cite[\S 2.2]{SS19} for a definition) we obtain
+	$H^i(X, \bbL_{\omega}) = 0$ for all $i$. Then the exactness of the resonance sequence follows from Hodge decomposition, together
+	with \cite[Theorem 3]{Ara92}. 
+	\item  (Universally) nonresonant  holomorphic 1-forms were first studied in \cite{SS19}.
 
-(1) (Universally) nonresonant  holomorphic 1-forms were first studied in \cite{SS19}.
-
-(2) In general by \cite[Proposition 3.4]{GL87}, if a holomorphic $\omega$ has zero scheme of codimension greater than or equal to $k$, then the complex $$\ldots\to H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\to\ldots$$ is exact whenever $i<k.$ 
+\item In general by \cite[Proposition 3.4]{GL87}, if a holomorphic $\omega$ has zero scheme of codimension greater than or equal to $k$, then the complex $$\ldots\to H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\rightarrow}H^{i}(X,\C)\to\ldots$$ is exact whenever $i<k.$ 
 
  
-(3) As mentioned in \cite[1.6]{SS19}, nonresonant holomorphic 1-form exists for bielliptic surfaces with multiple fibers. 
+\item As mentioned in \cite[1.6]{SS19}, nonresonant holomorphic 1-form exists for bielliptic surfaces with multiple fibers. 
+\end{enumerate}
 \end{remark}
 
 Not too much information is known for nonresonant 1-forms. The following theorem is due to Schreieder \cite{SS19}, which studies some properties of zeros of nonresonant 1-forms and the albanese maps of varieties admitting nonresonant 1-forms.
@@ -1159,9 +1179,20 @@ pp.\ 1095--1130.
 \bibitem[KK]{KK} J. Koll\'ar, S. Kov\'acs {\it Singularities of the Minimal Model Program.}
 Series: Cambridge Tracts in Mathematics (No. 200)
 
+\bibitem[Laz04a]{Laz04a}
+    R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ I.\ Classical
+    setting: line bundles and linear series}.
+    Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 48. Berlin: Springer-Verlag, 2004.
+    \textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18808-4}{\ttfamily 10.1007/978-3-642-18808-4}.
+    \textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095471}{\ttfamily 2095471}.
 
-\bibitem[Laz04]{Laz04} R. Lazarsfeld, \textit{Positivity in algebraic geometry, II: Positivity for Vector Bundles, and Multiplier Ideals}, Ergebnisse der Mathematik und ihrer Grenzgebiete. (3) \textbf{49}, Springer, Berlin, 2004.
 
+\bibitem[Laz04b]{Laz04}
+    R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ II.\ Positivity
+    for vector bundles, and multiplier ideals}.
+    Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 49. Berlin: Springer-Verlag, 2004.
+    \textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18810-7}{\ttfamily 10.1007/978-3-642-18810-7}.
+    \textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095472}{\ttfamily 2095472}.
 
 %\bibitem[KM05]{KM05} J. Koll\'ar and S. Mori, \textit{Birational geometry of algebraic varieties}, Cambridge University Press, Cambridge, 2008.
 
