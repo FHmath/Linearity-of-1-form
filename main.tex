@@ -63,6 +63,7 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{criterion}{Criterion}
+\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{exercise}{Exercise}
@@ -387,9 +388,11 @@ In a different direction we deal with the question
 of linearity of the set of vanishing 1-forms. This is
 inspired by the work of  \cite{CL73}, Carrell and Lieberman, who show that for a smooth complex projective variety $X$, the set of holomorphic tangent vector fields with zeros is a subvector space of $H^0(X, T_X)$. On the
 other hand its incarnation for 1-form is far from complete.
-It is known due to the theory of cohomology jump
-loci that only the forms satisfying certain resonance property (see Definition \ref{def:resonance} below) admitting zeros form
-a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$.
+It is known due to the generic vanishing theory
+%theory of cohomology jumploci 
+that only a piece of the set of all 1-forms admitting zeros, namely \emph{the resonant 1-forms} (see Definition \ref{def:resonance} below) 
+form a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$ \cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
+we borrow the terminology). 
 Henceforth we call finite unions of subvector spaces as \emph{linear subvarieties}.
 In this article we complete the picture. To this end we need the 
 following notations.
@@ -422,18 +425,30 @@ $V(f)$ is a linear subvariety of $H^0(X, \Omega_X^1)$. In particular, $V(X)$ is 
 	it follows that $V(X) = H^0(X,\Omega_X^1)$ which is of course
 	linear. 
 	\item  When $\dim X\leq 3$ an immediate corollary of the main theorems in \cite{SS19} and \cite{HS19} is that $V(X)$ is linear.
-	\item \label{item:resonance} The \emph{$i$-th holomorphic resonance varieties} are roughly speaking, the ``topological parts'' $R_h^i(X)$ of $V(X)$.
-	More precisely they are defined as follows
-	\[R_h^i(X):=\{\omega\in H^0(X, \Omega_X^1)|\ H^i(H^*(X, \mathbb{C}), \wedge \omega)\not= 0\}\subseteq V(X),\]
-	which is linear (see, e.g., \cite{DiPa13}). We define the \emph{holomorphic resonance varieties} to be the union $$R_h(X):=\bigcup_{i} R_h^i(X).$$ Note that
-	when
-	$R_h(X) = V(X)$, our theorem is a direct consequence of
-	the linearity of the resonance variety. This 
+	\item \label{item:resonance} As we have already mentioned, the \emph{$i$-th holomorphic resonance varieties} $R^i_h(X)$ for
+	all $i$ are 
+	known to be linear (see, e.g., \cite{DiPa13}). 
+	%These are, roughly speaking, the ``topological parts'' $R_h^i(X)$ of $V(X)$.
+	%More precisely they are defined as follows
+	%\[R_h^i(X):=\{\omega\in H^0(X, \Omega_X^1)|\ H^i(H^*(X, \mathbb{C}), \wedge \omega)\not= 0\}\subseteq V(X).\]
+%We define the \emph{holomorphic resonance varieties} to be the union $$R_h(X):=\bigcup_{i} R_h^i(X).$$ 
+%Our result fill in the fact that Note that
+	%when
+	If $R_h \coloneqq \bigcup_{i} R_h^	i(X)= V(X)$, our theorem is a direct consequence of
+	this linearity. This 
 	for instance is the case when $\chi(X)\not=0$ (see Corollary \ref{ECNT}). 
 \end{enumerate}
 
 \end{remark}
-The equality $R_h(X) = V(X)$ in Item (\ref{item:resonance}) may not always be true. An example of Debarre, Jiang and Lahoz 
+
+To put our results in the appropriate context of the linearity results from generic vanishing package developed
+in \cite{GL87, Ara92, Sim93b}
+we remark that a 1-form $\omega$ does \emph{not} satisfy this resonance property if and only if its associated local
+system $\bbL_\omega$ (for a definition see \cite[\S 2.2]{SS19}) does not
+admit cohomologies in any degree (see \textit{loc.\ cit.} or \cite[Theorem 4.2]{Sim93} for a proof). Therefore, these forms are precisely the ones that do not fall in the
+realm of the generic vanishing theory. 
+
+We also want to emphasize that the equality $R_h(X) = V(X)$ in Item (\ref{item:resonance}) may not always be true. An example of Debarre, Jiang and Lahoz 
 \cite[Example 1.11]{DJL17} shows that the
 there exists a bi-elliptic surface $S$ admitting a 1-form 
 $\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
@@ -557,17 +572,25 @@ Therefore we provide a complete proof (see \ref{proof:van-nonsimple}).
 
 Stefan, Jiang, Kovacs, Nero, Sabbah
 
-\section{Preliminary}
+\section{Preliminaries}
 
+\subsection{Pertaining to 1-forms}
+In this subsection we establish terminologies and notations that will enable us to talk about them where relevant. Unless otherwise
+specified by 1-forms we will mean global holomorphic 1-forms on a smooth complex projective variety $X$.
 
+\begin{definition}[Zero scheme of 1-forms]\label{def:zeroscheme}
+For $\omega\in H^0(X, \Omega_X^1)$, the \emph{zero set} of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(v)=0$
+for all tangent vectors $v\in T_xX$ at $x$. 
 
-\begin{definition}
-For $\omega\in H^0(X, \Omega_X^1)$, the zero set of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(x)=0$. The zero scheme of $\omega$ is defined by the ideal sheaf $\mathcal{I}_{\omega}$, where  $\mathcal{I}_{\omega}$ is the image of the morphism $$\mathcal{T}_X\overset{\langle\omega, \cdot\rangle}{\longrightarrow} \mathcal{O}_X$$ with $\mathcal{T}_X$ being the tangent sheaf of $X$ and $\langle\omega, \cdot\rangle$ being the pairing of tangent field with 1-form $\omega$.
+The \emph{zero scheme} of $\omega$ is the closed subscheme defined by the ideal sheaf $\mathcal{I}_{\omega}$ given by the image of the morphism 
+\[\mathcal{T}_X\overset{\langle\omega, \cdot\rangle}{\longrightarrow} \mathcal{O}_X.\] 
+Here $\mathcal{T}_X$ is the tangent sheaf of $X$ and $\langle\omega, \cdot\rangle$ denotes the pairing of tangent field with 
+the 1-form $\omega$.
 \end{definition}
 
 
-\begin{definition}\label{def:resonance}
-Let $X$ be a smooth projective variety. We call a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots$$ is exact. A holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots$$ is exact for any \'etale over $\tau: X'\to X$. Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
+\begin{definition}[Resonant and non-resonant forms]\label{def:resonance}
+We call a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots$$ is exact. A holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots$$ is exact for any \'etale over $\tau: X'\to X$. Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
 \end{definition}
 
 \begin{remark}
@@ -1094,7 +1117,10 @@ The theorem follows immediately from Theorem \ref{thm:Spurr-quasi-proj}.
 
 %\bibitem[BeFa08]{BeFa08} K. Behrend, B. Fantechi,  \textit{Symmetric obstruction theories and Hilbert schemes of points on threefolds},  Algebra and Number Theory,  \textbf{2} (2008), 313--345.
 
-\bibitem[Ara97]{Ara97} D. Arapura, \textit{Geometry of cohomology support loci for local systems, I}. Journal of Algebraic Geometry \textbf{3} (1997): 563--597.
+\bibitem[Ara92]{Ara92} D.\ Arapura, ``Higgs line bundles, Green-Lazarsfeld sets, and maps of Kähler manifolds to curves", \textit{Bull., New Ser.,
+Am. Math. Soc.}, vol.\ \textbf{26} (1992), pp.\ 310--314.
+
+\bibitem[Ara97]{Ara97} D.\ Arapura, ``Geometry of cohomology support loci for local systems, I". \textit{Journal of Algebraic Geometry} vol.\ \textbf{3} (1997): pp.\ 563--597.
 
 
 \bibitem[BWY16]{BWY16} N. Budur, B. Wang, Y. Yoon, \textit{Rank one local systems and forms of degree one}. Int. Math. Res. Not. \textbf{13} (2016), 3849--3855.
@@ -1103,7 +1129,10 @@ The theorem follows immediately from Theorem \ref{thm:Spurr-quasi-proj}.
 
 \bibitem[CL73]{CL73} J. B. Carrell, D. I. Lieberman,  \textit{Holomorphic vector fields and K\"ahler manifolds}, Invent. Math. \textbf{21} (1973), 303--309.
 
-\bibitem[Deb07]{Deb} O. Debarre,  \textit{On the geometry of abelian varieties} \url{https://www.math.ens.fr/~debarre/Taiwan.pdf}, (2007).
+\bibitem[Deb07]{Deb} O. Debarre,  \textit{On the geometry of abelian varieties} \url{https://www.math.ens.fr/\textasciitilde debarre/Taiwan.pdf}, (2007).
+
+\bibitem[DJL17]{DJL17} O.\ Debarre, Z.\ Jiang and M.\ Lahoz, Rational cohomology tori, \textit{Geometry & Topology} vol.\ 21 (2017),
+pp.\ 1095--1130.
 
 \bibitem[DiPa13]{DiPa13}A. Dimca, S. Papadima, \textit{Nonabelian cohomology jump loci from ananalytic view point}. Commun. Contem. Math. \textbf{15} (5), 1350025 (2013).
 
@@ -1112,7 +1141,7 @@ The theorem follows immediately from Theorem \ref{thm:Spurr-quasi-proj}.
 
 \bibitem[GH18]{GH18} I. Glazer, Y. I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms--the general case (with an appendix joint with Gady Kozma)}, arXiv:1811.09838.
 
-\bibitem[GH19]{GH19}  I. Glazer, Y.I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms}, Selecta Mathematica (2019), 25--15
+\bibitem[GH19]{GH19}  I. Glazer, Y.I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms}, Selecta Mathematica (2019), pp.\ 25--15
 
 
 \bibitem[GL87]{GL87} M. Green, R. Lazarsfeld, \textit{Deformation theory, generic vanishing theorems and some conjectures of Enriques, Catanese and Beauville}, Inv. Math. \textbf{90} (1987), 389--407.
@@ -1167,7 +1196,10 @@ Publ. Math. Inst. Hautes \'{E}tudes Sci. 121 (2015), 1--55.
 
 
 
-\bibitem[Sim93]{Sim93} C. Simpson, \textit{Lefschetz theorems for the integral leaves of a holomorphic one-form}, Compositio Math. \textbf{87} (1993), 99--113.
+\bibitem[Sim93a]{Sim93} C. Simpson, \textit{Lefschetz theorems for the integral leaves of a holomorphic one-form}, Compositio Math. \textbf{87} (1993), 99--113.
+
+\bibitem[Sim93b]{Sim93b} ---------, Subspaces of moduli spaces of rank one local systems, \textit{Ann. Sci. \'Ec. Norm. Super.}, vol.\ 26,
+pp.\ 361–-401 (1993).
 
 \bibitem[Sp88]{Sp88} M. Spurr, {\it On the zero set of a holomorphic one-form on a compact complex manifold.} Trans. Am.
 Soc. \textbf{308} (1988), 329-339. 
