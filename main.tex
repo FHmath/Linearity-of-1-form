@@ -3,8 +3,15 @@
 \usepackage{latexsym,amscd,amssymb,url}
 \pagestyle{headings}
 \usepackage{xcolor, mathtools}
-\definecolor{dblue}{rgb}{0,0,.6}
-\usepackage[colorlinks=true, linkcolor=dblue, citecolor=dblue, filecolor = dblue, menucolor = dblue, urlcolor = dblue]{hyperref}
+\PassOptionsToPackage{pdfusetitle,pagebackref,colorlinks}{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+  linkcolor={red!70!black},
+  citecolor={green!70!black},
+  urlcolor={teal!80!black}
+}
+%\definecolor{dblue}{rgb}{0,0,.6}
+%\usepackage[colorlinks=true, linkcolor=dblue, citecolor=dblue, filecolor = dblue, menucolor = dblue, urlcolor = dblue]{hyperref}
 
 \textwidth=450pt 
 \oddsidemargin=12pt
@@ -340,8 +347,8 @@ The goal of this article is two-fold, first we
 \section{Introduction}
 
 In this article we study the set of global holomorphic 1-forms  on smooth projective varieties that admit zeros. Interestingly, it has been
-indicated by plethora of results (\cite{HK05, LZ05, EL,
-SS19, SH19, PS14} to name just a few) that a lot of the geometry
+indicated by plethora of results (\cite{GL87, HK05, LZ05,
+SS19, HS19, PS14} to name just a few) that a lot of the geometry
 and topology of the variety depends on vanishing of such forms.
 We first state our result and then put it in the context of 
 the existing vast literature.
@@ -380,7 +387,7 @@ of linearity of the set of vanishing 1-forms. This is
 inspired by the work of  \cite{CL73}, Carrell and Lieberman, who show that for a smooth complex projective variety $X$, the set of holomorphic tangent vector fields with zeros is a subvector space of $H^0(X, T_X)$. On the
 other hand its incarnation for 1-form is far from complete.
 It is known due to the theory of cohomology jump
-loci that only the forms satisfying certain resonance property (see Definition \ref{def:res} below) admitting zeros form
+loci that only the forms satisfying certain resonance property (see Definition \ref{def:resonance} below) admitting zeros form
 a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$.
 Henceforth we call finite unions of subvector spaces as \emph{linear subvarieties}.
 In this article we complete the picture. To this end we need the 
@@ -554,7 +561,7 @@ For $\omega\in H^0(X, \Omega_X^1)$, the zero set of $\omega$ is the algebraic se
 \end{definition}
 
 
-\begin{definition}
+\begin{definition}\label{def:resonance}
 Let $X$ be a smooth projective variety. We call a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots$$ is exact. A holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ is called universally nonresonant if the zero scheme $Z(\omega)$ is nonempty and the complex $$\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots$$ is exact for any \'etale over $\tau: X'\to X$. Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
 \end{definition}
 
@@ -1128,6 +1135,10 @@ Series: Cambridge Tracts in Mathematics (No. 200)
 %\bibitem[LMW18]{LMW18} Y. Liu, L. Maxim, B. Wang, {\it Perverse sheaves on semi-abelian varieties}, arXiv: 1804.05014. 
 
 \bibitem[LMW20]{LMW20} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Koll\'ar}, arXiv:2006.09295.
+
+\bibitem[LZ05]{LZ05} T.\ Luo and Q.\ Zhang, Holomorphic forms on threefolds, \textit{Recent Progress in Arithmetic and Algebraic Geometry, Contemp.\ Math, Amer.\ Math.\ Soc.}, vol.\ 386, pp.\ 87--94 Providence, RI, (2005). 
+\textsc{doi}: \href{https://doi.org/org/10.1090/conm/386/07219}{\ttfamily 10.1090/conm/386/07219}.
+\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2182772}{\ttfamily 2182772}.
 
 \bibitem[MiSh18]{MiSh18} L. Migliorini and V. Shende, \textit{Higher discriminants and the topology of algebraic maps}, Algebraic geometry, (2018), 114--130.
 
