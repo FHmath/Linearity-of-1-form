@@ -574,9 +574,10 @@ Therefore we provide a complete proof (see \ref{proof:van-nonsimple}).
 
 Stefan, Jiang, Kovacs, Nero, Sabbah
 
-\section{Preliminaries}
+\section{Preliminaries pertaining to 1-forms}
 
-\subsection{Pertaining to 1-forms}
+\subsection{1-forms on smooth projective varieties}
+
 In this subsection we establish terminologies and notations that will enable us to talk about them where relevant. Unless otherwise
 specified by 1-forms we will mean global holomorphic 1-forms on a smooth complex projective variety $X$.
 
@@ -667,16 +668,77 @@ then $f(X)\subset A$ is fibred by tori.
 
 
 
+\subsection{1-forms on subvarieties of abelian varieties}
 
-\section{Linearity of holomorphic 1-forms with zeros} [{\color{red}One need a independent preliminary section also the following two sections}]
+Let $X\subset A$ be an irreducible proper subvariety of an abelian variety. In this section we show that whether or not a 1-form $\omega\in H^0(A,\Omega_A^1)$
+restricted to $X$ admits zeros on $X^{\reg}$ is determined by one of the most fundamental
+ structural properties of subvarieties of abelian varieties due to Ueno \cite[10.9]{Uen75};
+ namely, 
+$X$ is of general type if and only if $X$ is not fibered by any subabelian varieties of $A$. 
+When $X$ is smooth 
+this seems to be a classical fact that whenever the normal bundle of $X$ is ample all $\omega|_X$ admits finitely many zeros on $X$
+(see e.g.\ \cite[Lemma 3.1]{Deb}). This was generalised to subvarieties of simple abelian varieties by 
+Hacon and Kov\'acs \cite[Proposition 3.1]{HK05}. A special case of more recent result of Popa and \cite{PS14} suggests that this is true whenever $X$ is smooth and
+$\omega_X$ is big,
+i.e.\ $X$ is of general type. Although perhaps well-known to experts, we could not find any appropriate sources in literature. Nonetheless, our proof is inspired
+by their original argument in\cite[Proposition 3.1]{HK05} and the proof of \cite[Lemma 3.1]{Deb} in Debarre's expository article
+
+\begin{proposition}\label{van-nonsimple}
+Let $A$ be an abelian variety and $X$ be an irreducible proper subvariety of $A$. Then the following are equivalent
+
+(1) $X$ is not fibred by tori or of dimension 0. 
+
+(2) For general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$, the restricted holomorphic 1-form $\omega|_{X_{\textnormal{reg}}}$ admit zeros at finitely many points on the smooth locus $X_{\textnormal{reg}}$.
+\end{proposition}
+
+\begin{proof}\label{proof:van-nonsimple} (2)$\Rightarrow$ (1): Suppose $X$ is fibred by tori and $\dim X>0$, i.e.\ there exists a subabelian variety $B\subset A$ such that the fibres of the composition 
+
+$X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we assume $A'=B\times C$ and $X':=\tau^{-1}(X)=B\times Y\subset A'$. Then the 1-forms coming from $B$ do not vanish on smooth locus of $X'$, hence also do not on the smooth locus of $X$. 
+
+(1)$\Rightarrow$(2): Denote $d=\dim X$, $g=\dim A$. If $d=0$ it is trivial, so we assume $d>0$. Denoting by $N$ the
+vector bundle on $X^{\reg}$ given by $N_{X/A}|_{X^{\reg}}$ where $N_{X/A}$ is the normal sheaf of associated to the immersion
+ \cite[\href{https://stacks.math.columbia.edu/tag/01R1}{Tag 01R1}]{stacks-project}. Associated to \[T_A|_{X^{\reg}}\onto N,\]
+we obtain the following chain of maps
++\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP(T_0A)=\bbP^{g-1})\]
+where for a vector bundle $E$ on $X^{\reg}$ we use the notation $\bbP(E) \coloneqq \Proj_{X^{\reg}})(\Sym^d(E^{\vee}))$.
+Denote by $p\colon \bbP(N)\to X^{\reg}$ the bundle map. Given
+a point $s\in \bbP^g$, by construction we may associate a hyperplane $H_s\subset T_{A,0}$. Then
+\begin{equation}
+p\colon \varphi^{-1}(s) \overset{p}{\xrightarrow{\sim}}  \{x\in X^{\reg}| T_xX^{\reg} \subset H_s\}.
+\label{eq:van-nonsimple}
+\end{equation}
+Denote by $S\coloneqq \varphi(\bbP(N))$ the image. If $\dim S<g$, for all $s\in S$, a general
+ fibre $Z_s \coloneqq \varphi^{-1}(s)$
+must have dimension $g - 1 - \dim S$. Let $A_0$ denote the abelian variety spanned by $Z_s$, then $\dim A_0 > g- 1 - \dim S$. Indeed,
+our assumption implies that $Z_s$ cannot itself be an abelian variety. Since for a general $s\in S$, $H_s \supset T_xA_0$
+for all $x\in p(\varphi^{-1}(s))$ by \eqref{eq:van-nonsimple}. Normalising $x$ to $0$, we obtain that $T_0A_0$
+is cut out by $\dim S$ many hyperplanes in $T_0A$. But $\dim T_0A_0 \gneq g -1 - \dim S$. Hence $\varphi$ is quasi-finite
+dominant morphism which shows the claim above.
+%For any point $x\in X_{\textnormal{reg}}$, we have $$T_xX_{\textnormal{reg}}\cong \C^{g-d}\subset T_xA\cong H^0(A, \Omega_A^1)^{\vee}\cong \C^g.$$
+%Hence we have the following diagram 
+%$$\xymatrix{
+%\mathbb{P}T^*_{X_{\textnormal{reg}}}A \ar[d]^{\pi} \ar@{^{(}->}[r]^-i
+%&X_{\textnormal{reg}}\times \mathbb{P}H^0(A, \Omega_A^1)^{\vee}\ar[dl] \ar@{->>}[r]^-p&\mathbb{P}H^0(A, \Omega_A^1)^{\vee} \\
+%X_{\textnormal{reg}}
+%}.$$
+%We then denote $S$ be the image of $\mathbb{P}T^*_{X_{\textnormal{reg}}}A$ in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ through the map $p\circ i$ in the above diagram. Notice that it suffices to show $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ if $X$ is not fibred by tori and $\dim X>0$.  
 %
-%In this section, we consider the holomorphic 1-forms with zero locus of arbitrary dimension.
+%Noticed that $S$ is irreducible, since $X$ is irreducible. By contradiction we assume $S$ is not dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$. Denote $m:=\dim S$. Claim that $\dim S=m>0$. In fact, if $m=0$, then there is a nontrivial holomorphic 1-form $\eta$ corresponding to $s\in S$ such that the restriction $\eta|_X=0$. Also, notice that since $\dim S=0,$ $\dim X=g-1$. Also, since $X$ is not fibred by tori, $X$ generates the whole abelian variety $A$. Then this implies $\eta=0$, which is a contradiction. 
+%
+%Then for a general point $s\in S$, $$\dim (p\circ i)^{-1}(s)=g-m-1>0,$$ hence $$\dim \pi((p\circ i)^{-1}(s))=g-m-1>0.$$ We denote $Z_s:= \pi((p\circ i)^{-1}(s))\subset X_{\textnormal{reg}}$. For each $Z_s$, we consider the nontrivial subabelian variety $A_s:=\langle Z_s \rangle$ generated by $Z_s$.  Notice first $A_s$ is a proper subabelian variety, because for general $x\in Z_s$, and the line $L_s\subset \mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ corresponding to $s$, we have $$T_x(Z_s)\subset T_xX_{\textnormal{reg}}\subset L_s^{\perp}.$$
+%Since $A$ only contains at most countably many subabelian varieties and $S$ is irreducible, we have for general $s\in S$, $A_s$ are isomorphic to each other.  We denote this subabelian variety to be $A_0$ with a chosen origin $e$. Notice first that $T_e(A_0)$ is perpendicular to all $L_s$, since it is true for general $s$. Also, notice that since $X$ is not fibred by tori, $Z_s$ is a proper subvariety of the translated tori $A_0+x$ for general $s$ and any $x\in Z_s$ (Notice that $A_0+x$ does not depend on the choice of $x\in Z_s$). Thus $\dim A_0>g-m-1$, i.e., $\dim T_eA_0\geq g-m$. However, $\dim \bigcup_{s\in S}L_s=m+1$ ($\dim S=m$). So $T_e(A_0)$ cannot perpendicular to all $L_s$ for $s\in S$. This proves $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ and hence the lemma.
+
+\end{proof}
 
 
 
 
 
-\subsection{Stratification of morphisms after Migliorini and Shende}
+
+
+
+
+\section{Stratification of morphisms after Migliorini and Shende}
 
 For a morphism $f: X\to A$ as in Theorem \ref{main1},  we consider the following diagram 
 %$$\xymatrix{
@@ -744,7 +806,30 @@ Assume that for all $i\geq 1$, $D^i(f)=\emptyset$, then $$\tilde{f}(df^{-1}(0_X)
 
 
 
-\subsection{Proof of Theorem \ref{thm:smooth}}
+\section{Generalisation and proof of Theorem \ref{thm:smooth}}
+
+
+\begin{proposition}
+Given a morphism $f\colon X\to A$ from a smooth 
+projective variety to an abelian variety $A$, there is a holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ has no zeros if and only
+if for all $i\geq1$, and the pure $i$-th discriminant $D^i(f)$ of $f$
+
+(1) $D^i(f)$ are either empty, i.e., $f$ is smooth (by Corollary \ref{Cor:MiShCor});
+
+(2) or each irreducible component of $D^i(f)$ is fibered by tori and of positive dimension. 
+\label{thm:nonvanishing}
+\end{proposition}
+
+\begin{proof} ``$\Leftarrow$'' By Theorem \ref{MiSh}, (1) implies that for every holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros. By Theorem \ref{MiSh} and Proposition \ref{van-nonsimple}, (2) implies that for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros.
+
+
+``$\Rightarrow$'' 
+Suppose there is $i$ and an irreducible component $D_0^i(f)$ of $D^i(f)$ such that $D_0^i(f)$ is not fibred by tori or $\dim D_0^i(f)=0$. If $\dim D^i_0(f)=0$, then there is a point $x\in X$ so that the rank of the tangent map $Tf_x$ is 0, thus every holomorphic 1-form pulled back from $A$ vanishes at $x$, which is a contradiction. If $D_0^i(f)$ is not fibred by tori and $\dim D_0^i(f)>0$, applying Proposition \ref{van-nonsimple}, we have for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $\omega|_{D_0^i(f)_{\textnormal{reg}}}$ has zeros. Hence $$p(\overline{T^*_{D_0^i(f)_{\textnormal{reg}}}Y})=H^0(A, \Omega_A^1).$$ Hence $$p(\tilde{f}(df^{-1}(0_X)))=H^0(A, \Omega_A^1),$$ i.e.,$$V(f)=f^*H^0(A, \Omega_A^1),$$ which is a contradiction.
+\end{proof}
+
+\sorry{This is a strengthening of a ``special case" of Stefan's Theorem 1.4 (2)}
+
+
 
 \begin{proof}[Proof of Theorem \ref{thm:smooth}]
 ``$\Rightarrow$'' is trivial.
@@ -759,58 +844,11 @@ Assume that for all $i\geq 1$, $D^i(f)=\emptyset$, then $$\tilde{f}(df^{-1}(0_X)
 (2) {\color{red} TBA conterexample $E_1\times E_2\times E_3$ and blowup translated $E_1$ and $E_3$............}
 \end{remark}
 
-\subsection{subvarieties of abelian varieties}
 
-First we generalize a proposition of Hacon and Kov\'acs \cite[Proposition 3.1]{HK05}. The proof is inspired
-by their original argument in \textit{loc.\ cit.} and the proof of \cite[Lemma 3.1]{Deb} in Debarre's expository article
 
-\begin{proposition}\label{van-nonsimple}
-Let $A$ be an abelian variety and $X$ be an irreducible proper subvariety of $A$. Then the following are equivalent
 
-(1) $X$ is not fibred by tori or of dimension 0. 
 
-(2) For general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$, the restricted holomorphic 1-form $\omega|_{X_{\textnormal{reg}}}$ admit zeros at finitely many points on the smooth locus $X_{\textnormal{reg}}$.
-\end{proposition}
-
-\begin{proof}\label{proof:van-nonsimple} (2)$\Rightarrow$ (1): Suppose $X$ is fibred by tori and $\dim X>0$, i.e.\ there exists a subabelian variety $B\subset A$ such that the fibres of the composition 
-
-$X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we assume $A'=B\times C$ and $X':=\tau^{-1}(X)=B\times Y\subset A'$. Then the 1-forms coming from $B$ do not vanish on smooth locus of $X'$, hence also do not on the smooth locus of $X$. 
-
-(1)$\Rightarrow$(2): Denote $d=\dim X$, $g=\dim A$. If $d=0$ it is trivial, so we assume $d>0$. Denoting by $N$ the
-vector bundle on $X^{\reg}$ given by $N_{X/A}|_{X^{\reg}}$ where $N_{X/A}$ is the normal sheaf of associated to the immersion
- \cite[\href{https://stacks.math.columbia.edu/tag/01R1}{Tag 01R1}]{stacks-project}. Associated to \[T_A|_{X^{\reg}}\onto N,\]
-we obtain the following chain of maps
-+\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP(T_0A)=\bbP^{g-1})\]
-where for a vector bundle $E$ on $X^{\reg}$ we use the notation $\bbP(E) \coloneqq \Proj_{X^{\reg}})(\Sym^d(E^{\vee}))$.
-Denote by $p\colon \bbP(N)\to X^{\reg}$ the bundle map. Given
-a point $s\in \bbP^g$, by construction we may associate a hyperplane $H_s\subset T_{A,0}$. Then
-\begin{equation}
-p\colon \varphi^{-1}(s) \overset{p}{\xrightarrow{\sim}}  \{x\in X^{\reg}| T_xX^{\reg} \subset H_s\}.
-\label{eq:van-nonsimple}
-\end{equation}
-Denote by $S\coloneqq \varphi(\bbP(N))$ the image. If $\dim S<g$, for all $s\in S$, a general
- fibre $Z_s \coloneqq \varphi^{-1}(s)$
-must have dimension $g - 1 - \dim S$. Let $A_0$ denote the abelian variety spanned by $Z_s$, then $\dim A_0 > g- 1 - \dim S$. Indeed,
-our assumption implies that $Z_s$ cannot itself be an abelian variety. Since for a general $s\in S$, $H_s \supset T_xA_0$
-for all $x\in p(\varphi^{-1}(s))$ by \eqref{eq:van-nonsimple}. Normalising $x$ to $0$, we obtain that $T_0A_0$
-is cut out by $\dim S$ many hyperplanes in $T_0A$. But $\dim T_0A_0 \gneq g -1 - \dim S$. Hence $\varphi$ is quasi-finite
-dominant morphism which shows the claim above.
-%For any point $x\in X_{\textnormal{reg}}$, we have $$T_xX_{\textnormal{reg}}\cong \C^{g-d}\subset T_xA\cong H^0(A, \Omega_A^1)^{\vee}\cong \C^g.$$
-%Hence we have the following diagram 
-%$$\xymatrix{
-%\mathbb{P}T^*_{X_{\textnormal{reg}}}A \ar[d]^{\pi} \ar@{^{(}->}[r]^-i
-%&X_{\textnormal{reg}}\times \mathbb{P}H^0(A, \Omega_A^1)^{\vee}\ar[dl] \ar@{->>}[r]^-p&\mathbb{P}H^0(A, \Omega_A^1)^{\vee} \\
-%X_{\textnormal{reg}}
-%}.$$
-%We then denote $S$ be the image of $\mathbb{P}T^*_{X_{\textnormal{reg}}}A$ in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ through the map $p\circ i$ in the above diagram. Notice that it suffices to show $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ if $X$ is not fibred by tori and $\dim X>0$.  
-%
-%Noticed that $S$ is irreducible, since $X$ is irreducible. By contradiction we assume $S$ is not dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$. Denote $m:=\dim S$. Claim that $\dim S=m>0$. In fact, if $m=0$, then there is a nontrivial holomorphic 1-form $\eta$ corresponding to $s\in S$ such that the restriction $\eta|_X=0$. Also, notice that since $\dim S=0,$ $\dim X=g-1$. Also, since $X$ is not fibred by tori, $X$ generates the whole abelian variety $A$. Then this implies $\eta=0$, which is a contradiction. 
-%
-%Then for a general point $s\in S$, $$\dim (p\circ i)^{-1}(s)=g-m-1>0,$$ hence $$\dim \pi((p\circ i)^{-1}(s))=g-m-1>0.$$ We denote $Z_s:= \pi((p\circ i)^{-1}(s))\subset X_{\textnormal{reg}}$. For each $Z_s$, we consider the nontrivial subabelian variety $A_s:=\langle Z_s \rangle$ generated by $Z_s$.  Notice first $A_s$ is a proper subabelian variety, because for general $x\in Z_s$, and the line $L_s\subset \mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ corresponding to $s$, we have $$T_x(Z_s)\subset T_xX_{\textnormal{reg}}\subset L_s^{\perp}.$$
-%Since $A$ only contains at most countably many subabelian varieties and $S$ is irreducible, we have for general $s\in S$, $A_s$ are isomorphic to each other.  We denote this subabelian variety to be $A_0$ with a chosen origin $e$. Notice first that $T_e(A_0)$ is perpendicular to all $L_s$, since it is true for general $s$. Also, notice that since $X$ is not fibred by tori, $Z_s$ is a proper subvariety of the translated tori $A_0+x$ for general $s$ and any $x\in Z_s$ (Notice that $A_0+x$ does not depend on the choice of $x\in Z_s$). Thus $\dim A_0>g-m-1$, i.e., $\dim T_eA_0\geq g-m$. However, $\dim \bigcup_{s\in S}L_s=m+1$ ($\dim S=m$). So $T_e(A_0)$ cannot perpendicular to all $L_s$ for $s\in S$. This proves $S$ is dense in $\mathbb{P}H^0(A, \Omega_A^1)^{\vee}$ and hence the lemma.
-
-\end{proof}
-
+\section{Proof of Theorem {\ref{main}}: Linearity of holomorphic 1-forms with zeros} 
 For any subvariety $X$ of an abelian variety $A$, we consider the following diagram 
 $$\xymatrix{
 T^*_{X_{\textnormal{reg}}}A\ar@{->>}[r]^-p& T^*_e A=H^0(A, \Omega_A^1)
@@ -849,28 +887,8 @@ By Theorem \ref{MiSh}, we have $$\tilde{f}(df^{-1}(0_X))=\bigcup_{i\geq0}\overli
 
 {\color{red} Add two corollaries, the above main theorem implies the main theorems of [Papa Schnell], [Hacon Kovacs]}
 
-An immediate consequence of the above is the
-following
-
-\begin{proposition}
-Given a morphism $f\colon X\to A$ from a smooth 
-projective variety to an abelian variety $A$, there is a holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$ such that $f^*\omega$ has no zeros if and only
-if for all $i\geq1$, and the pure $i$-th discriminant $D^i(f)$ of $f$
-
-(1) $D^i(f)$ are either empty, i.e., $f$ is smooth (by Corollary \ref{Cor:MiShCor});
-
-(2) or each irreducible component of $D^i(f)$ is fibered by tori and of positive dimension. 
-\label{thm:nonvanishing}
-\end{proposition}
-
-\begin{proof} ``$\Leftarrow$'' By Theorem \ref{MiSh}, (1) implies that for every holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros. By Theorem \ref{MiSh} and Proposition \ref{van-nonsimple}, (2) implies that for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $f^*\omega$ has no zeros.
 
 
-``$\Rightarrow$'' 
-Suppose there is $i$ and an irreducible component $D_0^i(f)$ of $D^i(f)$ such that $D_0^i(f)$ is not fibred by tori or $\dim D_0^i(f)=0$. If $\dim D^i_0(f)=0$, then there is a point $x\in X$ so that the rank of the tangent map $Tf_x$ is 0, thus every holomorphic 1-form pulled back from $A$ vanishes at $x$, which is a contradiction. If $D_0^i(f)$ is not fibred by tori and $\dim D_0^i(f)>0$, applying Proposition \ref{van-nonsimple}, we have for general holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$, $\omega|_{D_0^i(f)_{\textnormal{reg}}}$ has zeros. Hence $$p(\overline{T^*_{D_0^i(f)_{\textnormal{reg}}}Y})=H^0(A, \Omega_A^1).$$ Hence $$p(\tilde{f}(df^{-1}(0_X)))=H^0(A, \Omega_A^1),$$ i.e.,$$V(f)=f^*H^0(A, \Omega_A^1),$$ which is a contradiction.
-\end{proof}
-
-\sorry{This is a strengthening of a ``special case" of Stefan's Theorem 1.4 (2)}
 
 
 %\section{Holomorphic Tischler's theorem}
