@@ -593,7 +593,7 @@ the 1-form $\omega$.
 Recall from \S \ref{intro} that \[V(X):=\{ \omega\in H^0(X, \Omega_X^1) |\ Z(\omega)\neq \emptyset\}.\]
 
 \begin{definition}[Resonant and (universally) nonresonant forms]\label{def:resonance}
-We call a 1-form $\omega\in V(X)$ (non)\emph{resonant} if the complex 
+We call a 1-form $\omega\in V(X)$ \emph{(non)resonant} if the complex 
 \[(H^{\bullet}(X,\bbC), \wedge\omega)\coloneqq [\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots]\]
  is (exact) not exact. 
 
@@ -622,43 +622,50 @@ We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the
 In particular, $(H^{\bullet}(X,\bbC), \wedge\omega)$ is exact whenever $Z(\omega) = \emptyset$. 
 
  
-\item As mentioned in the introduction, an example of \cite{DJL} shows that
+\item As mentioned in the introduction, an example of \cite{DJL17} shows that
 %\cite[1.6]{SS19}, 
 nonresonant holomorphic 1-form exists for bielliptic surfaces with multiple fibers. 
 \end{enumerate}
 \end{remark}
 
+
+As we have noted in the \S \ref{intro} that the set resonant 1-forms $R_h$ is linear as a consequence of the generic vanishing theory. Since we will not go in that
+direction we refer the readers to the classical literature \ref{Ara92, GL87, Sim93b}. However, we do use the following result describing the components of
+$R_h$ as $\bbQ$-Hodge substructures of $H^1(X, \bbC)$. For $i=1$, this is due to Dimca, Papadima, Suciu \sorry{add reference}. For higher $i$, this is due to Dimca and Papadima:
+ {\color{red} (Provide references as much as we can)}. {\color{red} (Due to Voisin?)}\textcolor{teal}{I think the result of voisin is this Deligne's lemma about rationality of Hodge substrctures. DiPa use it.} 
+
+\begin{theorem}{\cite[Theorem C, Corollary 1.7]{DiPa13}}\label{thm: resonant}
+Let $X$ be a compact K\"ahler manifold. Each irreducible component of resonance varieties $R^i(X)$ is a linear subspace of $H^1(X, \C)$ defined over $\Q$, i.e., $$R^i(X)=(R^i(X)\cap H^1(X, \Q))\otimes\C.$$ Also,  each irreducible component of $R^i(X)$ carries $\Q$-Hodge substructures of $H^1(X, \C)$.
+\end{theorem} 
+
+The above result becomes particularly simple in the following case.
+\begin{corollary}
+Let $f:X\to A$ be a morphism from smooth projective variety $X$ to a simple abelian  variety $A$. Then $R^i(X)\cap f^*H^0(A, \Omega_A^1)$ is $f^*H^0(A, \Omega_A^1)$ or $0$.
+\end{corollary}
+
+\begin{proof}
+Since polarised Hodge structures of weight 1 naturally arise as a Hodge structure of abelian varieties, $f^*H(A, \bbC)$ must induce an irreducible polarised Hodge structure on $X$. Therefore $R^i(X)\cap f^*H(A, \Omega_A^1)$ is a $\Q$-Hodge substructure of $H^1(X, \C)$ of the simple Hodge structure $f^*H(A, \Omega_A^1)$.
+\end{proof}
+
+
+
+
 %Not too much information is known for nonresonant 1-forms. T
 Since we are specifically interested in the nonresonant 1-forms, we collect here some of the results known about them. The following theorem is due to Schreieder \cite{SS19}, which studies some properties of zeros of nonresonant 1-forms and the albanese maps of varieties admitting nonresonant 1-forms.
 
 \begin{theorem} \label{thm:stefan}
-Let $X$ be a compact connected K\"ahler manifold with a holomorphic one-form $\omega$ such that the complex $(H^*(X, \C), \wedge\omega)$ given by cup product with $\omega$ is exact. Then
-the zero scheme $Z(\omega)$ of $\omega\in H^0(X,\Omega_X^1)$ has the following properties.
+Let $X$ be a compact connected K\"ahler manifold with a holomorphic one-form $\omega$ such that the 
+resonance complex $(H^{\bullet}(X, \C), \wedge\omega)$ given by cup product with $\omega$ is exact. Then
+the zero scheme $\sZ(\omega)$ of $\omega\in H^0(X,\Omega_X^1)$ has the following properties.
 
-(1) For any reduced irreducible component $Z \subset Z(\omega)$ with $d=\dim Z(\omega)$, $$H^d(Z, \omega_X|_Z)=0.$$
+(1) For any reduced irreducible component $Z \subset \sZ(\omega)$ with $d=\dim \sZ(\omega)$, $$H^d(Z, \omega_X|_Z)=0.$$
 In particular, $\omega$ does not have any isolated zero.
 
 (2) If $f : X \to A$ is a holomorphic map to a complex torus $A$ such that $\omega \in f^*H^0(A, \Omega^1_A)$,
 then $f(X)\subset A$ is fibred by tori.
 \end{theorem}
 
-The set of resonant 1-forms is very well understood {\color{red} (Provide references as much as we can)}. We recall the following theorem {\color{red} (Due to Voisin?)}. For $i=1$, this is due to Dimca, Papadima, Suciu. For higher $i$, this is due to Dimca and Papadima:
 
-\begin{theorem}{\cite[Theorem C, Corollary 1.7]{DiPa13}}\label{thm: resonant}
-Let $X$ be a compact K\"ahler manifold. Each irreducible component of resonance varieties $R^i(X)$ is a linear subspace of $H^1(X, \C)$ defined over $\Q$, i.e., $$R^i(X)=(R^i(X)\cap H^1(X, \Q))\otimes\C.$$ Also,  each irreducible component of $R^i(X)$ carries $\Q$-Hodge substructures of $H^1(X, \C)$.
-\end{theorem} 
-
-\begin{corollary}
-Let $f:X\to A$ be a morphism from smooth projective variety $X$ to a simple abelian  variety $A$. Then $R^i(X)\cap f^*H(A, \Omega_A^1)$ is $f^*H(A, \Omega_A^1)$ or $0$.
-\end{corollary}
-
-\begin{proof}
-$R^i(X)\cap f^*H(A, \Omega_A^1)$ is a $\Q$-Hodge substructure of $H^1(X, \C)$ of the simple Hodge structure $f^*H(A, \Omega_A^1)$.
-\end{proof}
-
-\begin{corollary}\label{ECNT}
-For $X$ being a smooth projective variety $X$ such that the topological Euler characteristic class $\chi(X)\not=0$, $V(X)$ is a linear subvariety.
-\end{corollary}
 
 
 \section{Linearity of holomorphic 1-forms with zeros} [{\color{red}One need a independent preliminary section also the following two sections}]
@@ -824,6 +831,9 @@ T^*_{X'_{\textnormal{reg}}}A'\ar@{->>}[r]^-{p'}& T^*_e A'=H^0(A', \Omega_A'^1)
 \end{proof}
 
 Next we will use Corollary \ref{Main-coro} and Theorem \ref{MiSh} to prove our first main result Theorem \ref{main1}.
+\begin{corollary}\label{ECNT}
+For $X$ being a smooth projective variety $X$ such that the topological Euler characteristic class $\chi(X)\not=0$, $V(X)$ is a linear subvariety.
+\end{corollary}
 
 \begin{proof}[Proof of Theorem \ref{main1}]
 %For the morphism $f: X\to A$, we consider the following diagram 
