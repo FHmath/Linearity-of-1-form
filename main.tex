@@ -348,6 +348,8 @@ The goal of this article is two-fold, first we
 \maketitle
 
 \section{Introduction}\label{intro}
+\textcolor{blue!70!white}{1. Need to be consistent with projective vs Kaehler, fibered by subabelian variety vs.\ fibered by subtori etc.
+2. Theorem 2.4 $R^i(X)$ are a-priori not $\bbC$-sub-hodge structures. They are subspaces of $h^{1,0}$, perhaps we mean $R^i(X)+\overline{R^i(X)}?$}
 
 In this article we study the set of global holomorphic 1-forms  on smooth projective varieties that admit zeros. Interestingly, it has been
 indicated by plethora of results (\cite{GL87, HK05, LZ05,
@@ -513,7 +515,7 @@ a result of Migliorini and Shende \cite[Theorem C]{MiSh18} which ensures that $(
 is a finite union of closures of conormal bundles
 $T^*_ZX$ along various subvarieties of $Z\subset A$.
 Then the linearity follows from the following proposition
-\begin{proposition}\label{van-nonsimple}
+\begin{proposition}[=Proposition \ref{van-nonsimple}]
 Let $A$ be an abelian variety and $X$ be a proper subvariety of $A$. Then the following are equivalent
 \begin{enumerate}
 	\item $X$ is not fibred by tori or of dimension 0. 
@@ -699,7 +701,7 @@ $X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we assume
 vector bundle on $X^{\reg}$ given by $N_{X/A}|_{X^{\reg}}$ where $N_{X/A}$ is the normal sheaf of associated to the immersion
  \cite[\href{https://stacks.math.columbia.edu/tag/01R1}{Tag 01R1}]{stacks-project}. Associated to \[T_A|_{X^{\reg}}\onto N,\]
 we obtain the following chain of maps
-+\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP(T_0A)=\bbP^{g-1})\]
+\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP(T_0A)=\bbP^{g-1})\]
 where for a vector bundle $E$ on $X^{\reg}$ we use the notation $\bbP(E) \coloneqq \Proj_{X^{\reg}})(\Sym^d(E^{\vee}))$.
 Denote by $p\colon \bbP(N)\to X^{\reg}$ the bundle map. Given
 a point $s\in \bbP^g$, by construction we may associate a hyperplane $H_s\subset T_{A,0}$. Then
@@ -747,7 +749,7 @@ For a morphism $f: X\to A$ as in Theorem \ref{main1},  we consider the following
 %},$$
 \begin{center}
 \begin{tikzcd}
-	X\times f^*H^0(A, \Omega_A^1) \ar[r, "df"] \ar[d, "f\times \id"] & T^*X\\
+	X\times f^*H^0(A, \Omega_A^1) \ar[r, "df"] \ar[d, "\tilde{f}"] & T^*X\\
 	A\times H^0(A, \Omega_A^1)\simeq T^*A\dar["\pr_2"]\\
 	H^0(A, \Omega_A^1)
 \end{tikzcd}
