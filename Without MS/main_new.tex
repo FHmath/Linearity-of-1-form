@@ -1,78 +1,49 @@
-\documentclass[a4paper,12pt,reqno]{amsart}
-%\usepackage{times} %,fullpage}%,backref}
-\usepackage{latexsym,amscd,amssymb,url}
-\pagestyle{headings}
-\usepackage{xcolor, mathtools}
+\pdfoutput=1
+\documentclass[11pt,reqno]{amsart}
+\usepackage[letterpaper,margin=1in,footskip=0.25in]{geometry}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+
 \PassOptionsToPackage{pdfusetitle,pagebackref,colorlinks}{hyperref}
 \usepackage{bookmark}
 \hypersetup{
   linkcolor={red!70!black},
   citecolor={green!70!black},
-  urlcolor={teal!80!black}
-	linkcolor={teal!80!black}
+  urlcolor={blue!80!black}
 }
 
-
-
-%\pagestyle{plain}
-
-%\usepackage[latin1]{inputenc}
-%\usepackage{a4}
-
-%\usepackage[T1]{fontenc}
-%\usepackage[scaled]{uarial}
-%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
-
-%\usepackage{eucal} 
-%\usepackage{cmmib57} 
-%\usepackage{amsbsy}
-%\usepackage{amsthm,alltt}
-
-\usepackage{graphicx,enumerate}
-
-
-
-
-\newcommand{\CN}{\mathbb{C}^{n+1}}
-\newcommand{\CP}{\mathbb{CP}^{n+1}}
-\newcommand{\U}{\mathcal{U}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Hom}{\mathrm{Hom}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\K}{\mathcal{L}}
-\newcommand{\V}{\mathcal{V}}
-
-
-
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem*{theoremnocount}{Theorem}
-\theoremstyle{plain}
-\newtheorem*{acknowledgement}{Acknowledgement}
-\newtheorem{question}[theorem]{Question}
-\newtheorem{statement}{Statement}
-\newtheorem{case}{Case}
-\newtheorem{claim}{Claim}
-\newtheorem{conclusion}{Conclusion}
-\newtheorem{condition}{Condition}
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{criterion}{Criterion}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{exercise}{Exercise}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{notation}{Notation}
-\newtheorem{problem}{Problem}
 \newtheorem{proposition}[theorem]{Proposition}
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{solution}{Solution}
-\newtheorem{fact}{Fact}
-\newtheorem*{convention}{Convention}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{step}{Step}[subsection]
+\renewcommand{\thestep}{\arabic{step}}
+
 \newtheorem{alphtheorem}{Theorem}
 \renewcommand{\thealphtheorem}{\Alph{alphtheorem}}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newtheoremstyle{cited}{.5\baselineskip\@plus.2\baselineskip\@minus.2\baselineskip}{.5\baselineskip\@plus.2\baselineskip\@minus.2\baselineskip}{\itshape}{}{\bfseries}{\bfseries .}{5pt plus 1pt minus 1pt}{\thmname{#1}\thmnumber{~#2}\thmnote{ \normalfont#3}}
+\theoremstyle{cited}
+\newtheorem{citedthm}[theorem]{Theorem}
+\newtheorem{citedconj}[theorem]{Conjecture}
+\newtheorem{citedlem}[theorem]{Lemma}
+\newtheorem{citedprop}[theorem]{Proposition}
+
+\newtheoremstyle{citeddef}{.5\baselineskip\@plus.2\baselineskip\@minus.2\baselineskip}{.5\baselineskip\@plus.2\baselineskip\@minus.2\baselineskip}{}{}{\bfseries}{\bfseries .}{5pt plus 1pt minus 1pt}{\thmname{#1}\thmnumber{~#2}\thmnote{ \normalfont#3}}
+\theoremstyle{citeddef}
+\newtheorem{citednot}[theorem]{Notation}
 
 
 \def\be{\begin{equation}}
@@ -416,7 +387,8 @@ $\omega_Z$ is big,
 i.e.\ $Z$ is of general type. Although perhaps well-known to experts, we could not find any appropriate sources in literature. Nonetheless, our proof is inspired
 by their original argument in\cite[Proposition 3.1]{HK05} and the proof of \cite[Lemma 3.1]{Deb} in Debarre's expository article
 
-\bp\label{van-nonsimple}
+\begin{proposition}
+\label{van-nonsimple}
 Let $A$ be an abelian variety and $Z$ be an irreducible proper subvariety of $A$. Then the following are equivalent
 
 (1) $Z$ is not fibred by tori. 
@@ -424,7 +396,7 @@ Let $A$ be an abelian variety and $Z$ be an irreducible proper subvariety of $A$
 (2) The projection $\pi\colon T^*_ZX\to H^0(A, \Omega_A^1)$ is surjective.
 
 (3) For general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$, the restricted holomorphic 1-form $\omega|_{Z_{\textnormal{reg}}}$ admit zeros at finitely many points on the smooth locus $Z_{\textnormal{reg}}$.
-\ep
+\end{proposition}
 
 
 
@@ -474,7 +446,7 @@ maps under $\Phi$ to a character admitting an element in $\sV(X, P)$. Therefore 
 On the other hand, as argued before since $\chi(A',P')>0$, the singular support of $P'$ must have a component $Z'$ that does not admit further fibration by tori.
 Since $p$ is smooth $p^{-1}Z'$ must be a strata of $P$. This plus the fact that $CC(P) = \sum n_{Z}\chi(Z)$ with $n_Z\geq 0$ [see Franecki--Kapranov Corollary 1.4]
 we obtain that all $Z$ must be fibered by tori. Depending on whether or not $p(Z)$ is fibered by tori, we will have that $\pi(T^*_ZA) \subseteq p^*(H^0(A',\Omega_{A'}^1)$ is a strict inequality or equality. Nonetheless we know that there exists at least one $Z$ for which this inclusion is an equality. Hence again
-$\sR(X) = \bigcup_Z \pi(T^*_{Z}A)$ for $\cupZ = \Ch(P)$
+$\sR(X) = \bigcup_Z \pi(T^*_{Z}A)$ for $\cup Z = \Ch(P)$
 
 
 \end{proof}
