@@ -1,0 +1,511 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+%\usepackage{times} %,fullpage}%,backref}
+\usepackage{latexsym,amscd,amssymb,url}
+\pagestyle{headings}
+\usepackage{xcolor, mathtools}
+\PassOptionsToPackage{pdfusetitle,pagebackref,colorlinks}{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+  linkcolor={red!70!black},
+  citecolor={green!70!black},
+  urlcolor={teal!80!black}
+	linkcolor={teal!80!black}
+}
+
+
+
+%\pagestyle{plain}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage{a4}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[scaled]{uarial}
+%\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+%\usepackage{eucal} 
+%\usepackage{cmmib57} 
+%\usepackage{amsbsy}
+%\usepackage{amsthm,alltt}
+
+\usepackage{graphicx,enumerate}
+
+
+
+
+\newcommand{\CN}{\mathbb{C}^{n+1}}
+\newcommand{\CP}{\mathbb{CP}^{n+1}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathcal{L}}
+\newcommand{\V}{\mathcal{V}}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theoremnocount}{Theorem}
+\theoremstyle{plain}
+\newtheorem*{acknowledgement}{Acknowledgement}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{statement}{Statement}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}{Solution}
+\newtheorem{fact}{Fact}
+\newtheorem*{convention}{Convention}
+\newtheorem{alphtheorem}{Theorem}
+\renewcommand{\thealphtheorem}{\Alph{alphtheorem}}
+
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+
+\def\bt{\begin{theorem}}
+\def\et{\end{theorem}}
+
+\def\bc{\begin{corollary}}
+\def\ec{\end{corollary}}
+
+\def\br{\begin{remark}}
+\def\er{\end{remark}}
+
+\def\bp{\begin{proposition}}
+\def\ep{\end{proposition}}
+
+\def\bl{\begin{lemma}}
+\def\el{\end{lemma}}
+
+%\def\bn{\begin{enumerate}}
+%\def\en{\end{enumerate}}
+
+\def\bex{\begin{ex}}
+\def\eex{\end{ex}}
+
+\def\bd{\begin{definition}}
+\def\ed{\end{definition}}
+
+
+
+
+
+
+
+
+%\DeclareMathOperator{\Pic}{Pic}                  % Pic
+
+%\newcommand{\PP}{\mathcal{P}}           % Poincare line bunle
+
+\DeclareMathOperator{\Supp}{Supp}                % Supp
+\DeclareMathOperator{\codim}{codim}              % codim
+\DeclareMathOperator{\mreg}{mreg}                % mreg
+\DeclareMathOperator{\reg}{reg}                  % reg
+\DeclareMathOperator{\sing}{sing}                  
+\DeclareMathOperator{\id}{id}                    % id
+\DeclareMathOperator{\obj}{Obj}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\morph}{Morph}
+\DeclareMathOperator{\enom}{End}
+\DeclareMathOperator{\iso}{Iso}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\homo}{Hom}
+\DeclareMathOperator{\enmo}{End}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\fitt}{Fitt}
+\DeclareMathOperator{\odr}{\Omega^\bullet_{\textrm{DR}}}
+\DeclareMathOperator{\rank}{Rank}
+\DeclareMathOperator{\gdeg}{gdeg}
+\DeclareMathOperator{\Alb}{Alb}
+\DeclareMathOperator{\alb}{alb}
+\DeclareMathOperator{\Ann}{Ann}
+
+
+
+%\DeclareMathOperator
+
+\DeclareMathOperator{\Char}{Char}
+\DeclareMathOperator{\CC}{SS}
+\DeclareMathOperator{\kn}{Ker}
+\DeclareMathOperator{\im}{Im}
+
+
+\def\ra{\rightarrow}
+
+
+\def\bone{\mathbf{1}}
+\def\bC{\mathbb{C}}
+\def\cM{\mathcal{M}}
+\def\cV{\mathcal{V}}
+\def\Def{{\rm {Def}}}
+\def\cR{\mathcal{R}}
+\def\om{\omega}
+\def\wti{\widetilde}
+\def\al{\alpha}
+\def\End{{\rm {End}}}
+\def\Pic{{\rm Pic}}
+\def\bP{\mathbb{P}}
+\def\cH{\mathcal{H}}
+\def\bL{\mathbb{L}}
+\def\cX{\mathcal{X}}
+\def\cI{\mathcal{I}}
+\def\pa{\partial}
+\def\cY{\mathcal{Y}}
+\def\cD{\mathcal{D}}
+\def\cO{\mathcal{O}}
+\def\lra{\longrightarrow}
+\def\bQ{\mathbb{Q}}
+\def\ol{\overline}
+\def\cL{\mathcal{L}}
+\def\bH{\mathbb{H}}
+\def\bZ{\mathbb{Z}}
+\def\bW{\mathbf{W}}
+\def\bV{\mathbf{V}}
+\def\bM{\mathbf{M}}
+\def\eps{\epsilon}
+\def\ul{\underline}
+\def\lam{\lambda}
+\def\sX{\mathscr{X}}
+\def\bN{\mathbb{N}}
+
+%-----------
+%-----------Yagna's typsets--------
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+
+\PassOptionsToPackage{pdfusetitle,pagebackref,colorlinks}{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+  linkcolor={red!70!black},
+  citecolor={green!70!black},
+  urlcolor={blue!80!black}
+}
+
+%Mathcal Letters =====================
+\newcommand{\sA}{\mathcal{A}}
+\newcommand{\sB}{\mathcal{B}}
+\newcommand{\sD}{\mathcal{D}}
+\newcommand{\sF}{\mathcal{F}}
+\newcommand{\sG}{\mathcal{G}}
+\newcommand{\sH}{\mathcal{H}}
+\newcommand{\sK}{\mathcal{K}}
+\newcommand{\sL}{\mathcal{L}}
+\newcommand{\sM}{\mathcal{M}}
+\newcommand{\sN}{\mathcal{N}}
+\newcommand{\sO}{\mathcal{O}}
+\newcommand{\sP}{\mathcal{P}}
+\newcommand{\sQ}{\mathcal{Q}}
+\newcommand{\sR}{\mathcal{R}}
+\newcommand{\sT}{\mathcal{T}}
+\newcommand\sV{{\mathcal V}}
+\newcommand\sW{{\mathcal W}}
+\newcommand{\sZ}{\mathcal{Z}}
+
+%mathbb Letters======
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+
+
+%Script Letters ======================
+\newcommand{\frf}{\mathfrak{f}}
+\newcommand{\frM}{\mathfrak{M}}
+
+\newcommand{\scrL}{\mathscr{L}}
+\newcommand{\crI}{\mathscr{I}}
+\newcommand{\scrK}{\mathscr{K}}
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrI}{\mathscr{I}}
+\newcommand{\scrQ}{\mathscr{Q}}
+\newcommand{\scrR}{\mathscr{R}}
+\newcommand{\scrX}{\mathscr{X}}
+\newcommand{\scrY}{\mathscr{Y}}
+\newcommand{\scrF}{\mathscr{F}}
+\newcommand{\Dred}{\lceil D\rceil}
+
+%Arrow Style =========================
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\onto}{\rightarrow\hspace*{-.14in}\rightarrow}
+
+%Math Operators ======================
+
+
+
+%\DeclareMathOperator{\alg}{alg}
+\DeclareMathOperator{\BM}{BM}
+\DeclareMathOperator{\Bs}{Bs}
+\DeclareMathOperator{\Bsp}{\mathbf{B}_+}
+\DeclareMathOperator{\SB}{\mathbf{B}}
+
+\DeclareMathOperator{\coh}{coh}
+\DeclareMathOperator{\Coker}{Coker}
+ \renewcommand{\div}{\text{div}}
+
+\DeclareMathOperator{\DR}{DR}
+\DeclareMathOperator{\Ch}{Ch}
+\DeclareMathOperator{\discrep}{discrep}
+\DeclareMathOperator{\exc}{exc}
+
+\DeclareMathOperator{\free}{free}
+
+
+\DeclareMathOperator{\HHom}{\mathcal{H}\!\mathit{om}}
+\DeclareMathOperator{\image}{Im}
+
+
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\op}{op}
+
+
+\DeclareMathOperator{\qcoh}{qcoh}
+
+%\DeclareMathOperator{\reg}{reg}
+
+\DeclareMathOperator{\RHHom}{\mathbf{R}\mathcal{H}\!\mathit{om}}
+
+
+\DeclareMathOperator{\Spf}{Spf}
+%\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\tors}{tors}
+\DeclareMathOperator{\torsion}{torsion}
+\DeclareMathOperator{\Var}{Var}
+%\DeclareMathOperator{\Sym}{Sym}
+
+
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Aff}{\mathbf{Aff}}
+\newcommand{\tB}{\tilde{B}}
+%\newcommand{\et}{{\acute{e}t}}
+
+\newcommand{\Sets}{\mathbf{Sets}}
+%\newcommand{\cX}{\bar{X}}
+\newcommand{\cP}{\bar{P}}
+%\newcommand{\cV}{\bar{V}}
+\newcommand{\cW}{\bar{W}}
+\newcommand{\sorry}[1]{\textcolor{red}{#1}}
+\newcommand{\dual}[1]{\sD^{\Omega}_{M^{#1}}}
+
+
+
+\title{}
+
+
+
+
+
+
+
+\date{\today}
+
+
+\subjclass[2010]{}
+
+\begin{document}
+\maketitle
+
+
+\section{}
+
+
+Given a smooth complex irregular projective variety $X$, we are interested in the set $V(X)\subseteq H^0(X, \Omega_X^1)$ of global holomorphic 1-forms
+that admit zeros on $X$. It is known that such zeros of a 1-form $\omega$ 
+are supported on the support of the cohomologies of the long exact sequence
+\[\sO_X\overset{\wedge\omega}{\to} \Omega_X^1 \to \cdots\to \Omega_X^{n-1}\to omega_X.\]
+In particular if $\omega$ is a 1-form such the the \textit{resonance sequence}
+\[H^0(X,\bbC)\overset{\wedge\omega}{\to}H^1(X,\bbC)\overset{\omega}{\to}\cdots\]
+is not exact everywhere the set of zeros $Z(\omega)\neq \emptyset$.
+
+On the other hand from the generic vanishing theory it is known that the set of such forms, call resonance forms after Dimca,
+is a finite union of linear subspaces of $H^0(X,\Omega_X^1)$.
+
+Perhaps known to the experts already, we show in particular that this linear subspace is in fact coming from a 
+finite union of triple
+tori in the sense of Simpson. In order to make the statement precise we need to introduce some terminologies and results. 
+\begin{definition}[Resonant and (universally) nonresonant forms]\label{def:resonance}
+We call a 1-form $\omega$ \emph{resonant} if the complex 
+\[(H^{\bullet}(X,\bbC), \wedge\omega)\coloneqq [\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots]\]
+ is not exact. Accordingly the resonance varieties of $X$ is defined as:
+$$ \sR^i(X):= \{\omega\in H^1(X,\Omega_X^1)\mid  H^i  (H^*(X,\bbC), \wedge \omega) \neq 0 \} $$
+and we denote by $R(X) \coloneqq \cup_i R^i(X)$.
+\end{definition}
+
+
+Let $\C^{\ast}$ be the multiplicative group of non-zero complex numbers.
+The {\it character variety} $\Char(X)$ of $X$ is the identity component of the moduli space of rank-one $\bC$-local systems on $X$, i.e., 
+\begin{center}
+$\Char(X):= 
+\Hom (H_1(X,\bZ)/\text{Torsion}, \bC^*)\cong (\bC^*)^{b_1(X)}.$
+\end{center}
+
+\bd The {\it $i$-th cohomology jump locus of $X$} is defined as: 
+$${\sV^{i}(X)=\lbrace \rho\in \Char(X) \mid  H^{i}(X,L_{\rho})\neq 0 \rbrace},$$ 
+where $L_{\rho}$ is the unique rank-one $\bC$-local system  on $X$ associated to the representation $\rho\in \Char(X) $.\ed
+
+
+\begin{theorem}[Structure Theorem] Let $X$ be a smooth complex projective variety. Then the jump loci $\sV^i(X)$ is a finite union of torsion translated sub-tori of $\Char(X)$.
+\end{theorem}
+%\br 
+%In fact, up to a torsion translate, every irreducible component of $\sV^i(X)$ is induced by a sub-Hodge structure of $H^1(X, \Q)$. To be precise, there exists an algebraic surjective map $f: \Alb(X) \to A$ from the Albanese variety of $X$ to an abelian variety $A$ such that this irreducible component is, up to a torsion translate, the image of the following map $$\Char(A) \hookrightarrow \Char(\Alb(X)) \cong \Char(X) .$$
+%Here the last isomorphism is induced by the Albanese map.
+%\er 
+
+
+
+
+\begin{theorem} Let $X$ be a smooth complex projective variety.  Then we have the following tangent cone formula:
+$$ TC_1( \sV^i(X)) = \sR^i(X)$$
+under the exponential map $M_{\DR}(X) \to \Char(X)$. 
+\end{theorem} 
+The reason behind this theorem is the fact that the smooth projective variety is formal.  For a proof, please see \cite{S}.
+
+Together with the structure theorem, we get the following. 
+
+\bc Let $X$ be a smooth complex projective variety. Then every irreducible component of $\sR^i(X)$ is a linear sub-vector space of $H^1(X,\C)$.
+\ec
+
+
+
+
+Finally, for a subvariety $Z\subset X$ of any smooth projective variety $X$, by 
+$T^*_ZX$ we denote the closure of the conormal bundle $T^*_{Z^{\reg}}X$ of the regular locus of $Z^{\reg}$ of $Z$
+inside the cotangent bundle $T^*X$ of $X$. With this notation at our disposal note that when $X$ is an abelian variety
+$A$, the image of $T^*_ZA\to H^0(A,\Omega_A^1)$ under the projection $\pi\colon T^*A \to H^0(A,\Omega_A^1)$ is precisely the set of 1-forms that admits a zero on the regular locus of $Z$.
+We show that whether or not a 1-form $\omega\in H^0(A,\Omega_A^1)$
+comes from $T^*_ZA$ for some $Z$, is determined by one of the most fundamental
+ structural properties of subvarieties of abelian varieties;
+ namely, whether or not
+$Z$ is of general type. By a result of Ueno \cite[Theorem 10.9]{Uen75} this is equivalent to $Z$ being not fibered by any subabelian varieties of $A$. 
+When $Z$ is smooth 
+this seems to be a classical fact that whenever the normal bundle of $Z$ is ample all $\omega|_Z$ admits finitely many zeros on $X$
+(see e.g.\ \cite[Lemma 3.1]{Deb}). This was generalised to subvarieties of simple abelian varieties by 
+Hacon and Kov\'acs \cite[Proposition 3.1]{HK05}. A special case of more recent result of Popa and \cite{PS14} suggests that this is true whenever $Z$ is smooth and
+$\omega_Z$ is big,
+i.e.\ $Z$ is of general type. Although perhaps well-known to experts, we could not find any appropriate sources in literature. Nonetheless, our proof is inspired
+by their original argument in\cite[Proposition 3.1]{HK05} and the proof of \cite[Lemma 3.1]{Deb} in Debarre's expository article
+
+\bp\label{van-nonsimple}
+Let $A$ be an abelian variety and $Z$ be an irreducible proper subvariety of $A$. Then the following are equivalent
+
+(1) $Z$ is not fibred by tori. 
+
+(2) The projection $\pi\colon T^*_ZX\to H^0(A, \Omega_A^1)$ is surjective.
+
+(3) For general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$, the restricted holomorphic 1-form $\omega|_{Z_{\textnormal{reg}}}$ admit zeros at finitely many points on the smooth locus $Z_{\textnormal{reg}}$.
+\ep
+
+
+
+\section{}
+Our theorem is the following
+Let $X$ be an irregular smooth projective variety and $a\colon X\to \Alb(X)$ the albanese morphism. We identify $M_{\DR}^0(X)$ with $M_{\DR}^0(A)$ 
+to identify
+\[\sR^i(X) = \{\omega\in H^0(A, \Omega_A^1)| H^i(H^*(X, \bbC), \wedge a^*\omega)\neq 0\}\]
+and rewrite the tangent cone theorem as 
+\[TC_1(A, \bbR a_*\bbC) = \sR^i(X).\]
+
+
+
+\begin{alphtheorem}
+Suppose the decomposition theorem
+for $a$ is given by
+\[\bbR a_*\bbC = \bigoplus_{\alpha}P_{\alpha}\]
+with $P_{\alpha}$ a shifted simple perverse sheaf suppored on some strata $S_{\alpha}$ of $a$, then
+\[R(X) = \bigcup_i (TC_1 \sV^i(A, P_{\alpha})) = \bigcup_{\alpha}\pi(T^*_{S_{\alpha}}A) \]
+\end{alphtheorem}
+
+The first equality is a consequence of the tangent cone theorem and the fact that
+$H^i(X, \bbC) = H^i(A, \bbR a_*\bbC) = \cup_{\alpha} \sV^i(A, P_{\alpha})$.
+Therefore the main point of the argument is to show the second equality.
+
+\begin{proof}
+Note that if there is an $\alpha$ such that $\chi(P_{\alpha}) \neq 0$, then note that by generic vanishing theorem for
+a general character $\rho \in \Char(\pi_1(A), \bbC^*)$ $\chi(P\otimes \bbC_{\rho}) = H^0(A, P\otimes \bbC_{\rho}) \neq 0$. Therefore,
+$\sV^0(X, P) = \Char(\pi_1(A), \bbC^*)$. Therefore $TC_1(\sV(X, \bbR a_*\bbC)) = TC_1(\sV(A, P)) = H^0(A, \Omega_A^1) =  \sR(X)$.
+
+On the other hand, if characteristic cycle $\Ch(P_{\alpha}) = \cup_Z T^*_ZA$ then we claim that there exists a $Z$ in the singular support of $P$ such that
+$Z$ is not fibered by tori. Indeed,
+by Kashiwara's index theorem 
+\[\chi(A,P) = <CC(P), T^*_AA>\]
+If $Z$ was fibered by a subabelian variety $B\subset A$, then $T^*_ZA = T^*_BA$. But $<T^*_BA, T^*_AA> = \chi(B, \bbC) = 0$ (see e.g.\ [Dimca, p.\ 12	4]).
+We conclude by Proposition \ref{van-nonsimple} that when $Z$ is not fibered by tori $\pi(T^*_ZA) = H^0(A,\Omega_A^1)$. 
+
+Now let $\chi(A, P) = 0$ for all $P$ appearing in the decomposition of $\bbR a_*\bbC$. By a result of Kr\"amer--Weissauer we know that there exists an abelian variety $A'$, a map $p\colon A\to A'$,
+a character $\rho\in \Char(A)$ and a simple perverse sheaf $P'$ on
+$A'$ with $\chi(P')>0$ and such that $p^*P'  = P\otimes \bbC_{\rho}$. Note that in this case the cohomology jump loci are given by
+\[\bigcup \rho\cdot(\Char(A')\to \Char(A))\]
+(see schnell: $\Phi : A^{\natural} \to \Char(A)$. $\Phi(S^k(\sM)) = S^k(\DR(\sM)$ and $S^k(\sM)$ are supported on the support of $FM(\sM)$ which 
+is supported on $(L,\nabla)\otimes(A'^{\natural}\to A^{\natural})$.)
+Letting $B = \ker(A\to A')$ note that the local systems corresponding to the forms $\omega\in H^0(B, \Omega_B^1)$ are no tangent to $\sV(A, P)$ and hence 
+$\sR(X)\subseteq p^*H^0(A', \Omega_{A'}^1)$. On the other hand any element in the image of $T^*A' \to T^*A$
+maps under $\Phi$ to a character admitting an element in $\sV(X, P)$. Therefore $p^*H^0(A', \Omega_{A'}^1)\subseteq \sR(X)$. 
+On the other hand, as argued before since $\chi(A',P')>0$, the singular support of $P'$ must have a component $Z'$ that does not admit further fibration by tori.
+Since $p$ is smooth $p^{-1}Z'$ must be a strata of $P$. This plus the fact that $CC(P) = \sum n_{Z}\chi(Z)$ with $n_Z\geq 0$ [see Franecki--Kapranov Corollary 1.4]
+we obtain that all $Z$ must be fibered by tori. Depending on whether or not $p(Z)$ is fibered by tori, we will have that $\pi(T^*_ZA) \subseteq p^*(H^0(A',\Omega_{A'}^1)$ is a strict inequality of not. Nonetheless we know that there exists at least on $Z$ for which it is an equality.
+
+
+\end{proof}
+
+
+
+
+\begin{thebibliography}{ADMSP}
+
+
+
+\bibitem[BWY]{BWY} N. Budur, B . Wang, Y. Yoon, {\it Rank one local systems and forms of degree one}, Int. Math. Res. Not. (2016), no.13, 3849-3855.
+
+
+\bibitem[LMW]{LMW} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Kollar}, arXiv:2006.09295.
+
+\bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
+
+
+\bibitem[S]{S} A. Suciu, {\it Around the tangent cone theorem}, Configuration Spaces: Geometry, Topology and Representation Theory, 1-39, Springer INdAM series, vol. 14, Springer, Cham, 2016
+
+
+
+
+\end{thebibliography}
+
+
+
+%------------------------------------------------------------------
+\end{document}
+%------------------------------------------------------------------
+
+
+
+
