@@ -344,10 +344,11 @@ The goal of this article is two-fold, first we
 \maketitle
 
 
-Given a smooth complex irregular projective variety $X$, we are interested in the set $V(X)\subseteq H^0(X, \Omega_X^1)$ of global holomorphic 1-forms
+Given a $n$-dimensional smooth complex irregular projective variety $X$, we are interested in the set $V(X)\subseteq H^0(X, \Omega_X^1)$ of global holomorphic 1-forms
 that admit zeros on $X$. It is known that such zeros of a 1-form $\omega$ 
 are supported on the support of the cohomologies of the long exact sequence
 \[\sO_X\overset{\wedge\omega}{\to} \Omega_X^1 \to \cdots\to \Omega_X^{n-1}\to omega_X.\]
+\[\sO_X\overset{\wedge\omega}{\to} \Omega_X^1 \to \cdots\to \Omega_X^{n-1}\to \Omega^n_X.\]
 In particular if $\omega$ is a 1-form such the the \textit{resonance sequence}
 \[H^0(X,\bbC)\overset{\wedge\omega}{\to}H^1(X,\bbC)\overset{\omega}{\to}\cdots\]
 is not exact everywhere the set of zeros $Z(\omega)\neq \emptyset$.
@@ -483,6 +484,16 @@ $\sR(X) = \bigcup_Z \pi(T^*_{Z}A)$ for $\cup Z = \Ch(P)$
 
 
 \end{proof}
+
+
+
+\begin{theorem}
+Let $A$ be an abelian variety. Let $P$ be a complex of perverse sheaves with complex coefficient on $A$. 
+Then we have the equality that
+$$\pi(CC(P)) = \bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,P), $$
+where the union is running over points on every irreducible components of $\sV^0(A,P)$.  
+\end{theorem}
+
 
 
 
