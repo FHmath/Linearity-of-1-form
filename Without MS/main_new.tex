@@ -397,8 +397,8 @@ support of the higher direct images $Rf_*\bbC$.
 Suppose the decomposition theorem
 for $a$ is given by
 \[\bbR a_*\bbC = \bigoplus_{\alpha}P_{\alpha}\]
-with $P_{\alpha}$ a shifted simple perverse sheaf suppored on some strata $S_{\alpha}$ of $a$, then
-\[R(X) = \bigcup_i (TC_1 \sV^i(A, P_{\alpha})) = \bigcup_{i,\alpha}\pi(T^*_{S_{\alpha}}A) \]
+with $P_{\alpha}$'s shifted simple perverse sheaves suppored on some strata $S_{\alpha_j}$'s of $a$ for some indexed set of stratas $S_{\alpha_j}$'s, then
+\[R(X) = \bigcup_{i,\alpha} (TC_1 \sV^i(A, P_{\alpha})) = \bigcup_{i,\alpha_j}\pi(T^*_{S_{\alpha_j}}A) \]
 \label{thm:linearity}
 \end{alphtheorem}
 In fact the theorem follows from a more general statement
@@ -417,14 +417,221 @@ use to relate the the generic vanishing theory on abelian varieties with the sup
 global index theorem. The statement about perverse sheaves
 is essentially contained in \cite{sch}.
 
+\section{Preliminary}
+\subsection{Generic vanishing theory}
+Given a holomorphic 1-form $\omega\in H^0(X,\Omega_X^1)$
+the kernel of the associated Koszul complex
+\begin{equation}
+\sK^{\bullet}_{\omega} \coloneqq [\sO_X\overset{\wedge\omega}{\to} \Omega_X^1 \to \cdots\to \Omega_X^{n-1}\to \Omega^n_X.]
+\label{eq:koszul}
+\end{equation}
+defines a rank 1 local system $L(\omega)$ (see \cite[\S 2.1]{sch}
+for a construction). This gives in the way of the generic vanishing theory developed by \cite{GL, Ara, Sim} into the 
+study of zeros of holomorphic 1-forms. In this section we discuss 
+the relevant bits of this vast theory that we will use in various
+proofs.
+
+\begin{definition}[Zero scheme of 1-forms]\label{def:zeroscheme}
+For $\omega\in H^0(X, \Omega_X^1)$, the \emph{zero set} $Z(\omega)$ of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(v)=0$
+for all tangent vectors $v\in T_xX$ at $x$. 
+
+The \emph{zero scheme} of $\omega$ is the closed subscheme $\sZ(\omega)$ defined by the ideal sheaf $\mathcal{I}_{\omega}$ given by the image of the morphism 
+\[\mathcal{T}_X\overset{\langle\omega, \cdot\rangle}{\longrightarrow} \mathcal{O}_X.\] 
+Here $\mathcal{T}_X$ is the tangent sheaf of $X$ and $\langle\omega, \cdot\rangle$ denotes the pairing of tangent field with 
+the 1-form $\omega$.
+\end{definition}
+
+ 
+The generic vanishing theory 
+\cite[Proposition 3.4]{GL} ensures that
+if $Z(\omega)\neq \emptyset$ then the sequence
+\[\cdots\overset{\wedge\omega}{\to} H^k(X, \Omega^{i-1}
+\overset{\wedge\omega}){\to}H^k(X, \Omega_X^{i})
+\overset{\wedge\omega}{\to} H^k(X,\Omega_X^{i+1})
+\overset{\wedge\omega}{\to}\cdots\]
+is not exact for all $k\geq 0$. Putting these together 
+by the Hodge decomposition for $H^k(X,\bbC)$ we get
+\begin{equation}
+(H^{\bullet}(X,\bbC), \wedge\omega)\coloneqq [\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots]
+\label{eq:resonance}
+\end{equation}
+is not exact whenever $Z(\omega)\neq \emptyset$. This prompts the following
 
 
-\section{Proof of }
+\begin{definition}[Resonant forms]\label{def:resonance}
+We call a 1-form $\omega$ \emph{resonant} if the complex 
+in Equation (\ref{eq:resonance}) is not exact. 
+
+On the other hand for when the the complex 
+in Equation (\ref{eq:resonance}) is exact and\footnote{Note that
+with this assumption it is not always the case that $Z(\omega) = \emptyset$. See Example \ref{ex:DJL}.} 
+$Z(\omega) \neq \emptyset$ then we call such form non-resonant. 
+
+Moreover a 1-forms $\omega\in V(X)$ is called \emph{universally nonresonant} if the complex
+\newline $(H^{\bullet}(X',\bbC), \wedge\tau^*\omega)$
+%\[\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots\]
+ is exact for any \'etale over $\tau\colon X'\to X$. 
+
+We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the \emph{resonance sequence}.
+%Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
+\end{definition}
+
+\subsubsection{Tangent cone theorem}
+\label{sub:tc} Another way to understand the resonant 1-forms is via the tangent cone theorem in the
+generic vanishing theory. 
+%Here we state the relevant results in the relative setting when $X$ admits a map $f\colon X\to A$ 
+%to an abelian variety. The main reference for this part is \cite{sch}. We first set 
+%\[\sR(f) \coloneqq \{\omega\in H^0(A,\Omega_A^1)| (H^{\bullet}(X, L(f^*\omega)), \wedge f^*\omega) \text{ is exact }\]
+First set $\sL \coloneqq L(\omega)\otimes \sO_A \in \Pic^0(A)$. 
+%Then $(\sL, \wedge\omega)\in \sM_{Higgs}^0$
+%the identity component of the Higgs moduli space. $\sM_{Higgs} \simeq \Pic^{\tau}\times H^0(X,\Omega_X^1)$.
+%This is isomorphic to $\Char(X) = Hom(\pi_1(X), \bbC^*)$ as a complex manifold under the map
+%\[\Phi\colon \sM_{Higgs} \to \Char(X)\text{ define by } (\sL, \omega) \mapsto L(\omega).\]
+Then by the generic vanishing theory \cite[Theorem 3]{Ara} have 
+\begin{equation}\begin{split}
+\Psi(\{L(\omega)| H^k(X, L(\omega))\neq 0 \text{ for some } k\in \bbZ\})
+=\{(\sL,\omega)| H^p((H^q(X,\Omega_X^{\bullet}\otimes L),\wedge\omega)) \neq 0
+\\ \text{ for some } p,q\in\bbZ\}
+\end{split}\label{eq:}
+\end{equation}
+where $\Psi \colon\Char(X) \to \Pic^{\tau}\times H^0(X,\Omega_X^1)$ 
+is the isomorphism of topological groups and $Char(X)$ denotes the moduli
+of rank 1 complex local system and $\Char(X) = Hom(\pi_1(X),\bbC^{\star})$. More precisely $\Psi$ is defined
+as follows: for a character $\rho\colon \pi_1(X)\to \bbC^{\star}$, $\Psi(\rho) = (\sL_{\rho} , \omega_{\rho})$, where 
+$\omega_\rho$ is the (1,0) part of $\log ||\rho||$ in the cohomology class $H^1(X, \bbR) = Hom(\pi_1(X), \bbR)$ and
+$\sL_{\rho} = L(\omega_{\rho})\otimes_{\bbC}\sO_X$.
+Under this identification we obtain that $\omega$ is a resonant 1-form if and only if $H^k(X, L(\omega))\neq 0$ for all $k$. 
+
+
+\subsection{Decomposition theorem}
+
+
+\section{Generic vanishing theory on abelian varieties}
+Given $f\colon X\to A$, in \ref{sub:tc} we saw that the set of relative resonant forms, i.e.
+\[\sR(f)\coloneqq \{\omega\in H^0(A,\Omega_A^1)| H^k(H^{\bullet}(X,\bbC),\wedge f^*\omega) \neq 0 \text{ for some }k\}\]
+can be identified with the set 
+\[S(f)\coloneqq \{\omega\in H^0(A,\Omega_A^1)| H^{\bullet}(X, f^*L(\omega))\neq 0\}\]
+via the tangent cone theorem.
+In this section we relate the latter set with conical Lagrangian subsets of $T^*A$ arising from the decomposition theorem.
+\begin{theorem}[= Thereom \ref{thm:linearity}]
+Let $f\colon X\to A$ be as above. Let $\pi\colon T^*A\to H^0(A,\Omega_A^1)$ denote the projection. Then
+\[\sR(f) = S(f) = \pi(\SS(Rf_*\bbC))\]
+\end{theorem}
+This follows from the following theorem about simple perverse sheaves on abelian variety
+\begin{theorem}
+Let $\sP$ be a simple perverse sheaf on abelian variety then
+\[S(A,\sP)\coloneqq \{\omega\in H^0(A,\Omega_A^1)| H^k(A, \sP\otimes L(\omega)) \neq 0 \text{ for some } k\} = \pi(\SS(\sP))\]
+\label{thm:perverse}
+\end{theorem}
+
+\begin{proof}[Proof of Theorem \ref{thm:linearity}]
+By decomposition Theorem \ref{thm:decomp} applied to $f\colon X\to A$
+we have, 
+\[Rf_*\bbC\simeq \bigoplus \sP.\]
+Applying Theorem \ref{thm:perverse} to each component we note that
+\[\{\omega\in H^0(A,\Omega_A^1)| H^k(A, Rf_*\bbC\otimes L(\omega)) \neq 0 \text{ for some } k\} = \pi(\SS(Rf_*\bbC)).\]
+The result follows from noting that $H^k(A, Rf_*\bbC\otimes L(\omega)) \simeq H^k(X, f^*L(\omega))$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:pervese}]
+Denote by
+\[S^k(A,\sP)\coloneqq \{L\in \Char(A)| H^k(A, \sP\otimes L) \neq 0\}\]
+and $S(A,\sP) = \pi\circ\Psi(\bigcup_k S^k(A,\sP))\subset H^0(A,\Omega_A^1)$. Recall that $\Psi(L) = (\sL, \omega)$
+as defined in \S \ref{sub:tc} and $\pi\circ\Psi(L) = \omega$
+We split the proof in two cases.
+
+\noindent \textbf{Case I: }$\chi(A, \sP)>0$. By theorem \cite[Theorem 7.4]{sch}
+$\codim_{\Char(A)} S^k(A,\sP) \geq |2k|$. Thus for a general $L \in \Char(A)$
+$\chi(A, \sP) = H^0(A, \sP\otimes L)$. Therefore, $S^0(A,\sP) = \Char(A)$ and hence $S(A, \sP) = H^0(A, \Omega_A^1)$.
+On the other hand, let $\SS(A, \sP) = \bigcup_Z T^*_ZA$. We claim that not all such $Z$ would be fibered by tori. This follows from
+the Kashiwara's index theorem 
+\[\chi(A,P) = \langle CC(P), T^*_AA\rangle.\]
+If $Z$ was fibered by a subabelian variety $B\subset A$, then $T^*_ZA = T^*_BA$. But $<T^*_BA, T^*_AA> = \chi(B, \bbC) = 0$ (see e.g.\ \cite[p.\ 124]{Dim}).
+We conclude by Proposition \ref{van-nonsimple} that when $Z$ is not fibered by tori $\pi(T^*_ZA) = H^0(A,\Omega_A^1)$. 
+
+\noindent \textbf{Case II: } $\chi(A, \sP)=0$. 
+By the structure theorem \cite[Theorem 7.3]{sch}
+we know that 
+\[S^0(A, \sP) = \bigcup \rho_i\cdot(\Char(B_i) \to \Char(A))\]
+for a finite collection of abelian varieties $B_i$
+with maps $p_i\colon A\to B_i$. 
+Therefore for all $L\in\Char(B_i)$ we have
+\[H^0(B_i, p_{i_*}(\sP\otimes \bbC_{\rho})\otimes L) = 0.\]
+This implies that $\chi(p_{i_*}(\sP\otimes \bbC_{\rho}))>0$. 
+Since $p_i$ is smooth, the cotangent vectors in the singular supports of these perverse sheaves satisfy,
+\[p_{i_{\dagger}}(\SS(p_{i_*}(\sP\otimes \bbC_{\rho}))) \subseteq \SS(\sP)\]
+where $p_{i_{\dagger}} \coloneqq (p_i\times \id)\circ dp_i^{-1}$.  
+Conversely, if $Z\subset A$ is so that 
+$T^*_ZA \subset \SS(\sP)$, then
+$Z$ has to be fibered by tori. Indeed, by a result of
+Franecki and Kapranov
+\cite[Corollary 1.4]{FK} we have that in the formula of
+characterstic cucle, i.e\ $\CC(\sP) = \sum_Z n_Z Z$
+one has $n_Z\geq 0$. Then the statement follows from the
+fact that $T^*_ZA\cdot T^*_AA = 0$ iff and only if $Z$ is fibered by tori and Kashiwara's index theorem. 
+Therefore there exists an abelian variety $A'$ and a map
+$p\colon A\to A'$ such that $Z' \coloneqq p(Z)$ is 
+not fibered by tori. Since $Z'$
+is a singular support of $p_*\sP$
+we have $\chi(p_*\sP) > 0$. Hence for all
+$L\in \Char(A')$, $H^k(A', p_*\sP\otimes L) \neq 0$. Since
+this cohomogy is a direct summand of $H^k(A, \sP\otimes p^*L)$,
+this cohomology is also non-zero. Therefore,
+$\Char(A') \subset \Char(A)$. Hence we have an
+equality
+\[\bigcup_i p_{i_{\dagger}}(\SS(p_*(\sP\otimes \bbC_{\rho}))) = \SS(\sP).\]
+By the above argument it also follows that
+$T^*Z\subset \SS(\sP)$ if and only if there is an $i$
+such that
+$T^*_Z \subset p_{i_{\dagger}}(\SS(p_*(\sP\otimes \bbC_{\rho})))$.
+Now since for all $B_i$, there is a $Z_i\subset A$
+such that $\pi(T^*_{Z_i}A) = p_i^*H^0(B_i, \Omega_{B_i}^1)$
+we obtain
+that
+\[\pi(\SS(\sP) = \bigcup_ip_i^*H^0(B_i, \Omega_{B_i}^1)
+= \pi(S^0(A, \sP)).\]
+Finally, by propagation of cohomology jump loci 
+\cite{??}, we know that $S^0(A, \sP)\supset S^k(A,\sP)$
+for all $k\in \bbZ$. Hence,
+$\pi(S^0(A, \sP)) = S(A, \sP)$.
+
+
+
+%Then by a Theorem of Weissauer \cite[Theorem 2]{Wei12} we know that there exists an abelian variety $A'$, a map $p\colon A\to A'$,
+%a character $\rho\in \Char(A)$ and a simple perverse sheaf $P'$ on
+%$A'$ with $\chi(A', P')>0$ and such that $p^*P'  = P\otimes \bbC_{\rho}$ for some $\rho\in\Char(A)$. 
+%We claim that in this case
+%\[S^k(A,\sP) =  \rho^{-1}\cdot p^*(S^k(A', \sP'))\]
+%where $p^*\colon \Char(A')\to \Char(A))$. 
+%Indeed, if $L = \bbC_{\rho^{-1}}\otimes p^*L'$ for some $L'\in S^k(A'\sP')$ then
+%\[H^k(A, \sP\otimes L) = H^k(A, p^*\sP'\otimes\bbC_{\rho}\otimes \bbC_{\rho^{-1}}\otimes p^*L')=
+%H^k(A', \sP'\otimes L'\otimes Rp_*\bbC_A).\]
+%Since $\bbC\overset{\oplus}{\into} Rp_*\bbC_A$, we obtain the desired non-vanishing. Conversely, if $L\in S^k(A,\sP)$,
+%then by a similar argument we have 
+%$H^k(A', \sP'\otimes Rp_*(L\otimes \bbC_{\rho})) \neq 0$.
+%Since $p$ is smooth $Rp_*(L\otimes \bbC_{\rho})$ is a local system. Furthermore since $\pi_1(A)$ is abelian the local system
+%splits into 1-dimensional simple representations. Let $\eta$
+%be one such representation for which 
+%$H^k(A', \sP'\otimes \bbC_{\eta})\neq 0$. Then,
+
+
+
+
+
+
+\end{proof}
+
+
+
+
+
+
+\section{Proof of Theorem \ref{thm:linearity}}
 Given an $n$-dimensional smooth complex irregular projective variety $X$, we are interested in the set $V(X)\subseteq H^0(X, \Omega_X^1)$ of global holomorphic 1-forms
 that admit zeros on $X$. It is known that such zeros of a 1-form $\omega$ 
 are supported on the support of the cohomologies of the long exact sequence
 
-\[\sO_X\overset{\wedge\omega}{\to} \Omega_X^1 \to \cdots\to \Omega_X^{n-1}\to \Omega^n_X.\]
+
 In particular if $\omega$ is a 1-form such the the \textit{resonance sequence}
 \[H^0(X,\bbC)\overset{\wedge\omega}{\to}H^1(X,\bbC)\overset{\omega}{\to}\cdots\]
 is not exact everywhere the set of zeros $Z(\omega)\neq \emptyset$.
@@ -537,20 +744,7 @@ by Kashiwara's index theorem
 If $Z$ was fibered by a subabelian variety $B\subset A$, then $T^*_ZA = T^*_BA$. But $<T^*_BA, T^*_AA> = \chi(B, \bbC) = 0$ (see e.g.\ [Dimca, p.\ 12	4]).
 We conclude by Proposition \ref{van-nonsimple} that when $Z$ is not fibered by tori $\pi(T^*_ZA) = H^0(A,\Omega_A^1)$. 
 
-Now let $\chi(A, P) = 0$ for all $P$ appearing in the decomposition of $\bbR a_*\bbC$. By a result of Kr\"amer--Weissauer we know that there exists an abelian variety $A'$, a map $p\colon A\to A'$,
-a character $\rho\in \Char(A)$ and a simple perverse sheaf $P'$ on
-$A'$ with $\chi(P')>0$ and such that $p^*P'  = P\otimes \bbC_{\rho}$. Note that in this case the cohomology jump loci are given by
-\[\bigcup \rho\cdot(\Char(A')\to \Char(A))\]
-(see schnell: $\Phi : A^{\natural} \to \Char(A)$. $\Phi(S^k(\sM)) = S^k(\DR(\sM)$ and $S^k(\sM)$ are supported on the support of $FM(\sM)$ which 
-is supported on $(L,\nabla)\otimes(A'^{\natural}\to A^{\natural})$.)
-Letting $B = \ker(A\to A')$ note that the local systems corresponding to the forms $\omega\in H^0(B, \Omega_B^1)$ are no tangent to $\sV(A, P)$ and hence 
-$\sR(X)\subseteq p^*H^0(A', \Omega_{A'}^1)$. On the other hand any element in the image of $T^*A' \to T^*A$
-maps under $\Phi$ to a character admitting an element in $\sV(X, P)$. Therefore $p^*H^0(A', \Omega_{A'}^1)\subseteq \sR(X)$. 
-On the other hand, as argued before since $\chi(A',P')>0$, the singular support of $P'$ must have a component $Z'$ that does not admit further fibration by tori.
-Since $p$ is smooth $p^{-1}Z'$ must be a strata of $P$. This plus the fact that $CC(P) = \sum n_{Z}\chi(Z)$ with $n_Z\geq 0$ [see Franecki--Kapranov Corollary 1.4]
-we obtain that all $Z$ must be fibered by tori. Depending on whether or not $p(Z)$ is fibered by tori, we will have that $\pi(T^*_ZA) \subseteq p^*(H^0(A',\Omega_{A'}^1)$ is a strict inequality or equality. Nonetheless we know that there exists at least one $Z$ for which this inclusion is an equality. Hence again
-$\sR(X) = \bigcup_Z \pi(T^*_{Z}A)$ for $\cup Z = \Ch(P)$
-
+Now let $\chi(A, P) = 0$ for all $P$ appearing in the decomposition of $\bbR a_*\bbC$. By a result of Kr\"amer--Weissauer 
 
 \end{proof}
 
@@ -562,7 +756,9 @@ $\sR(X) = \bigcup_Z \pi(T^*_{Z}A)$ for $\cup Z = \Ch(P)$
 
 \begin{thebibliography}{ADMSP}
 
-
+\bibitem[Dim]{Dim} A. Dimca, {\it Sheaves in Topology} Springer-Verlag Berlin Heidelberg New York in 2004.
+\textsc{doi:} \href{https://doi.org/10.10071978-3-642-18868-8}{\ttfamily 10.10071978-3-642-18868-8}.
+\textsc{isbn:} {\ttfamily 978-540-20665-1 }.
 
 \bibitem[BWY]{BWY} N. Budur, B . Wang, Y. Yoon, {\it Rank one local systems and forms of degree one}, Int. Math. Res. Not. (2016), no.13, 3849-3855.
 
@@ -572,7 +768,9 @@ $\sR(X) = \bigcup_Z \pi(T^*_{Z}A)$ for $\cup Z = \Ch(P)$
 \bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
 
 
-\bibitem[S]{S} A. Suciu, {\it Around the tangent cone theorem}, Configuration Spaces: Geometry, Topology and Representation Theory, 1-39, Springer INdAM series, vol. 14, Springer, Cham, 2016
+\bibitem[Suc16]{S} A. Suciu, {\it Around the tangent cone theorem}, Configuration Spaces: Geometry, Topology and Representation Theory, 1-39, Springer INdAM series, vol. 14, Springer, Cham, 2016
+
+\bibitem[Wei12]{Wei12} R.\ Weissauer, ``Degenerate perverse sheaves on abelian varieties", \href{https://arxiv.org/abs/1204.2247}{\ttfamily arXiv:1204.2247[math.AG]}, 2012.
 
 
 
