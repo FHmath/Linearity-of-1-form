@@ -626,130 +626,130 @@ $\pi(S^0(A, \sP)) = S(A, \sP)$.
 
 
 
-\section{Proof of Theorem \ref{thm:linearity}}
-Given an $n$-dimensional smooth complex irregular projective variety $X$, we are interested in the set $V(X)\subseteq H^0(X, \Omega_X^1)$ of global holomorphic 1-forms
-that admit zeros on $X$. It is known that such zeros of a 1-form $\omega$ 
-are supported on the support of the cohomologies of the long exact sequence
-
-
-In particular if $\omega$ is a 1-form such the the \textit{resonance sequence}
-\[H^0(X,\bbC)\overset{\wedge\omega}{\to}H^1(X,\bbC)\overset{\omega}{\to}\cdots\]
-is not exact everywhere the set of zeros $Z(\omega)\neq \emptyset$.
-
-On the other hand from the generic vanishing theory it is known that the set of such forms, called resonance forms following Dimca,
-is a finite union of linear subspaces of $H^0(X,\Omega_X^1)$.
-
-Perhaps known to the experts already, we show in particular that this linear subspace is in fact coming from a 
-finite union of triple
-tori in the sense of Simpson. In order to make the statement precise we need to introduce some terminologies and results. 
-\begin{definition}[Resonant and (universally) nonresonant forms]\label{def:resonance}
-We call a 1-form $\omega$ \emph{resonant} if the complex 
-\[(H^{\bullet}(X,\bbC), \wedge\omega)\coloneqq [\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots]\]
- is not exact. Accordingly the resonance varieties of $X$ is defined as:
-$$ \sR^i(X):= \{\omega\in H^1(X,\Omega_X^1)\mid  H^i  (H^*(X,\bbC), \wedge \omega) \neq 0 \} $$
-and we denote by $R(X) \coloneqq \cup_i R^i(X)$.
-\end{definition}
-
-
-Let $\C^{\ast}$ be the multiplicative group of non-zero complex numbers.
-The {\it character variety} $\Char(X)$ of $X$ is the identity component of the moduli space of rank-one $\bC$-local systems on $X$, i.e., 
-\begin{center}
-$\Char(X):= 
-\Hom (H_1(X,\bZ)/\text{Torsion}, \bC^*)\cong (\bC^*)^{b_1(X)}.$
-\end{center}
-
-\bd The {\it $i$-th cohomology jump locus of $X$} is defined as: 
-$${\sV^{i}(X)=\lbrace \rho\in \Char(X) \mid  H^{i}(X,L_{\rho})\neq 0 \rbrace},$$ 
-where $L_{\rho}$ is the unique rank-one $\bC$-local system  on $X$ associated to the representation $\rho\in \Char(X) $.\ed
-
-
-\begin{theorem}[Structure Theorem] Let $X$ be a smooth complex projective variety. Then the jump loci $\sV^i(X)$ is a finite union of torsion translated sub-tori of $\Char(X)$.
-\end{theorem}
-%\br 
-%In fact, up to a torsion translate, every irreducible component of $\sV^i(X)$ is induced by a sub-Hodge structure of $H^1(X, \Q)$. To be precise, there exists an algebraic surjective map $f: \Alb(X) \to A$ from the Albanese variety of $X$ to an abelian variety $A$ such that this irreducible component is, up to a torsion translate, the image of the following map $$\Char(A) \hookrightarrow \Char(\Alb(X)) \cong \Char(X) .$$
-%Here the last isomorphism is induced by the Albanese map.
-%\er 
-
-
-
-
-\begin{theorem} Let $X$ be a smooth complex projective variety.  Then we have the following tangent cone formula:
-$$ TC_1( \sV^i(X)) = \sR^i(X)$$
-under the exponential map $M_{\DR}(X) \to \Char(X)$. 
-\end{theorem} 
-The reason behind this theorem is the fact that the smooth projective variety is formal.  For a proof, please see \cite{S}.
-
-Together with the structure theorem, we get the following. 
-
-\bc Let $X$ be a smooth complex projective variety. Then every irreducible component of $\sR^i(X)$ is a linear sub-vector space of $H^1(X,\C)$.
-\ec
-
-
-
-
-Finally, for a subvariety $Z\subset X$ of any smooth projective variety $X$, by 
-$T^*_ZX$ we denote the closure of the conormal bundle $T^*_{Z^{\reg}}X$ of the regular locus of $Z^{\reg}$ of $Z$
-inside the cotangent bundle $T^*X$ of $X$. With this notation at our disposal note that when $X$ is an abelian variety
-$A$, the image of $T^*_ZA\to H^0(A,\Omega_A^1)$ under the projection $\pi\colon T^*A \to H^0(A,\Omega_A^1)$ is precisely the set of 1-forms that admits a zero on the regular locus of $Z$.
-We show that whether or not a 1-form $\omega\in H^0(A,\Omega_A^1)$
-comes from $T^*_ZA$ for some $Z$, is determined by one of the most fundamental
- structural properties of subvarieties of abelian varieties;
- namely, whether or not
-$Z$ is of general type. By a result of Ueno \cite[Theorem 10.9]{Uen75} this is equivalent to $Z$ being not fibered by any subabelian varieties of $A$. 
-When $Z$ is smooth 
-this seems to be a classical fact that whenever the normal bundle of $Z$ is ample all $\omega|_Z$ admits finitely many zeros on $X$
-(see e.g.\ \cite[Lemma 3.1]{Deb}). This was generalised to subvarieties of simple abelian varieties by 
-Hacon and Kov\'acs \cite[Proposition 3.1]{HK05}. A special case of more recent result of Popa and \cite{PS14} suggests that this is true whenever $Z$ is smooth and
-$\omega_Z$ is big,
-i.e.\ $Z$ is of general type. Although perhaps well-known to experts, we could not find any appropriate sources in literature. Nonetheless, our proof is inspired
-by their original argument in\cite[Proposition 3.1]{HK05} and the proof of \cite[Lemma 3.1]{Deb} in Debarre's expository article
-
-\begin{proposition}
-\label{van-nonsimple}
-Let $A$ be an abelian variety and $Z$ be an irreducible proper subvariety of $A$. Then the following are equivalent
-
-(1) $Z$ is not fibred by tori. 
-
-(2) The projection $\pi\colon T^*_ZX\to H^0(A, \Omega_A^1)$ is surjective.
-
-(3) For general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$, the restricted holomorphic 1-form $\omega|_{Z_{\textnormal{reg}}}$ admit zeros at finitely many points on the smooth locus $Z_{\textnormal{reg}}$.
-\end{proposition}
-
-
-
-\section{}
-Our theorem is the following
-Let $X$ be an irregular smooth projective variety and $a\colon X\to \Alb(X)$ the albanese morphism. We identify $M_{\DR}^0(X)$ with $M_{\DR}^0(A)$ 
-to identify
-\[\sR^i(X) = \{\omega\in H^0(A, \Omega_A^1)| H^i(H^*(X, \bbC), \wedge a^*\omega)\neq 0\}\]
-and rewrite the tangent cone theorem as 
-\[TC_1(A, \bbR a_*\bbC) = \sR^i(X).\]
-
-
-
-
-The first equality is a consequence of the tangent cone theorem and the fact that
-$H^i(X, \bbC) = H^i(A, \bbR a_*\bbC) = \cup_{\alpha} \sV^i(A, P_{\alpha})$.
-Therefore the main point of the argument is to show the second equality.
-
-\begin{proof}
-Note that if there is an $\alpha$ such that $\chi(P_{\alpha}) \neq 0$, then note that by generic vanishing theorem for
-a general character $\rho \in \Char(\pi_1(A), \bbC^*)$ $\chi(P\otimes \bbC_{\rho}) = H^0(A, P\otimes \bbC_{\rho}) \neq 0$. Therefore,
-$\sV^0(X, P) = \Char(\pi_1(A), \bbC^*)$. Therefore $TC_1(\sV(X, \bbR a_*\bbC)) = TC_1(\sV(A, P)) = H^0(A, \Omega_A^1) =  \sR(X)$.
-
-On the other hand, if characteristic cycle $\Ch(P_{\alpha}) = \cup_Z T^*_ZA$ then we claim that there exists a $Z$ in the singular support of $P$ such that
-$Z$ is not fibered by tori. Indeed,
-by Kashiwara's index theorem 
-\[\chi(A,P) = <CC(P), T^*_AA>\]
-If $Z$ was fibered by a subabelian variety $B\subset A$, then $T^*_ZA = T^*_BA$. But $<T^*_BA, T^*_AA> = \chi(B, \bbC) = 0$ (see e.g.\ [Dimca, p.\ 12	4]).
-We conclude by Proposition \ref{van-nonsimple} that when $Z$ is not fibered by tori $\pi(T^*_ZA) = H^0(A,\Omega_A^1)$. 
-
-Now let $\chi(A, P) = 0$ for all $P$ appearing in the decomposition of $\bbR a_*\bbC$. By a result of Kr\"amer--Weissauer 
-
-\end{proof}
-
-
-
+%\section{Proof of Theorem \ref{thm:linearity}}
+%Given an $n$-dimensional smooth complex irregular projective variety $X$, we are interested in the set $V(X)\subseteq H^0(X, \Omega_X^1)$ of global holomorphic 1-forms
+%that admit zeros on $X$. It is known that such zeros of a 1-form $\omega$ 
+%are supported on the support of the cohomologies of the long exact sequence
+%
+%
+%In particular if $\omega$ is a 1-form such the the \textit{resonance sequence}
+%\[H^0(X,\bbC)\overset{\wedge\omega}{\to}H^1(X,\bbC)\overset{\omega}{\to}\cdots\]
+%is not exact everywhere the set of zeros $Z(\omega)\neq \emptyset$.
+%
+%On the other hand from the generic vanishing theory it is known that the set of such forms, called resonance forms following Dimca,
+%is a finite union of linear subspaces of $H^0(X,\Omega_X^1)$.
+%
+%Perhaps known to the experts already, we show in particular that this linear subspace is in fact coming from a 
+%finite union of triple
+%tori in the sense of Simpson. In order to make the statement precise we need to introduce some terminologies and results. 
+%\begin{definition}[Resonant and (universally) nonresonant forms]\label{def:resonance}
+%We call a 1-form $\omega$ \emph{resonant} if the complex 
+%\[(H^{\bullet}(X,\bbC), \wedge\omega)\coloneqq [\ldots\to H^{i-1}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i}(X,\C)\overset{\wedge\omega}{\longrightarrow}H^{i+1}(X,\C)\to\ldots]\]
+ %is not exact. Accordingly the resonance varieties of $X$ is defined as:
+%$$ \sR^i(X):= \{\omega\in H^1(X,\Omega_X^1)\mid  H^i  (H^*(X,\bbC), \wedge \omega) \neq 0 \} $$
+%and we denote by $R(X) \coloneqq \cup_i R^i(X)$.
+%\end{definition}
+%
+%
+%Let $\C^{\ast}$ be the multiplicative group of non-zero complex numbers.
+%The {\it character variety} $\Char(X)$ of $X$ is the identity component of the moduli space of rank-one $\bC$-local systems on $X$, i.e., 
+%\begin{center}
+%$\Char(X):= 
+%\Hom (H_1(X,\bZ)/\text{Torsion}, \bC^*)\cong (\bC^*)^{b_1(X)}.$
+%\end{center}
+%
+%\bd The {\it $i$-th cohomology jump locus of $X$} is defined as: 
+%$${\sV^{i}(X)=\lbrace \rho\in \Char(X) \mid  H^{i}(X,L_{\rho})\neq 0 \rbrace},$$ 
+%where $L_{\rho}$ is the unique rank-one $\bC$-local system  on $X$ associated to the representation $\rho\in \Char(X) $.\ed
+%
+%
+%\begin{theorem}[Structure Theorem] Let $X$ be a smooth complex projective variety. Then the jump loci $\sV^i(X)$ is a finite union of torsion translated sub-tori of $\Char(X)$.
+%\end{theorem}
+%%\br 
+%%In fact, up to a torsion translate, every irreducible component of $\sV^i(X)$ is induced by a sub-Hodge structure of $H^1(X, \Q)$. To be precise, there exists an algebraic surjective map $f: \Alb(X) \to A$ from the Albanese variety of $X$ to an abelian variety $A$ such that this irreducible component is, up to a torsion translate, the image of the following map $$\Char(A) \hookrightarrow \Char(\Alb(X)) \cong \Char(X) .$$
+%%Here the last isomorphism is induced by the Albanese map.
+%%\er 
+%
+%
+%
+%
+%\begin{theorem} Let $X$ be a smooth complex projective variety.  Then we have the following tangent cone formula:
+%$$ TC_1( \sV^i(X)) = \sR^i(X)$$
+%under the exponential map $M_{\DR}(X) \to \Char(X)$. 
+%\end{theorem} 
+%The reason behind this theorem is the fact that the smooth projective variety is formal.  For a proof, please see \cite{S}.
+%
+%Together with the structure theorem, we get the following. 
+%
+%\bc Let $X$ be a smooth complex projective variety. Then every irreducible component of $\sR^i(X)$ is a linear sub-vector space of $H^1(X,\C)$.
+%\ec
+%
+%
+%
+%
+%Finally, for a subvariety $Z\subset X$ of any smooth projective variety $X$, by 
+%$T^*_ZX$ we denote the closure of the conormal bundle $T^*_{Z^{\reg}}X$ of the regular locus of $Z^{\reg}$ of $Z$
+%inside the cotangent bundle $T^*X$ of $X$. With this notation at our disposal note that when $X$ is an abelian variety
+%$A$, the image of $T^*_ZA\to H^0(A,\Omega_A^1)$ under the projection $\pi\colon T^*A \to H^0(A,\Omega_A^1)$ is precisely the set of 1-forms that admits a zero on the regular locus of $Z$.
+%We show that whether or not a 1-form $\omega\in H^0(A,\Omega_A^1)$
+%comes from $T^*_ZA$ for some $Z$, is determined by one of the most fundamental
+ %structural properties of subvarieties of abelian varieties;
+ %namely, whether or not
+%$Z$ is of general type. By a result of Ueno \cite[Theorem 10.9]{Uen75} this is equivalent to $Z$ being not fibered by any subabelian varieties of $A$. 
+%When $Z$ is smooth 
+%this seems to be a classical fact that whenever the normal bundle of $Z$ is ample all $\omega|_Z$ admits finitely many zeros on $X$
+%(see e.g.\ \cite[Lemma 3.1]{Deb}). This was generalised to subvarieties of simple abelian varieties by 
+%Hacon and Kov\'acs \cite[Proposition 3.1]{HK05}. A special case of more recent result of Popa and \cite{PS14} suggests that this is true whenever $Z$ is smooth and
+%$\omega_Z$ is big,
+%i.e.\ $Z$ is of general type. Although perhaps well-known to experts, we could not find any appropriate sources in literature. Nonetheless, our proof is inspired
+%by their original argument in\cite[Proposition 3.1]{HK05} and the proof of \cite[Lemma 3.1]{Deb} in Debarre's expository article
+%
+%\begin{proposition}
+%\label{van-nonsimple}
+%Let $A$ be an abelian variety and $Z$ be an irreducible proper subvariety of $A$. Then the following are equivalent
+%
+%(1) $Z$ is not fibred by tori. 
+%
+%(2) The projection $\pi\colon T^*_ZX\to H^0(A, \Omega_A^1)$ is surjective.
+%
+%(3) For general holomorphic 1-forms $\omega\in H^0(A, \Omega_A^1)$, the restricted holomorphic 1-form $\omega|_{Z_{\textnormal{reg}}}$ admit zeros at finitely many points on the smooth locus $Z_{\textnormal{reg}}$.
+%\end{proposition}
+%
+%
+%
+%\section{}
+%Our theorem is the following
+%Let $X$ be an irregular smooth projective variety and $a\colon X\to \Alb(X)$ the albanese morphism. We identify $M_{\DR}^0(X)$ with $M_{\DR}^0(A)$ 
+%to identify
+%\[\sR^i(X) = \{\omega\in H^0(A, \Omega_A^1)| H^i(H^*(X, \bbC), \wedge a^*\omega)\neq 0\}\]
+%and rewrite the tangent cone theorem as 
+%\[TC_1(A, \bbR a_*\bbC) = \sR^i(X).\]
+%
+%
+%
+%
+%The first equality is a consequence of the tangent cone theorem and the fact that
+%$H^i(X, \bbC) = H^i(A, \bbR a_*\bbC) = \cup_{\alpha} \sV^i(A, P_{\alpha})$.
+%Therefore the main point of the argument is to show the second equality.
+%
+%\begin{proof}
+%Note that if there is an $\alpha$ such that $\chi(P_{\alpha}) \neq 0$, then note that by generic vanishing theorem for
+%a general character $\rho \in \Char(\pi_1(A), \bbC^*)$ $\chi(P\otimes \bbC_{\rho}) = H^0(A, P\otimes \bbC_{\rho}) \neq 0$. Therefore,
+%$\sV^0(X, P) = \Char(\pi_1(A), \bbC^*)$. Therefore $TC_1(\sV(X, \bbR a_*\bbC)) = TC_1(\sV(A, P)) = H^0(A, \Omega_A^1) =  \sR(X)$.
+%
+%On the other hand, if characteristic cycle $\Ch(P_{\alpha}) = \cup_Z T^*_ZA$ then we claim that there exists a $Z$ in the singular support of $P$ such that
+%$Z$ is not fibered by tori. Indeed,
+%by Kashiwara's index theorem 
+%\[\chi(A,P) = <CC(P), T^*_AA>\]
+%If $Z$ was fibered by a subabelian variety $B\subset A$, then $T^*_ZA = T^*_BA$. But $<T^*_BA, T^*_AA> = \chi(B, \bbC) = 0$ (see e.g.\ [Dimca, p.\ 12	4]).
+%We conclude by Proposition \ref{van-nonsimple} that when $Z$ is not fibered by tori $\pi(T^*_ZA) = H^0(A,\Omega_A^1)$. 
+%
+%Now let $\chi(A, P) = 0$ for all $P$ appearing in the decomposition of $\bbR a_*\bbC$. By a result of Kr\"amer--Weissauer 
+%
+%\end{proof}
+%
+%
+%
 
 
 
