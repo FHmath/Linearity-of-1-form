@@ -497,7 +497,7 @@ coeffcients. All the varieties are complex quasi-projective varieties.
 
 
 \section{Preliminary}
-\subsection{Generic vanishing theory}
+\subsection{Classical Generic vanishing theory}
 Given a holomorphic 1-form $\omega\in H^0(X,\Omega_X^1)$
 the kernel of the associated Koszul complex
 \begin{equation}
@@ -509,16 +509,16 @@ for a construction). This gives in the way of the generic vanishing theory devel
 study of zeros of holomorphic 1-forms. In this section we discuss 
 the relevant bits of this vast theory that we will use in various
 proofs.
-
-\begin{definition}[Zero scheme of 1-forms]\label{def:zeroscheme}
-For $\omega\in H^0(X, \Omega_X^1)$, the \emph{zero set} $Z(\omega)$ of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(v)=0$
-for all tangent vectors $v\in T_xX$ at $x$. 
-
-The \emph{zero scheme} of $\omega$ is the closed subscheme $\sZ(\omega)$ defined by the ideal sheaf $\mathcal{I}_{\omega}$ given by the image of the morphism 
-\[\mathcal{T}_X\overset{\langle\omega, \cdot\rangle}{\longrightarrow} \mathcal{O}_X.\] 
-Here $\mathcal{T}_X$ is the tangent sheaf of $X$ and $\langle\omega, \cdot\rangle$ denotes the pairing of tangent field with 
-the 1-form $\omega$.
-\end{definition}
+%
+%\begin{definition}[Zero scheme of 1-forms]\label{def:zeroscheme}
+%For $\omega\in H^0(X, \Omega_X^1)$, the \emph{zero set} $Z(\omega)$ of $\omega$ is the algebraic set of closed point $x$ in $X$, such that $\omega(v)=0$
+%for all tangent vectors $v\in T_xX$ at $x$. 
+%
+%The \emph{zero scheme} of $\omega$ is the closed subscheme $\sZ(\omega)$ defined by the ideal sheaf $\mathcal{I}_{\omega}$ given by the image of the morphism 
+%\[\mathcal{T}_X\overset{\langle\omega, \cdot\rangle}{\longrightarrow} \mathcal{O}_X.\] 
+%Here $\mathcal{T}_X$ is the tangent sheaf of $X$ and $\langle\omega, \cdot\rangle$ denotes the pairing of tangent field with 
+%the 1-form $\omega$.
+%\end{definition}
 
  
 The generic vanishing theory 
@@ -539,7 +539,8 @@ is not exact whenever $Z(\omega)\neq \emptyset$. This prompts the following
 
 \begin{definition}[Resonant forms]\label{def:resonance}
 We call a 1-form $\omega$ \emph{resonant} if the complex 
-in Equation (\ref{eq:resonance}) is not exact. 
+in Equation (\ref{eq:resonance}) is not exact. The set of all such forms 
+is denoted $\sR(X,\bbC)$.
 
 On the other hand for when the the complex 
 in Equation (\ref{eq:resonance}) is exact and\footnote{Note that
@@ -555,7 +556,26 @@ We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the
 %Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
 \end{definition}
 
-\subsubsection{Tangent cones and cohomology jump loci}
+We consider more generally all local systems of rank 1. To make our notations precise recall 
+\begin{definition}[Character variety]
+$\Char(X) \coloneqq Hom(H_1(X, \bbZ)/\torsion, \bbC^{\star})$, 
+\end{definition}
+By the Riemann--Hilbert correspondence any such representation $\rho\in \Char(X)$ 
+gives uniquely a local system of rank 1. 
+Recall also the non-abelian Hodge
+correspondence
+\[\Char(X) \leftrightarrow \Pic^{0}(X)\times H^0(X,\Omega_X^1).\]
+mapping a local system $\bbL_{\rho}$ to the line bundle $\sL_{\rho}\simeq \bbL\otimes_{\bbC}\sO_X$
+along with the 1-form $\omega_{\rho}$ given by the inverse image of $\bbL$ under
+the exponential map
+\begin{equation}
+H^1(X,\bbC) \xrightarrow{\exp} \Char(X).
+\label{eq:exponential}
+\end{equation}
+More precisely, $\omega_{\rho} = $ (0,1)-piece of $|\log(\rho)|$. Conversely, a pair $(\sL, \omega)$ 
+is mapped to the kernel of $\sL\xrightarrow{\partial_{\sL}+\omega} \Omega_X^1\otimes \sL$ under this correspondence.
+
+\subsection{Tangent cones and cohomology jump loci}
 \label{sub:tc} Another way to understand the resonant 1-forms is via the tangent cone theorem in the
 generic vanishing theory. 
 %Here we state the relevant results in the relative setting when $X$ admits a map $f\colon X\to A$ 
