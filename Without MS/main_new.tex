@@ -313,7 +313,7 @@
 
 
 \begin{document}  
-\title[On linearity of holomorphic 1-forms with zeros]{On linearity of holomorphic 1-forms with zeros} 
+\title[Cohomology jump loci and holomorphic 1-forms with zeros]{On linearity of holomorphic 1-forms with zeros} 
 
 \author{Yajnaseni Dutta}
 
@@ -343,21 +343,25 @@ The goal of this article is two-fold, first we
 
 \maketitle
 \section{Introduction}\label{intro}
-In this article we study the set of global holomorphic 1-forms  on smooth projective varieties that admit zeros. Interestingly, it has been
-indicated by plethora of results (\cite{GL87, HK05, LZ05,
-SS19, HS19, PS14} to name just a few) that a lot of the geometry
-and topology of the variety depends on vanishing of such forms.
-We first state our result in this direction and then put it in the context of 
-the existing vast literature.
+Given a smooth porjective variety $X$, in this article we relate the cohomology jump loci of $\bbC_X$ with the 
+stratification arising from the decomposition theorem for the albnese morphism. Such relation fell out of our interest in the
+study of linearity of holomorphic 1-forms. This is inspired by the work of  \cite{CL73}, Carrell and Lieberman 
+who show that the set of global holomorphic tangent vector fields with zeros is a subvector space of $H^0(X, T_X)$. We deal with a similar question for global holomorphic 1-forms. In this case the story is far from complete and is deeply connected to the generic
+vanishing theory. To this end, we obtained that the set of 1-forms that admit codimension 1 zeros forms a linear subset of $H^0(X, \Omega_X^1)$. We also obtain the following geometric/cohomological property of smooth projective varieties that
+admits a non-vanishing 1-form. 
+
+
+
 \begin{alphtheorem}\label{thm:smooth}
-Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelian variety $A$. Then $f$ is cohomologically a fiber bundle if and only if there is a global holomorphic 1-form $\omega	$ on $A$ such that $f^*\omega$ is nowhere vanishing. 
+Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelian variety $A$. Then $f$ is cohomologically a fiber bundle if and only if there is a global holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing.  In particular, the
+singular fibres of $f$ carry a pure Hodge structure.
 \end{alphtheorem}
 
-By cohomological fiber bundle we mean the the higher direct
-images $\bbR^if_*\bbC$ are integrable connections for all $i$. In fact we prove a bit more; When $A$ is not necessarily simple
-existence of a non-vanishing global holomorphic 1-form
-is equivalent to certain restrictions on the support 
-(see Definition \ref{def:support}) of 
+By a \textsl{cohomological fiber bundle} we mean that the higher direct
+images $\bbR^if_*\bbC$ are integrable connections for all $i$. In particular, the derived direct image
+$\bbR f_*\bbC$ decomposes like the smooth morphism in the derived category $D^b(\bbC)$. In fact a bit more can be said; When $A$ is not necessarily simple existence of a non-vanishing global holomorphic 1-form
+is equivalent to certain restrictions on the singular support 
+(see Definition \ref{def:ss}) of 
 these pushforwards. See Theorem \ref{thm:nonvanishing} for more details.
 
 \begin{remark}[Previous results]
@@ -370,52 +374,127 @@ these pushforwards. See Theorem \ref{thm:nonvanishing} for more details.
 		type in $A$, Hacon and Kov\'acs \cite[Proposition 3.5.]{HK05} show that
 		$f^*\omega$ always admits zero. See Corollary \ref{cor:hk}
 		for a reinterpretation of their argument. 
-\end{enumerate}
+\end{enumerate}	
 \end{remark}
 
 
-
-In a different direction we deal with the question
-of linearity of the set of vanishing 1-forms. This is
-inspired by the work of  \cite{CL73}, Carrell and Lieberman, who show that for a smooth complex projective variety $X$, the set of holomorphic tangent vector fields with zeros is a subvector space of $H^0(X, T_X)$. On the
-other hand its incarnation for 1-form is far from complete.
-Consider the following set
+To state the linearity results we define
+the following set
 \[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\},\]
 It is known due to the generic vanishing theory
 %theory of cohomology jumploci 
-that only a piece of $V(X)$, namely \emph{the resonant 1-forms} (see Definition \ref{def:resonance} below) 
-form a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$ \cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
-we borrow the terminology). 
-Henceforth we shall call finite unions of subvector spaces as \emph{linear subvarieties}. In the relative setting]
-of a morphism $f\colon X\to A$ to an abelian variety $A$,
-one may define all of the above sets as properties
-of forms $\omega\in H^0(A,\Omega_A^1)$ such that the pull-back
-$f^*\omega$ satisfies the above condition.
-In this article we relate the relative resonant locus to another linear subvariety of $H^0(A, \Omega_A^1)$, namely the
-support of the higher direct images $Rf_*\bbC$. 
+that only a piece of $V(X)$, arising from the generic vanishing theory (see \S \ref{se:gv} for more details) is linear, i.e.\
+%\emph{the resonant 1-forms} (see Definition \ref{def:resonance} below) 
+this set forms a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$. To be more specific, this set is given by
+\cite[p.\ 311]{Ara}
+\[\sR(X)\coloneqq \{\omega\in H^0(X, \Omega_X^1)| \exists \sL\in \Pic^0(X) \text{ and } p\in \bbZ_{\geq 0} \text{ such that }, 
+(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge\omega) \text{ is not exact.}\}\]
+This set is also the holomorphic piece of the tangent cone to the cohomology jump loci 
+$\sV^i(A,\sP)$ at finitely many local systems associated to $\rho\in\Char(X) = Hom(\pi_1(X), \bbC^{\star})$.
+%\cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
+%we borrow the terminology). 
+%Henceforth we shall call finite unions of subvector spaces as \emph{linear subvarieties}. 
+%In the relative setting
+%of a morphism $f\colon X\to A$ from a smooth projective variety to an abelian variety $A$,
+%we similarly define
+%\[V(f):=\{ \omega\in H^0(A, \Omega_A^1) | Z(f^*\omega)\neq \emptyset\}.\]
+We show that this linear subset of $V(f)$ arising from the generic vanishing theory is in fact 
+%one may define all of the above sets as properties
+%of forms $\omega\in H^0(A,\Omega_A^1)$ such that the pull-back
+%$f^*\omega$ satisfies the above condition.
+equal to the set arising from the conormal directions of the singular supports (see Definition \ref{def:ss}) 
+the higher direct image $Rf_*\bbC$ determined by the decomposition theorem. 
 \begin{alphtheorem}
 Suppose the decomposition theorem
 for $a$ is given by
 \[\bbR a_*\bbC = \bigoplus_{\alpha}P_{\alpha}\]
-with $P_{\alpha}$'s shifted simple perverse sheaves suppored on some strata $S_{\alpha_j}$'s of $a$ for some indexed set of stratas $S_{\alpha_j}$'s, then
-\[R(X) = \bigcup_{i,\alpha} (TC_1 \sV^i(A, P_{\alpha})) = \bigcup_{i,\alpha_j}\pi(T^*_{S_{\alpha_j}}A) \]
+with $P_{\alpha}$'s shifted simple perverse sheaves supported on some strata $S_{\alpha_j}$'s of $a$ for some indexed set of stratas $S_{\alpha_j}$'s, then
+\[\sR(X) =  \bigcup_{i,\alpha_j}\pi(T^*_{S_{\alpha_j}}A) \]
 \label{thm:linearity}
 \end{alphtheorem}
-In fact the theorem follows from a more general statement
-about perverse sheaves on abelian varieties.
+The theorem follows from a more general statement
+about perverse sheaves on abelian varieties. Recall
+\begin{definition}
+Associated to $\rho\in \Char(X)$ the collection of local systems $\bbC_{\rho}$ defined as
+\[\sV^i(A, \sP) \coloneqq \{\rho\in\Char(X)| H^i(A, \sP\otimes \bbC_{\rho}) \neq 0\}\]
+is called the cohomology jump loci of $\sP$.
+\label{def:cjl}
+\end{definition}
 \begin{theorem}
 Let $A$ be an abelian variety. Let $P$ be a complex of perverse sheaves with complex coefficient on $A$. 
 Then we have the equality that
-$$\pi(CC(P)) = \bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,P), $$
-where the union is running over points on every irreducible components of $\sV^0(A,P)$.  
+$$\pi(CC(P)) = H^0(X, \Omega_X^1)\cap \bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,\sP), $$
+where the union is running over a representative point from every irreducible components of $\sV^0(A,P)$
+$TC_{\rho} \sV^0(A,P) \subseteq H^1(X, \bbC)$ denotes the tangent cone at $\rho$. 
 \label{thm:perverse}
 \end{theorem}
+
 For an
-interpretation in the category of regular holonomic D-modules
+interpretation of these results in the category of regular holonomic D-modules
 see Theorem \ref{thm:linearitydmodule}. The key technique we
 use to relate the the generic vanishing theory on abelian varieties with the support of $Rf_*\bbC$ is Kashiwara's
-global index theorem. The statement about perverse sheaves
-is essentially contained in \cite{sch}.
+global index theorem. 
+
+The aforementioned linearity can be seen in this context
+as follows. Recall that because of the group structure, the total space $T^*A$ of the cotangent bundle (sometimes referred to simply as cotangent bundle) of an abelian variety $A$ satisfies $T^*A\simeq A\times H^0(A, \Omega_A^1)$. We also show 
+(see Proposition \ref{van-nonsimple}) that the image of $T^*_{S_{\alpha_j}}A\subset T^*A$ under the projection onto $H^0(A,\Omega_A^1)$ is a finite union of linear subsets. Therefore, $\sR(X)$
+is  linear. 
+
+We want to emphasize that the equality $\sR(X) \subseteq V(X)$ may not always be an equality. An example of Debarre, Jiang and Lahoz 
+\cite[Example 1.11]{DJL17} shows that the
+there exists a bi-elliptic surface $S$ admitting a 1-form 
+$\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
+is exact, yet $\omega$ admits zeros on $S$. Theorem \ref{thm:linearity} shows that such forms are not under the realm of generic vanishing theory. 
+
+\begin{remark}
+Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is indeed linear. 
+This follows immediately from the generic vanishing theory. Indeed, by Hodge decomposition
+we have
+$H^k(X,\bbC) \simeq \bigoplus_{p+q = k} H^p(X,\Omega_X^q)$. Hence the complexes $(H^p(X, \Omega_X^{\bullet}), \wedge\omega)$ can be summed together to form the complex $(H^p(X, \bbC), \wedge\omega)$. Since $\chi(X)>0$ the latter complex cannot be exact. Hence $H^0(X,\Omega_X^1)
+= \sR(X)$.
+\end{remark}
+
+
+
+
+More generally we expect the following to be true.
+\begin{conjecture} \label{linear-v1}
+Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then $V^i(f)$ are linear subvarieties of $H^0(X, \Omega_X^1)$, i.e., $V^i(X)$ is a finite union of linear subspaces of $H^0(X, \Omega_X^1)$ for each nonnegative integer $i$. In particular $V^i(X)$ are linear.
+\end{conjecture}
+
+To this end, using a result of Spurr \cite{Sp88}, we directly get $V^1(X)$ is linear.
+
+\begin{alphtheorem}
+Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then $V^1(f)$ is linear. In particular, $V^1(X)$ is linear.
+\end{alphtheorem}
+
+
+ %What's more, we show that $V^1(f)$ consists the resonant holomorphic 1-forms vanishing along a divisor and ``negative'' 1-forms (holomorphic 1-forms, which is not  necessarily resonant, but vanishes along a rigid divisor). Also, in this article, 
+We also generalize a result of Spurr \cite{Sp88} to quasi-projective varieties. 
+
+\begin{alphtheorem} \label{log-linear-v1}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be a very ample divisor on $X$. If $(X, D)$ carries a holomorphic log 1-form $0\not=\omega\in H^0(X, \Omega_X^1(\log D))$  which pullbacks to zero on an effective divisor $E$ with $E^2\cdot H^{n-2}\geq0$, then there is a morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ (where $\bar{C}$ is the completion of $C$ and $B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(X, \Omega_{\bar{C}}^1(\log B))$.
+
+(2) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{alphtheorem}
+
+As a corollary we prove the linearity of the set of logarithmic holomorphic 1-forms admitting codimension one zeros.
+
+\begin{corollary}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Then the set $$ V^1(X,D):=\{ w \in W(U) \mid \codim_X Z(w) \leq i \}$$ is linear.
+\end{corollary}
+
+We show that $V^1(X,D)$ consists of resonant holomorphic logarithmic 1-forms vanishing along a divisor, holomorphic logarthmic 1-forms vanishing along a rigid divisor, and holomorphic logarithmic 1-forms vanishing along some components of the boundary divisor $D$.
+
+
+In this paper, all complex of sheaves and perverse sheaves are defined with complex
+coeffcients. All the varieties are complex quasi-projective varieties. 
+
+\subsection*{Acknowledgements}
+
+
 
 \section{Preliminary}
 \subsection{Generic vanishing theory}
@@ -476,7 +555,7 @@ We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the
 %Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
 \end{definition}
 
-\subsubsection{Tangent cone theorem}
+\subsubsection{Tangent cones and cohomology jump loci}
 \label{sub:tc} Another way to understand the resonant 1-forms is via the tangent cone theorem in the
 generic vanishing theory. 
 %Here we state the relevant results in the relative setting when $X$ admits a map $f\colon X\to A$ 
@@ -487,7 +566,7 @@ First set $\sL \coloneqq L(\omega)\otimes \sO_A \in \Pic^0(A)$.
 %the identity component of the Higgs moduli space. $\sM_{Higgs} \simeq \Pic^{\tau}\times H^0(X,\Omega_X^1)$.
 %This is isomorphic to $\Char(X) = Hom(\pi_1(X), \bbC^*)$ as a complex manifold under the map
 %\[\Phi\colon \sM_{Higgs} \to \Char(X)\text{ define by } (\sL, \omega) \mapsto L(\omega).\]
-Then by the generic vanishing theory \cite[Theorem 3]{Ara} have 
+Then by the generic vanishing theory \cite[Theorem 3]{Ara} we have 
 \begin{equation}\begin{split}
 \Psi(\{L(\omega)| H^k(X, L(\omega))\neq 0 \text{ for some } k\in \bbZ\})
 =\{(\sL,\omega)| H^p((H^q(X,\Omega_X^{\bullet}\otimes L),\wedge\omega)) \neq 0
