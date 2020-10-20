@@ -561,10 +561,10 @@ We consider more generally all local systems of rank 1. To make our notations pr
 $\Char(X) \coloneqq Hom(H_1(X, \bbZ)/\torsion, \bbC^{\star})$, 
 \end{definition}
 By the Riemann--Hilbert correspondence any such representation $\rho\in \Char(X)$ 
-gives uniquely a local system of rank 1. 
+uniquely gives a local system of rank 1. 
 Recall also the non-abelian Hodge
 correspondence
-\[\Char(X) \leftrightarrow \Pic^{0}(X)\times H^0(X,\Omega_X^1).\]
+\[\Char(X) \xrightarrow{\Psi} \Pic^{0}(X)\times H^0(X,\Omega_X^1).\]
 mapping a local system $\bbL_{\rho}$ to the line bundle $\sL_{\rho}\simeq \bbL\otimes_{\bbC}\sO_X$
 along with the 1-form $\omega_{\rho}$ given by the inverse image of $\bbL$ under
 the exponential map
@@ -574,35 +574,103 @@ H^1(X,\bbC) \xrightarrow{\exp} \Char(X).
 \end{equation}
 More precisely, $\omega_{\rho} = $ (0,1)-piece of $|\log(\rho)|$. Conversely, a pair $(\sL, \omega)$ 
 is mapped to the kernel of $\sL\xrightarrow{\partial_{\sL}+\omega} \Omega_X^1\otimes \sL$ under this correspondence.
+This induces an isomorphism of topological groups.
+
+We now define after Simpson \cite[p.\ 365]{Sim93}; the notion of linearity of subsets of 
+$\Pic^0(X)\times H^0(X,\Omega_X^1)$. Via the albanese
+map $a\colon X\to \Alb_X$ we may and do identify
+$\Pic^0(X)\times H^0(X,\Omega_X^1)$ with
+$A^{\natural} \coloneqq \Pic^0(A)\times H^0(A,\Omega_A^1)$.
+\begin{definition}[Linearity]\label{def:linhiggs}
+A subset $Z\subset A^{\natural}$ is said to be \textsl{linear}
+or \textsl{translates of triple tori}
+if there exists finitely many morphisms of abelian varities
+$p_i\colon A\to B_i$ and pairs $(\sL_i,\omega_i)$
+such that $Z= (\sL_i,\omega_i)\otimes \im(B^{\natural}
+\to A^{\natural})$.
+\end{definition}
+There is a notion of linear subsets of $\Char(A)$ as well. 
+See Definition \ref{def:linearitychar}. It is a result of Simpson \cite[Theorem 3.1]{Sim93} that a closed algebraic subset $Z \subset Char(A)$ is linear if and only if its image $Z'\subset A^{\natural}$ remains algebraic. 
+
+\begin{definition}
+Define the \textsl{GV-forms} associated to $\sL\in \Pic^0(X)$
+ to be the set
+\[\sR(X, \sL) \coloneqq \bigcap_{p+q = i}\{\omega\in H^0(A,\Omega_A^1)|H^p((H^q(X,\Omega_X^{\bullet}\otimes \sL),\wedge\omega)) \neq 0
+\}
+\]
+We denote by $\sR(X) \coloneqq \bigcup_{\sL}\sR(X, \sL)$
+the set of all GV-forms.
+\end{definition}
+
+By the generic vanishing theory \cite[Theorem 3]{Ara}
+we know that $\sR(X)\subset H^0(X,\Omega_X^1)$ is linear.
+\begin{remark}
+Note that when $\rho$ a unitary representation 
+$(\sL, \omega)$ satisfies the Hodge decomposition
+\[H^i(X, \bbL) \simeq \bigoplus_{p+q=i}H^{q}(X, \Omega_X^p\otimes \sL)\]
+where $\Psi(\bbL ) = (\sL,\omega)$.
+Therefore in this case, the GV-forms associated to 
+$\sL$ can be interpreted
+as Resonant forms associated to the local system $\bbL$,
+i.e.\ 
+\[\sR(X, \sL) = \sR(X, \bbL) \coloneqq \{\omega\in H^0(A,\Omega_A^1)| (H^{\bullet}(X,\bbL),\wedge\omega) \text{ is not exact}\}.\]
+\end{remark} 
 
 \subsection{Tangent cones and cohomology jump loci}
-\label{sub:tc} Another way to understand the resonant 1-forms is via the tangent cone theorem in the
-generic vanishing theory. 
+\label{sub:tc} Another way to understand the resonant 1-forms is via the tangent cone of the cohomology jump loci defined
+as follows.
+\begin{definition}
+Given a perverse sheaf $\sP$ on $X$, define
+\[\sV^i(X,\sP) \coloneqq \{\rho\in\Char(X)|
+H^i(X,\sP\otimes \bbC_{\rho})\neq 0\}.\]
+\end{definition}
+Recall from (\ref{eq:exponential}) that given $\rho\in \Char(X)$, $\omega_{\rho} = $ (0,1)-piece of $\log|\rho|$. 
 %Here we state the relevant results in the relative setting when $X$ admits a map $f\colon X\to A$ 
 %to an abelian variety. The main reference for this part is \cite{sch}. We first set 
 %\[\sR(f) \coloneqq \{\omega\in H^0(A,\Omega_A^1)| (H^{\bullet}(X, L(f^*\omega)), \wedge f^*\omega) \text{ is exact }\]
-First set $\sL \coloneqq L(\omega)\otimes \sO_A \in \Pic^0(A)$. 
 %Then $(\sL, \wedge\omega)\in \sM_{Higgs}^0$
 %the identity component of the Higgs moduli space. $\sM_{Higgs} \simeq \Pic^{\tau}\times H^0(X,\Omega_X^1)$.
 %This is isomorphic to $\Char(X) = Hom(\pi_1(X), \bbC^*)$ as a complex manifold under the map
 %\[\Phi\colon \sM_{Higgs} \to \Char(X)\text{ define by } (\sL, \omega) \mapsto L(\omega).\]
-Then by the generic vanishing theory \cite[Theorem 3]{Ara} we have 
+Also by the generic vanishing theory \cite[Theorem 3]{Ara} we have 
 \begin{equation}\begin{split}
-\Psi(\{L(\omega)| H^k(X, L(\omega))\neq 0 \text{ for some } k\in \bbZ\})
-=\{(\sL,\omega)| H^p((H^q(X,\Omega_X^{\bullet}\otimes L),\wedge\omega)) \neq 0
-\\ \text{ for some } p,q\in\bbZ\}
+\Psi(\sV^i(X,\bbC))
+=\bigcap_{p+q = i}\{(\sL,\omega)| H^p((H^q(X,\Omega_X^{\bullet}\otimes \sL),\wedge\omega)) \neq 0
+\\ \text{ for some } p,q\in\bbZ\}.
 \end{split}\label{eq:}
 \end{equation}
-where $\Psi \colon\Char(X) \to \Pic^{\tau}\times H^0(X,\Omega_X^1)$ 
-is the isomorphism of topological groups and $Char(X)$ denotes the moduli
-of rank 1 complex local system and $\Char(X) = Hom(\pi_1(X),\bbC^{\star})$. More precisely $\Psi$ is defined
-as follows: for a character $\rho\colon \pi_1(X)\to \bbC^{\star}$, $\Psi(\rho) = (\sL_{\rho} , \omega_{\rho})$, where 
-$\omega_\rho$ is the (1,0) part of $\log ||\rho||$ in the cohomology class $H^1(X, \bbR) = Hom(\pi_1(X), \bbR)$ and
-$\sL_{\rho} = L(\omega_{\rho})\otimes_{\bbC}\sO_X$.
-Under this identification we obtain that $\omega$ is a resonant 1-form if and only if $H^k(X, L(\omega))\neq 0$ for all $k$. 
+This implies the simple fact that
+\[TC_{\rho}(\sV^i(X,\bbC)) = \sR(X).\]
 
+\subsection{Cohomology jump loci on abelian variety}
+In this section we collect together further properties of the
+cohomology jump loci on an abelian variety $A$ of dimension $g$.
+We put appropriate references wherever needed.
+
+\begin{theorem}[Properties of CJL on $A$]
+Let $\sP$ be a perverse sheave on an abelian variety $A$ with $\dim A = g$.
+The
+cohomology jump loci of $\sP$ satisfy the following
+\begin{enumerate}
+	\item Propagation property:
+\[\sV^g(A, \sP) \subseteq \cdots\subseteq \sV^1(A, \sP) 
+\subseteq \sV^0(A, \sP) \supseteq \sV^1(A, \sP) \supset\cdots\supset \sV^g(A, \sP).\]
+Furthermore, $\sV^i(A, \sP) = \emptyset$, if $i \in [-g, g]$.
+\item Codimension lower bound: for any $i \geq 0$,
+$\codim \sV^i(A, \sP) \geq 2i$.
+\item Generic vanishing: there exists a non-empty Zariski open subset $U \subset \Char(A)$
+such that, for any $\rho\in U$, $H^i(A, \sP 
+\otimes \sL_{\rho}) = 0$ for all $i \neq 0$.
+\item Signed Euler characteristic property:
+$\chi(A, P) \geq 0$.
+Moreover, the equality holds if and only if $\sV^0(A, \sP) \neq \Char(A)$.
+\item $\sV^i(A, \sP)$ is a finite union of linear subvarieties of $Char(A)$ for any $i$.
+\end{enumerate}
+\label{thm:gvperverse}
+\end{theorem} 
 
 \subsection{Decomposition theorem}
+
 
 
 \section{Generic vanishing theory on abelian varieties}
