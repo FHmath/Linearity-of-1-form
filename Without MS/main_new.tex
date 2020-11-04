@@ -378,7 +378,7 @@ these pushforwards. See Theorem \ref{thm:nonvanishing} for more details.
 \end{remark}
 
 
-To state the linearity results we define
+In order to state the linearity results we define
 the following set
 \[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\},\]
 It is known due to the generic vanishing theory
@@ -387,10 +387,16 @@ that only a piece of $V(X)$, arising from the generic vanishing theory (see \S \
 %\emph{the resonant 1-forms} (see Definition \ref{def:resonance} below) 
 this set forms a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$. To be more specific, this set is given by
 \cite[p.\ 311]{Ara}
-\[\sR(X)\coloneqq \{\omega\in H^0(X, \Omega_X^1)| \exists \sL\in \Pic^0(X) \text{ and } p\in \bbZ_{\geq 0} \text{ such that }, 
-(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge\omega) \text{ is not exact.}\}\]
+\begin{equation}
+\begin{split}
+\sR(X)\coloneqq \bigcup_i\{\omega\in H^0(X, \Omega_X^1)| \exists \sL\in \Pic^0(X) \text{ and } p\in \bbZ_{\geq 0} \text{ such that},
+H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge\omega) \neq 0
+\\\text{ for all } p+q=i\}
+\label{eq:}
+\end{split}
+\end{equation}
 This set is also the holomorphic piece of the tangent cone to the cohomology jump loci 
-$\sV^i(A,\sP)$ at finitely many local systems associated to $\rho\in\Char(X) = Hom(\pi_1(X), \bbC^{\star})$.
+$\sV^i(A,\sP)$ at finitely many local systems associated to $\rho\in\Char(X) = Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})$.
 %\cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
 %we borrow the terminology). 
 %Henceforth we shall call finite unions of subvector spaces as \emph{linear subvarieties}. 
@@ -398,20 +404,42 @@ $\sV^i(A,\sP)$ at finitely many local systems associated to $\rho\in\Char(X) = H
 %of a morphism $f\colon X\to A$ from a smooth projective variety to an abelian variety $A$,
 %we similarly define
 %\[V(f):=\{ \omega\in H^0(A, \Omega_A^1) | Z(f^*\omega)\neq \emptyset\}.\]
-We show that this linear subset of $V(f)$ arising from the generic vanishing theory is in fact 
-%one may define all of the above sets as properties
-%of forms $\omega\in H^0(A,\Omega_A^1)$ such that the pull-back
-%$f^*\omega$ satisfies the above condition.
-equal to the set arising from the conormal directions of the singular supports (see Definition \ref{def:ss}) 
-the higher direct image $Rf_*\bbC$ determined by the decomposition theorem. 
+On the other hand by Kashiwara's estimate
+of character varieties, it is known that given a proper morphism
+$f\colon X\to A$ to an abelian variety $A$, we have
+\[SS(Rf_*\bbC) \subseteq f_*(df^{-1}(0_X))\subset T^*A\]
+where $SS(Rf_*\bbC)$ is the singular support of the constructible
+sheaf $Rf_*\bbC$ (see Definition \ref{def:ss}) and $0_X$ is the
+zero section $T^*_XX$. Furthermore, $f_*(df^{-1}(0_X))$ is
+defined via the following diagram:
+\begin{equation}
+\begin{tikzcd}
+A\times H^0(A,\Omega_A^1)  \ar[dr]
+& X\times H^0(A, \Omega_A^1)\ar[r, "df"']\ar[d] \ar[l, "f\times id"]
+& T^*X \ar[d]\\
+&A  & X\ar[l, "f"]
+\end{tikzcd}
+\label{eq:maindiagram}
+\end{equation}
+Note that under the projection $\pi\colon A\times H^0(A,\Omega_A^1)\to H^0(A,\Omega_A^1)$ we have
+\[\pi(f_*(df^{-1}(0_X))) = V(f) \coloneqq \{\omega\in H^0(A,\Omega_A^1)|
+Z(f^*\omega) \neq \emptyset\}.\]
+Therefore, when $f$ is the albanese morphism, we obtain
+\[SS(Rf_*\bbC)\subseteq V(X).\]
+We show in Proposition \ref{prop:vansimple} 
+that $SS(Rf_*\bbC)$ is a finite union of linear subspaces of $H^0(A,\Omega_A^1)$. We
+have the following
 \begin{alphtheorem}
-Suppose the decomposition theorem
-for $a$ is given by
-\[\bbR a_*\bbC = \bigoplus_{\alpha}P_{\alpha}\]
-with $P_{\alpha}$'s shifted simple perverse sheaves supported on some strata $S_{\alpha_j}$'s of $a$ for some indexed set of stratas $S_{\alpha_j}$'s, then
-\[\sR(X) =  \bigcup_{i,\alpha_j}\pi(T^*_{S_{\alpha_j}}A) \]
+Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
+\[\sR(X) =  \SS(Ra_*\bbC). \]
 \label{thm:linearity}
 \end{alphtheorem}
+
+\begin{remark}
+Note that it is not clear a priori why $\sR(X)\subseteq V(X)$. However, it is clear from our Theorem. Although this was known by a special case of an earlier result of Budur--Wang--Yoon
+\cite{BWY}.
+
+\end{remark}
 The theorem follows from a more general statement
 about perverse sheaves on abelian varieties. Recall
 \begin{definition}
@@ -420,14 +448,14 @@ Associated to $\rho\in \Char(X)$ the collection of local systems $\bbC_{\rho}$ d
 is called the cohomology jump loci of $\sP$.
 \label{def:cjl}
 \end{definition}
-\begin{theorem}
+\begin{alphtheorem}
 Let $A$ be an abelian variety. Let $P$ be a complex of perverse sheaves with complex coefficient on $A$. 
 Then we have the equality that
 $$\pi(CC(P)) = H^0(X, \Omega_X^1)\cap \bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,\sP), $$
 where the union is running over a representative point from every irreducible components of $\sV^0(A,P)$
 $TC_{\rho} \sV^0(A,P) \subseteq H^1(X, \bbC)$ denotes the tangent cone at $\rho$. 
 \label{thm:perverse}
-\end{theorem}
+\end{alphtheorem}
 
 For an
 interpretation of these results in the category of regular holonomic D-modules
@@ -440,11 +468,12 @@ as follows. Recall that because of the group structure, the total space $T^*A$ o
 (see Proposition \ref{van-nonsimple}) that the image of $T^*_{S_{\alpha_j}}A\subset T^*A$ under the projection onto $H^0(A,\Omega_A^1)$ is a finite union of linear subsets. Therefore, $\sR(X)$
 is  linear. 
 
-We want to emphasize that the equality $\sR(X) \subseteq V(X)$ may not always be an equality. An example of Debarre, Jiang and Lahoz 
-\cite[Example 1.11]{DJL17} shows that the
-there exists a bi-elliptic surface $S$ admitting a 1-form 
-$\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
-is exact, yet $\omega$ admits zeros on $S$. Theorem \ref{thm:linearity} shows that such forms are not under the realm of generic vanishing theory. 
+We do know at the moment whether the equality holds in $\sR(X) \subseteq V(X)$. 
+%An example of Debarre, Jiang and Lahoz 
+%\cite[Example 1.11]{DJL17} shows that the
+%there exists a bi-elliptic surface $S$ admitting a 1-form 
+%$\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
+%is exact, yet $\omega$ admits zeros on $S$. Theorem \ref{thm:linearity} shows that such forms are not under the realm of generic vanishing theory. 
 
 \begin{remark}
 Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is indeed linear. 
@@ -664,12 +693,23 @@ such that, for any $\rho\in U$, $H^i(A, \sP
 \item Signed Euler characteristic property:
 $\chi(A, P) \geq 0$.
 Moreover, the equality holds if and only if $\sV^0(A, \sP) \neq \Char(A)$.
-\item $\sV^i(A, \sP)$ is a finite union of linear subvarieties of $Char(A)$ for any $i$.
+\item Structural property: $\sV^i(A, \sP)$ is a finite union of linear subvarieties of $Char(A)$ for any $i$.
 \end{enumerate}
 \label{thm:gvperverse}
 \end{theorem} 
 
-\subsection{Decomposition theorem}
+
+
+\subsection{Perverse sheaves and Decomposition theorem}
+We refer the reader to
+\citeSection 4.5]HTT08 
+Given a morphism of smooth projective varieties, 
+$f\colon X\to Y$ then we have the following
+\begin{theorem}[Decomposition theorem]
+
+
+\label{thm:}
+\end{theorem}
 
 
 
