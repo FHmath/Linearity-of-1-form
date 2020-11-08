@@ -26,7 +26,8 @@
 
 \newtheorem{alphtheorem}{Theorem}
 \renewcommand{\thealphtheorem}{\Alph{alphtheorem}}
-
+\theoremstyle{question}
+\newtheorem{question}[theorem]{Question}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{notation}[theorem]{Notation}
@@ -344,11 +345,12 @@ The goal of this article is two-fold, first we
 \maketitle
 \section{Introduction}\label{intro}
 Given a smooth porjective variety $X$, in this article we relate the cohomology jump loci of $\bbC_X$ with the 
-stratification arising from the decomposition theorem for the albnese morphism. Such relation fell out of our interest in the
-study of linearity of holomorphic 1-forms. This is inspired by the work of  \cite{CL73}, Carrell and Lieberman 
-who show that the set of global holomorphic tangent vector fields with zeros is a subvector space of $H^0(X, T_X)$. We deal with a similar question for global holomorphic 1-forms. In this case the story is far from complete and is deeply connected to the generic
-vanishing theory. To this end, we obtained that the set of 1-forms that admit codimension 1 zeros forms a linear subset of $H^0(X, \Omega_X^1)$. We also obtain the following geometric/cohomological property of smooth projective varieties that
-admits a non-vanishing 1-form. 
+stratification arising in the decomposition theorem for the albnese morphism. Such relation fell out of our interest in the
+study of holomorphic 1-forms. Interestingly, it has been indicated by plethora of results
+(\cite{GL87, HK05, LZ05,
+SS19, HS19, PS14} to name just a few) that a lot of the geometry and topology of the
+variety depends on vanishing of such forms. We state our first result in this direction
+and then put it in the context of the existing vast literature.
 
 
 
@@ -377,10 +379,40 @@ these pushforwards. See Theorem \ref{thm:nonvanishing} for more details.
 \end{enumerate}	
 \end{remark}
 
+This result is an easy consequence of Kashiwara's estimate for character variety together with the decomposition of $\bbR f_*\bbC$ in $D^b_{A}(\bbC)$. We began studying this pair of results with the
+hope of showing linearity of the set of global holomorphic 1-forms
+of smooth projective varieties much like the work of   Carrell and Lieberman \cite{CL73}
+in case of the global holomorphic tangent vector fields with zeros. It is no surprise that for 1-forms the story is deeply connected to the generic
+vanishing theory. The question we ask is the following:
+\begin{question}
+Is the following set
+\[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\}\]
+os holomorphic 1-forms admitting zeros linear, i.e.\ a finite
+union of linear subspaces of the vector space $H^0(X, \Omega_X^1)$.
+\end{question} 
 
-In order to state the linearity results we define
-the following set
-\[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\},\]
+The answer to this question is yes up-to 3-folds by
+a result of the second author obtained jointly with Schreieder
+\sorry{insert theorem reference}. Moreover,
+generic vanishing reasons the answer is also yes 
+when $\chi(X)>0$ \sorry{why not $\chi(X)\neq 0$}. Furthermore
+we show the following
+
+\begin{alphtheorem}
+Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then 
+\[V^1(f) \coloneqq \{\omega\in H^0(X,\Omega_X^1)| \codim Z(\omega) \geq 1\}\]
+ is linear. In particular, $V^1(X)$ is linear.
+\end{alphtheorem}
+
+More generally we expect the following to be true.
+\begin{conjecture} \label{linear-v1}
+Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then 
+\[V^i(f)\coloneqq \{\omega\in H^0(X,\Omega_X^1)| \codim Z(\omega) \geq i\}\] are linear subvarieties of $H^0(X, \Omega_X^1)$, i.e., $V^i(X)$ is linear for each nonnegative integer $i$. In particular $V^i(X)$ are linear.
+\end{conjecture}
+In fact we show a similar result in the quasi-projective setting
+(see \ref{log-linear-v1}). 
+
+
 It is known due to the generic vanishing theory
 %theory of cohomology jumploci 
 that only a piece of $V(X)$, arising from the generic vanishing theory (see \S \ref{se:gv} for more details) is linear, i.e.\
@@ -395,8 +427,11 @@ H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge\omega) \neq 0
 \label{eq:}
 \end{split}
 \end{equation}
-This set is also the holomorphic piece of the tangent cone to the cohomology jump loci 
-$\sV^i(A,\sP)$ at finitely many local systems associated to $\rho\in\Char(X) = Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})$.
+This set is also the holomorphic piece of the tangent cone 
+(see \ref{def:tc} for a definition) to the cohomology jump loci 
+\[\sV^i(X,\bbC) \coloneqq \{\rho\in\Char(X)| \bbH^i(X, \bbC_{\rho})\neq  0\}\subseteq \Char(X) \coloneqq Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})\]
+where $\bbC_{\rho}$ is the local system associated $\rho$
+under the Riemann--Hilbert correspondence.
 %\cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
 %we borrow the terminology). 
 %Henceforth we shall call finite unions of subvector spaces as \emph{linear subvarieties}. 
@@ -435,11 +470,7 @@ Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
 \label{thm:linearity}
 \end{alphtheorem}
 
-\begin{remark}
-Note that it is not clear a priori why $\sR(X)\subseteq V(X)$. However, it is clear from our Theorem. Although this was known by a special case of an earlier result of Budur--Wang--Yoon
-\cite{BWY}.
 
-\end{remark}
 The theorem follows from a more general statement
 about perverse sheaves on abelian varieties. Recall
 \begin{definition}
@@ -463,12 +494,14 @@ see Theorem \ref{thm:linearitydmodule}. The key technique we
 use to relate the the generic vanishing theory on abelian varieties with the support of $Rf_*\bbC$ is Kashiwara's
 global index theorem. 
 
-The aforementioned linearity can be seen in this context
-as follows. Recall that because of the group structure, the total space $T^*A$ of the cotangent bundle (sometimes referred to simply as cotangent bundle) of an abelian variety $A$ satisfies $T^*A\simeq A\times H^0(A, \Omega_A^1)$. We also show 
-(see Proposition \ref{van-nonsimple}) that the image of $T^*_{S_{\alpha_j}}A\subset T^*A$ under the projection onto $H^0(A,\Omega_A^1)$ is a finite union of linear subsets. Therefore, $\sR(X)$
-is  linear. 
 
-We do know at the moment whether the equality holds in $\sR(X) \subseteq V(X)$. 
+\begin{remark}
+Note that it is not clear a priori why $\sR(X)\subseteq V(X)$. However, it is a consequence of our Theorem. Although this was known by a special case of an earlier result of Budur--Wang--Yoon
+\cite{BWY}. However,
+We do know at the moment whether the equality holds in $\sR(X) \subseteq V(X)$. \sorry{isn't this question in fact equivalent to the question
+raised by Schreieder \cite{Sch} that there are no universally
+non-resonant forms.}
+\end{remark}
 %An example of Debarre, Jiang and Lahoz 
 %\cite[Example 1.11]{DJL17} shows that the
 %there exists a bi-elliptic surface $S$ admitting a 1-form 
@@ -476,7 +509,7 @@ We do know at the moment whether the equality holds in $\sR(X) \subseteq V(X)$.
 %is exact, yet $\omega$ admits zeros on $S$. Theorem \ref{thm:linearity} shows that such forms are not under the realm of generic vanishing theory. 
 
 \begin{remark}
-Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is indeed linear. 
+Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is linear as already mentioned above. 
 This follows immediately from the generic vanishing theory. Indeed, by Hodge decomposition
 we have
 $H^k(X,\bbC) \simeq \bigoplus_{p+q = k} H^p(X,\Omega_X^q)$. Hence the complexes $(H^p(X, \Omega_X^{\bullet}), \wedge\omega)$ can be summed together to form the complex $(H^p(X, \bbC), \wedge\omega)$. Since $\chi(X)>0$ the latter complex cannot be exact. Hence $H^0(X,\Omega_X^1)
@@ -486,36 +519,10 @@ $H^k(X,\bbC) \simeq \bigoplus_{p+q = k} H^p(X,\Omega_X^q)$. Hence the complexes 
 
 
 
-More generally we expect the following to be true.
-\begin{conjecture} \label{linear-v1}
-Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then $V^i(f)$ are linear subvarieties of $H^0(X, \Omega_X^1)$, i.e., $V^i(X)$ is a finite union of linear subspaces of $H^0(X, \Omega_X^1)$ for each nonnegative integer $i$. In particular $V^i(X)$ are linear.
-\end{conjecture}
-
-To this end, using a result of Spurr \cite{Sp88}, we directly get $V^1(X)$ is linear.
-
-\begin{alphtheorem}
-Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then $V^1(f)$ is linear. In particular, $V^1(X)$ is linear.
-\end{alphtheorem}
 
 
- %What's more, we show that $V^1(f)$ consists the resonant holomorphic 1-forms vanishing along a divisor and ``negative'' 1-forms (holomorphic 1-forms, which is not  necessarily resonant, but vanishes along a rigid divisor). Also, in this article, 
-We also generalize a result of Spurr \cite{Sp88} to quasi-projective varieties. 
 
-\begin{alphtheorem} \label{log-linear-v1}
-Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be a very ample divisor on $X$. If $(X, D)$ carries a holomorphic log 1-form $0\not=\omega\in H^0(X, \Omega_X^1(\log D))$  which pullbacks to zero on an effective divisor $E$ with $E^2\cdot H^{n-2}\geq0$, then there is a morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ (where $\bar{C}$ is the completion of $C$ and $B$ can be empty) with 
 
-(1)  $\omega=f^*\eta$ for some $\eta\in H^0(X, \Omega_{\bar{C}}^1(\log B))$.
-
-(2) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
-\end{alphtheorem}
-
-As a corollary we prove the linearity of the set of logarithmic holomorphic 1-forms admitting codimension one zeros.
-
-\begin{corollary}
-Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Then the set $$ V^1(X,D):=\{ w \in W(U) \mid \codim_X Z(w) \leq i \}$$ is linear.
-\end{corollary}
-
-We show that $V^1(X,D)$ consists of resonant holomorphic logarithmic 1-forms vanishing along a divisor, holomorphic logarthmic 1-forms vanishing along a rigid divisor, and holomorphic logarithmic 1-forms vanishing along some components of the boundary divisor $D$.
 
 
 In this paper, all complex of sheaves and perverse sheaves are defined with complex
@@ -526,7 +533,7 @@ coeffcients. All the varieties are complex quasi-projective varieties.
 
 
 \section{Preliminary}
-\subsection{Classical Generic vanishing theory}
+\subsection{Resonant 1-forms and Hodge decomposition}
 Given a holomorphic 1-form $\omega\in H^0(X,\Omega_X^1)$
 the kernel of the associated Koszul complex
 \begin{equation}
@@ -553,8 +560,8 @@ proofs.
 The generic vanishing theory 
 \cite[Proposition 3.4]{GL} ensures that
 if $Z(\omega)\neq \emptyset$ then the sequence
-\[\cdots\overset{\wedge\omega}{\to} H^k(X, \Omega^{i-1}
-\overset{\wedge\omega}){\to}H^k(X, \Omega_X^{i})
+\[\cdots\overset{\wedge\omega}{\to} H^k(X, \Omega^{i-1})
+\overset{\wedge\omega}{\to}H^k(X, \Omega_X^{i})
 \overset{\wedge\omega}{\to} H^k(X,\Omega_X^{i+1})
 \overset{\wedge\omega}{\to}\cdots\]
 is not exact for all $k\geq 0$. Putting these together 
@@ -576,16 +583,23 @@ in Equation (\ref{eq:resonance}) is exact and\footnote{Note that
 with this assumption it is not always the case that $Z(\omega) = \emptyset$. See Example \ref{ex:DJL}.} 
 $Z(\omega) \neq \emptyset$ then we call such form non-resonant. 
 
-Moreover a 1-forms $\omega\in V(X)$ is called \emph{universally nonresonant} if the complex
-\newline $(H^{\bullet}(X',\bbC), \wedge\tau^*\omega)$
-%\[\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots\]
- is exact for any \'etale over $\tau\colon X'\to X$. 
+%Moreover a 1-forms $\omega\in V(X)$ is called \emph{universally nonresonant} if the complex
+%\newline $(H^{\bullet}(X',\bbC), \wedge\tau^*\omega)$
+%%\[\ldots\to H^{i-1}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i}(X',\C)\overset{\wedge\tau^*\omega}{\longrightarrow}H^{i+1}(X',\C)\to\ldots\]
+ %is exact for any \'etale over $\tau\colon X'\to X$. 
 
 We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the \emph{resonance sequence}.
 %Also, we call a holomorphic 1-form to be a resonant 1-form if it is not a nonresonant 1-form and has zeros.
 \end{definition}
 
-We consider more generally all local systems of rank 1. To make our notations precise recall 
+
+
+
+More generally for any local system we consider a similar situation. 
+
+
+
+To make our notations precise recall 
 \begin{definition}[Character variety]
 $\Char(X) \coloneqq Hom(H_1(X, \bbZ)/\torsion, \bbC^{\star})$, 
 \end{definition}
@@ -605,6 +619,42 @@ More precisely, $\omega_{\rho} = $ (0,1)-piece of $|\log(\rho)|$. Conversely, a 
 is mapped to the kernel of $\sL\xrightarrow{\partial_{\sL}+\omega} \Omega_X^1\otimes \sL$ under this correspondence.
 This induces an isomorphism of topological groups.
 
+Define the cohomology groups of 
+$(\sL, \omega)$ as
+\[H^{p,q}(X, (\sL, \omega)) \coloneqq 
+\frac{\ker(\omega\colon H^q(X, \Omega_X^p\otimes \sL)
+\to H^q(X, \Omega_X^{p+1}\otimes\sL))}{\im(\omega\colon
+H^q(X,\Omega_X^{p-1}\otimes\sL)\to H^q(X,\Omega_X^{p}\otimes\sL)}\]
+We have the following (see e.g.\ Theorem 17.9)
+\begin{theorem}
+Let $\rho\in \Char(X)$ be the character corresponding to 
+$(\sL,\omega)$ then we have
+\[H^k(X, \bbC_{\rho}) \simeq \bigoplus_{p+q =k}H^{p,q}(X,\sL,\omega)\]
+\label{thm:genhodgedecomp}
+\end{theorem}
+
+Note that when $\omega = 0$, i.e.\ $\bbC_{\rho}$ is unitary
+this recovers the usual Hodge decomposition for 
+unitary local systems corresponding to $\rho \in Hom(\pi_1(X)/\torsion, U(1))$
+\[H^p(X, \bbC_{\rho}) \simeq H^p(X, \Omega_X^q\otimes\sL).\]
+
+We now defined
+\begin{definition}[generalised resonant 1-forms]
+Given a local system $\bbC_{rho}$ associated to a unitary character $\rho$, we define
+\[\sR^k(X, \bbC_{\rho}) \coloneqq
+\{\omega\in H^0(X, \Omega_X^1)| H^k(H^{\bullet}(X, \bbC_{\rho}), \wedge\omega) \neq 0 .\}\]
+We denote as usual 
+$\sR(X, \bbC_{\rho}) \coloneqq \bigcup_k \sr^k(X, \bbC_{\rho)$.
+\end{definition}
+
+\begin{remark}
+From our discussion above it immediately follows that
+if $\sL = \Psi(\rho)$ then
+\[\sR^k(X, \bbC_{\rho}) =\bigcap_{p+q = k} \{\omega| H^{p,q}(X, \sL,\omega) \neq 0\}.\]
+\end{remark}
+
+
+\subsection{Linearity in generic vanishing theory}
 We now define after Simpson \cite[p.\ 365]{Sim93}; the notion of linearity of subsets of 
 $\Pic^0(X)\times H^0(X,\Omega_X^1)$. Via the albanese
 map $a\colon X\to \Alb_X$ we may and do identify
@@ -702,7 +752,7 @@ Moreover, the equality holds if and only if $\sV^0(A, \sP) \neq \Char(A)$.
 
 \subsection{Perverse sheaves and Decomposition theorem}
 We refer the reader to
-\citeSection 4.5]HTT08 
+\cite[Section 4.5]{HTT08 }
 Given a morphism of smooth projective varieties, 
 $f\colon X\to Y$ then we have the following
 \begin{theorem}[Decomposition theorem]
@@ -829,6 +879,26 @@ $\pi(S^0(A, \sP)) = S(A, \sP)$.
 \end{proof}
 
 
+
+\section{Linearity of forms with codimension 1 zeros}
+ %What's more, we show that $V^1(f)$ consists the resonant holomorphic 1-forms vanishing along a divisor and ``negative'' 1-forms (holomorphic 1-forms, which is not  necessarily resonant, but vanishes along a rigid divisor). Also, in this article, 
+We also generalize a result of Spurr \cite{Sp88} to quasi-projective varieties. 
+
+\begin{theorem} \label{log-linear-v1}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be a very ample divisor on $X$. If $(X, D)$ carries a holomorphic log 1-form $0\not=\omega\in H^0(X, \Omega_X^1(\log D))$  which pullbacks to zero on an effective divisor $E$ with $E^2\cdot H^{n-2}\geq0$, then there is a morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ (where $\bar{C}$ is the completion of $C$ and $B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(X, \Omega_{\bar{C}}^1(\log B))$.
+
+(2) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{theorem}
+
+As a corollary we prove the linearity of the set of logarithmic holomorphic 1-forms admitting codimension one zeros.
+
+\begin{corollary}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Then the set $$ V^1(X,D):=\{ w \in W(U) \mid \codim_X Z(w) \leq i \}$$ is linear.
+\end{corollary}
+
+We show that $V^1(X,D)$ consists of resonant holomorphic logarithmic 1-forms vanishing along a divisor, holomorphic logarthmic 1-forms vanishing along a rigid divisor, and holomorphic logarithmic 1-forms vanishing along some components of the boundary divisor $D$.
 
 
 
@@ -958,10 +1028,116 @@ $\pi(S^0(A, \sP)) = S(A, \sP)$.
 %
 %
 
-
+%\bibliographystyle{alpha}
+%\bibliography{main_new}
 
 
 \begin{thebibliography}{ADMSP}
+
+\bibitem[Ara92]{Ara92} D.\ Arapura, ``Higgs line bundles, Green-Lazarsfeld sets, and maps of K\"ahler manifolds to curves", \textit{Bull., New Ser.,
+Am. Math. Soc.}, vol.\ \textbf{26} (1992), pp.\ 310--314.
+
+\bibitem[Ara97]{Ara97} D.\ Arapura, ``Geometry of cohomology support loci for local systems, I". \textit{Journal of Algebraic Geometry} vol.\ \textbf{3} (1997): pp.\ 563--597.
+
+
+\bibitem[BWY16]{BWY16} N. Budur, B. Wang, Y. Yoon, \textit{Rank one local systems and forms of degree one}. Int. Math. Res. Not. \textbf{13} (2016), 3849--3855.
+
+
+
+\bibitem[CL73]{CL73} J. B. Carrell, D. I. Lieberman,  \textit{Holomorphic vector fields and K\"ahler manifolds}, Invent. Math. \textbf{21} (1973), 303--309.
+
+\bibitem[Deb07]{Deb} O. Debarre,  \textit{On the geometry of abelian varieties} \url{https://www.math.ens.fr/\textasciitilde debarre/Taiwan.pdf}, (2007).
+
+\bibitem[DJL17]{DJL17} O.\ Debarre, Z.\ Jiang and M.\ Lahoz, Rational cohomology tori, \textit{Geometry \& Topology} vol.\ 21 (2017),
+pp.\ 1095--1130.
+
+\bibitem[DiPa13]{DiPa13}A. Dimca, S. Papadima, \textit{Nonabelian cohomology jump loci from ananalytic view point}. Commun. Contem. Math. \textbf{15} (5), 1350025 (2013).
+
+
+\bibitem[DiSu]{disu} A. Dimca, A. I. Suciu, \textit{Which 3-manifold groups are K\"ahler groups?}, J. Eur. Math. Soc., \textbf{11} (2009), no. 3, 521-528.
+
+\bibitem[GH18]{GH18} I. Glazer, Y. I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms--the general case (with an appendix joint with Gady Kozma)}, arXiv:1811.09838.
+
+\bibitem[GH19]{GH19}  I. Glazer, Y.I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms}, Selecta Mathematica (2019), pp.\ 25--15
+
+
+\bibitem[GL87]{GL87} M. Green, R. Lazarsfeld, \textit{Deformation theory, generic vanishing theorems and some conjectures of Enriques, Catanese and Beauville}, Inv. Math. \textbf{90} (1987), 389--407.
+
+\bibitem[GW10]{GW10} U. G\"ortz, T. Wedhorn, \textit{Algebraic geometry I. Schemes with examples and exercises.} Advanced Lectures in Mathematics. Vieweg+Teubner, Wiesbaden, 2010. 
+
+\bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
+
+\bibitem[Har77]{Har77} R. Hartshorne, \textit{Algebraic Geometry}, Graduate Texts in Mathematics, vol. 52, Springer, New York,
+1977.
+
+\bibitem[HS19]{HS19} F. Hao, S. Schreieder, \textit{Holomorphic one-forms without zeros on threefolds}, to appear Geometry $\&$ Topology , arXiv:1906.07606.
+
+\bibitem[KK]{KK} J. Koll\'ar, S. Kov\'acs {\it Singularities of the Minimal Model Program.}
+Series: Cambridge Tracts in Mathematics (No. 200)
+
+\bibitem[Laz04a]{Laz04a}
+    R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ I.\ Classical
+    setting: line bundles and linear series}.
+    Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 48. Berlin: Springer-Verlag, 2004.
+    \textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18808-4}{\ttfamily 10.1007/978-3-642-18808-4}.
+    \textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095471}{\ttfamily 2095471}.
+
+
+\bibitem[Laz04b]{Laz04}
+    R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ II.\ Positivity
+    for vector bundles, and multiplier ideals}.
+    Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 49. Berlin: Springer-Verlag, 2004.
+    \textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18810-7}{\ttfamily 10.1007/978-3-642-18810-7}.
+    \textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095472}{\ttfamily 2095472}.
+
+%\bibitem[KM05]{KM05} J. Koll\'ar and S. Mori, \textit{Birational geometry of algebraic varieties}, Cambridge University Press, Cambridge, 2008.
+
+%\bibitem[Mo85]{Mo85} S. MORI S, \textit{Classification of higher-dimensional varieties}, in: Algebraic Geometry, Bowdoin, (1985),Brunswick, Maine, (1985), in: Proc. Sympos. Pure Math., \textbf{46}, American Mathematical Society,Providence, RI, (1987), 269--331.
+
+%\bibitem[LMW18]{LMW18} Y. Liu, L. Maxim, B. Wang, {\it Perverse sheaves on semi-abelian varieties}, arXiv: 1804.05014. 
+
+\bibitem[LMW20]{LMW20} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Koll\'ar}, arXiv:2006.09295.
+
+\bibitem[LZ05]{LZ05} T.\ Luo and Q.\ Zhang, Holomorphic forms on threefolds, \textit{Recent Progress in Arithmetic and Algebraic Geometry, Contemp.\ Math, Amer.\ Math.\ Soc.}, vol.\ 386, pp.\ 87--94 Providence, RI, (2005). 
+\textsc{doi}: \href{https://doi.org/org/10.1090/conm/386/07219}{\ttfamily 10.1090/conm/386/07219}.
+\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2182772}{\ttfamily 2182772}.
+
+\bibitem[MiSh18]{MiSh18} L. Migliorini and V. Shende, \textit{Higher discriminants and the topology of algebraic maps}, Algebraic geometry, (2018), 114--130.
+
+\bibitem[Mum]{Mum} D. Mumford, \text{Abelian Varieties}, Tata Institute of Fundamental Research, (1985).
+
+\bibitem[PS14]{PS14} M. Popa and C. Schnell, \textit{Kodaira dimension and zeros of holomorphic one-forms}, Ann. of Math. \textbf{179} (2014), 1109--1120.
+
+
+\bibitem[Sha74]{Sha74} I. Shafarevich, \textit{Basic Algebraic Geometry I}. Berlin, Springer--Verlag, (1974).
+
+\bibitem[Sch15]{Sch}
+C. Schnell, {\it  Holonomic $\mathcal{D}$-modules on abelian varieties},
+Publ. Math. Inst. Hautes \'{E}tudes Sci. 121 (2015), 1--55.
+
+\bibitem[Sch19]{SS19} S.\ Schreieder, \textit{Zeros of holomorphic one-forms and topology of K\"ahler manifolds, (Appendix written jointly with H.-Y. Lin) }, to appear IMRN. (2019).
+
+\bibitem[Schm76]{Schm76} W. Schmid, Variation of Hodge structure: the singularities of the period mapping, Inv. Math. \textbf{22} (1973), 211--319.
+
+\bibitem[Ste76]{Ste76} J. Steenbrink, \textit{Limits of Hodge structures}, Inv. Math. \textbf{31} (1976), 229--257.
+
+
+
+
+\bibitem[Sim93a]{Sim93} C. Simpson, \textit{Lefschetz theorems for the integral leaves of a holomorphic one-form}, Compositio Math. \textbf{87} (1993), 99--113.
+
+\bibitem[Sim93b]{Sim93b} ---------, Subspaces of moduli spaces of rank one local systems, \textit{Ann. Sci. \'Ec. Norm. Super.}, vol.\ 26,
+pp.\ 361–-401 (1993).
+
+\bibitem[Sp88]{Sp88} M. Spurr, {\it On the zero set of a holomorphic one-form on a compact complex manifold.} Trans. Am.
+Soc. \textbf{308} (1988), 329-339. 
+
+\bibitem[stacks-project]{stacks-project} The {Stacks project authors}, \textit{The Stacks project}, \url{https://stacks.math.columbia.edu}, (2020).
+
+\bibitem[Uen75]{Uen75} K.\ Ueno. ``Classification theory of algebraic varieties and compact complex spaces", \textit{Lecture Notes in Mathematics},
+Springer-Verlag, Berlin, 1975, Notes written in collaboration with P. Cherenack, Vol.\ \textbf{439}. 
+\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=0506253}{\ttfamily 0506253}.
+
 
 \bibitem[Dim]{Dim} A. Dimca, {\it Sheaves in Topology} Springer-Verlag Berlin Heidelberg New York in 2004.
 \textsc{doi:} \href{https://doi.org/10.10071978-3-642-18868-8}{\ttfamily 10.10071978-3-642-18868-8}.
@@ -969,7 +1145,7 @@ $\pi(S^0(A, \sP)) = S(A, \sP)$.
 
 \bibitem[BWY]{BWY} N. Budur, B . Wang, Y. Yoon, {\it Rank one local systems and forms of degree one}, Int. Math. Res. Not. (2016), no.13, 3849-3855.
 
-
+%
 \bibitem[LMW]{LMW} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Kollar}, arXiv:2006.09295.
 
 \bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
