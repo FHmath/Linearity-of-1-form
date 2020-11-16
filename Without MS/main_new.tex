@@ -1,5 +1,5 @@
 \pdfoutput=1
-\documentclass[11pt,reqno]{amsart}
+\documentclass[12pt,reqno]{amsart}
 \usepackage[letterpaper,margin=1in,footskip=0.25in]{geometry}
 \usepackage{mathrsfs}
 \usepackage{amssymb}
@@ -498,9 +498,7 @@ global index theorem.
 \begin{remark}
 Note that it is not clear a priori why $\sR(X)\subseteq V(X)$. However, it is a consequence of our Theorem. Although this was known by a special case of an earlier result of Budur--Wang--Yoon
 \cite{BWY}. However,
-We do know at the moment whether the equality holds in $\sR(X) \subseteq V(X)$. \sorry{isn't this question in fact equivalent to the question
-raised by Schreieder \cite{Sch} that there are no universally
-non-resonant forms.}
+We do know at the moment whether the equality holds in $\sR(X) \subseteq V(X)$. 
 \end{remark}
 %An example of Debarre, Jiang and Lahoz 
 %\cite[Example 1.11]{DJL17} shows that the
@@ -777,6 +775,19 @@ Moreover, the equality holds if and only if $\sV^0(A, \sP) \neq \Char(A)$.
 
 
 \subsection{Perverse sheaves and Decomposition theorem}
+\begin{definition}[Singular Support]
+
+
+\end{definition}
+\begin{definition}[Characteristic Cycle]
+
+
+\end{definition}
+
+\begin{theorem}[Kashiwara's index]
+
+\label{thm:indextheorem}
+\end{theorem}
 We refer the reader to
 \cite[Section 4.5]{HTT08 }
 Given a morphism of smooth projective varieties, 
@@ -790,112 +801,74 @@ $f\colon X\to Y$ then we have the following
 
 
 \section{Generic vanishing theory on abelian varieties}
-Given $f\colon X\to A$, in \ref{sub:tc} we saw that the set of relative resonant forms, i.e.
-\[\sR(f)\coloneqq \{\omega\in H^0(A,\Omega_A^1)| H^k(H^{\bullet}(X,\bbC),\wedge f^*\omega) \neq 0 \text{ for some }k\}\]
-can be identified with the set 
-\[S(f)\coloneqq \{\omega\in H^0(A,\Omega_A^1)| H^{\bullet}(X, f^*L(\omega))\neq 0\}\]
-via the tangent cone theorem.
-In this section we relate the latter set with conical Lagrangian subsets of $T^*A$ arising from the decomposition theorem.
-\begin{theorem}[= Thereom \ref{thm:linearity}]
-Let $f\colon X\to A$ be as above. Let $\pi\colon T^*A\to H^0(A,\Omega_A^1)$ denote the projection. Then
-\[\sR(f) = S(f) = \pi(\SS(Rf_*\bbC))\]
-\end{theorem}
-This follows from the following theorem about simple perverse sheaves on abelian variety
-\begin{theorem}
-Let $\sP$ be a simple perverse sheaf on abelian variety then
-\[S(A,\sP)\coloneqq \{\omega\in H^0(A,\Omega_A^1)| H^k(A, \sP\otimes L(\omega)) \neq 0 \text{ for some } k\} = \pi(\SS(\sP))\]
-\label{thm:perverse}
-\end{theorem}
+This section is devoted to the proof of Theorem \ref{thm:perverse}. First we note that Theorem \ref{thm:linearity} follows
+from Theorem \ref{thm:perverse}
+
 
 \begin{proof}[Proof of Theorem \ref{thm:linearity}]
-By decomposition Theorem \ref{thm:decomp} applied to $f\colon X\to A$
+By the decomposition Theorem \ref{thm:decomp} applied to $f\colon X\to A$
 we have, 
-\[Rf_*\bbC\simeq \bigoplus \sP.\]
-Applying Theorem \ref{thm:perverse} to each component we note that
-\[\{\omega\in H^0(A,\Omega_A^1)| H^k(A, Rf_*\bbC\otimes L(\omega)) \neq 0 \text{ for some } k\} = \pi(\SS(Rf_*\bbC)).\]
-The result follows from noting that $H^k(A, Rf_*\bbC\otimes L(\omega)) \simeq H^k(X, f^*L(\omega))$.
+\[Rf_*\bbC\simeq \bigoplus_{\alpha,i} \sP_{\alpha,i}[-i].\]
+Here $\sP_{\alpha, i}$ are simple perverse sheaves supported on various strata of the morphism $f$. 
+Note that
+\[\{\rho\in \Char(A)| H^k(X, f^*\bbC_{\rho})\neq 0 \text{ for some } k\} = \bigcup_{\alpha, i, k}\sV^k(A, \sP_{\alpha, i}).\]
+Applying Theorem \ref{thm:perverse} to each 
+of these $\sP_{\alpha,i}$ we obtain the result.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{thm:pervese}]
-Denote by
-\[S^k(A,\sP)\coloneqq \{L\in \Char(A)| H^k(A, \sP\otimes L) \neq 0\}\]
-and $S(A,\sP) = \pi\circ\Psi(\bigcup_k S^k(A,\sP))\subset H^0(A,\Omega_A^1)$. Recall that $\Psi(L) = (\sL, \omega)$
-as defined in \S \ref{sub:tc} and $\pi\circ\Psi(L) = \omega$
-We split the proof in two cases.
 
-\noindent \textbf{Case I: }$\chi(A, \sP)>0$. By theorem \cite[Theorem 7.4]{sch}
-$\codim_{\Char(A)} S^k(A,\sP) \geq |2k|$. Thus for a general $L \in \Char(A)$
-$\chi(A, \sP) = H^0(A, \sP\otimes L)$. Therefore, $S^0(A,\sP) = \Char(A)$ and hence $S(A, \sP) = H^0(A, \Omega_A^1)$.
-On the other hand, let $\SS(A, \sP) = \bigcup_Z T^*_ZA$. We claim that not all such $Z$ would be fibered by tori. This follows from
-the Kashiwara's index theorem 
-\[\chi(A,P) = \langle CC(P), T^*_AA\rangle.\]
-If $Z$ was fibered by a subabelian variety $B\subset A$, then $T^*_ZA = T^*_BA$. But $<T^*_BA, T^*_AA> = \chi(B, \bbC) = 0$ (see e.g.\ \cite[p.\ 124]{Dim}).
-We conclude by Proposition \ref{van-nonsimple} that when $Z$ is not fibered by tori $\pi(T^*_ZA) = H^0(A,\Omega_A^1)$. 
+\begin{proof}[Proof of Theorem \ref{thm:pervese}]
+By the propagation property of the cohomology jump loci
+$\sV^i(A, \sP)$ as in Theorem \ref{thm:cjl}(1) we
+only need to consider $\sV^0(A,\sP)$. We split the argument in 
+two cases:
+\noindent \textbf{Case I: }$\chi(A, \sP)>0$. 
+For a general character $\rho$, $H^i(A, sP\otimes \bbC_{\rho})= 0$ for $i\neq 0$ by Theorem \ref{thm:cjl}(3). Hence for a general
+$\rho$,
+in this case we must have $H^0(A, \sP\otimes \bbC_{\rho})\neq 0$. Hence, 
+\[TC_{\rho}\sV^0(A, \sP) = H^1(X,\bbC)\]
+On the other hand we have
+the Kashiwara index theorem \ref{thm:indextheorem}
+that states
+\[\chi(A,P) = \langle \CC(\sP), T^*_AA\rangle\]
+where $CC(P)$ is the characteristic cycle of $\sP$ as
+in Definition \ref{def:cc}.
+Note that if $Z\subset A$ is fibered by a subabelian variety $B\subset A$, then $T^*_ZA = T^*_BA$. But $<T^*_BA, T^*_AA> = \chi(B, \bbC) = 0$ (see e.g.\ \cite[p.\ 124]{Dim}).  Therefore,
+the $\SS(\sP)$ must contain a subvariety $Z\subset A$ such that
+$Z$ is not fibered by tori. 
+
+We conclude by Proposition \ref{van-nonsimple} that when $Z$ is not fibered by tori $\pi(T^*_ZA) = H^0(A,\Omega_A^1)$. Hence
+we obtain the desired equality.
 
 \noindent \textbf{Case II: } $\chi(A, \sP)=0$. 
-By the structure theorem \cite[Theorem 7.3]{sch}
-we know that 
-\[S^0(A, \sP) = \bigcup \rho_i\cdot(\Char(B_i) \to \Char(A))\]
-for a finite collection of abelian varieties $B_i$
-with maps $p_i\colon A\to B_i$. 
-Therefore for all $L\in\Char(B_i)$ we have
-\[H^0(B_i, p_{i_*}(\sP\otimes \bbC_{\rho})\otimes L) = 0.\]
-This implies that $\chi(p_{i_*}(\sP\otimes \bbC_{\rho}))>0$. 
-Since $p_i$ is smooth, the cotangent vectors in the singular supports of these perverse sheaves satisfy,
-\[p_{i_{\dagger}}(\SS(p_{i_*}(\sP\otimes \bbC_{\rho}))) \subseteq \SS(\sP)\]
-where $p_{i_{\dagger}} \coloneqq (p_i\times \id)\circ dp_i^{-1}$.  
-Conversely, if $Z\subset A$ is so that 
-$T^*_ZA \subset \SS(\sP)$, then
-$Z$ has to be fibered by tori. Indeed, by a result of
+By a result of Weissauer \cite[Theorem 2]{Wei}
+we know that there exists an abelian variety $B$ and a surjective morphism $\varphi\colon A\to B$, a simple perverse sheaf $\sP_B$ on $B$, and a local system $\bbL$ on $A$
+such that 
+\[\sP\otimes \bbL\simeq \varphi^*\sP_B.\]
+Since $\sP$ and $\sP\otimes \bbL$ have the same singular support
+and upto translation by $\bbL$ the same cohomology jump loci, we 
+may and do replace $\sP$ by $\sP\otimes \bbL$.
+
+On the other hand, by a result of
 Franecki and Kapranov
-\cite[Corollary 1.4]{FK} we have that in the formula of
-characterstic cucle, i.e\ $\CC(\sP) = \sum_Z n_Z Z$
-one has $n_Z\geq 0$. Then the statement follows from the
-fact that $T^*_ZA\cdot T^*_AA = 0$ iff and only if $Z$ is fibered by tori and Kashiwara's index theorem. 
-Therefore there exists an abelian variety $A'$ and a map
-$p\colon A\to A'$ such that $Z' \coloneqq p(Z)$ is 
-not fibered by tori. Since $Z'$
-is a singular support of $p_*\sP$
-we have $\chi(p_*\sP) > 0$. Hence for all
-$L\in \Char(A')$, $H^k(A', p_*\sP\otimes L) \neq 0$. Since
-this cohomogy is a direct summand of $H^k(A, \sP\otimes p^*L)$,
-this cohomology is also non-zero. Therefore,
-$\Char(A') \subset \Char(A)$. Hence we have an
-equality
-\[\bigcup_i p_{i_{\dagger}}(\SS(p_*(\sP\otimes \bbC_{\rho}))) = \SS(\sP).\]
-By the above argument it also follows that
-$T^*Z\subset \SS(\sP)$ if and only if there is an $i$
-such that
-$T^*_Z \subset p_{i_{\dagger}}(\SS(p_*(\sP\otimes \bbC_{\rho})))$.
-Now since for all $B_i$, there is a $Z_i\subset A$
-such that $\pi(T^*_{Z_i}A) = p_i^*H^0(B_i, \Omega_{B_i}^1)$
-we obtain
-that
-\[\pi(\SS(\sP) = \bigcup_ip_i^*H^0(B_i, \Omega_{B_i}^1)
-= \pi(S^0(A, \sP)).\]
-Finally, by propagation of cohomology jump loci 
-\cite{??}, we know that $S^0(A, \sP)\supset S^k(A,\sP)$
-for all $k\in \bbZ$. Hence,
-$\pi(S^0(A, \sP)) = S(A, \sP)$.
+\cite[Corollary 1.4]{FK} the formula of
+characterstic cucle, i.e\ \[\CC(\sP) = \sum_Z n_Z Z\]
+satisfies $n_Z\geq 0$. Hence from Kashiwara's index theorem 
+\ref{thm:indextheorem}, one can deduce that all $Z\subset \SS(\sP)$ must be fibered by tori. Similarly, there must be 
+$Z$, with $Z' = \varphi(Z)$ not fibered by tori.
+Therefore, from the previous case we have 
+\[(TC_{\rho}\sV^0(B, \sP'))^{1,0} = \pi(\SS(\sP').\]
+We then conclude 
+that $\varphi^*(\Char(B))\subset \sV^0(A, \sP)$ from observing that
+\[H^0(B, \sP'\otimes \bbC_{\rho'}) \overset{\oplus}{\into}
+H^0(A, \sP\otimes \bbC_{\rho'}).\]
+To see the converse not that 
+for any $\rho \in \sV^0(A, \sP)$ we must 
+have $\bbC_{\rho}|_{\operatorname{Fibre}(\varphi)} = \bbC$.
+Indeed, $H^0(A, \sP\otimes \bbC_{\rho}) = H^0(B, \sP'\otimes \varphi_*\bbC_{\rho})$.
+Hence $\varphi_*\bbC_{\rho} = \bbC{\rho'}$ and $\bbC_{\rho} = 
+\varphi^*\bbC_{\rho'}$.
 
-
-
-%Then by a Theorem of Weissauer \cite[Theorem 2]{Wei12} we know that there exists an abelian variety $A'$, a map $p\colon A\to A'$,
-%a character $\rho\in \Char(A)$ and a simple perverse sheaf $P'$ on
-%$A'$ with $\chi(A', P')>0$ and such that $p^*P'  = P\otimes \bbC_{\rho}$ for some $\rho\in\Char(A)$. 
-%We claim that in this case
-%\[S^k(A,\sP) =  \rho^{-1}\cdot p^*(S^k(A', \sP'))\]
-%where $p^*\colon \Char(A')\to \Char(A))$. 
-%Indeed, if $L = \bbC_{\rho^{-1}}\otimes p^*L'$ for some $L'\in S^k(A'\sP')$ then
-%\[H^k(A, \sP\otimes L) = H^k(A, p^*\sP'\otimes\bbC_{\rho}\otimes \bbC_{\rho^{-1}}\otimes p^*L')=
-%H^k(A', \sP'\otimes L'\otimes Rp_*\bbC_A).\]
-%Since $\bbC\overset{\oplus}{\into} Rp_*\bbC_A$, we obtain the desired non-vanishing. Conversely, if $L\in S^k(A,\sP)$,
-%then by a similar argument we have 
-%$H^k(A', \sP'\otimes Rp_*(L\otimes \bbC_{\rho})) \neq 0$.
-%Since $p$ is smooth $Rp_*(L\otimes \bbC_{\rho})$ is a local system. Furthermore since $\pi_1(A)$ is abelian the local system
-%splits into 1-dimensional simple representations. Let $\eta$
-%be one such representation for which 
-%$H^k(A', \sP'\otimes \bbC_{\eta})\neq 0$. Then,
 
 
 
