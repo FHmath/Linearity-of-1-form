@@ -276,7 +276,7 @@
 
 \DeclareMathOperator{\qcoh}{qcoh}
 
-%\DeclareMathOperator{\reg}{reg}
+\DeclareMathOperator{\dr}{DR}
 
 \DeclareMathOperator{\RHHom}{\mathbf{R}\mathcal{H}\!\mathit{om}}
 
@@ -344,46 +344,78 @@ The goal of this article is two-fold, first we
 
 \maketitle
 \section{Introduction}\label{intro}
-Given a smooth porjective variety $X$, in this article we relate the cohomology jump loci of $\bbC_X$ with the 
+Given a smooth porjective variety $X$, in this article we relate the cohomology jump loci of $\bbC_X$ to the 
 stratification arising in the decomposition theorem for the albnese morphism. Such relation fell out of our interest in the
-study of holomorphic 1-forms. Interestingly, it has been indicated by plethora of results
+study of holomorphic 1-forms. It has been indicated by plethora of results
 (\cite{GL87, HK05, LZ05,
 SS19, HS19, PS14} to name just a few) that a lot of the geometry and topology of the
-variety depends on vanishing of such forms. We state our first result in this direction
-and then put it in the context of the existing vast literature.
+variety depends on vanishing of such forms. For example
+we have the following
 
 
 
 \begin{alphtheorem}\label{thm:smooth}
-Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelian variety $A$. Then $f$ is cohomologically a fiber bundle if and only if there is a global holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing.  In particular, the
+Let $f:X\to A$ be a morphism from a smooth projective variety to a simple abelian variety $A$. If $X$ admits a $\scrC^{\infty}$-fibration over the circle, then $f$ is cohomologically smooth.
+In other words, $R^if_*\bbZ$ are local systems for 
+all $i>0$.
+%Then $f$ is cohomologically a fiber bundle if and only if there is a global holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing.  
+In particular, the
 singular fibres of $f$ carry a pure Hodge structure.
 \end{alphtheorem}
+The link between such
+ real geometry and complex geometry of $X$ is dictated
+by the generic vanishing theory over the abelian variety. 
+On the other hand, conjecturally the following two statements
+are also a bridge between the real and the complex worlds.
+\begin{enumerate}
+	\item $X$ admits a global holomorphic 1-form $\omega$
+	such that $Z(\omega) = \emptyset$, i.e.\ there does \textsl{not}
+	exist any $x\in X$ such that $\omega(T_xX) = 0$. 
+	\item $X$ admits a $\scrC^{\infty}$-fibration over the circle.
+\end{enumerate}
+The direction (1) $\Rightarrow$ (2) was shown by Tischler,
+\cite{Tis70}. The opposite direction is conjectural (attributed
+to Kotschik) and
+was recently established by Shreieder and the first second author
+\cite{SH19}. Assuming (1), therefore we are able to show
+\begin{alphtheorem}
+Let $f\colon X\to A$ be as in Theorem (\ref{thm:smooth}). Assume 
+that there exists a 1-form $\omega\in H^0(A,\Omega_A^1)$
+such that $Z(f^*\omega) = \emptyset$. Then we have the following
+decomposition for any semi-simple complex local system $\bbL$
+\[\bbR f_*\bbL \simeq \bigoplus_i \bbR^i f_*\bbL[-i]\]
+and $\bbR^i f_*\bbL$ are local system.
+\label{thm:cxsmooth}
+\end{alphtheorem}
 
-By a \textsl{cohomological fiber bundle} we mean that the higher direct
-images $\bbR^if_*\bbC$ are integrable connections for all $i$. In particular, the derived direct image
-$\bbR f_*\bbC$ decomposes like the smooth morphism in the derived category $D^b(\bbC)$. In fact a bit more can be said; When $A$ is not necessarily simple existence of a non-vanishing global holomorphic 1-form
-is equivalent to certain restrictions on the singular support 
-(see Definition \ref{def:ss}) of 
+From Tischler's result it is evident that Thereom \ref{thm:smooth}
+implies Theorem \ref{thm:cxsmooth} when $\bbL = \bbC$. 
+The key iput in this result is
+Kashiwara's estimate on the behaviour of the singular
+support of $\bbR f_*\bbL$ (see
+Theorem \ref{th:kas-ss}. In fact a bit more can be said; When $A$ is not necessarily simple existence of a non-vanishing global holomorphic 1-form
+is equivalent to certain restrictions on the singular support of 
 these pushforwards. See Theorem \ref{thm:nonvanishing} for more details.
 
-\begin{remark}[Previous results]
-\begin{enumerate}
-\item \label{item:ps} When $X$ is of general type, it was conjectured in
-	\cite{HK05, LZ05} and was proved
-	by Popa and Schnell \cite{PS14} every global holomorphic 1-		
-	form vanishes on $X$. 
-\item \label{item:hk} On the opposite extreme for any $A$, not necessarily simple when $f$ is singular along a divisor of general
-		type in $A$, Hacon and Kov\'acs \cite[Proposition 3.5.]{HK05} show that
-		$f^*\omega$ always admits zero. See Corollary \ref{cor:hk}
-		for a reinterpretation of their argument. 
-\end{enumerate}	
-\end{remark}
+%\begin{remark}[Previous results]
+%\begin{enumerate}
+%\item \label{item:ps} When $X$ is of general type, it was conjectured in
+	%\cite{HK05, LZ05} and was proved
+	%by Popa and Schnell \cite{PS14} every global holomorphic 1-		
+	%form vanishes on $X$. 
+%\item \label{item:hk} On the opposite extreme for any $A$, not necessarily simple when $f$ is singular along a divisor of general
+		%type in $A$, Hacon and Kov\'acs \cite[Proposition 3.5.]{HK05} show that
+		%$f^*\omega$ always admits zero. See Corollary \ref{cor:hk}
+		%for a reinterpretation of their argument. 
+%\end{enumerate}	
+%\end{remark}
 
-This result is an easy consequence of Kashiwara's estimate for character variety together with the decomposition of $\bbR f_*\bbC$ in $D^b_{A}(\bbC)$. We began studying this pair of results with the
-hope of showing linearity of the set of global holomorphic 1-forms
-of smooth projective varieties much like the work of   Carrell and Lieberman \cite{CL73}
-in case of the global holomorphic tangent vector fields with zeros. It is no surprise that for 1-forms the story is deeply connected to the generic
-vanishing theory. The question we ask is the following:
+We show in Proposition \ref{van-nonsimple} that the collection
+of 1-forms appearing in the conormal spaces of the
+irreducible components of $\bbR f_*\bbL$ are in fact finite union of linear subspaces of $H^0(X,\Omega_X^1)$. Hence, in the spirit of Carrell and Lieberman \cite{CL73}, who showed that
+the set of global holomorphic tangent vector fields with zeros
+is linear,
+we began investigating the following:
 \begin{question}
 Is the following set
 \[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\}\]
@@ -394,31 +426,15 @@ union of linear subspaces of the vector space $H^0(X, \Omega_X^1)$.
 The answer to this question is yes up-to 3-folds by
 a result of the second author obtained jointly with Schreieder
 \sorry{insert theorem reference}. Moreover,
-generic vanishing reasons the answer is also yes 
-when $\chi(X)>0$ \sorry{why not $\chi(X)\neq 0$}. Furthermore
-we show the following
+reasons coming from the generic vanishing theory 
+the answer is also yes 
+when $\chi(X)>0$ \sorry{why not $\chi(X)\neq 0$}. 
 
-\begin{alphtheorem}
-Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then 
-\[V^1(f) \coloneqq \{\omega\in H^0(X,\Omega_X^1)| \codim Z(\omega) \geq 1\}\]
- is linear. In particular, $V^1(X)$ is linear.
-\end{alphtheorem}
-
-More generally we expect the following to be true.
-\begin{conjecture} \label{linear-v1}
-Let $f: X\to A$ be a morphism from a smooth complex projective variety $X$ to an abelian variety $A$. Then 
-\[V^i(f)\coloneqq \{\omega\in H^0(X,\Omega_X^1)| \codim Z(\omega) \geq i\}\] are linear subvarieties of $H^0(X, \Omega_X^1)$, i.e., $V^i(X)$ is linear for each nonnegative integer $i$. In particular $V^i(X)$ are linear.
-\end{conjecture}
-In fact we show a similar result in the quasi-projective setting
-(see \ref{log-linear-v1}). 
-
-
-It is known due to the generic vanishing theory
-%theory of cohomology jumploci 
-that only a piece of $V(X)$, arising from the generic vanishing theory (see \S \ref{se:gv} for more details) is linear, i.e.\
-%\emph{the resonant 1-forms} (see Definition \ref{def:resonance} below) 
-this set forms a finite union of subvector spaces inside $H^0(X, \Omega_X^1)$. To be more specific, this set is given by
-\cite[p.\ 311]{Ara92}
+In the light of Kashiwara's estimate, the 1-forms
+conormal to various strata in the decomposition theorem
+above, is a linear subset of $V(X)$. On the other hand,
+due to the generic vanishing theory
+there exists yet another linear piece, namely
 \begin{equation}
 \begin{split}
 \sR(X)\coloneqq \bigcup_i\{\omega\in H^0(X, \Omega_X^1)| \exists \sL\in \Pic^0(X) \text{ and } p\in \bbZ_{\geq 0} \text{ such that},
@@ -427,11 +443,15 @@ H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge\omega) \neq 0
 \label{eq:}
 \end{split}
 \end{equation}
-This set is also the holomorphic piece of the tangent cone 
-(see \ref{def:tc} for a definition) to the cohomology jump loci 
-\[\sV^i(X,\bbC) \coloneqq \{\rho\in\Char(X)| \bbH^i(X, \bbC_{\rho})\neq  0\}\subseteq \Char(X) \coloneqq Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})\]
-where $\bbC_{\rho}$ is the local system associated $\rho$
-under the Riemann--Hilbert correspondence.
+Via the non-abelian Hodge correspondence a different way to understand this set is via the Lie algebra associated to the  the cohomology jump loci 
+\[\sV^i(X,\bbC) \coloneqq \{\rho\in\Char(X)| \bbH^i(X, \bbC_{\rho})\neq  0\}\subseteq \]
+where $\bbC_{\rho}$ is the local system associated 
+to the characte $\rho\in Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})$.
+The Lie algebra of this set lies in $H^1(X,\bbC)$. It's holomorphic part coincides with $\sR(X)$ above
+(see \S \ref{sec:gv} for more details). Various results
+from the generic vanishing theory culminated in
+the result of Arapura \cite[p.\ 311]{Ara92} guarantees that
+$\sR(X)$ is linear. 
 %\cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
 %we borrow the terminology). 
 %Henceforth we shall call finite unions of subvector spaces as \emph{linear subvarieties}. 
@@ -439,31 +459,7 @@ under the Riemann--Hilbert correspondence.
 %of a morphism $f\colon X\to A$ from a smooth projective variety to an abelian variety $A$,
 %we similarly define
 %\[V(f):=\{ \omega\in H^0(A, \Omega_A^1) | Z(f^*\omega)\neq \emptyset\}.\]
-On the other hand by Kashiwara's estimate
-of character varieties, it is known that given a proper morphism
-$f\colon X\to A$ to an abelian variety $A$, we have
-\[SS(Rf_*\bbC) \subseteq f_*(df^{-1}(0_X))\subset T^*A\]
-where $SS(Rf_*\bbC)$ is the singular support of the constructible
-sheaf $Rf_*\bbC$ (see Definition \ref{def:ss}) and $0_X$ is the
-zero section $T^*_XX$. Furthermore, $f_*(df^{-1}(0_X))$ is
-defined via the following diagram:
-\begin{equation}
-\begin{tikzcd}
-A\times H^0(A,\Omega_A^1)  \ar[dr]
-& X\times H^0(A, \Omega_A^1)\ar[r, "df"']\ar[d] \ar[l, "f\times id"]
-& T^*X \ar[d]\\
-&A  & X\ar[l, "f"]
-\end{tikzcd}
-\label{eq:maindiagram}
-\end{equation}
-Note that under the projection $\pi\colon A\times H^0(A,\Omega_A^1)\to H^0(A,\Omega_A^1)$ we have
-\[\pi(f_*(df^{-1}(0_X))) = V(f) \coloneqq \{\omega\in H^0(A,\Omega_A^1)|
-Z(f^*\omega) \neq \emptyset\}.\]
-Therefore, when $f$ is the albanese morphism, we obtain
-\[SS(Rf_*\bbC)\subseteq V(X).\]
-We show in Proposition \ref{prop:vansimple} 
-that $SS(Rf_*\bbC)$ is a finite union of linear subspaces of $H^0(A,\Omega_A^1)$. We
-have the following
+We show the following
 \begin{alphtheorem}
 Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
 \[\sR(X) =  \SS(Ra_*\bbC). \]
@@ -480,40 +476,56 @@ is called the cohomology jump loci of $\sP$.
 \label{def:cjl}
 \end{definition}
 \begin{alphtheorem}
-Let $A$ be an abelian variety. Let $P$ be a complex of perverse sheaves with complex coefficient on $A$. 
+Let $A$ be an abelian variety. Let $\sP$ be a complex of perverse sheaves with complex coefficient on $A$. 
 Then we have the equality that
-$$\pi(CC(P)) = H^0(X, \Omega_X^1)\cap \bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,\sP), $$
-where the union is running over a representative point from every irreducible components of $\sV^0(A,P)$
+$$\pi(\SS(\sP)) = \text{(1,0)-piece of }\bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,\sP), $$
+where the union is running over representative points from every irreducible components of $\sV^0(A,P)$
 $TC_{\rho} \sV^0(A,P) \subseteq H^1(X, \bbC)$ denotes the tangent cone at $\rho$. 
 \label{thm:perverse}
 \end{alphtheorem}
 
-For an
-interpretation of these results in the category of regular holonomic D-modules
-see Theorem \ref{thm:linearitydmodule}. The key technique we
+The key technique we
 use to relate the the generic vanishing theory on abelian varieties with the support of $Rf_*\bbC$ is Kashiwara's
-global index theorem. 
+global index theorem. In terms of simple holonomic D-modules
+on abelian variety we can interpret the above result as
 
-
+\begin{alphtheorem}
+Let $\sM$ be a simple holonomic D-module on an abelian variety $A$.
+Then the set
+\[\sR_d(X)\coloneqq \{\omega\in H^0(A, \Omega_A^1)|\exists \sL\in \Pic^0(A) \text{ with }
+(H^{\bullet}(A, \dr(\sM\otimes\sL)), \wedge\omega) \text{ is not exact.}\}\]
+satisfies
+\[\sR_d(X) = \pi(\SS(\sM))\]
+where $\SS(\sM)$ is the singular support of $\sM$.
+\label{thm:dlinearity}
+\end{alphtheorem}
 \begin{remark}
-Note that it is not clear a priori why $\sR(X)\subseteq V(X)$. However, it is a consequence of our Theorem. Although this was known by a special case of an earlier result of Budur--Wang--Yoon
-\cite{BWY}. However,
-We do know at the moment whether the equality holds in $\sR(X) \subseteq V(X)$. 
+\begin{enumerate}
+\item Note that a consequence of the above is that $\sR(X)\subseteq V(X)$. This was known by a special case of an earlier result of Budur--Wang--Yoon
+\cite{BWY}. 
+\item Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is linear as already mentioned above. 
+This follows immediately from the generic vanishing theory. Indeed, by Hodge decomposition
+we have
+$H^k(X,\bbC) \simeq \bigoplus_{p+q = k} H^p(X,\Omega_X^q)$. Hence the complexes $(H^p(X, \Omega_X^{\bullet}), \wedge\omega)$ can be summed together to form the complex $(H^p(X, \bbC), \wedge\omega)$. Since $\chi(X)>0$ the latter complex cannot be exact. Hence $H^0(X,\Omega_X^1)
+= \sR(X)$.
+\item The equality $\sR(X) = V(X)$ is known to fail
+in case of Example \cite{ex:DJL} below. However $X$ admits a
+finite \'etale cover $X'\to X$ such that $\sR(X') = V(X')$. Therefore it is natural to ask the following 
+\end{enumerate}
 \end{remark}
+\begin{question}
+Does there exist an \'etale finite morphism $p\colon  X' \to X$ 
+such that for all $\omega \in H^0(X', \Omega_{X'}^1)$ with
+$Z(\omega)\neq \emptyset$, there is a line bundle $\sL\in\Pic(X')$
+and integers $p, q$ such that
+\[\frac{\ker(H^q({X'}, \Omega_{X'}^{p})\xrightarrow{\omega} H^q({X'}, \Omega_{X'}^{p+1})}
+{\im(H^q({X'}, \Omega_{X'}^{p-1}) \xrightarrow{\omega} H^q({X'}, \Omega_{X'}^{p})}\]
+\end{question}
 %An example of Debarre, Jiang and Lahoz 
 %\cite[Example 1.11]{DJL17} shows that the
 %there exists a bi-elliptic surface $S$ admitting a 1-form 
 %$\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
 %is exact, yet $\omega$ admits zeros on $S$. Theorem \ref{thm:linearity} shows that such forms are not under the realm of generic vanishing theory. 
-
-\begin{remark}
-Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is linear as already mentioned above. 
-This follows immediately from the generic vanishing theory. Indeed, by Hodge decomposition
-we have
-$H^k(X,\bbC) \simeq \bigoplus_{p+q = k} H^p(X,\Omega_X^q)$. Hence the complexes $(H^p(X, \Omega_X^{\bullet}), \wedge\omega)$ can be summed together to form the complex $(H^p(X, \bbC), \wedge\omega)$. Since $\chi(X)>0$ the latter complex cannot be exact. Hence $H^0(X,\Omega_X^1)
-= \sR(X)$.
-\end{remark}
-
 
 
 
@@ -798,6 +810,18 @@ $f\colon X\to Y$ then we have the following
 \label{thm:}
 \end{theorem}
 
+Given $f\colon X\to A$ a morphism to an abelian
+variety, via Kashiwara's estimate the singular support of $\bbR f_*\bbC$ produces a breeding ground for 1-forms with zeros. This phenomenon was exploited in
+\cite{PS14}
+in showing that all 1-forms admit zeros on smooth projective
+varieties of general type. Here we recall the estimate in our
+current framework. For the most 
+\begin{theorem}[Kashiwara's estimate on the behaviour of singular support]
+Given $f\colon X\to A$, consider the following
+
+\label{thm:}
+\end{theorem}
+
 
 
 \section{Generic vanishing theory on abelian varieties}
@@ -861,12 +885,12 @@ Therefore, from the previous case we have
 We then conclude 
 that $\varphi^*(\Char(B))\subset \sV^0(A, \sP)$ from observing that
 \[H^0(B, \sP_B\otimes \bbC_{\rho'}) \overset{\oplus}{\into}
-H^0(A, \sP\otimes \bbC_{\rho'}).\]
+H^0(A, \sP\otimes \varphi^*\bbC_{\rho'}).\]
 To see the converse note that 
 for any $\rho \in \sV^0(A, \sP)$ we must 
 have $\bbC_{\rho}|_{\operatorname{Fibre}(\varphi)} = \bbC$.
 Indeed, $H^0(A, \sP\otimes \bbC_{\rho}) = H^0(B, \sP_B\otimes \varphi_*\bbC_{\rho})$.
-Hence $\varphi_*\bbC_{\rho} = \bbC{\rho'}$ and $\bbC_{\rho} = 
+Hence $\varphi_*\bbC_{\rho} = \bbC_{\rho'}$ and $\bbC_{\rho} = 
 \varphi^*\bbC_{\rho'}$.
 
 
@@ -880,137 +904,137 @@ Hence $\varphi_*\bbC_{\rho} = \bbC{\rho'}$ and $\bbC_{\rho} =
 
 
 
-%\bibliographystyle{alpha}
-%\bibliography{main_new}
+\bibliographystyle{halpha}
+\bibliography{main_new}
 
 
-\begin{thebibliography}{ADMSP}
-
-\bibitem[Ara92]{Ara92} D.\ Arapura, ``Higgs line bundles, Green-Lazarsfeld sets, and maps of K\"ahler manifolds to curves", \textit{Bull., New Ser.,
-Am. Math. Soc.}, vol.\ \textbf{26} (1992), pp.\ 310--314.
-
-\bibitem[Ara97]{Ara97} D.\ Arapura, ``Geometry of cohomology support loci for local systems, I". \textit{Journal of Algebraic Geometry} vol.\ \textbf{3} (1997): pp.\ 563--597.
-
-
-\bibitem[BWY16]{BWY16} N. Budur, B. Wang, Y. Yoon, \textit{Rank one local systems and forms of degree one}. Int. Math. Res. Not. \textbf{13} (2016), 3849--3855.
-
-
-
-\bibitem[CL73]{CL73} J. B. Carrell, D. I. Lieberman,  \textit{Holomorphic vector fields and K\"ahler manifolds}, Invent. Math. \textbf{21} (1973), 303--309.
-
-\bibitem[Deb07]{Deb} O. Debarre,  \textit{On the geometry of abelian varieties} \url{https://www.math.ens.fr/\textasciitilde debarre/Taiwan.pdf}, (2007).
-
-\bibitem[DJL17]{DJL17} O.\ Debarre, Z.\ Jiang and M.\ Lahoz, Rational cohomology tori, \textit{Geometry \& Topology} vol.\ 21 (2017),
-pp.\ 1095--1130.
-
-\bibitem[DiPa13]{DiPa13}A. Dimca, S. Papadima, \textit{Nonabelian cohomology jump loci from ananalytic view point}. Commun. Contem. Math. \textbf{15} (5), 1350025 (2013).
-
-
-\bibitem[DiSu]{disu} A. Dimca, A. I. Suciu, \textit{Which 3-manifold groups are K\"ahler groups?}, J. Eur. Math. Soc., \textbf{11} (2009), no. 3, 521-528.
-
-\bibitem[GH18]{GH18} I. Glazer, Y. I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms--the general case (with an appendix joint with Gady Kozma)}, arXiv:1811.09838.
-
-\bibitem[GH19]{GH19}  I. Glazer, Y.I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms}, Selecta Mathematica (2019), pp.\ 25--15
-
-
-\bibitem[GL87]{GL87} M. Green, R. Lazarsfeld, \textit{Deformation theory, generic vanishing theorems and some conjectures of Enriques, Catanese and Beauville}, Inv. Math. \textbf{90} (1987), 389--407.
-
-\bibitem[GW10]{GW10} U. G\"ortz, T. Wedhorn, \textit{Algebraic geometry I. Schemes with examples and exercises.} Advanced Lectures in Mathematics. Vieweg+Teubner, Wiesbaden, 2010. 
-
-\bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
-
-\bibitem[Har77]{Har77} R. Hartshorne, \textit{Algebraic Geometry}, Graduate Texts in Mathematics, vol. 52, Springer, New York,
-1977.
-
-\bibitem[HS19]{HS19} F. Hao, S. Schreieder, \textit{Holomorphic one-forms without zeros on threefolds}, to appear Geometry $\&$ Topology , arXiv:1906.07606.
-
-\bibitem[KK]{KK} J. Koll\'ar, S. Kov\'acs {\it Singularities of the Minimal Model Program.}
-Series: Cambridge Tracts in Mathematics (No. 200)
-
-\bibitem[Laz04a]{Laz04a}
-    R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ I.\ Classical
-    setting: line bundles and linear series}.
-    Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 48. Berlin: Springer-Verlag, 2004.
-    \textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18808-4}{\ttfamily 10.1007/978-3-642-18808-4}.
-    \textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095471}{\ttfamily 2095471}.
-
-
-\bibitem[Laz04b]{Laz04}
-    R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ II.\ Positivity
-    for vector bundles, and multiplier ideals}.
-    Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 49. Berlin: Springer-Verlag, 2004.
-    \textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18810-7}{\ttfamily 10.1007/978-3-642-18810-7}.
-    \textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095472}{\ttfamily 2095472}.
-
-%\bibitem[KM05]{KM05} J. Koll\'ar and S. Mori, \textit{Birational geometry of algebraic varieties}, Cambridge University Press, Cambridge, 2008.
-
-%\bibitem[Mo85]{Mo85} S. MORI S, \textit{Classification of higher-dimensional varieties}, in: Algebraic Geometry, Bowdoin, (1985),Brunswick, Maine, (1985), in: Proc. Sympos. Pure Math., \textbf{46}, American Mathematical Society,Providence, RI, (1987), 269--331.
-
-%\bibitem[LMW18]{LMW18} Y. Liu, L. Maxim, B. Wang, {\it Perverse sheaves on semi-abelian varieties}, arXiv: 1804.05014. 
-
-\bibitem[LMW20]{LMW20} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Koll\'ar}, arXiv:2006.09295.
-
-\bibitem[LZ05]{LZ05} T.\ Luo and Q.\ Zhang, Holomorphic forms on threefolds, \textit{Recent Progress in Arithmetic and Algebraic Geometry, Contemp.\ Math, Amer.\ Math.\ Soc.}, vol.\ 386, pp.\ 87--94 Providence, RI, (2005). 
-\textsc{doi}: \href{https://doi.org/org/10.1090/conm/386/07219}{\ttfamily 10.1090/conm/386/07219}.
-\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2182772}{\ttfamily 2182772}.
-
-\bibitem[MiSh18]{MiSh18} L. Migliorini and V. Shende, \textit{Higher discriminants and the topology of algebraic maps}, Algebraic geometry, (2018), 114--130.
-
-\bibitem[Mum]{Mum} D. Mumford, \text{Abelian Varieties}, Tata Institute of Fundamental Research, (1985).
-
-\bibitem[PS14]{PS14} M. Popa and C. Schnell, \textit{Kodaira dimension and zeros of holomorphic one-forms}, Ann. of Math. \textbf{179} (2014), 1109--1120.
-
-
-\bibitem[Sha74]{Sha74} I. Shafarevich, \textit{Basic Algebraic Geometry I}. Berlin, Springer--Verlag, (1974).
-
-\bibitem[Sch15]{Sch}
-C. Schnell, {\it  Holonomic $\mathcal{D}$-modules on abelian varieties},
-Publ. Math. Inst. Hautes \'{E}tudes Sci. 121 (2015), 1--55.
-
-\bibitem[Sch19]{SS19} S.\ Schreieder, \textit{Zeros of holomorphic one-forms and topology of K\"ahler manifolds, (Appendix written jointly with H.-Y. Lin) }, to appear IMRN. (2019).
-
-\bibitem[Schm76]{Schm76} W. Schmid, Variation of Hodge structure: the singularities of the period mapping, Inv. Math. \textbf{22} (1973), 211--319.
-
-\bibitem[Ste76]{Ste76} J. Steenbrink, \textit{Limits of Hodge structures}, Inv. Math. \textbf{31} (1976), 229--257.
-
-
-
-
-\bibitem[Sim93a]{Sim93} C. Simpson, \textit{Lefschetz theorems for the integral leaves of a holomorphic one-form}, Compositio Math. \textbf{87} (1993), 99--113.
-
-\bibitem[Sim93b]{Sim93b} ---------, Subspaces of moduli spaces of rank one local systems, \textit{Ann. Sci. \'Ec. Norm. Super.}, vol.\ 26,
-pp.\ 361–-401 (1993).
-
-\bibitem[Sp88]{Sp88} M. Spurr, {\it On the zero set of a holomorphic one-form on a compact complex manifold.} Trans. Am.
-Soc. \textbf{308} (1988), 329-339. 
-
-\bibitem[stacks-project]{stacks-project} The {Stacks project authors}, \textit{The Stacks project}, \url{https://stacks.math.columbia.edu}, (2020).
-
-\bibitem[Uen75]{Uen75} K.\ Ueno. ``Classification theory of algebraic varieties and compact complex spaces", \textit{Lecture Notes in Mathematics},
-Springer-Verlag, Berlin, 1975, Notes written in collaboration with P. Cherenack, Vol.\ \textbf{439}. 
-\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=0506253}{\ttfamily 0506253}.
-
-
-\bibitem[Dim]{Dim} A. Dimca, {\it Sheaves in Topology} Springer-Verlag Berlin Heidelberg New York in 2004.
-\textsc{doi:} \href{https://doi.org/10.10071978-3-642-18868-8}{\ttfamily 10.10071978-3-642-18868-8}.
-\textsc{isbn:} {\ttfamily 978-540-20665-1 }.
-
-\bibitem[BWY]{BWY} N. Budur, B . Wang, Y. Yoon, {\it Rank one local systems and forms of degree one}, Int. Math. Res. Not. (2016), no.13, 3849-3855.
-
+%\begin{thebibliography}{ADMSP}
 %
-\bibitem[LMW]{LMW} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Kollar}, arXiv:2006.09295.
-
-\bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
-
-
-\bibitem[Suc16]{S} A. Suciu, {\it Around the tangent cone theorem}, Configuration Spaces: Geometry, Topology and Representation Theory, 1-39, Springer INdAM series, vol. 14, Springer, Cham, 2016
-
-\bibitem[Wei12]{Wei12} R.\ Weissauer, ``Degenerate perverse sheaves on abelian varieties", \href{https://arxiv.org/abs/1204.2247}{\ttfamily arXiv:1204.2247[math.AG]}, 2012.
-
-
-
-
-\end{thebibliography}
+%\bibitem[Ara92]{Ara92} D.\ Arapura, ``Higgs line bundles, Green-Lazarsfeld sets, and maps of K\"ahler manifolds to curves", \textit{Bull., New Ser.,
+%Am. Math. Soc.}, vol.\ \textbf{26} (1992), pp.\ 310--314.
+%
+%\bibitem[Ara97]{Ara97} D.\ Arapura, ``Geometry of cohomology support loci for local systems, I". \textit{Journal of Algebraic Geometry} vol.\ \textbf{3} (1997): pp.\ 563--597.
+%
+%
+%\bibitem[BWY16]{BWY16} N. Budur, B. Wang, Y. Yoon, \textit{Rank one local systems and forms of degree one}. Int. Math. Res. Not. \textbf{13} (2016), 3849--3855.
+%
+%
+%
+%\bibitem[CL73]{CL73} J. B. Carrell, D. I. Lieberman,  \textit{Holomorphic vector fields and K\"ahler manifolds}, Invent. Math. \textbf{21} (1973), 303--309.
+%
+%\bibitem[Deb07]{Deb} O. Debarre,  \textit{On the geometry of abelian varieties} \url{https://www.math.ens.fr/\textasciitilde debarre/Taiwan.pdf}, (2007).
+%
+%\bibitem[DJL17]{DJL17} O.\ Debarre, Z.\ Jiang and M.\ Lahoz, Rational cohomology tori, \textit{Geometry \& Topology} vol.\ 21 (2017),
+%pp.\ 1095--1130.
+%
+%\bibitem[DiPa13]{DiPa13}A. Dimca, S. Papadima, \textit{Nonabelian cohomology jump loci from ananalytic view point}. Commun. Contem. Math. \textbf{15} (5), 1350025 (2013).
+%
+%
+%\bibitem[DiSu]{disu} A. Dimca, A. I. Suciu, \textit{Which 3-manifold groups are K\"ahler groups?}, J. Eur. Math. Soc., \textbf{11} (2009), no. 3, 521-528.
+%
+%\bibitem[GH18]{GH18} I. Glazer, Y. I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms--the general case (with an appendix joint with Gady Kozma)}, arXiv:1811.09838.
+%
+%\bibitem[GH19]{GH19}  I. Glazer, Y.I. Hendel, \textit{On singularity properties of convolutions of algebraic morphisms}, Selecta Mathematica (2019), pp.\ 25--15
+%
+%
+%\bibitem[GL87]{GL87} M. Green, R. Lazarsfeld, \textit{Deformation theory, generic vanishing theorems and some conjectures of Enriques, Catanese and Beauville}, Inv. Math. \textbf{90} (1987), 389--407.
+%
+%\bibitem[GW10]{GW10} U. G\"ortz, T. Wedhorn, \textit{Algebraic geometry I. Schemes with examples and exercises.} Advanced Lectures in Mathematics. Vieweg+Teubner, Wiesbaden, 2010. 
+%
+%\bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
+%
+%\bibitem[Har77]{Har77} R. Hartshorne, \textit{Algebraic Geometry}, Graduate Texts in Mathematics, vol. 52, Springer, New York,
+%1977.
+%
+%\bibitem[HS19]{HS19} F. Hao, S. Schreieder, \textit{Holomorphic one-forms without zeros on threefolds}, to appear Geometry $\&$ Topology , arXiv:1906.07606.
+%
+%\bibitem[KK]{KK} J. Koll\'ar, S. Kov\'acs {\it Singularities of the Minimal Model Program.}
+%Series: Cambridge Tracts in Mathematics (No. 200)
+%
+%\bibitem[Laz04a]{Laz04a}
+    %R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ I.\ Classical
+    %setting: line bundles and linear series}.
+    %Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 48. Berlin: Springer-Verlag, 2004.
+    %\textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18808-4}{\ttfamily 10.1007/978-3-642-18808-4}.
+    %\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095471}{\ttfamily 2095471}.
+%
+%
+%\bibitem[Laz04b]{Laz04}
+    %R. Lazarsfeld. \textit{Positivity in algebraic geometry.\ II.\ Positivity
+    %for vector bundles, and multiplier ideals}.
+    %Ergeb.\ Math.\ Grenzgeb.\ (3), Vol.\ 49. Berlin: Springer-Verlag, 2004.
+    %\textsc{doi}: \href{https://doi.org/10.1007/978-3-642-18810-7}{\ttfamily 10.1007/978-3-642-18810-7}.
+    %\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2095472}{\ttfamily 2095472}.
+%
+%%\bibitem[KM05]{KM05} J. Koll\'ar and S. Mori, \textit{Birational geometry of algebraic varieties}, Cambridge University Press, Cambridge, 2008.
+%
+%%\bibitem[Mo85]{Mo85} S. MORI S, \textit{Classification of higher-dimensional varieties}, in: Algebraic Geometry, Bowdoin, (1985),Brunswick, Maine, (1985), in: Proc. Sympos. Pure Math., \textbf{46}, American Mathematical Society,Providence, RI, (1987), 269--331.
+%
+%%\bibitem[LMW18]{LMW18} Y. Liu, L. Maxim, B. Wang, {\it Perverse sheaves on semi-abelian varieties}, arXiv: 1804.05014. 
+%
+%\bibitem[LMW20]{LMW20} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Koll\'ar}, arXiv:2006.09295.
+%
+%\bibitem[LZ05]{LZ05} T.\ Luo and Q.\ Zhang, Holomorphic forms on threefolds, \textit{Recent Progress in Arithmetic and Algebraic Geometry, Contemp.\ Math, Amer.\ Math.\ Soc.}, vol.\ 386, pp.\ 87--94 Providence, RI, (2005). 
+%\textsc{doi}: \href{https://doi.org/org/10.1090/conm/386/07219}{\ttfamily 10.1090/conm/386/07219}.
+%\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=2182772}{\ttfamily 2182772}.
+%
+%\bibitem[MiSh18]{MiSh18} L. Migliorini and V. Shende, \textit{Higher discriminants and the topology of algebraic maps}, Algebraic geometry, (2018), 114--130.
+%
+%\bibitem[Mum]{Mum} D. Mumford, \text{Abelian Varieties}, Tata Institute of Fundamental Research, (1985).
+%
+%\bibitem[PS14]{PS14} M. Popa and C. Schnell, \textit{Kodaira dimension and zeros of holomorphic one-forms}, Ann. of Math. \textbf{179} (2014), 1109--1120.
+%
+%
+%\bibitem[Sha74]{Sha74} I. Shafarevich, \textit{Basic Algebraic Geometry I}. Berlin, Springer--Verlag, (1974).
+%
+%\bibitem[Sch15]{Sch}
+%C. Schnell, {\it  Holonomic $\mathcal{D}$-modules on abelian varieties},
+%Publ. Math. Inst. Hautes \'{E}tudes Sci. 121 (2015), 1--55.
+%
+%\bibitem[Sch19]{SS19} S.\ Schreieder, \textit{Zeros of holomorphic one-forms and topology of K\"ahler manifolds, (Appendix written jointly with H.-Y. Lin) }, to appear IMRN. (2019).
+%
+%\bibitem[Schm76]{Schm76} W. Schmid, Variation of Hodge structure: the singularities of the period mapping, Inv. Math. \textbf{22} (1973), 211--319.
+%
+%\bibitem[Ste76]{Ste76} J. Steenbrink, \textit{Limits of Hodge structures}, Inv. Math. \textbf{31} (1976), 229--257.
+%
+%
+%
+%
+%\bibitem[Sim93a]{Sim93} C. Simpson, \textit{Lefschetz theorems for the integral leaves of a holomorphic one-form}, Compositio Math. \textbf{87} (1993), 99--113.
+%
+%\bibitem[Sim93b]{Sim93b} ---------, Subspaces of moduli spaces of rank one local systems, \textit{Ann. Sci. \'Ec. Norm. Super.}, vol.\ 26,
+%pp.\ 361–-401 (1993).
+%
+%\bibitem[Sp88]{Sp88} M. Spurr, {\it On the zero set of a holomorphic one-form on a compact complex manifold.} Trans. Am.
+%Soc. \textbf{308} (1988), 329-339. 
+%
+%\bibitem[stacks-project]{stacks-project} The {Stacks project authors}, \textit{The Stacks project}, \url{https://stacks.math.columbia.edu}, (2020).
+%
+%\bibitem[Uen75]{Uen75} K.\ Ueno. ``Classification theory of algebraic varieties and compact complex spaces", \textit{Lecture Notes in Mathematics},
+%Springer-Verlag, Berlin, 1975, Notes written in collaboration with P. Cherenack, Vol.\ \textbf{439}. 
+%\textsc{mr}: \href{http://www.ams.org/mathscinet-getitem?mr=0506253}{\ttfamily 0506253}.
+%
+%
+%\bibitem[Dim]{Dim} A. Dimca, {\it Sheaves in Topology} Springer-Verlag Berlin Heidelberg New York in 2004.
+%\textsc{doi:} \href{https://doi.org/10.10071978-3-642-18868-8}{\ttfamily 10.10071978-3-642-18868-8}.
+%\textsc{isbn:} {\ttfamily 978-540-20665-1 }.
+%
+%\bibitem[BWY]{BWY} N. Budur, B . Wang, Y. Yoon, {\it Rank one local systems and forms of degree one}, Int. Math. Res. Not. (2016), no.13, 3849-3855.
+%
+%%
+%\bibitem[LMW]{LMW} Y. Liu, L. Maxim, B. Wang, \textit{Aspherical manifolds, Mellin transformation and a question of Bobadilla-Kollar}, arXiv:2006.09295.
+%
+%\bibitem[HK05]{HK05} C. D. Hacon, S. J. Kov\'acs, \textit{Holomorphic one-forms on varieties of general type}, Ann. Sci. \'Ecole Norm. Sup. \textbf{38} (2005), no. 4, 599--607.
+%
+%
+%\bibitem[Suc16]{S} A. Suciu, {\it Around the tangent cone theorem}, Configuration Spaces: Geometry, Topology and Representation Theory, 1-39, Springer INdAM series, vol. 14, Springer, Cham, 2016
+%
+%\bibitem[Wei12]{Wei12} R.\ Weissauer, ``Degenerate perverse sheaves on abelian varieties", \href{https://arxiv.org/abs/1204.2247}{\ttfamily arXiv:1204.2247[math.AG]}, 2012.
+%
+%
+%
+%
+%\end{thebibliography}
 
 
 
