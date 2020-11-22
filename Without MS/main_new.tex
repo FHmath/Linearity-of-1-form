@@ -343,6 +343,7 @@ The goal of this article is two-fold, first we
 \end{abstract}
 
 \maketitle
+\tableofcontents
 \section{Introduction}\label{intro}
 Given a smooth porjective variety $X$, in this article we relate the cohomology jump loci of $\bbC_X$ to the 
 stratification arising in the decomposition theorem for the albnese morphism. Such relation fell out of our interest in the
@@ -493,10 +494,12 @@ on abelian variety we can interpret the above result as
 Let $\sM$ be a simple holonomic D-module on an abelian variety $A$.
 Then the set
 \[\sR_d(X)\coloneqq \{\omega\in H^0(A, \Omega_A^1)|\exists \sL\in \Pic^0(A) \text{ with }
-(H^{\bullet}(A, \dr(\sM\otimes\sL)), \wedge\omega) \text{ is not exact.}\}\]
+H^{k}(A, \dr(\sM\otimes(\sL, \nabla_{\omega}))) \neq 0\}\]
 satisfies
 \[\sR_d(X) = \pi(\SS(\sM))\]
-where $\SS(\sM)$ is the singular support of $\sM$.
+where $\nabla_{\omega})\colon \sL \to \Omega_A^1\otimes \sL)$
+denotes the integrable connection on $\sL$ associated to the Higgs
+field $\omega$ and $\SS(\sM)$ is the singular support of $\sM$.
 \label{thm:dlinearity}
 \end{alphtheorem}
 \begin{remark}
@@ -821,6 +824,29 @@ Given $f\colon X\to A$, consider the following
 
 \label{thm:}
 \end{theorem}
+
+
+
+
+
+
+\section{Proof of Theorem \ref{thm:smooth} and \ref{thm:cxsmooth}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
