@@ -241,6 +241,7 @@
 %Arrow Style =========================
 \newcommand{\into}{\hookrightarrow}
 \newcommand{\onto}{\rightarrow\hspace*{-.14in}\rightarrow}
+\def\acts{\curvearrowright}
 
 %Math Operators ======================
 
@@ -350,23 +351,7 @@ stratification arising in the decomposition theorem for the albnese morphism. Su
 study of holomorphic 1-forms. It has been indicated by plethora of results
 (\cite{GL87, HK05, LZ05,
 Sch19, HS19, PS14} to name just a few) that a lot of the geometry and topology of the
-variety depends on vanishing of such forms. For example
-we have the following
-
-
-
-\begin{alphtheorem}\label{thm:smooth}
-Let $X$ be a smooth projective variety with albanese a simple abelian variety $A$. Denote the albanese morphism $a\colon X\to A$. If $X$ admits a $\scrC^{\infty}$-fibre bundle structure over the circle, then the albanese is cohomologically smooth.
-In other words, $R^ia_*\bbZ$ are local systems for 
-all $i>0$.
-%Then $f$ is cohomologically a fiber bundle if and only if there is a global holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing.  
-In particular, the
-singular fibres of $f$ carry a pure Hodge structure.
-\end{alphtheorem}
-The link between such
- real geometry and complex geometry of $X$ is dictated
-by the generic vanishing theory over the abelian variety. 
-On the other hand, conjecturally the following two statements
+variety depends on vanishing of such forms. Conjecturally the following two statements
 are also a bridge between the real and the complex worlds.
 \begin{enumerate}
 	\item $X$ admits a global holomorphic 1-form $\omega$
@@ -378,27 +363,57 @@ The direction (1) $\Rightarrow$ (2) was shown by Tischler,
 \cite{Tis70}. The opposite direction is conjectural (attributed
 to Kotschik) and
 was recently established by Shreieder and the first second author
-\cite{HS19}. Assuming (1), therefore we are able to show
-\begin{alphtheorem}
-Let $f\colon X\to A$ be as in Theorem (\ref{thm:smooth}). Assume 
-that there exists a 1-form $\omega\in H^0(A,\Omega_A^1)$
-such that $Z(f^*\omega) = \emptyset$. Then we have the following
-decomposition for any semi-simple complex local system $\bbL$
-\[\bbR f_*\bbL \simeq \bigoplus_i \bbR^i f_*\bbL[-i]\]
-and $\bbR^i f_*\bbL$ are local system.
-\label{thm:cxsmooth}
-\end{alphtheorem}
+\cite{HS19}. We show the following 
 
-From Tischler's result it is evident that Thereom \ref{thm:smooth}
-implies Theorem \ref{thm:cxsmooth} when $\bbL = \bbC$. 
-The key iput in this result is
-Kashiwara's estimate on the behaviour of the singular
-support of $\bbR f_*\bbL$ (see
-Theorem \ref{th:kas-ss}. In fact a bit more can be said; When $A$ is not necessarily simple existence of a non-vanishing global holomorphic 1-form
+
+
+\begin{alphtheorem}\label{thm:smooth}
+Given a $f\colon X\to A$ be from a smooth projective variety $X$ to a simple abelian variety $A$ such that
+both $X$ and $A$ admit $\scrC^{\infty}$-fibre bundle structure over $S^1$ with the commutative diagram
+\[\begin{tikzcd}
+	X\ar[dr]\ar[d, "f"]& \\
+	A\ar[r]&S^1
+\end{tikzcd}.\] 
+Then $f$ is cohomologically trivial, i.e.\ we have the following
+decomposition for any semi-simple complex local system $\bbL$ on $X$
+\[\bbR f_*\bbL \simeq \bigoplus_i \bbR^i f_*\bbL[-i]\]
+and $\bbR^i f_*\bbL$ are local system. In particular, the
+singular fibres of $f$ carry a pure Hodge structure.
+
+Furthermore, the decomposition $\bbR f_*\bbC$ underlies an integral lattice, in other words, $R^ia_*\bbZ$ are also local systems for 
+all $i\geq 0$.
+%Then $f$ is cohomologically a fiber bundle if and only if there is a global holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing.  
+
+\end{alphtheorem}
+In fact a bit more can be said; When $A$ is not necessarily simple existence of a non-vanishing global holomorphic 1-form
 is equivalent to certain restrictions on the singular support of 
 these pushforwards. See Theorem \ref{thm:nonvanishing} for more details. 
+The link between such
+ real geometry and complex geometry of $X$ is dictated
+by the generic vanishing theory. More precisely, Schreieder 
+showed \cite[Theorem 1.2]{Sch19} that such real fibre bundle structure gives rise to the existence of certain
+holomorphic 1-form and vanishing of cohomologies of certain rank 1 complex local system. We prove a more general
+version of this statement in a relative setting. 
+Another key input here is the result of
+Kashiwara giving an estimate on the behaviour of the singular
+support of $\bbR f_*\bbL$ (see
+Theorem \ref{th:kas-ss}). This prompted us to look further into the relationship between the generic vanishing theory and the decomposition
+theorem. To state our next result, we need the following notations
+Denote by $\SS(Ra_*\bbC)\subset T^*\Alb_X$ the singular support under the albanese morphism $a\colon X\to \Alb_X$ and $\pi\colon T^*\Alb_X\to 
+H^0(\Alb_X, \Omega_{\Alb_X}^1)$ is the porjection. $\sR(X)$ denote the (1,0)-piece of the union of generic vanishing loci
+\[\sigma^{p,q}(X) \coloneqq \{(\sL,\omega)\in \Pic^0(X)\times H^0(\Alb_X,\Omega_{\Alb_X}^1)|H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge a^*\omega) \neq 0\}.\]
+Via the non-abelian Hodge correspondence a different way to understand this set is via the Lie algebra associated to the  the cohomology jump loci 
+\[\sV(X,\bbC) \coloneqq \{\rho\in\Char(X)| \bbH^i(X, \bbC_{\rho})\neq  0\text{ for some } i\} \]
+where $\bbC_{\rho}$ is the local system associated 
+to the character $\rho\in Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})$.
+The Lie algebra of this set lies in $H^1(X,\bbC)$. Its holomorphic part coincides with $\sR(X)$ above
+(see \S \ref{sec:gv} for more details). 
 
-
+\begin{alphtheorem}
+Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
+\[\sR(X) =  \pi(\SS(Ra_*\bbC)). \]
+\label{thm:linearity}
+\end{alphtheorem}
 %\begin{remark}[Previous results]
 %\begin{enumerate}
 %\item \label{item:ps} When $X$ is of general type, it was conjectured in
@@ -412,64 +427,7 @@ these pushforwards. See Theorem \ref{thm:nonvanishing} for more details.
 %\end{enumerate}	
 %\end{remark}
 
-We show in Proposition \ref{van-nonsimple} that the collection
-of 1-forms appearing in the conormal spaces of the
-irreducible components of $\bbR f_*\bbL$ are in fact finite union of linear subspaces of $H^0(X,\Omega_X^1)$. Hence, in the spirit of Carrell and Lieberman \cite{CL73}, who showed that
-the set of global holomorphic tangent vector fields with zeros
-is linear,
-we began investigating the following:
-\begin{question}
-Is the following set
-\[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\}\]
-os holomorphic 1-forms admitting zeros linear, i.e.\ a finite
-union of linear subspaces of the vector space $H^0(X, \Omega_X^1)$.
-\end{question} 
-
-The answer to this question is yes up-to 3-folds by
-a result of the second author obtained jointly with Schreieder
-\sorry{insert theorem reference}. Moreover,
-reasons coming from the generic vanishing theory 
-the answer is also yes 
-when $\chi(X)>0$ \sorry{why not $\chi(X)\neq 0$}. 
-
-In the light of Kashiwara's estimate, the 1-forms
-conormal to various strata in the decomposition theorem
-above, is a linear subset of $V(X)$. On the other hand,
-due to the generic vanishing theory
-there exists yet another linear piece, namely
-\begin{equation}
-\begin{split}
-\sR(X)\coloneqq \bigcup_i\{\omega\in H^0(X, \Omega_X^1)| \exists \sL\in \Pic^0(X) \text{ and } p\in \bbZ_{\geq 0} \text{ such that},
-H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge\omega) \neq 0
-\\\text{ for all } p+q=i\}
-\label{eq:}
-\end{split}
-\end{equation}
-Via the non-abelian Hodge correspondence a different way to understand this set is via the Lie algebra associated to the  the cohomology jump loci 
-\[\sV^i(X,\bbC) \coloneqq \{\rho\in\Char(X)| \bbH^i(X, \bbC_{\rho})\neq  0\}\subseteq \]
-where $\bbC_{\rho}$ is the local system associated 
-to the characte $\rho\in Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})$.
-The Lie algebra of this set lies in $H^1(X,\bbC)$. It's holomorphic part coincides with $\sR(X)$ above
-(see \S \ref{sec:gv} for more details). Various results
-from the generic vanishing theory culminated in
-the result of Arapura \cite[p.\ 311]{Ara92} guarantees that
-$\sR(X)$ is linear. 
-%\cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
-%we borrow the terminology). 
-%Henceforth we shall call finite unions of subvector spaces as \emph{linear subvarieties}. 
-%In the relative setting
-%of a morphism $f\colon X\to A$ from a smooth projective variety to an abelian variety $A$,
-%we similarly define
-%\[V(f):=\{ \omega\in H^0(A, \Omega_A^1) | Z(f^*\omega)\neq \emptyset\}.\]
-We show the following
-\begin{alphtheorem}
-Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
-\[\sR(X) =  \SS(Ra_*\bbC). \]
-\label{thm:linearity}
-\end{alphtheorem}
-
-
-The theorem follows from a more general statement
+The theorem follows from statement
 about perverse sheaves on abelian varieties. Recall
 \begin{definition}
 Associated to $\rho\in \Char(X)$ the collection of local systems $\bbC_{\rho}$ defined as
@@ -503,27 +461,63 @@ denotes the integrable connection on $\sL$ associated to the Higgs
 field $\omega$ and $\SS(\sM)$ is the singular support of $\sM$.
 \label{thm:dlinearity}
 \end{alphtheorem}
+
+This brings us to the question of linearity. It is well-known \cite[p.\ 311]{Ara92} $\sR(X)$ that is a finite union of linear subspaces of $H^0(\Alb_X, \Omega_{\Alb_X}^1)$. 
+On the other hand, by Proposition \ref{van-nonsimple} that for any subvariety $Z$ of an abelian variety $A$, the collection
+of 1-forms appearing in the conormal spaces $T^*_ZA$ is also linear in the above sense. Furthermore, both sets are subsets of the set $V(X)$ of holomorphic 1-forms that admits zeros. Hence, the result of Theorem \ref{thm:linearity} can be interpretted as identifying the linear piece of $V(X)$. 
+However, in the spirit of Carrell and Lieberman \cite{CL73}, who showed that
+the set of global holomorphic tangent vector fields with zeros
+is linear,
+one can ask the following 
+\begin{question}
+Is the following set
+\[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\}\]
+os holomorphic 1-forms admitting zeros linear, i.e.\ a finite
+union of linear subspaces of the vector space $H^0(X, \Omega_X^1)$.
+\end{question} 
+
+The answer to this question is yes up-to 3-folds by
+a result of the second author obtained jointly with Schreieder
+\sorry{insert theorem reference}.  
+
+
+%\cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
+%we borrow the terminology). 
+%Henceforth we shall call finite unions of subvector spaces as \emph{linear subvarieties}. 
+%In the relative setting
+%of a morphism $f\colon X\to A$ from a smooth projective variety to an abelian variety $A$,
+%we similarly define
+%\[V(f):=\{ \omega\in H^0(A, \Omega_A^1) | Z(f^*\omega)\neq \emptyset\}.\]
+
+
+
 \begin{remark}
 \begin{enumerate}
-\item Note that a consequence of the above is that $\sR(X)\subseteq V(X)$. This was known by a special case of an earlier result of Budur--Wang--Yoon
-\cite{BWY}. 
+\item Note that a consequence of Theorem \ref{thm:linearity} is that $\sR(X)\subseteq V(X)$. This was known by the generic vanishing theory
+(see \cite{BWY} for more general statement). 
 \item Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is linear as already mentioned above. 
 This follows immediately from the generic vanishing theory. Indeed, by Hodge decomposition
 we have
 $H^k(X,\bbC) \simeq \bigoplus_{p+q = k} H^p(X,\Omega_X^q)$. Hence the complexes $(H^p(X, \Omega_X^{\bullet}), \wedge\omega)$ can be summed together to form the complex $(H^p(X, \bbC), \wedge\omega)$. Since $\chi(X)>0$ the latter complex cannot be exact. Hence $H^0(X,\Omega_X^1)
 = \sR(X)$.
 \item The equality $\sR(X) = V(X)$ is known to fail
-in case of Example \cite{ex:DJL} below. However $X$ admits a
-finite \'etale cover $X'\to X$ such that $\sR(X') = V(X')$. Therefore it is natural to ask the following 
+in case of \cite[Example 1.11]{DJL17} given by the surface $X \coloneqq C_1\times C_2/\sigma_1\times \sigma_2$ where $C_1$ is a curve of genus $>1$, $C_2$ is an Elliptic curve and the diagonal action is induced by $\sigma_1 \acts C_1$ with $E \coloneqq C_1/\sigma_1$ an elliptic curve and $\sigma_2\acts C_2$ is a free and properly discontinuous action. In this case, $\sR(X, f) = 0$
+but $V(X, f) = H^0(E, \Omega_E^1)$ for $f\colon X\to A$. 
+However the
+finite \'etale cover given by $C_1\times (C_2/\sigma_2)=:X'\xrightarrow{\tau} X$ such that for all 1-form $\omega$ on $X'$ coming from $E$,
+satisfies $(H^{\bullet}(X', \bbC), \wedge\omega)$ is not exact. In the light of this example and Schreieder's result (see \ref{Thm:schreieder}), it is natural to ask if it always happen.
 \end{enumerate}
 \end{remark}
 \begin{question}
-Does this always happend? In other words, does there exist an \'etale finite morphism $p\colon  X' \to X$ 
+Soes there exist an \'etale finite morphism $\tau\colon  X' \to X$ 
 such that for all $\omega \in H^0(X', \Omega_{X'}^1)$ with
-$Z(\omega)\neq \emptyset$, there is a line bundle $\sL\in\Pic(X')$
+$Z(\omega)\neq \emptyset$, there is a line bundle $\sL\in\Pic(X)$
 and integers $p, q$ such that
-\[\frac{\ker(H^q({X'}, \Omega_{X'}^{p}\otimes \sL)\xrightarrow{\omega} H^q({X'}, \Omega_{X'}^{p+1}\otimes \sL)}
-{\im(H^q({X'}, \Omega_{X'}^{p-1}\otimes \sL) \xrightarrow{\omega} H^q({X'}, \Omega_{X'}^{p}\otimes \sL)} \neq 0\]
+\[ H^q(H^{p}(X', \Omega_{X'}^{\bullet}\otimes \tau^*\sL), \wedge \tau^*\omega)\neq 0?\]
+Or equivalently, does there exist a line bundle $\sL\in\Pic(X)$ such that the local system $\bbL$ corresponding to
+$(\sL, \omega)$ under the non-abelian Hodge correspondence satisfy
+\[ H^{i}(X', \tau^*\bbL) =0\]
+for all $i\geq 0$?
 \end{question}
 %An example of Debarre, Jiang and Lahoz 
 %\cite[Example 1.11]{DJL17} shows that the
@@ -594,7 +588,7 @@ is denoted $\sR(X,\bbC)$.
 
 On the other hand for when the the complex 
 in Equation (\ref{eq:resonance}) is exact and\footnote{Note that
-with this assumption it is not always the case that $Z(\omega) = \emptyset$. See Example \ref{ex:DJL}.} 
+with this assumption it is not always the case that $Z(\omega) = \emptyset$. See Example \cite{DJL17}}
 $Z(\omega) \neq \emptyset$ then we call such form non-resonant. 
 
 %Moreover a 1-forms $\omega\in V(X)$ is called \emph{universally nonresonant} if the complex
@@ -930,77 +924,77 @@ Hence $\varphi_*\bbC_{\rho} = \bbC_{\rho'}$ and $\bbC_{\rho} =
 
 
 
+
+\bibliographystyle{halpha}
+\bibliography{main_new}
+
+%\begin{thebibliography}{Ara92}
+%\expandafter\ifx\csname url\endcsname\relax
+  %\def\url#1{\texttt{#1}}\fi
+%\expandafter\ifx\csname doi\endcsname\relax
+  %\def\doi#1{\burlalt{doi:#1}{http://dx.doi.org/#1}}\fi
+%\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+%\expandafter\ifx\csname href\endcsname\relax
+  %\def\href#1#2{#2}\fi
+%\expandafter\ifx\csname burlalt\endcsname\relax
+  %\def\burlalt#1#2{\href{#2}{#1}}\fi
 %
-%\bibliographystyle{halpha}
-%\bibliography{main_new}
-
-\begin{thebibliography}{Ara92}
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname doi\endcsname\relax
-  \def\doi#1{\burlalt{doi:#1}{http://dx.doi.org/#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\expandafter\ifx\csname href\endcsname\relax
-  \def\href#1#2{#2}\fi
-\expandafter\ifx\csname burlalt\endcsname\relax
-  \def\burlalt#1#2{\href{#2}{#1}}\fi
-
-\bibitem[Ara92]{Ara92}
-Donu Arapura.
-\newblock Higgs line bundles, {G}reen-{L}azarsfeld sets, and maps of
-  {K}\"{a}hler manifolds to curves.
-\newblock {\em Bull. Amer. Math. Soc. (N.S.)} {\bfseries 26}(2), pp.\ 310--314,
-  1992.
-\newblock \doi{10.1090/S0273-0979-1992-00283-5}.
-
-\bibitem[CL73]{CL73}
-James~B. Carrell and David~I. Lieberman.
-\newblock Holomorphic vector fields and {K}aehler manifolds.
-\newblock {\em Invent. Math.} 21, pp.\ 303--309, 1973.
-\newblock \doi{10.1007/BF01418791}.
-
-\bibitem[GL87]{GL87}
-Mark Green and Robert Lazarsfeld.
-\newblock Deformation theory, generic vanishing theorems, and some conjectures
-  of {E}nriques, {C}atanese and {B}eauville.
-\newblock {\em Invent. Math.} {\bfseries 90}(2), pp.\ 389--407, 1987.
-\newblock \doi{10.1007/BF01388711}.
-
-\bibitem[HK05]{HK05}
-Christopher~D. Hacon and S\'{a}ndor~J. Kov\'{a}cs.
-\newblock Holomorphic one-forms on varieties of general type.
-\newblock {\em Ann. Sci. \'{E}cole Norm. Sup. (4)} {\bfseries 38}(4), pp.\
-  599--607, 2005.
-\newblock \doi{10.1016/j.ansens.2004.12.002}.
-
-\bibitem[HS19]{HS19}
-Feng Hao and Stefan Schreieder.
-\newblock Holomorphic one-forms without zeros on threefolds.
-\newblock {\em to appear Geometry $\&$ Topology} , 2019.
-\newblock \urlprefix\url{arXiv:1906.07606}.
-
-\bibitem[LZ05]{LZ05}
-Tie Luo and Qi~Zhang.
-\newblock Holomorphic forms on threefolds.
-\newblock In {\em Recent progress in arithmetic and algebraic geometry}, volume
-  386 of {\em Contemp. Math.}, pages 87--94. Amer. Math. Soc., Providence, RI,
-  2005.
-\newblock \doi{10.1090/conm/386/07219}.
-
-\bibitem[PS14]{PS14}
-Mihnea Popa and Christian Schnell.
-\newblock Kodaira dimension and zeros of holomorphic one-forms.
-\newblock {\em Ann. of Math. (2)} {\bfseries 179}(3), pp.\ 1109--1120, 2014.
-\newblock \doi{10.4007/annals.2014.179.3.6}.
-
-\bibitem[Sch19]{Sch19}
-Stefan Schreieder.
-\newblock Zeros of holomorphic one-forms and topology of k\"ahler manifolds,
-  (appendix written jointly with h.-y. lin).
-\newblock {\em to appear Geometry $\&$ Topology} , 2019.
-\newblock \urlprefix\url{arXiv:1906.07606}.
-
-\end{thebibliography}
+%\bibitem[Ara92]{Ara92}
+%Donu Arapura.
+%\newblock Higgs line bundles, {G}reen-{L}azarsfeld sets, and maps of
+  %{K}\"{a}hler manifolds to curves.
+%\newblock {\em Bull. Amer. Math. Soc. (N.S.)} {\bfseries 26}(2), pp.\ 310--314,
+  %1992.
+%\newblock \doi{10.1090/S0273-0979-1992-00283-5}.
+%
+%\bibitem[CL73]{CL73}
+%James~B. Carrell and David~I. Lieberman.
+%\newblock Holomorphic vector fields and {K}aehler manifolds.
+%\newblock {\em Invent. Math.} 21, pp.\ 303--309, 1973.
+%\newblock \doi{10.1007/BF01418791}.
+%
+%\bibitem[GL87]{GL87}
+%Mark Green and Robert Lazarsfeld.
+%\newblock Deformation theory, generic vanishing theorems, and some conjectures
+  %of {E}nriques, {C}atanese and {B}eauville.
+%\newblock {\em Invent. Math.} {\bfseries 90}(2), pp.\ 389--407, 1987.
+%\newblock \doi{10.1007/BF01388711}.
+%
+%\bibitem[HK05]{HK05}
+%Christopher~D. Hacon and S\'{a}ndor~J. Kov\'{a}cs.
+%\newblock Holomorphic one-forms on varieties of general type.
+%\newblock {\em Ann. Sci. \'{E}cole Norm. Sup. (4)} {\bfseries 38}(4), pp.\
+  %599--607, 2005.
+%\newblock \doi{10.1016/j.ansens.2004.12.002}.
+%
+%\bibitem[HS19]{HS19}
+%Feng Hao and Stefan Schreieder.
+%\newblock Holomorphic one-forms without zeros on threefolds.
+%\newblock {\em to appear Geometry $\&$ Topology} , 2019.
+%\newblock \urlprefix\url{arXiv:1906.07606}.
+%
+%\bibitem[LZ05]{LZ05}
+%Tie Luo and Qi~Zhang.
+%\newblock Holomorphic forms on threefolds.
+%\newblock In {\em Recent progress in arithmetic and algebraic geometry}, volume
+  %386 of {\em Contemp. Math.}, pages 87--94. Amer. Math. Soc., Providence, RI,
+  %2005.
+%\newblock \doi{10.1090/conm/386/07219}.
+%
+%\bibitem[PS14]{PS14}
+%Mihnea Popa and Christian Schnell.
+%\newblock Kodaira dimension and zeros of holomorphic one-forms.
+%\newblock {\em Ann. of Math. (2)} {\bfseries 179}(3), pp.\ 1109--1120, 2014.
+%\newblock \doi{10.4007/annals.2014.179.3.6}.
+%
+%\bibitem[Sch19]{Sch19}
+%Stefan Schreieder.
+%\newblock Zeros of holomorphic one-forms and topology of k\"ahler manifolds,
+  %(appendix written jointly with h.-y. lin).
+%\newblock {\em to appear Geometry $\&$ Topology} , 2019.
+%\newblock \urlprefix\url{arXiv:1906.07606}.
+%
+%\end{thebibliography}
 
 
 %------------------------------------------------------------------
