@@ -825,9 +825,30 @@ Given $f\colon X\to A$, consider the following
 
 
 
-\section{Proof of Theorem \ref{thm:smooth} and \ref{thm:cxsmooth}}
+\section{Proof of Theorem \ref{thm:smooth}}
+Note that by a result of Tischler \cite[Theorem 1]{Tis70} and Sackstder \cite[p.\ 96]{Sac65} we know that for a real manifold $X$
+a $\scrC^{\infty}$-fibre bundle structure over $S^1$ is equivalent to having a real $\scrC^{\infty}$ closed 1-form $\alpha$ without zeros. 
+The following generalisation of Schreider's \cite[Theorem 1.2]{Sch19} relates this with the complex geometry of $X$ when it is a smooth projective variety.
 
+\begin{theorem}
+Given a $f\colon X\to A$ be from a smooth projective variety $X$ to a simple abelian variety $A$ such that
+both $X$ and $A$ admit $\scrC^{\infty}$-fibre bundle structure over $S^1$ with the commutative diagram
+\[\begin{tikzcd}
+	X\ar[dr]\ar[d, "f"]& \\
+	A\ar[r]&S^1
+\end{tikzcd}.\]  
+Then there exists a global holomorphic 1-form $\omega$ such that for any finite \'etale cover $\tau\colon X' \to X$ and
+any unitary local system $\bbL\in \Char(A)$, we have $H^{\bullet}(X, \tau^*f^*\bbL), \wedge\tau^*f^*\omega)$ is exact. 
+\end{theorem} 
 
+\begin{proof}
+We have commutative diagram of representation
+\[\begin{tikzcd}
+\Hom(\pi_1(X), \bbC^{\star})& \\
+\Hom(\pi_1(A), \bbC^{\star})\ar[u]&\Hom(\pi_1(S^1),\bbC^*)\ar[l]\ar[lu]
+\end{tikzcd}.\]  
+induced by the commutative diagram in the hypothesis. Since $\pi_1(S) \simeq \bbZ$, we can find 
+\end{proof}
 
 
 
