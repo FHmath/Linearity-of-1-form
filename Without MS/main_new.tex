@@ -315,7 +315,7 @@
 
 
 \begin{document}  
-\title[Cohomology jump loci and holomorphic 1-forms with zeros]{On linearity of holomorphic 1-forms with zeros} 
+\title[Decomposition theorem, generic vanishing and holomorphic 1-forms]{Decomposition theorem, generic vanishing and holomorphic 1-forms} 
 
 \author{Yajnaseni Dutta}
 
@@ -340,7 +340,11 @@
 
 
 \begin{abstract} 
-The goal of this article is two-fold, first we 
+The goal of this article is two-fold; first we establish a link
+between some sets arising in the generic vanishing theory and
+the decomposition theorem for albanese morphism of a smooth projective variety over the complex numbers. As an upshot, we show that when a smooth projective variety with simple albanese admits a fibre bundle structure over the circle, its albanese morphism is cohomologically trivial, i.e.\ the decomposition theorem behaves like that of a smooth morphism. Such fibre bundle structure is conjecturally equivalent to the existence of 1-forms without zeros. Stronger cohomological properties follow from latter. This brings us to our second goal which is to address the question of linearity of set of holomorphic 1-forms
+admitting zeros. It was shown by Carrel and Lieberman that the set of holomorphic vector fields that admit zeros form a linear subspace. In the light of linearity statements coming out of generic vanishing theory, we conjecture a similar behaviour for holomorphic 1-forms and prove it for the set
+of such 1-forms admitting zeros of codimension 1. 
 \end{abstract}
 
 \maketitle
@@ -361,7 +365,7 @@ are also a bridge between the real and the complex worlds.
 \end{enumerate}
 The direction (1) $\Rightarrow$ (2) was shown by Tischler,
 \cite{Tis70}. The opposite direction is conjectural (attributed
-to Kotschik) and
+to Kotschik in \cite{Sch19}) and
 was recently established by Shreieder and the first second author
 \cite{HS19}. We show the following 
 
@@ -376,31 +380,48 @@ both $X$ and $A$ admit $\scrC^{\infty}$-fibre bundle structure over $S^1$ with t
 \end{tikzcd}.\] 
 Then $f$ is cohomologically trivial, i.e.\ we have the following
 decomposition for any semi-simple complex local system $\bbL$ on $X$
-\[\bbR f_*\bbL \simeq \bigoplus_i \bbR^i f_*\bbL[-i]\]
-and $\bbR^i f_*\bbL$ are local system. In particular, the
+\[\bbR f_*\bbC \simeq \bigoplus_i \bbR^i f_*\bbC[-i]\]
+and $\bbR^i f_*\bbC$ are local system. In particular, the
 singular fibres of $f$ carry a pure Hodge structure.
 
-Furthermore, the decomposition $\bbR f_*\bbC$ underlies an integral lattice, in other words, $R^ia_*\bbZ$ are also local systems for 
+Furthermore, 
+$R^if_*\bbZ$ are also local systems for 
 all $i\geq 0$.
 %Then $f$ is cohomologically a fiber bundle if and only if there is a global holomorphic 1-form $\omega$ on $A$ such that $f^*\omega$ is nowhere vanishing.  
 
 \end{alphtheorem}
-In fact a bit more can be said; When $A$ is not necessarily simple existence of a non-vanishing global holomorphic 1-form
+
+Assuming (1), which is presently a stronger (yet conjecturally
+equivalent) hypothesis we have
+\begin{alphtheorem}
+Let $f\colon X\to A$ be a surjective morphism to a simple abelian
+variety such that there exists a holomorphic 1-form
+$\omega$ with $Z(f^*\omega) = \emptyset$ then $\bbR f_*\bbL$
+admits the decomposition
+\[\bbR f_*\bbL \simeq \bigoplus_i \bbR f_*\bbL[-i]\]
+for any semi-simple local system $\bbL$ on $X$. 
+\end{alphtheorem}
+In fact a bit more can be said; When $A$ is not necessarily simple existence of a nowhere vanishing global holomorphic 1-form
 is equivalent to certain restrictions on the singular support of 
 these pushforwards. See Theorem \ref{thm:nonvanishing} for more details. 
+
 The link between such
- real geometry and complex geometry of $X$ is dictated
+ real geometry and complex geometry of $X$ can be partially
+understood
 by the generic vanishing theory. More precisely, Schreieder 
 showed \cite[Theorem 1.2]{Sch19} that such real fibre bundle structure gives rise to the existence of certain
 holomorphic 1-form and vanishing of cohomologies of certain rank 1 complex local system. We prove a more general
-version of this statement in a relative setting. 
-Another key input here is the result of
-Kashiwara giving an estimate on the behaviour of the singular
-support of $\bbR f_*\bbL$ (see
-Theorem \ref{th:kas-ss}). This prompted us to look further into the relationship between the generic vanishing theory and the decomposition
-theorem. To state our next result, we need the following notations
+version of this statement in a relative setting (see Theorem
+\ref{thm:schreieder}. 
+
+ Another key input here is the relationship between the generic vanishing theory and the decomposition
+theorem as stated in the following result. We need the following notations
 Denote by $\SS(Ra_*\bbC)\subset T^*\Alb_X$ the singular support under the albanese morphism $a\colon X\to \Alb_X$ and $\pi\colon T^*\Alb_X\to 
-H^0(\Alb_X, \Omega_{\Alb_X}^1)$ is the porjection. $\sR(X)$ denote the (1,0)-piece of the union of generic vanishing loci
+H^0(\Alb_X, \Omega_{\Alb_X}^1)$ is the porjection. A result of
+Kashiwara giving an estimate on the behaviour of the singular
+support of $\bbR f_*\bbC$ (see
+Theorem \ref{th:kas-ss}) ensures that all 1-forms
+$\omega\in \pi(\SS(\bbR a_*\bbC)$ admit zeros. Let $\sR(X)$ denote the (1,0)-piece of the union of generic vanishing loci
 \[\sigma^{p,q}(X) \coloneqq \{(\sL,\omega)\in \Pic^0(X)\times H^0(\Alb_X,\Omega_{\Alb_X}^1)|H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge a^*\omega) \neq 0\}.\]
 Via the non-abelian Hodge correspondence a different way to understand this set is via the Lie algebra associated to the  the cohomology jump loci 
 \[\sV(X,\bbC) \coloneqq \{\rho\in\Char(X)| \bbH^i(X, \bbC_{\rho})\neq  0\text{ for some } i\} \]
@@ -414,6 +435,7 @@ Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
 \[\sR(X) =  \pi(\SS(Ra_*\bbC)). \]
 \label{thm:linearity}
 \end{alphtheorem}
+For a relative version of this theorem see Theorem \ref{thm:rellinearity}.
 %\begin{remark}[Previous results]
 %\begin{enumerate}
 %\item \label{item:ps} When $X$ is of general type, it was conjectured in
@@ -439,7 +461,7 @@ is called the cohomology jump loci of $\sP$.
 Let $A$ be an abelian variety. Let $\sP$ be a complex of perverse sheaves with complex coefficient on $A$. 
 Then we have the equality that
 $$\pi(\SS(\sP)) = \text{(1,0)-piece of }\bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,\sP), $$
-where the union is running over representative points from every irreducible components of $\sV^0(A,P)$
+where the union is running over representative points from every irreducible components of $\sV^0(A,P)$ and
 $TC_{\rho} \sV^0(A,P) \subseteq H^1(X, \bbC)$ denotes the tangent cone at $\rho$. 
 \label{thm:perverse}
 \end{alphtheorem}
@@ -839,6 +861,7 @@ both $X$ and $A$ admit $\scrC^{\infty}$-fibre bundle structure over $S^1$ with t
 \end{tikzcd}.\]  
 Then there exists a global holomorphic 1-form $\omega$ such that for any finite \'etale cover $\tau\colon X' \to X$ and
 any unitary local system $\bbL\in \Char(A)$, we have $H^{\bullet}(X, \tau^*f^*\bbL), \wedge\tau^*f^*\omega)$ is exact. 
+\label{thm:schreieder}
 \end{theorem} 
 
 \begin{proof}
@@ -870,6 +893,7 @@ induced by the commutative diagram in the hypothesis. Since $\pi_1(S) \simeq \bb
 This section is devoted to the proof of Theorem \ref{thm:perverse}. First we note that Theorem \ref{thm:linearity} follows
 from Theorem \ref{thm:perverse}
 
+\sorry{We need a relative version for showing Theorem \ref{thm:smooth}.}
 
 \begin{proof}[Proof of Theorem \ref{thm:linearity}]
 By the decomposition Theorem \ref{thm:decomp} applied to $f\colon X\to A$
