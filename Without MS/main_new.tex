@@ -26,6 +26,10 @@
 
 \newtheorem{alphtheorem}{Theorem}
 \renewcommand{\thealphtheorem}{\Alph{alphtheorem}}
+\newtheorem{alphtheoremprime}{Theorem}
+\renewcommand{\thealphtheoremprime}{\Alph{alphtheoremprime}'}
+
+
 \theoremstyle{question}
 \newtheorem{question}[theorem]{Question}
 \theoremstyle{definition}
@@ -340,47 +344,49 @@
 
 
 \begin{abstract} 
-The goal of this article is two-fold; first we establish a link
+The goal of this article is two-fold; first we establish an interesting link
 between some sets arising in the generic vanishing theory and
-the decomposition theorem for albanese morphism of a smooth projective variety over the complex numbers. As an upshot, we show that when a smooth projective variety with simple albanese admits a fibre bundle structure over the circle, its albanese morphism is cohomologically trivial, i.e.\ the decomposition theorem behaves like that of a smooth morphism. Such fibre bundle structure is conjecturally equivalent to the existence of 1-forms without zeros. Stronger cohomological properties follow from latter. This brings us to our second goal which is to address the question of linearity of set of holomorphic 1-forms
-admitting zeros. It was shown by Carrel and Lieberman that the set of holomorphic vector fields that admit zeros form a linear subspace. In the light of linearity statements coming out of generic vanishing theory, we conjecture a similar behaviour for holomorphic 1-forms and prove it for the set
+the decomposition theorem for albanese morphism of a smooth projective varieties over the complex numbers. As an upshot, we show that when a smooth projective variety with simple albanese admits a fibre bundle structure over the circle, its albanese morphism is cohomologically trivial, i.e.\ the decomposition theorem behaves like that of a smooth morphism. Such fibre bundle structure is conjecturally equivalent to the existence of 1-forms without zeros. We also present stronger cohomological properties for the albanese morphism assuming the latter. This brings us to our second goal which is to address the question of linearity of set of holomorphic 1-forms
+admitting zeros. It was shown by Carrel and Lieberman that the set of holomorphic vector fields that admit zeros form a linear subspace. In the light of linearity statements coming out of the generic vanishing theory, we conjecture a similar behaviour for holomorphic 1-forms and prove it for the set
 of such 1-forms admitting zeros of codimension 1. 
 \end{abstract}
 
 \maketitle
 \tableofcontents
 \section{Introduction}\label{intro}
-Given a smooth porjective variety $X$, in this article we relate the cohomology jump loci of $\bbC_X$ to the 
+Given a smooth porjective complex variety $X$, in this article we relate the cohomology jump loci of the constant sheaf $\bbC_X$ to the 
 stratification arising in the decomposition theorem for the albnese morphism. Such relation fell out of our interest in the
-study of holomorphic 1-forms. It has been indicated by plethora of results
+study of holomorphic 1-forms admitting zeros. It has been indicated by plethora of results
 (\cite{GL87, HK05, LZ05,
 Sch19, HS19, PS14} to name just a few) that a lot of the geometry and topology of the
-variety depends on vanishing of such forms. Conjecturally the following two statements
+variety depends on zeros of holomorphic 1-forms. Conjecturally the following two statements
 are also a bridge between the real and the complex worlds.
 \begin{enumerate}
-	\item $X$ admits a global holomorphic 1-form $\omega$
+	\item\label{kot1} $X$ admits a global holomorphic 1-form $\omega$
 	such that $Z(\omega) = \emptyset$, i.e.\ there does \textsl{not}
 	exist any $x\in X$ such that $\omega(T_xX) = 0$. 
-	\item $X$ admits a $\scrC^{\infty}$-fibration over the circle.
+	\item\label{kot2} $X$ admits a global holomorphic 1-form $\omega$
+	such that $Z(\omega) = \emptyset$, $X$ admits a $\scrC^{\infty}$-fibration over the circle.
 \end{enumerate}
 The direction (1) $\Rightarrow$ (2) was shown by Tischler,
 \cite{Tis70}. The opposite direction is conjectural (attributed
 to Kotschik in \cite{Sch19}) and
-was recently established by Shreieder and the first second author
+was recently established by Shreieder in dimension 2 and in dimension 3 by a joint work of the second author with Schreieder
 \cite{HS19}. We show the following 
 
 
 
 \begin{alphtheorem}\label{thm:smooth}
-Given a $f\colon X\to A$ be from a smooth projective variety $X$ to a simple abelian variety $A$ such that
-both $X$ and $A$ admit $\scrC^{\infty}$-fibre bundle structure over $S^1$ with the commutative diagram
+Given a $f\colon X\to A$ be a morphism from a smooth projective variety $X$ of dimension $n$ to a simple abelian variety $A$ 
+of dimension $g$ such that
+both $X$, and $A$ admit $\scrC^{\infty}$-fibre bundle structures over $S^1$ and the commutative diagram
 \[\begin{tikzcd}
 	X\ar[dr]\ar[d, "f"]& \\
 	A\ar[r]&S^1
 \end{tikzcd}.\] 
 Then $f$ is cohomologically trivial, i.e.\ we have the following
-decomposition for any semi-simple complex local system $\bbL$ on $X$
-\[\bbR f_*\bbC \simeq \bigoplus_i \bbR^i f_*\bbC[-i]\]
+decomposition
+\[\bbR f_*\bbC[n] \simeq \bigoplus_i \bbR^i f_*\bbC[g-i]\]
 and $\bbR^i f_*\bbC$ are local system. In particular, the
 singular fibres of $f$ carry a pure Hodge structure.
 
@@ -391,7 +397,7 @@ all $i\geq 0$.
 
 \end{alphtheorem}
 
-Assuming (1), which is presently a stronger (yet conjecturally
+Assuming (\ref{Kot1}), which is currently a stronger (yet conjecturally
 equivalent) hypothesis we have
 \begin{alphtheorem}
 Let $f\colon X\to A$ be a surjective morphism to a simple abelian
@@ -409,26 +415,29 @@ The link between such
  real geometry and complex geometry of $X$ can be partially
 understood
 by the generic vanishing theory. More precisely, Schreieder 
-showed \cite[Theorem 1.2]{Sch19} that such real fibre bundle structure gives rise to the existence of certain
-holomorphic 1-form and vanishing of cohomologies of certain rank 1 complex local system. We prove a more general
+showed \cite[Theorem 1.2]{Sch19} that a real $\scrC^{\infty}$-fibre bundle structure over $S^1$ gives rise to the existence of 
+a global
+holomorphic 1-form that together with any degree zero line bundle give rise to a local system without any cohomology. These
+local systems do not come from the cohomology jump loci of the constant sheaf $\bbC_X$. More on that shortly. We prove a more general
 version of this statement in a relative setting (see Theorem
 \ref{thm:schreieder}. 
 
  Another key input here is the relationship between the generic vanishing theory and the decomposition
 theorem as stated in the following result. We need the following notations
-Denote by $\SS(Ra_*\bbC)\subset T^*\Alb_X$ the singular support under the albanese morphism $a\colon X\to \Alb_X$ and $\pi\colon T^*\Alb_X\to 
+Denote by $\SS(Ra_*\bbC)\subset T^*\Alb_X$ the singular support of $Ra_*\bbC$ under the albanese morphism $a\colon X\to \Alb_X$ and 
+let $\pi\colon T^*\Alb_X\to 
 H^0(\Alb_X, \Omega_{\Alb_X}^1)$ is the porjection. A result of
 Kashiwara giving an estimate on the behaviour of the singular
 support of $\bbR f_*\bbC$ (see
 Theorem \ref{th:kas-ss}) ensures that all 1-forms
-$\omega\in \pi(\SS(\bbR a_*\bbC)$ admit zeros. Let $\sR(X)$ denote the (1,0)-piece of the union of generic vanishing loci
+$\omega\in \pi(\SS(\bbR a_*\bbC))$ admit zeros. Let $\sR(X)$ denote the (1,0)-piece of the union of generic vanishing loci
 \[\sigma^{p,q}(X) \coloneqq \{(\sL,\omega)\in \Pic^0(X)\times H^0(\Alb_X,\Omega_{\Alb_X}^1)|H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge a^*\omega) \neq 0\}.\]
-Via the non-abelian Hodge correspondence a different way to understand this set is via the Lie algebra associated to the  the cohomology jump loci 
+Via the non-abelian Hodge correspondence a different way to understand the union over all $p,q$ of such set is via the Lie algebra associated to the  the cohomology jump loci 
 \[\sV(X,\bbC) \coloneqq \{\rho\in\Char(X)| \bbH^i(X, \bbC_{\rho})\neq  0\text{ for some } i\} \]
 where $\bbC_{\rho}$ is the local system associated 
 to the character $\rho\in Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})$.
 The Lie algebra of this set lies in $H^1(X,\bbC)$. Its holomorphic part coincides with $\sR(X)$ above
-(see \S \ref{sec:gv} for more details). 
+(see \S \ref{sec:gv} for more details). It is known that the tangent cone of $\sV(X,\bbC)$ is a sub-Hodge structure of $H^1(X,\bbC)$.
 
 \begin{alphtheorem}
 Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
@@ -449,44 +458,48 @@ For a relative version of this theorem see Theorem \ref{thm:rellinearity}.
 %\end{enumerate}	
 %\end{remark}
 
-The theorem follows from statement
+The theorem follows from a similar statement
 about perverse sheaves on abelian varieties. Recall
 \begin{definition}
-Associated to $\rho\in \Char(X)$ the collection of local systems $\bbC_{\rho}$ defined as
+The i-th\textsl{ cohomology jump loci} of a constructible sheaf $\sP$ on an abelian variety $A$ is defined to be the set
 \[\sV^i(A, \sP) \coloneqq \{\rho\in\Char(X)| H^i(A, \sP\otimes \bbC_{\rho}) \neq 0\}\]
-is called the cohomology jump loci of $\sP$.
+where we denote by $\bbC_{\rho}$ the local system associated to $\rho\in \Char(X)$.
 \label{def:cjl}
 \end{definition}
 \begin{alphtheorem}
-Let $A$ be an abelian variety. Let $\sP$ be a complex of perverse sheaves with complex coefficient on $A$. 
-Then we have the equality that
+Let $A$ be an abelian variety. Let $\sP$ be a simple perverse sheaf with complex coefficient on $A$. 
+Then we have the equality
 $$\pi(\SS(\sP)) = \text{(1,0)-piece of }\bigcup_{\rho} \rho^{-1} TC_{\rho} \sV^0(A,\sP), $$
 where the union is running over representative points from every irreducible components of $\sV^0(A,P)$ and
-$TC_{\rho} \sV^0(A,P) \subseteq H^1(X, \bbC)$ denotes the tangent cone at $\rho$. 
+$\rho^{-1}TC_{\rho} \sV^0(A,P) \subseteq H^1(X, \bbC)$ denotes the tangent cone at $\rho$. 
 \label{thm:perverse}
 \end{alphtheorem}
 
 The key technique we
-use to relate the the generic vanishing theory on abelian varieties with the support of $Rf_*\bbC$ is Kashiwara's
-global index theorem. In terms of simple holonomic D-modules
-on abelian variety we can interpret the above result as
+use to relate the generic vanishing theory on abelian varieties with the support of $Rf_*\bbC$ is Kashiwara's
+global index theorem (see Theorem \ref{thm:index}). In terms of simple holonomic D-modules
+on an abelian variety we can interpret the above result as
 
-\begin{alphtheorem}
+\setcounter{alphtheoremprime}{3}
+\begin{alphtheoremprime}
 Let $\sM$ be a simple holonomic D-module on an abelian variety $A$.
 Then the set
-\[\sR_d(X)\coloneqq \{\omega\in H^0(A, \Omega_A^1)|\exists \sL\in \Pic^0(A) \text{ with }
+\[\sR_d(X)\coloneqq \{\omega\in H^0(A, \Omega_A^1)|\exists \sL \in \Pic^0(A)\text{ and } k\in\bbZ_{\geq 0} \text{ with }
 H^{k}(A, \dr(\sM\otimes(\sL, \nabla_{\omega}))) \neq 0\}\]
 satisfies
-\[\sR_d(X) = \pi(\SS(\sM))\]
-where $\nabla_{\omega}\colon \sL \to \Omega_A^1\otimes \sL)$
+\[\sR_d(X) = \pi(\SS(\sM)).\]
+Here $\nabla_{\omega}\colon \sL \to \Omega_A^1\otimes \sL$
 denotes the integrable connection on $\sL$ associated to the Higgs
 field $\omega$ and $\SS(\sM)$ is the singular support of $\sM$.
 \label{thm:dlinearity}
-\end{alphtheorem}
+\end{alphtheoremprime}
+A consequence of Theorem \ref{thm:linearity} is that $\sR(X)\subseteq V(X)$. This was also known by the generic vanishing theory
+(see \cite{BWY} for more general statement). 
 
-This brings us to the question of linearity. It is well-known \cite[p.\ 311]{Ara92} $\sR(X)$ that is a finite union of linear subspaces of $H^0(\Alb_X, \Omega_{\Alb_X}^1)$. 
-On the other hand, by Proposition \ref{van-nonsimple} that for any subvariety $Z$ of an abelian variety $A$, the collection
-of 1-forms appearing in the conormal spaces $T^*_ZA$ is also linear in the above sense. Furthermore, both sets are subsets of the set $V(X)$ of holomorphic 1-forms that admits zeros. Hence, the result of Theorem \ref{thm:linearity} can be interpretted as identifying the linear piece of $V(X)$. 
+
+This brings us to the question of linearity. It is well-known \cite[p.\ 311]{Ara92} that $\sR(X)$  is a finite union of linear subspaces of $H^0(\Alb_X, \Omega_{\Alb_X}^1)$. 
+On the other hand, by Proposition \ref{van-nonsimple} we know that for any subvariety $Z$ of an abelian variety $A$, the collection
+of 1-forms appearing in the conormal spaces $\overline{T^*_{Z^{\reg}}A}$ is also linear in the above sense. Furthermore, both sets are subsets of the set $V(X)$ of holomorphic 1-forms that admit zeros. Hence, the result of Theorem \ref{thm:linearity} can be interpreted as identifying these two linear pieces of $V(X)$. 
 However, in the spirit of Carrell and Lieberman \cite{CL73}, who showed that
 the set of global holomorphic tangent vector fields with zeros
 is linear,
@@ -494,13 +507,20 @@ one can ask the following
 \begin{question}
 Is the following set
 \[V(X):=\{ \omega\in H^0(X, \Omega_X^1) | Z(\omega)\neq \emptyset\}\]
-os holomorphic 1-forms admitting zeros linear, i.e.\ a finite
-union of linear subspaces of the vector space $H^0(X, \Omega_X^1)$.
+linear, i.e.\ a finite
+union of linear subspaces of the vector space $H^0(X, \Omega_X^1)$?
+
+Or, more generally
+for $i\geq 0$, is the following 
+\[V^i(X):=\{ \omega\in H^0(X, \Omega_X^1) | \codim(Z(\omega))\leq i\}\]
+linear, i.e.\ a finite
+union of linear subspaces of the vector space $H^0(X, \Omega_X^1)$?
+
 \end{question} 
 
 The answer to this question is yes up-to 3-folds by
 a result of the second author obtained jointly with Schreieder
-\sorry{insert theorem reference}.  
+\sorry{insert theorem reference}. 
 
 
 %\cite[Theorem 4.2]{Sim93} (see also \cite{DiPa13} from where
@@ -514,39 +534,59 @@ a result of the second author obtained jointly with Schreieder
 
 
 \begin{remark}
-\begin{enumerate}
-\item Note that a consequence of Theorem \ref{thm:linearity} is that $\sR(X)\subseteq V(X)$. This was known by the generic vanishing theory
-(see \cite{BWY} for more general statement). 
+\begin{enumerate} 
 \item Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is linear as already mentioned above. 
 This follows immediately from the generic vanishing theory. Indeed, by Hodge decomposition
 we have
 $H^k(X,\bbC) \simeq \bigoplus_{p+q = k} H^p(X,\Omega_X^q)$. Hence the complexes $(H^p(X, \Omega_X^{\bullet}), \wedge\omega)$ can be summed together to form the complex $(H^p(X, \bbC), \wedge\omega)$. Since $\chi(X)>0$ the latter complex cannot be exact. Hence $H^0(X,\Omega_X^1)
 = \sR(X)$.
-\item The equality $\sR(X) = V(X)$ is known to fail
+\item \label{exa:djl} The equality $\sR(X) = V(X)$ is known to fail
 in case of \cite[Example 1.11]{DJL17} given by the surface $X \coloneqq C_1\times C_2/\sigma_1\times \sigma_2$ where $C_1$ is a curve of genus $>1$, $C_2$ is an Elliptic curve and the diagonal action is induced by $\sigma_1 \acts C_1$ with $E \coloneqq C_1/\sigma_1$ an elliptic curve and $\sigma_2\acts C_2$ is a free and properly discontinuous action. In this case, $\sR(X, f) = 0$
 but $V(X, f) = H^0(E, \Omega_E^1)$ for $f\colon X\to A$. 
 However the
 finite \'etale cover given by $C_1\times (C_2/\sigma_2)=:X'\xrightarrow{\tau} X$ such that for all 1-form $\omega$ on $X'$ coming from $E$,
-satisfies $(H^{\bullet}(X', \bbC), \wedge\omega)$ is not exact. In the light of this example and Schreieder's result (see \ref{Thm:schreieder}), it is natural to ask if it always happen.
+satisfies $(H^{\bullet}(X', \bbC), \wedge\omega)$ is not exact. 
+\item Furthermore, Schreieder's result (see Theorem \ref{thm:schreieder}) implies that conjecturally any form $\omega\notin \sR(X)$
+must admit a zero up-to a finite \'etale cover of $X$. In that case, generic vanishing establishes the linearity question.
+This is precisey how the linearity question was answered positively up to dimension 3. In the light of this, it is natural to ask if it always happen. We pose 
 \end{enumerate}
 \end{remark}
-\begin{question}
-Soes there exist an \'etale finite morphism $\tau\colon  X' \to X$ 
-such that for all $\omega \in H^0(X', \Omega_{X'}^1)$ with
-$Z(\omega)\neq \emptyset$, there is a line bundle $\sL\in\Pic(X)$
-and integers $p, q$ such that
-\[ H^q(H^{p}(X', \Omega_{X'}^{\bullet}\otimes \tau^*\sL), \wedge \tau^*\omega)\neq 0?\]
-Or equivalently, does there exist a line bundle $\sL\in\Pic(X)$ such that the local system $\bbL$ corresponding to
-$(\sL, \omega)$ under the non-abelian Hodge correspondence satisfy
-\[ H^{i}(X', \tau^*\bbL) =0\]
-for all $i\geq 0$?
-\end{question}
+\begin{conjecture}[Kotschick--Schreieder conjecture]
+Given $\omega \in H^0(X,\Omega_X^1)$, such that for all finite \'etale morphism $\tau\colon  X' \to X$
+and for all unitary rank 1 local systems $\bbL$ on $X$
+we have $(H^{\bullet}(X', \tau^*\bbL), \wedge\tau^*\omega)$ is exact. Then $Z(\omega) = \emptyset$. 
+\end{conjecture}
 %An example of Debarre, Jiang and Lahoz 
 %\cite[Example 1.11]{DJL17} shows that the
 %there exists a bi-elliptic surface $S$ admitting a 1-form 
 %$\omega$ for which $(H^*(X, \mathbb{C}), \wedge \omega)$
 %is exact, yet $\omega$ admits zeros on $S$. Theorem \ref{thm:linearity} shows that such forms are not under the realm of generic vanishing theory. 
 
+
+Finally, in any dimension we show the following
+\begin{alphtheorem}\label{thm:codim1}
+Let $X$ be a smooth complex projective variety. Then $V^1(X)$ is linear.
+\end{alphtheorem}
+As usual more generally we show a relative version on this theorem (see \S \ref{sec:codim1}). This follows from
+a statement of Spurr \cite[Theorem 2]{Sp88}. He showed that whenever a divisor $D\subset Z(\omega)$ for some 1-form $\omega$, then
+either $D$ is rigid in the sense that it is negative with respect to a polarisation of $X$ or $\omega$ comes from a curve. We generalise this statement
+in the quasi-projective setting
+\begin{alphtheorem} \label{thm:spurr}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be a very ample divisor on $X$. If $(X, D)$ carries a holomorphic log 1-form $0\not=\omega\in H^0(X, \Omega_X^1(\log D))$  which pullbacks to zero on an effective divisor $E$ with $E^2\cdot H^{n-2}\geq0$, then there is a morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ (where $\bar{C}$ is the completion of $C$ and $B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(X, \Omega_{\bar{C}}^1(\log B))$.
+
+(2) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{alphtheorem}
+
+As a corollary we prove the linearity of the set of logarithmic holomorphic 1-forms admitting codimension one zeros.
+
+\begin{corollary}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Then the set $$ V^1(X,D):=\{ w \in W(U) \mid \codim_X Z(w) \leq i \}$$ is linear.
+\end{corollary}
+
+To show the Corollary we prove that $V^1(X,D)$ consists of the following three types of logarithmic 1-forms: those certain generic vanishing type property, those vanishing along rigid divisors, and those vanishing along some components of the boundary divisor $D$.
+\sorry{I think by a result of Wei we know that the last one cannot happen, will check!}.
 
 
 
@@ -818,7 +858,7 @@ Moreover, the equality holds if and only if $\sV^0(A, \sP) \neq \Char(A)$.
 
 \begin{theorem}[Kashiwara's index]
 
-\label{thm:indextheorem}
+\label{thm:index}
 \end{theorem}
 We refer the reader to
 \cite[Section 4.5]{HTT08 }
