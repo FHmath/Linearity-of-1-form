@@ -7,6 +7,7 @@
 \usepackage{tikz-cd}
 \usepackage{enumitem}
 
+
 \PassOptionsToPackage{pdfusetitle,pagebackref,colorlinks}{hyperref}
 \usepackage{bookmark}
 \hypersetup{
@@ -15,7 +16,28 @@
   urlcolor={blue!80!black}
 }
 
-\newtheorem{theorem}{Theorem}[section]
+\makeatletter
+  \def\th@plain{
+  \thm@headfont{\bfseries} % Heading font is bold
+  \thm@notefont{\itshape} % Note is same as heading
+  \itshape% Regular text is also italic
+}
+\makeatother
+
+\makeatletter
+  \def\th@definition{
+  \thm@headfont{\bfseries} % Heading font is italic
+  \thm@notefont{\bfseries} % Note is same as heading
+}
+\makeatother
+
+\makeatletter
+  \def\th@remark{
+  \thm@headfont{\bfseries} % Heading font is italic
+  \thm@notefont{\bfseries} % Note is same as heading
+	}
+\makeatother
+\newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -129,7 +151,7 @@
 %\DeclareMathOperator
 
 \DeclareMathOperator{\Char}{Char}
-\DeclareMathOperator{\CC}{SS}
+\DeclareMathOperator{\CC}{CC}
 \DeclareMathOperator{\kn}{Ker}
 \DeclareMathOperator{\im}{Im}
 
@@ -378,7 +400,7 @@ was recently established by Shreieder in dimension 2 and in dimension 3 by a joi
 
 \begin{alphtheorem}\label{thm:smooth}
 Given a $f\colon X\to A$ be a morphism from a smooth projective variety $X$ of dimension $n$ to a simple abelian variety $A$ 
-of dimension $g$ such that
+of dimension $q$ such that
 both $X$, and $A$ admit $\scrC^{\infty}$-fibre bundle structures over $S^1$ and the commutative diagram
 \[\begin{tikzcd}
 	X\ar[dr]\ar[d, "f"]& \\
@@ -386,7 +408,7 @@ both $X$, and $A$ admit $\scrC^{\infty}$-fibre bundle structures over $S^1$ and 
 \end{tikzcd}.\] 
 Then $f$ is cohomologically trivial, i.e.\ we have the following
 decomposition
-\[\bbR f_*\bbC[n] \simeq \bigoplus_i \bbR^i f_*\bbC[g-i]\]
+\[\bbR f_*\bbC[n] \simeq \bigoplus_i \bbR^i f_*\bbC[q-i]\]
 and $\bbR^i f_*\bbC$ are local system. In particular, the
 singular fibres of $f$ carry a pure Hodge structure.
 
@@ -533,7 +555,7 @@ a result of the second author obtained jointly with Schreieder
 
 
 
-\begin{remark}
+\begin{remark}\label{rem:linearity}
 \begin{enumerate} 
 \item Note that if $\chi(X)>0$, we have $\sR(X) = V(X) = H^0(X, \Omega_X^1)$. Hence in this case the set of 1-forms that admit zeros is linear as already mentioned above. 
 This follows immediately from the generic vanishing theory. Indeed, by Hodge decomposition
@@ -586,7 +608,7 @@ Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a si
 \end{corollary}
 
 To show the Corollary we prove that $V^1(X,D)$ consists of the following three types of logarithmic 1-forms: those certain generic vanishing type property, those vanishing along rigid divisors, and those vanishing along some components of the boundary divisor $D$.
-\sorry{I think by a result of Wei we know that the last one cannot happen, will check!}.
+
 
 
 
@@ -603,15 +625,14 @@ coeffcients. All the varieties are complex quasi-projective varieties.
 
 
 \section{Preliminary}
-\subsection{Resonant 1-forms and Hodge decomposition}
+\subsection{Generic Vanishing and Non-abelian Hodge theory}\label{sec:gv}
 Given a holomorphic 1-form $\omega\in H^0(X,\Omega_X^1)$
-the kernel of the associated Koszul complex
+the kernel of the following de Rham complex
 \begin{equation}
-\sK^{\bullet}_{\omega} \coloneqq [\sO_X\overset{\wedge\omega}{\to} \Omega_X^1 \to \cdots\to \Omega_X^{n-1}\to \Omega^n_X.]
+\sK^{\bullet}_{\omega} \coloneqq [\sO_X\overset{d+\wedge\omega}{\to} \Omega_X^1 \to \cdots\overset{d+\wedge\omega}{\to}  \Omega_X^{n-1}\overset{d+\wedge\omega}{\to}  \Omega^n_X.]
 \label{eq:koszul}
 \end{equation}
-defines a rank 1 local system $L(\omega)$ (see \cite[\S 2.1]{sch}
-for a construction). This gives in the way of the generic vanishing theory developed by \cite{GL, Ara, Sim} into the 
+defines a rank 1 local system $L(\omega)$. This gives in the way of the generic vanishing theory developed by \cite{GL, Ara, Sim} into the 
 study of zeros of holomorphic 1-forms. In this section we discuss 
 the relevant bits of this vast theory that we will use in various
 proofs.
@@ -650,8 +671,8 @@ is denoted $\sR(X,\bbC)$.
 
 On the other hand for when the the complex 
 in Equation (\ref{eq:resonance}) is exact and\footnote{Note that
-with this assumption it is not always the case that $Z(\omega) = \emptyset$. See Example \cite{DJL17}}
-$Z(\omega) \neq \emptyset$ then we call such form non-resonant. 
+with this assumption it is not always the case that $Z(\omega) = \emptyset$. See Example \ref{rem:linearity}.\ref{exa:djl}}
+then we call such form non-resonant. 
 
 %Moreover a 1-forms $\omega\in V(X)$ is called \emph{universally nonresonant} if the complex
 %\newline $(H^{\bullet}(X',\bbC), \wedge\tau^*\omega)$
@@ -666,13 +687,11 @@ We will refer to the sequence $(H^{\bullet}(X,\bbC), \wedge\omega)$ above as the
 
 
 More generally for any local system we consider a similar situation. 
-
-
-
 To make our notations precise recall 
 \begin{definition}[Character variety]
-$\Char(X) \coloneqq Hom(H_1(X, \bbZ)/\torsion, \bbC^{\star})$
-\footnote{This is connected component around the trivial character of the Betti moduli $M_B(X) \coloneqq \Hom(\pi_1(X), \bbC^{\star})$ via the short exact sequence \[0\to \frac{H^1(X, \bbC)}{H^1(X, \bbZ(1))}\to M_B(X)\to H^2(X, \bbZ(1))_{\torsion}\to 0.\] Unlike us, in literature this $M_B(X)$ is often called the character variety $\Char(X)$.} and is isomorphic to
+For a smooth projective variety $X$, we define the \textsl{character variety} to be \[\Char(X) \coloneqq Hom(H_1(X, \bbZ)/\torsion, \bbC^{\star})
+\footnote{This is connected component around the trivial character of the Betti moduli $M_B(X) \coloneqq \Hom(\pi_1(X), \bbC^{\star})$ via the short exact sequence \[0\to \frac{H^1(X, \bbC)}{H^1(X, \bbZ(1))}\to M_B(X)\to H^2(X, \bbZ(1))_{\torsion}\to 0.\] Unlike us, in literature this $M_B(X)$ is often called the character variety $\Char(X)$.} .\]
+This is isomorphic to
 $(\bbC^{\star})^{2q}$ where $q = \dim \Alb(X)$.
 \end{definition}
 By the Riemann--Hilbert correspondence any such representation $\rho\in \Char(X)$ 
@@ -680,7 +699,7 @@ uniquely gives a local system of rank 1.
 Recall also the non-abelian Hodge
 correspondence
 \[\Char(X) \xrightarrow{\Psi} \Pic^{0}(X)\times H^0(X,\Omega_X^1).\]
-mapping a local system $\bbL_{\rho}$ to the line bundle $\sL_{\rho}\simeq \bbL\otimes_{\bbC}\sO_X$
+mapping a local system $\bbC_{\rho}$ to the line bundle $\sL_{\rho}\simeq \bbC_{\rho}\otimes_{\bbC}\sO_X$
 along with the 1-form $\omega_{\rho}$ given by the inverse image of $\bbL$ under
 the exponential map
 \begin{equation}
@@ -695,21 +714,21 @@ This induces an isomorphism of topological groups.
 Note that a unitary local system given by
 \[\eta\in\Char(X)^u \coloneqq \Hom(H_1(X,\bbZ)/\torsion , U(1))\]
 corresponds to $(\bbC_{\eta}\otimes_{\bbC}\sO_X, 0)$
-under the above non-abelian Hodge correspondence. Thus
+under the above non-abelian Hodge correspondence \cite{Sim91}. Thus
 we get an embedding 
 \[\Pic^0(X) \to \Char(X).\]
 This is not a complex submanifold.
-
 \end{remark}
 
-Define the cohomology groups of 
-$(\sL, \omega)$ as
+
+\subsubsection{Hodge decomposition for trivial line bundles with Higgs fields}
+Given $(\sL, \omega)\in \Pic^0(X)\times H^0(X,\Omega_X^1)$, following \cite{Ara92} we define the $(p,q)$-th cohomology groups as
 \[H^{p,q}(X, (\sL, \omega)) \coloneqq 
-\frac{\ker(\omega\colon H^q(X, \Omega_X^p\otimes \sL)
-\to H^q(X, \Omega_X^{p+1}\otimes\sL))}{\im(\omega\colon
-H^q(X,\Omega_X^{p-1}\otimes\sL)\to H^q(X,\Omega_X^{p}\otimes\sL)}\]
-We have the following (see \cite[Theorem 3]{Ara92})
-\begin{theorem}
+\frac{\ker\left(\omega\colon H^q(X, \Omega_X^p\otimes \sL)
+\to H^q(X, \Omega_X^{p+1}\otimes\sL)\right)}{\im\left(\omega\colon
+H^q(X,\Omega_X^{p-1}\otimes\sL)\to H^q(X,\Omega_X^{p}\otimes\sL)\right)}\]
+We have the following 
+\begin{theorem}[{\cite[Theorem 3]{Ara92}}]
 Let $\rho\in \Char(X)$ be the character corresponding to 
 $(\sL,\omega)$ then we have
 \[H^k(X, \bbC_{\rho}) \simeq \bigoplus_{p+q =k}H^{p,q}(X,\sL,\omega)\]
@@ -723,7 +742,8 @@ unitary local systems corresponding to $\rho \in Hom(\pi_1(X)/\torsion, U(1))$
 
 We now defined
 \begin{definition}[generalised resonant 1-forms]
-Given a local system $\bbC_{rho}$ associated to a unitary character $\rho$, we define
+Given a local system $\bbC_{\rho}$ associated to a unitary character $\rho$, we define
+the \textsl{set of resonant forms associated to $\bbC_{\rho}$} to be
 \[\sR^k(X, \bbC_{\rho}) \coloneqq
 \{\omega\in H^0(X, \Omega_X^1)| H^k(H^{\bullet}(X, \bbC_{\rho}), \wedge\omega) \neq 0 .\}\]
 We denote as usual 
@@ -737,7 +757,7 @@ if $\sL = \Psi(\rho)$ then
 \end{remark}
 
 
-\subsection{Tangent cones and cohomology jump loci}
+\subsubsection{Tangent cones and cohomology jump loci}
 \label{sub:tc} Another way to understand the resonant 1-forms is via the tangent cone of the cohomology jump loci defined
 as follows.
 \begin{definition}
@@ -755,11 +775,12 @@ Recall from (\ref{eq:exponential}) that given $\rho\in \Char(X)$, $\omega_{\rho}
 %\[\Phi\colon \sM_{Higgs} \to \Char(X)\text{ define by } (\sL, \omega) \mapsto L(\omega).\]
 By the generic vanishing theory \cite[Theorem 3]{Ara92} we have 
 \begin{equation}
-\Psi(\sV^i(X,\bbC))
-=\bigcup_{p+q = i}\{(\sL,\omega)| H^{p,q}(X,(\sL,\omega)) \neq 0
+\Psi(\sV^k(X,\bbC))
+=\bigcup_{p+q = k}\{(\sL,\omega)| H^{p,q}(X,(\sL,\omega)) \neq 0
  \text{ for some } p,q\in\bbZ_{\geq 0}\}.
 \label{eq:arapura}
 \end{equation}
+
 Therefore we have the following
 \begin{proposition} 
 Given a character $\rho\in \sV^k(X,\bbC)$,
@@ -773,7 +794,7 @@ piece of $TC_{\rho}(\sV^k(X,\bbC))$.
 \end{proposition}
 \begin{proof}
 The result follows essentially from (\ref{eq:arapura})
-above. Indeed, by \ref{thm:genhodgedecomp} $\omega \in \sR^k(X, \bbC_{\eta})$
+above. Indeed, by Theorem \ref{thm:genhodgedecomp} $\omega \in \sR^k(X, \bbC_{\eta})$
 implies $H^k(X, \Psi^{-1}(\sL, \omega)) \neq 0$
 where $\sL\coloneqq \bbC_{\eta}\otimes_{\bbC}\sO_X$.
 Similarly, if $\rho\in \sV^k(X, \bbC)$ i.e.\ $H^k(X, \bbC_{\rho})
@@ -784,8 +805,8 @@ we have $\omega\in \sR^k(X, \bbC_{\Psi^{-1}(\sL, 0)})$.
 \end{proof}
 
 
-\subsection{Linearity in generic vanishing theory}
-We now define after Simpson \cite[p.\ 365]{Sim93}; the notion of linearity of subsets of 
+\subsubsection{Linearity}
+Simpson \cite[p.\ 365]{Sim93a} introduced the notion of linearity of subsets of 
 $\Pic^0(X)\times H^0(X,\Omega_X^1)$. Via the albanese
 map $a\colon X\to \Alb_X$ we may and do identify
 $\Pic^0(X)\times H^0(X,\Omega_X^1)$ with
@@ -794,33 +815,29 @@ $A^{\natural} \coloneqq \Pic^0(A)\times H^0(A,\Omega_A^1)$.
 A subset $Z\subset A^{\natural}$ is said to be \textsl{linear}
 or \textsl{translates of triple tori}
 if there exists finitely many morphisms of abelian varities
-$p_i\colon A\to B_i$ and pairs $(\sL_i,\omega_i)$
-such that $Z= (\sL_i,\omega_i)\otimes \im(B^{\natural}
+$p_i\colon A\to B_i$ and pairs $(\sL_i,\omega_i)\in B_i^{\natural}$
+such that $Z= (p_i^*\sL_i,p_i^*\omega_i)\otimes \im(B_i^{\natural}
 \to A^{\natural})$.
+
+Similarly a subset $\sZ\subset \Char(A)$ is said to be linear if here exists finitely many morphisms of abelian varities
+$p_i\colon A\to B_i$ and character $\rho_i\in \Char(B_i)$
+such that $\sZ= p_i^*\rho_i\cdot\im(\Char(B_i)\to \Char(A))$.
 \end{definition}
 
-The notion of linearity has an obvious incarnation for subsets of
- $\Char(A)$ as well. 
-\begin{definition}[Linearity]\label{def:char}
-
-\end{definition}
-
-It is a result of Simpson \cite[Theorem 3.1]{Sim93} that a closed algebraic subset $Z \subset Char(A)$ is linear if and only if its image $Z'\subset A^{\natural}$ remains algebraic. 
 
 
-By the generic vanishing theory \cite{Ara92} and Proposition
-\ref{prop:equivalence}
-we have the following
+
+It is a result of Simpson \cite[Theorem 3.1]{Sim93b} that a closed algebraic subset $\sZ \subset Char(A)$ is linear if and only if its image $Z\subset A^{\natural}$ remains algebraic. Furthermore we have 
 \begin{theorem}
-The cohomology jump loci $\sV^k(X, \bbC)$ are linear. In particular, $\sR(X)\coloneqq \bigcup_{\eta}\sR(X,\eta)\subset H^0(X,\Omega_X^1)$ is linear, i.e.\ a finite union of linear subspaces.
+The cohomology jump loci $\sV^k(X, \bbC)$ are linear and $\rho_i$'s are torsion characters. In particular, $\sR(X)\coloneqq \bigcup_{\eta}\sR(X,\eta)\subset H^0(X,\Omega_X^1)$ is linear, i.e.\ a finite union of linear subspaces.
 \label{thm:}
 \end{theorem} 
 
-Finally we need similar linearity statement
-for perverse sheaves on abelian varieties. 
+Finally we need a similar linearity statement
+for perverse sheaves on abelian varieties. More on this is discussed in the subsequent section \S \ref{sec:perverse}.
 We collect together further properties of the
 cohomology jump loci on an abelian variety $A$ of dimension $q$.
-We put appropriate references wherever needed.
+We put appropriate references wherever needed. \sorry{add reference}
 
 \begin{theorem}[Properties of CJL on $A$]
 Let $\sP$ be a perverse sheave on an abelian variety $A$ with $\dim A = q$.
@@ -828,8 +845,8 @@ The
 cohomology jump loci of $\sP$ satisfy the following
 \begin{enumerate}
 	\item Propagation property:
-\[\sV^g(A, \sP) \subseteq \cdots\subseteq \sV^1(A, \sP) 
-\subseteq \sV^0(A, \sP) \supseteq \sV^1(A, \sP) \supset\cdots\supset \sV^g(A, \sP).\]
+\[\sV^q(A, \sP) \subseteq \cdots\subseteq \sV^1(A, \sP) 
+\subseteq \sV^0(A, \sP) \supseteq \sV^1(A, \sP) \supset\cdots\supset \sV^q(A, \sP).\]
 Furthermore, $\sV^i(A, \sP) = \emptyset$, if $i \in [-q, q]$.
 \item Codimension lower bound: for any $i \geq 0$,
 $\codim \sV^i(A, \sP) \geq 2i$.
@@ -846,38 +863,74 @@ Moreover, the equality holds if and only if $\sV^0(A, \sP) \neq \Char(A)$.
 
 
 
-\subsection{Perverse sheaves and Decomposition theorem}
+
+\subsection{Perverse sheaves, $D$-modules and Decomposition theorem}\label{sec:perverse}
+Perverse sheaves on a smooth projective variety $X$ are, roughly speaking, a generalisation of local systems. 
+Under the Riemann--Hilbert correspondence they underlie regular, holonomic $D$-modules and the two categories are equivalent. 
+We refer the readers to \cite[Chapter 6,7]{HTT} for a 
+comprehensive background on this topic. 
+The corresponding $D$-module $\sM$, being regular and holonomic admits an increasing
+ filtration $F_{\bullet}\sM$ with respect to the filtration on $D_X$
+given by the order of differential operators. Furthermore, the pieces $F_{\bullet}\sM$'s are coherent sheaves and the corresponding
+graded module $gr^F_{\bullet}\sM$ is coherent as a module over the graded abelian algebra $gr^F_{\bullet}D_X$. We identify the latter
+ with the pushforward of the
+structure sheaf $\sO_{T^*X}$ of the cotangent sheaf, via the bundle map $\pi\colon T^*X\to X$. We define
+\begin{definition}[Conormal Sheaf]
+Given $Z\subset X$ a subvariety of a smooth projective variety $X$, we define the conormal sheaf 
+\[T^*ZX\coloneqq \overline{T^*_{Z^{\reg}}X} \coloneqq \overline{\{(z,\omega)\in T^*X| z\in Z^{\reg} \text{ and } \omega|_{Z}(T_zZ) = 0\}}\]
+
+\end{definition}
+By results of Kashiwara and Gabber, the holonomicity condition ensures that (see e.g.\ \cite[Theorem E.3.6]{HTT}) the support of $gr^F_{\bullet}\sM$ is a finite union of
+conical Lagrangian subvarieties given by closure of conormal sheaves along various subvarieties of $X$.
+ 
 \begin{definition}[Singular Support]
+Given a perverse sheaf $\sP$ and its corresponding regular holonomic $D$-module together with a good filtration $(\sM, F_{\bullet})$ we define the singular support of $\sM$ to be the support of the coherent $\sO_{T^*X}$-module $\widetilde{gr_{\bullet}^F\sM}$. The module structure is
+induced via the bundle map $\pi\colon T^*X\to X$ and is
+\[\widetilde{gr_{\bullet}^F\sM} \coloneqq gr_{\bullet}^F\sM\otimes_{\pi^{-1}gr_{\bullet}^FD_X}\sO_{T^*X}.\]
+We write
+\[\SS(\sP) (\text{ or, } \SS(\sM)) \coloneqq \bigcup_{Z\subset X}T^*_ZX\]
 
 
 \end{definition}
 \begin{definition}[Characteristic Cycle]
-
+The characteristic cycle associalted to a perverse sheaf $\sP$ is defined to be the support of $\widetilde{gr_{\bullet}^F\sM}$ with
+each irreducible components 
+taken with multiplicities given by the length of the module localised at generic points of the components. we write
+\[\CC(\sP) \coloneqq \sum_i n_ZT^*_ZX\]
 
 \end{definition}
-
+The euler characteristic of perverse sheaves are determined by intersection theory of its support much like the Grothendiek--Riemann--Roch theorem for coherent sheaves. This was shown by Kashiwara \cite{Kas85}.
 \begin{theorem}[Kashiwara's index]
 
 \label{thm:index}
 \end{theorem}
-We refer the reader to
-\cite[Section 4.5]{HTT08 }
-Given a morphism of smooth projective varieties, 
-$f\colon X\to Y$ then we have the following
+Simple perverse sheaves are minimal and irreducible objects among perverse sheaves. They correspond to the minimal extension of a local system $\bbL_U$ supported on an open subset $U\subseteq Z$ of some subvariety $Z\subseteq X$, and are denoted $IC_Z(\bbL)$.  A perverse sheaf admits Jordan--Holder type
+filtration with simple perverse sheaves as quotients. However, the ones arising geometrically are in fact semi-simple. This fact is known as the decomposition theorem and is the topic of our next short overview. We refer the reader to
+\cite[Section 4.5]{HTT08} for more general discussion.
 \begin{theorem}[Decomposition theorem]
-
+Given a morphism $f\colon X\to A$,
 
 \label{thm:}
 \end{theorem}
 
-Given $f\colon X\to A$ a morphism to an abelian
+
+Given $f\colon X\to A$ a surjective morphism of a smooth projective variety to an abelian
 variety, via Kashiwara's estimate the singular support of $\bbR f_*\bbC$ produces a breeding ground for 1-forms with zeros. This phenomenon was exploited in
 \cite{PS14}
 in showing that all 1-forms admit zeros on smooth projective
 varieties of general type. Here we recall the estimate in our
-current framework. For the most 
+current framework. 
 \begin{theorem}[Kashiwara's estimate on the behaviour of singular support]
-Given $f\colon X\to A$, consider the following
+Given $f\colon X\to A$, consider the following commutative diagram.
+\[
+\begin{tikzcd}
+T^*X \ar[dr]& f^*T^*A \ar[d]\ar[r, "df"]\ar[l, "f\times\id"'] & T^*A\ar[d]\\
+&X\ar[r, "f"] &A
+\end{tikzcd}
+\]
+Then 
+\[\SS(\bbR f_* \bbC[n]) \subseteq (f\times \id)(df^{-1}(0_X))\]
+where $0_X$ denotes the zero section $T^*_XX$ of $T^*X$.
 
 \label{thm:}
 \end{theorem}
