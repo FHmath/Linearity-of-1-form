@@ -421,7 +421,7 @@ all $i\geq 0$.
 
 Assuming (\ref{Kot1}), which is currently a stronger (yet conjecturally
 equivalent) hypothesis we have
-\begin{alphtheorem}
+\begin{alphtheorem}\label{thm:cxsmooth}
 Let $f\colon X\to A$ be a surjective morphism to a simple abelian
 variety such that there exists a holomorphic 1-form
 $\omega$ with $Z(f^*\omega) = \emptyset$ then $\bbR f_*\bbL$
@@ -624,7 +624,7 @@ coeffcients. All the varieties are complex quasi-projective varieties.
 
 
 
-\section{Preliminary}
+\section{Preliminaries}
 \subsection{Generic Vanishing and Non-abelian Hodge theory}\label{sec:gv}
 Given a holomorphic 1-form $\omega\in H^0(X,\Omega_X^1)$
 the kernel of the following de Rham complex
@@ -890,6 +890,11 @@ induced via the bundle map $\pi\colon T^*X\to X$ and is
 We write
 \[\SS(\sP) (\text{ or, } \SS(\sM)) \coloneqq \bigcup_{Z\subset X}T^*_ZX\]
 
+This notion helps us distinguish between local systems from more complicated perverse sheaves. More precisely, it detects the singularity of a $D$-module (or, equivalently constructible sheaves) effectively. We have
+\begin{theorem}[{\cite[Theorem ??]{HTT}}]
+A perverse sheaf $\sP$ is a local system if and only if $\SS(\sP) = T^_XX$.
+\label{thm:support}
+\end{theorem}
 
 \end{definition}
 \begin{definition}[Characteristic Cycle]
@@ -934,42 +939,6 @@ where $0_X$ denotes the zero section $T^*_XX$ of $T^*X$.
 
 \label{thm:}
 \end{theorem}
-
-
-
-
-
-
-\section{Proof of Theorem \ref{thm:smooth}}
-Note that by a result of Tischler \cite[Theorem 1]{Tis70} and Sackstder \cite[p.\ 96]{Sac65} we know that for a real manifold $X$
-a $\scrC^{\infty}$-fibre bundle structure over $S^1$ is equivalent to having a real $\scrC^{\infty}$ closed 1-form $\alpha$ without zeros. 
-The following generalisation of Schreider's \cite[Theorem 1.2]{Sch19} relates this with the complex geometry of $X$ when it is a smooth projective variety.
-
-\begin{theorem}
-Given a $f\colon X\to A$ be from a smooth projective variety $X$ to a simple abelian variety $A$ such that
-both $X$ and $A$ admit $\scrC^{\infty}$-fibre bundle structure over $S^1$ with the commutative diagram
-\[\begin{tikzcd}
-	X\ar[dr]\ar[d, "f"]& \\
-	A\ar[r]&S^1
-\end{tikzcd}.\]  
-Then there exists a global holomorphic 1-form $\omega$ such that for any finite \'etale cover $\tau\colon X' \to X$ and
-any unitary local system $\bbL\in \Char(A)$, we have $H^{\bullet}(X, \tau^*f^*\bbL), \wedge\tau^*f^*\omega)$ is exact. 
-\label{thm:schreieder}
-\end{theorem} 
-
-\begin{proof}
-We have commutative diagram of representation
-\[\begin{tikzcd}
-\Hom(\pi_1(X), \bbC^{\star})& \\
-\Hom(\pi_1(A), \bbC^{\star})\ar[u]&\Hom(\pi_1(S^1),\bbC^*)\ar[l]\ar[lu]
-\end{tikzcd}.\]  
-induced by the commutative diagram in the hypothesis. Since $\pi_1(S) \simeq \bbZ$, we can find 
-\end{proof}
-
-
-
-
-
 
 
 
@@ -1059,6 +1028,77 @@ Hence $\varphi_*\bbC_{\rho} = \bbC_{\rho'}$ and $\bbC_{\rho} =
 
 
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Some Geometric consequences}
+In this section we prove Theorem \ref{thm:smooth} and \ref{thm:cxsmooth}, thereby establishing a geometric consequence of our theorem. 
+Note that by a result of Tischler \cite[Theorem 1]{Tis70} and Sackstder \cite[p.\ 96]{Sac65} we know that for a real manifold $X$
+a $\scrC^{\infty}$-fibre bundle structure over $S^1$ is equivalent to having a real $\scrC^{\infty}$ closed 1-form $\alpha$ without zeros. 
+The following generalisation of Schreider's \cite[Theorem 1.2]{Sch19} relates this with the complex geometry when $X$ admits
+the structure of a smooth projective variety. We give a slightly different proof than the one in \cite{Sch19}.   
+
+\begin{theorem}\label{thm:schreieder}
+Given a $f\colon X\to A$ be from a smooth projective variety $X$ to an abelian variety $A$ such that
+both $X$ and $A$ admit $\scrC^{\infty}$-fibre bundle structure over $S^1$ with the commutative diagram
+\[\begin{tikzcd}
+	X\ar[dr, "p_X"']\ar[d, "f"]& \\
+	A\ar[r, "p_A"]&S^1
+\end{tikzcd}.\]  
+Then there exists a global holomorphic 1-form $\omega\in H^0(A,\Omega_A^1)$ such that for any finite \'etale cover $\tau\colon X' \to X$ and
+any unitary local system $\bbL\in \Char(A)$, we have $H^{\bullet}(X, \tau^*f^*\bbL), \wedge\tau^*f^*\omega)$ is exact. 
+\label{thm:schreieder}
+\end{theorem} 
+
+\begin{proof}
+By \cite[Proposition 5.4]{LW18}, given $\rho\in \Char(S^1)$, the local system $\bbC_{\rho}$ associated to $p_X^*(\rho)$ admits
+a non-trivial cohomology if and only if $\rho$ is an eigenvalue of the monodromy operation on $H^{\bullet}(F, \bbC)$. Hence, 
+we have the strict inclusion
+\[\sV(X, f) \coloneqq \{\rho\in\Char(A)| H^i(X, f^*\bbC_{\rho}) \neq 0 \text{ for some }i\}\subsetneq \Char(A).\]
+Since the tangent cones $TC_{\rho}\sV(X, f)\subsetneq H^1(A, \bbC)$ is a sub-Hodge structure, we obtain the same strict inclusion
+for the $(1,0)$-piece of the tangent cone into $H^0(A, \Omega_A^1)$. Consider an $\omega$ in the complement on this inclusion. We now use the non-abelian Hodge correspondednce (Proposition
+\ref{prop:equivalence}) to conclude that $\omega\notin \sR(X, \bbC_{f^*\rho})$ for all unitary local systems $\rho\in \Char(A)$. Then
+by Hodge decomposition (Theorem \ref{thm:arapura}) we obtain the result.
+
+\end{proof}
+We should mention that when $A = \Alb_X$, one can deduce this immediately from Schreieder's original result as follows. By
+the generic vanishing theory we know $\sV(X)$ is a finite union of torsion translate of subtori in $\Char(A)$. Therefore, 
+all cohomology jump loci pass through $\bbC_X$ after an \'etale cyclic cover of $\Alb_X$.
+
+\begin{proof}[Proof of Theorem \ref{thm:smooth}]
+If there exists a simple perverse sheaf $\sP$ in the decomposition of $\bbR^i f_*\bbC[n]$ such that $\sP$ is not a local system,
+we must have $Z\in\SS(\sP)$ by Theorem \ref{thm:support}. Since $A$ is simple $\pi(T^*_ZA) = H^0(A, \Omega_A^1)$. 
+But Theorem \ref{thm:schreieder} above ensures that the tangent cone to $\sV(X, f)$ cannot be all of $H^1(A, \bbC)$.
+This is a contradiction to our comparison Theorem \ref{thm:linearity}.
+
+\end{proof}
+
+
+Assuming the existence of a holomorphic 1-form.
+
+
+
+
+\section{Linearity for codimension 1 zeros}
+
+
+
+
+
+
+
 
 
 
