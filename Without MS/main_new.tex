@@ -231,6 +231,7 @@
 \newcommand{\bbA}{\mathbb{A}}
 \newcommand{\bbB}{\mathbb{B}}
 \newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbE}{\mathbb{E}}
 \newcommand{\bbG}{\mathbb{G}}
 \newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbK}{\mathbb{K}}
@@ -309,11 +310,11 @@
 
 
 \DeclareMathOperator{\Spf}{Spf}
-%\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\Proj}{Proj}
 \DeclareMathOperator{\tors}{tors}
 \DeclareMathOperator{\torsion}{torsion}
 \DeclareMathOperator{\Var}{Var}
-%\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Sym}{Sym}
 
 
 \newcommand{\Ab}{\mathbf{Ab}}
@@ -448,10 +449,10 @@ version of this statement in a relative setting (see Theorem
 theorem as stated in the following result. We need the following notations
 Denote by $\SS(Ra_*\bbC)\subset T^*\Alb_X$ the singular support of $Ra_*\bbC$ under the albanese morphism $a\colon X\to \Alb_X$ and 
 let $\pi\colon T^*\Alb_X\to 
-H^0(\Alb_X, \Omega_{\Alb_X}^1)$ is the porjection. A result of
+H^0(\Alb_X, \Omega_{\Alb_X}^1)$ is the projection. A result of
 Kashiwara giving an estimate on the behaviour of the singular
 support of $\bbR f_*\bbC$ (see
-Theorem \ref{th:kas-ss}) ensures that all 1-forms
+Theorem \ref{thm:kas-ss}) ensures that all 1-forms
 $\omega\in \pi(\SS(\bbR a_*\bbC))$ admit zeros. Let $\sR(X)$ denote the (1,0)-piece of the union of generic vanishing loci
 \[\sigma^{p,q}(X) \coloneqq \{(\sL,\omega)\in \Pic^0(X)\times H^0(\Alb_X,\Omega_{\Alb_X}^1)|H^q(H^{p}(X, \Omega_X^{\bullet}\otimes \sL), \wedge a^*\omega) \neq 0\}.\]
 Via the non-abelian Hodge correspondence a different way to understand the union over all $p,q$ of such set is via the Lie algebra associated to the  the cohomology jump loci 
@@ -460,7 +461,7 @@ where $\bbC_{\rho}$ is the local system associated
 to the character $\rho\in Hom(H_1(X,\bbZ)/\torsion, \bbC^{\star})$.
 The Lie algebra of this set lies in $H^1(X,\bbC)$. Its holomorphic part coincides with $\sR(X)$ above
 (see \S \ref{sec:gv} for more details). It is known that the tangent cone of $\sV(X,\bbC)$ is a sub-Hodge structure of $H^1(X,\bbC)$.
-
+We show
 \begin{alphtheorem}
 Let $a\colon X\to \Alb_X$ denotes the albanese morphism. Then
 \[\sR(X) =  \pi(\SS(Ra_*\bbC)). \]
@@ -891,8 +892,8 @@ We write
 \[\SS(\sP) (\text{ or, } \SS(\sM)) \coloneqq \bigcup_{Z\subset X}T^*_ZX\]
 
 This notion helps us distinguish between local systems from more complicated perverse sheaves. More precisely, it detects the singularity of a $D$-module (or, equivalently constructible sheaves) effectively. We have
-\begin{theorem}[{\cite[Theorem ??]{HTT}}]
-A perverse sheaf $\sP$ is a local system if and only if $\SS(\sP) = T^_XX$.
+\begin{theorem}[{\cite[Proposition 2.2.5]{HTT}}]
+A perverse sheaf $\sP$ is a local system if and only if $\SS(\sP) = T^*_XX$ (the zero section of $T^*X$).
 \label{thm:support}
 \end{theorem}
 
@@ -951,22 +952,23 @@ where $0_X$ denotes the zero section $T^*_XX$ of $T^*X$.
 
 
 
-\section{Generic vanishing theory on abelian varieties}
-This section is devoted to the proof of Theorem \ref{thm:perverse}. First we note that Theorem \ref{thm:linearity} follows
-from Theorem \ref{thm:perverse}
+\section{Generic vanishing and decomposition theorem}
 
-\sorry{We need a relative version for showing Theorem \ref{thm:smooth}.}
-
-\begin{proof}[Proof of Theorem \ref{thm:linearity}]
-By the decomposition Theorem \ref{thm:decomp} applied to $f\colon X\to A$
-we have, 
-\[Rf_*\bbC\simeq \bigoplus_{\alpha,i} \sP_{\alpha,i}[-i].\]
-Here $\sP_{\alpha, i}$ are simple perverse sheaves supported on various strata of the morphism $f$. 
-Note that
-\[\{\rho\in \Char(A)| H^k(X, f^*\bbC_{\rho})\neq 0 \text{ for some } k\} = \bigcup_{\alpha, i, k}\sV^k(A, \sP_{\alpha, i}).\]
-Applying Theorem \ref{thm:perverse} to each 
-of these $\sP_{\alpha,i}$ we obtain the result.
-\end{proof}
+\subsection{Generic vanishing on abelian varieties}
+Before we establish the curious connection between the generic vanishing theory and the decomposition theorem, we need to understand
+the generic vanishing theory for perverse sheaves on abelian variety. This subsection is devoted to
+ Theorem \ref{thm:perverse} establishing a connection between the cohomology jump loci of simple perverse sheaves and their singular support.
+%
+%\begin{proof}[Proof of Theorem \ref{thm:linearity}]
+%By the decomposition Theorem \ref{thm:decomp} applied to $f\colon X\to A$
+%we have, 
+%\[Rf_*\bbC\simeq \bigoplus_{\alpha,i} \sP_{\alpha,i}[-i].\]
+%Here $\sP_{\alpha, i}$ are simple perverse sheaves supported on various strata of the morphism $f$. 
+%Note that
+%\[\{\rho\in \Char(A)| H^k(X, f^*\bbC_{\rho})\neq 0 \text{ for some } k\} = \bigcup_{\alpha, i, k}\sV^k(A, \sP_{\alpha, i}).\]
+%Applying Theorem \ref{thm:perverse} to each 
+%of these $\sP_{\alpha,i}$ we obtain the result.
+%\end{proof}
 
 
 \begin{proof}[Proof of Theorem \ref{thm:pervese}]
@@ -1021,21 +1023,80 @@ Indeed, $H^0(A, \sP\otimes \bbC_{\rho}) = H^0(B, \sP_B\otimes \varphi_*\bbC_{\rh
 Hence $\varphi_*\bbC_{\rho} = \bbC_{\rho'}$ and $\bbC_{\rho} = 
 \varphi^*\bbC_{\rho'}$.
 
+\end{proof}
 
+\subsection{Linearity and comparison}
+Linearity of cohomology jump loci is a well-known fact in the generic vanishing theory. We start by showing the linearity of the input
+from decomposition theorem in the statement of Theorem \ref{thm:linearity}. 
+\begin{proposition}\label{van-nonsimple}
+Let $A$ be an abelian variety and $X$ be a proper subvariety of $A$. Then the following are equivalent
+\begin{enumerate}
+	\item $X$ is not fibred by tori or of dimension 0. 
+	\item Any holomorphic 1-form $\omega\in H^0(A, \Omega_A^1)$ restricted to $X^{\reg}$, i.e.\ $\omega|_{X_{\textnormal{reg}}}$ admits zeros on the smooth locus $X_{\textnormal{reg}}$.
+\end{enumerate}
+\end{proposition}
+The result is well-known to the expert, especially when $Z$ is smooth. 
+\begin{proof}\label{proof:van-nonsimple} (2)$\Rightarrow$ (1): Suppose $X$ is fibred by tori and $\dim X>0$, i.e.\ there exists a subabelian variety $B\subset A$ such that the fibres of the composition 
 
+$X\into A \onto A/B$ are $B$. Taking an \'etale cover $\tau: A'\to A$, we assume $A'=B\times C$ and $X':=\tau^{-1}(X)=B\times Y\subset A'$. Then the 1-forms coming from $B$ do not vanish on smooth locus of $X'$, hence also do not on the smooth locus of $X$. 
 
-
-
-
+(1)$\Rightarrow$(2): Denote $d=\dim X$, $g=\dim A$. If $d=0$ it is trivial, so we assume $d>0$. Denoting by $N$ the
+vector bundle on $X^{\reg}$ given by $N_{X/A}|_{X^{\reg}}$ where $N_{X/A}$ is the normal sheaf of associated to the immersion
+ \cite[\href{https://stacks.math.columbia.edu/tag/01R1}{Tag 01R1}]{stacks-project}. Associated to \[T_A|_{X^{\reg}}\onto N,\]
+we obtain the following chain of maps
+\[\varphi\coloneqq (\bbP(N) \to 	X^{\reg}\times \bbP(T_0{A}) \to \bbP(T_0A)=\bbP^{g-1})\]
+where for a vector bundle $E$ on $X^{\reg}$ we use the notation $\bbP(E) \coloneqq \Proj_{X^{\reg}})(\Sym^d(E^{\vee}))$.
+Denote by $p\colon \bbP(N)\to X^{\reg}$ the bundle map. Given
+a point $s\in \bbP^g$, by construction we may associate a hyperplane $H_s\subset T_{A,0}$. Then
+\begin{equation}
+p\colon \varphi^{-1}(s) \overset{p}{\xrightarrow{\sim}}  \{x\in X^{\reg}| T_xX^{\reg} \subset H_s\}.
+\label{eq:van-nonsimple}
+\end{equation}
+Denote by $S\coloneqq \varphi(\bbP(N))$ the image. If $\dim S<g$, for all $s\in S$, a general
+ fibre $Z_s \coloneqq \varphi^{-1}(s)$
+must have dimension $g - 1 - \dim S$. Let $A_0$ denote the abelian variety spanned by $Z_s$, then $\dim A_0 > g- 1 - \dim S$. Indeed,
+our assumption implies that $Z_s$ cannot itself be an abelian variety. Since for a general $s\in S$, $H_s \supset T_xA_0$
+for all $x\in p(\varphi^{-1}(s))$ by \eqref{eq:van-nonsimple}. Normalising $x$ to $0$, we obtain that $T_0A_0$
+is cut out by $\dim S$ many hyperplanes in $T_0A$. But $\dim T_0A_0 \gneq g -1 - \dim S$. Hence $\varphi$ is quasi-finite
+dominant morphism which shows the claim above.
 \end{proof}
 
 
 
 
+We are now ready to prove Theorem \ref{thm:linearity}. However we prove a much more general version for semi-simple local system
+of any rank and in the relative setting. First, we recall the notion of general cohomology jump loci.
+\begin{definition}{Cohomology Jump Loci}
+Let $\bbE$ be complex local system of rank $r$ on a smooth projective variety $X$. We define, the \textsl{$k$-th cohomology jump loci}
+associated to $\bbE$ as
+\[\sV^k(X, \bbE) \coloneqq \{\rho\in \Char(X)| H^k(X, \bbE\otimes_{\bbC}\bbC_{\rho})\neq 0\}.\]
+Similarly, given a proper morphism $f\colon X\to A$ to an abelian variety, we define 
+\[\sV^k(X, \bbE, f)\coloneqq \{\rho\in \Char(A)| H^k(X, \bbE\otimes_{\bbC}f^*\bbC_{\rho})\neq 0\}.\]
+Note that $\sV^k(X, \bbE) = \sV^k(X,\bbE, a)$ where $a\colon X\to \Alb_X$ is the albanese morphism.
+\end{definition}
 
+Under the non-abelian Hodge correspondence, we can recover the $(1,0)$ part of the tangent cone of these loci. We define
+\[\sR(X, \bbE, f) \coloneqq \bigcup_k\pi\circ\Psi(\sV^k(X,\bbE, f)).\]
 
+We have
 
+\bt
+Let $f\colon X\to A$ be a proper morphism to an abelian variety. Let $\bbE$ be a semisimple local system on $X$ then
+\[\sR(X,\bbE) = \pi(SS(Rf_*\bbE))\]
+\et
 
+\begin{proof}
+The proof is a direct consequence of the comparison Theorem \ref{thm:perverse}. Indeed,
+By the decomposition theorem, we have
+\[\bbR f_*\bbE = \bigoplus\sP_{i,\alpha}[-i]\]
+for various simple perverse sheaves $\sP_{i,\alpha}$ on $A$. For each of these we apply Theorem \ref{thm:perverse}
+to conclude that
+\[\bigcup_{\rho}(TC_{\rho}\sV^k(A, \sP_{i,\alpha}))^{(1,0)} = \pi(\SS(\sP_{i,\alpha})).\]
+Putting these together we obtain
+\[\bigcup_{\rho}(TC_{\rho}\sV^k(A, \bbR f_*\bbE))^{(1,0)} = \pi(\SS(\bbR f_*\bbE)).\]
+But, for any character $\rho\in \Char(A)$, we have
+$H^k(A, \bbR f_*\bbE\otimes \bbC_{\rho}) = H^k(X, \bbE\otimes f^*\bbC_{\rho})$. Hence the result.
+\end{proof}
 
 
 
@@ -1091,7 +1152,214 @@ Assuming the existence of a holomorphic 1-form.
 
 
 
-\section{Linearity for codimension 1 zeros}
+
+\section{Linearity of holomorphic 1-forms with codimension one zeros}
+
+In this section, we consider (logarithmic) holomorphic 1-forms with codimension one zeros. We will prove that $V^1(X)$ is linear and give a more finer analysis on $V^1(X)$. 
+
+\subsection{Projective case}
+
+%We give some preliminaries, which is used in studying (logarithmic) holomorphic 1-forms with codimension one zeros, especially the linearity and finer structure of $V^1(X)$. 
+
+First we recall the definition of cohomology jump loci. Let $X$ be a connected finite CW-complex with $\pi_{1}(X)=G$. Then we have the Betti moduli of rank one local system $\textnormal{M}_B(X):= \Hom(G,\C^{\ast})$ is a commutative affine algebraic group. Each character $\rho \in \textnormal{M}_B(X)$ defines a rank one local system on $X$, denoted by $L_{\rho}$. The tangent space $T_1\textnormal{M}_B(X)$ of $\textnormal{M}_B(X)$ at trivial local system 1 is canonically isomorphic to $H^1(X, \C)$.
+The cohomology jump loci of $X$ are defined as follows:
+$$\mathcal{S}^i(X)=\lbrace \rho\in \textnormal{M}_B(X) \mid  H^{i}(X, L_{\rho})\neq 0 \rbrace,$$ 
+which by the structure theorem are finite union of torsion translated subtori of $\textnormal{M}_B(X)$.
+
+To study $V^1(X)$ we introduce a homotopy invariant of $X$, denoted by $T^1(X)${\color{red} (The name TBA, translated tangent cone?)}, which is contained in $H^1(X, \C)$. The following definition of $T^1(X)$ is based on Arapura's work. Roughly speaking, Arapura \cite{Ara97} showed that every positive dimension component of $\mathcal{S}^1(X)$ can be induced by a so called strict orbifold map. A morphism $f:X\to C$ from $X$ to a smooth projective curve $C$ is called a  {\it strict orbifold map} if $f $ is surjective, has connected fibers and one of the following condition holds:
+\begin{itemize}
+\item $g(C)\geq 2$
+\item $g(C)=1$ and $f$ has at least one multiple fiber.
+\end{itemize}
+A strict orbifold map always induces an injective map: $f^*: H^1(C, \C) \to H^1(X,\C)$. In fact, there are only at most finitely many equivalent strict orbifold maps. Define $$T^1(X):= \bigcup_f \im f^*,$$
+where the union runs over all possible strict orbifold maps for $X$. By another equivalent definition of Budur-Wang-Yoon \cite{BWY16} , $T^1(X)$ is a linear subvariety, which is the union of torsion translation of affine tangent space of each component of degree 1 cohomology jump loci $\mathcal{S}^1(X)$. We denote the holomorphic part of the tangent cone $T^1(X)$ to be $T^1_h(X)$, i.e., $T_h^1(X):=T^1(X)\cap H^0(X, \Omega_X^1)$, which is a linear subvariety.
+
+We will see that except for $T_h^1(X)$, another part of $V^1(X)$ is coming from negative divisors.
+\begin{definition}
+Let $X$ be a smooth projective variety of dimension $n$, with a fixed very ample line bundle $H$ and a prime divisor $E$ on $X$. We say that $E$ is $H$-negative if $E^2\cdot H^{n-2}<0$, where $$E^2\cdot H^{n-2}=\int_X c_1^2(E)\wedge c_1(H)^{n-2}.$$ Similarly we can define $H$-trivial and $H$-positive divisors corresponding to the above integration is zero and positive, respectively. We say $E$ a negative (trivial or positive respectively) if it is $H$-negative ($H$-trivial or $H$-positive respectively) for all ample divisor $H$.
+\end{definition}  
+With the above definition, we define $$V_{H\textnormal{-neg}}(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E, \ \textnormal{with $H$-negative divisor}\  E\}$$  
+
+\begin{lemma}\label{lem:welldef}
+Let $E$ be a integral divisor in $X$ with $\dim X=n$. Suppose there exists a holomorphic 1-form $\omega$ such that $\omega(p)=0$ for each $p\in E$. Then the sign of the intersection number $E^2\cdot H^{n-2}$does not depend on the choice of ample divisor $H$.
+\end{lemma}
+
+\begin{proof}
+By Theorem \cite[Theorem 2]{Sp88}, $E^2\cdot H^{n-2}\leq 0$ for any ample divisor $H$ and when $E^2\cdot H^{n-2}=0$, $E$ is set theoretically contained in a fibre of a strict orbifold map $f: X\to C$ to a smooth projective curve $C$.  Claim that $E$ is the only component of the fiber containing $E$ if $E^2\cdot H^{n-2}=0$ for some ample divisor $H$. In fact, assume there is an effective divisor $E':=f^{-1}(f(E))\backslash E$ such that $aE+bE'$ is linearly equivalent to $F$ with $F$ a general fiber of $f$ and $a$, $b$ are positive integers. Since $f$ has connected fibres, $E\cdot E'\not=0$.  First notice that $(aE+bE')\cdot E'\cdot H^{n-2}=0$. Also, $(aE+bE')^2\cdot H^{n-2}=0$. Hence we get $E^2\cdot H^{n-2}<0$, which is a contradiction. Since set theoretically $E$ is the whole fiber of a morphism $f: X\to C$, $E^2\cdot H^{n-2}=0$ for all ample divisor $H$. 
+\end{proof}
+
+
+With the Lemma \ref{lem:welldef}, we have the following well defined notation$$V_{\textnormal{neg}}(X):=V_{H\textnormal{-neg}}(X)\subset H^0(X, \Omega_X^1),$$ where $H$ is any ample divisor of $X$. With the above notations, we have the following theorem which is based on Spurr \cite[Theorem 2]{Sp88}.
+
+\begin{theorem}\label{Thm:Proj-codim1}
+ Let $X$ be a complex smooth projective variety, with the above notations, we have that 
+$$V^1(X)= T_h^1(X)\cup V_{\textnormal{neg}}(X).
+$$
+Every irreducible component of $V^1(X)$ is a linear complex subvector space of $H^0(X, \Omega_X^1)$, i.e., $V^1(X)$ is a linear subvariety. %Moreover, $V_{\textnormal{neg}}(X)$ is a union of  one dimensional complex vector spaces of $H^0(X, \Omega_X^1)$.
+\end{theorem}
+
+\begin{remark} (1) The Theorem \ref{Thm:Proj-codim1} complements the result of Green-Lazarsfeld \cite{GL87}: $T_h^1(X) \subset V^1(X)$. In general one should not expect $T_h^1(X) = V^1(X)$. Let $X$ be a complex abelian surface and $Y$ be the blowup of $X$ along a point. Then $T_h^1(X)=T_h^1(Y)$, but  $V^1(X)\subsetneq V^1(Y)$.
+
+(2) In dimension 2, \cite[Theorem 2]{Sp88} also holds for compact K\"ahler surface and even any compact complex surface. For the compact complex surface $X$, it is not clear if $V^1(X)$ has finitely many components, since it is not algebraic in general.
+
+(3) The two parts $T_h^1(X)$ and $V_{\textnormal{neg}}(X)$ may have overlap. For example if $f: S\to C$ is a morphism from a smooth complex projective surface $S$ to a smooth projective curve $C$ with genus $g(C)\geq2$. Take a holomorphic 1-form $\omega\in H^0(C, \Omega_C^1)$ which has a zero $p\in C$. Pick any point $s\in S$ over $p$ and blow up $S$ along $s$ with $(-1)$ curve $E$. Then consider the natural morphism $f': S'\to C$, then $f^*\omega(E)=0$ and hence $f^*\omega\in T_h^1(X)\cap V_{\textnormal{neg}}(X)$.
+\end{remark}
+
+\begin{lemma} \label{countable} Let $X$ be a $n$-dimensional smooth complex projective variety with very ample divisor $H$. Then there are at most countablely many $H$-negative divisors in $X$.
+\end{lemma}
+
+\begin{proof}
+Let $E$ be any $H$-negative divisor. After fixing $n-2$ general hyperplanes $H_1, \ldots, H_{n-2}$ in the linear system $|H|$, we have over the complete intersection surface $S:=H_1\cap H_2\cap\ldots\cap H_{n-2}$, $E\cap S$ is a negative curve in $S$, which has no infinitesimal deformation, i.e., the $H^0(E\cap S, N_{E\cap S/S})=0$, where $N_{E\cap S/S}$ is the normal bundle of $E\cap S$ in $S$. Then they are isolated points in the Hilbert scheme $\textnormal{Hilb}_S^{P(m)}$ with some Hilbert polynomial{\color{red}(Hartshorne deformation theory reference)}. Note also that $\textnormal{Hilb}_X^{P(m)}$ is of finite type and $P(m)$ are polynomials with $\Q$ coefficients. Hence there are at most countably many negative curves on $S$ with above properties. Hence there are at most countably many $H$-negative divisors.
+\end{proof}
+
+\begin{proof}[Proof  of theorem \ref{Thm:Proj-codim1}]
+{\color{red}(Remember to discuss the case $\dim X=1$ case, after merging.)}With the notation in theorem \ref{Thm:Proj-codim1},  for any holomorphic 1-form $\omega\in V^1(X)$, there is a integral divisor $D\subset X$ such that $\omega(D)=0$. Then by \cite[theorem 2]{Sp88}, we have either $D$ is $H$-negative or $H$-trivial for any chosen ample divisor $H$. If $D$ is $H$-negative for any ample divisor $H$ then $\omega\in V_{\textnormal{neg}}$. Still by \cite[theorem 2]{Sp88}, If $D$ is $H$-trivial for some ample divisor $H$, then $D$ is contained in a fiber of a morphism $f: X\to C$ with $C$ a smooth projective curve of positive genus and $f$ admitting connected fibers, and $\omega=f^*\eta$ for $\eta\in H^0(C, \Omega_C^1)$. Claim that $D$ is the whole fiber. In fact, if we denote $F:=f^{-1}(f(D))$ and assume by contradiction that $F=D\cup D'$ with $D'\not=\emptyset$. Then the intersection number $D'\cdot D\cdot H^{n-2}>0$. Also, note that $F\cdot D\cdot H^{n-2}=0$, thus $D^2\cdot H^{n-2}<0$, which is a contradiction. Since $D$ is a zero set of a form $\omega$ pullback from $C$ and $D$ is the whole fiber, thus (1) $D$ is multiple and genus $g(C)=1$ or (2) $g(C)>1$ and $\eta(f(D))=0$. Hence $f$ is a strict orbifold fibration. Then $\omega\in T_h^1(X)$. Notice that $T_h^1(X)\subset V^1(X)$ by \cite{GL87}. Hence $$V^1(X)= T_h^1(X)\cup V_{\textnormal{neg}}(X).
+$$
+By lemma \ref{countable}, $V_{\textnormal{neg}}$ is a union of at most countably many linear subspaces in $H^0(X, \Omega_X^1)$ of the following type $$V_E(X):=\{\omega\in H^0(X, \Omega_X^1)\ |\ \omega(p)=0\  \textnormal{for any point}\ p\in E\},$$ where $E$ is a negative divisor. Since $V^1(X)$ is an algebraic set and $T_h^1(X)$ is a linear subvariety, $V^1(X)$ is a linear subvariety.
+ \end{proof} 
+ 
+ In Theorem \ref{Thm:Proj-codim1}, we can write holomorphic 1-forms with codimension one zeros s union of two parts: The 1-forms in the {\color{red} translated tangent cone?} and the one vanishes along a negative divisor.  Another way to understand  $V^1(X)$ is one can divide $V^1(X)$ into set of resonant 1-forms $$V^1_r(X):=V^1(X)\cap R_h(X),$$ and set of nonresonant 1-forms with codimension one zeros, denoted to be $V^1_{nr}(X)$, which is locally closed. Notice that $V_r^1(X)$ is a linear subvariety, since $V^1(X)$ is linear by Theorem \ref{Thm:Proj-codim1}  and $R_h(X)$ is linear by Theorem \ref{thm: resonant}. For holomorphic nonresonant 1-forms,  we have the following proposition.
+ \begin{proposition}
+Let $X$ be a smooth complex projective variety of dimension $n$. There are only finitely many integral divisors $D$ on $X$, such that there is a holomorphic nonresonant 1-form $\omega\in H^0(X, \Omega_X^1)$ with $\omega(D)=0$.
+ \end{proposition}
+ 
+ \begin{proof}
+For any holomorphic nonresonant 1-form $\omega$ such that the zero set $Z(\omega)$ contains a integral divisor $D\subset X$, by Theorem \ref{thm:stefan} (1), $H^{n-1}(D, {\omega_X}|_D)=0$, where $\omega_X$ is the canonical line bundle of $X$. Hence $H^0(D, N_{D/X})=0$ by Serre duality. Then by the same Hilbert scheme argument as that is the proof of   Lemma \ref{countable}, we have there are at most countably many integral divisors that are contained in zero locus of some holomorphic nonresonant 1-forms.  Notice also since $V^1(X)$ is algebraic and $V^1_{nr}(X)=V^1(X)\backslash V_r^1(X)$ is open in $V^1(X)$, $\overline{V_{nr}^1(X)}$ has finitely many irreducible components. Since $$\overline{V_{nr}^1(X)}=\bigcup_{D}V_D(X),$$ where the union runs over all integral divisors $D$ contained in zero loci of holomorphic nonresonant 1-forms. Hence the proposition holds.
+ \end{proof}
+ 
+ \begin{remark}
+By the H.-Y. Lin and Schreieder \cite[appendix]{SS19}, the zero set of any universal nonresonant 1-form is of codimension at least two. 
+ \end{remark}
+
+ To end this subsection, we consider nonresonant 1-forms on surfaces, which is for its own interest. Let $S$ be smooth complex surface, one can bound genus of curves along which a nonresonant 1-form may vanish.
+ 
+ \begin{proposition}
+ Let $S$ be smooth complex projective surface and $C$ be a curve on $S$. Suppose there is a nonresonant holomorphic 1-form $\omega\in H^0(S, \Omega_S^1)$ such that $\omega(C)=0$ Then $C$ is a rational curve or an elliptic curve.
+ \end{proposition}
+ 
+ 
+ \begin{proof}
+ Since $C\subset Z(\omega)$, we have $H^1(C, {\omega_S}|_C)=0$ by Theorem \ref{thm:stefan} (1). Consider the normalization $\eta: \widetilde{C}\to C$ and the exact sequence $$0\to \mathcal{O}_C\to \eta_*\mathcal{O}_{\widetilde{C}}\to \delta\to 0, $$ where $\delta$ is the skyscraper sheaf defined as the coker. Then we have the short exact sequence $$0\to {\omega_S}|_C\to \eta_*{{\omega_X}|_{\widetilde{C}}}\to \delta\to 0.$$ Then we get $$\dim H^0(\widetilde{C}, {\omega_X}|_{\widetilde{C}})\leq \dim H^0(\delta);   H^1(C, {\omega_S}|_C)=H^1(\widetilde{C}, {\omega_X}|_{\widetilde{C}})=0.$$ By Riemann-Roch, $$\deg {\omega_X}|_{\widetilde{C}}+1-g(\widetilde{C})\leq \dim H^0(\delta).$$ Notice also, $$p_a(C)=g(\widetilde{C})+\dim H^0(\delta), $$ and by genus formula $$\deg {\omega_X}|_{\widetilde{C}}+C^2=2p_a(C)-2.$$ Then by \cite[Theorem 1]{Sp88}, $C^2\leq 0$. Hence $p_a(C)\leq1$.
+ \end{proof}
+ 
+
+ \subsection{Quasi-projective case}
+ 
+
+Let $U$ be a smooth complex quasi-projective variety. Let $X$ be a good compactification of $U$, i.e., a smooth compactification of $U$ with boundary $D:=X-U$ a simple normal crossing divisor. Note that the space of logarithmic 1-forms $H^0(X, \Omega_X^1(\log D))$ does not depend on the choice of the good compactification, so we may denote it by $W(U)$. We write $H^0(X, \Omega_X^1(\log D))$ when we want to emphasize the boundary divisor. Similar to projective case,  one can define $$V^i(X,D):=\{ \omega\in H^0(X, \Omega_X^1(\log D)) \mid \codim_X Z(\omega) \leq i \}.$$
+where $Z(\omega)$ is the zero locus of $\omega$. Again by Chevalley's upper-semicontinuity theorem, $V^i(X, D)$ are all algebraic sets.
+
+\begin{remark} For a smooth quasi-projective variety $U$, $V^i(X,D)$ clearly depends on the good compactification $(X,D)$. For example, let $X$ be a smooth projective variety admitting a holomorphic 1-form $\omega\in H^0(X, \Omega_X^1)$ with isolated zero set. Let $D\subset X$ be a divisor containing one point $p \in Z(\omega)$, and $Y$ be the blowup of $X$ along $p$ with exceptional divisor $E$. Then $V^1(X, D)\subsetneq V^1(Y, D\cup E)$. To get an invariant of $U$, we define
+$$V^i(U)= \bigcap_{(X,D)} V^i(X,D) ,$$
+where the intersection runs over all possible good compactification $(X,D)$ of $U$. Clearly, $V^i(U) $ are closed algebraic varieties of $W(U)$.
+\end{remark} 
+
+For a good compactfication $(X,D)$ of $U$ where $D=\cup_{j=1}^r D_j$. Set $$V_{\textnormal{bound}}(X, D):= \{\omega\in H^0(X, \Omega_X^1(\log D)) \mid D_j \subset Z(\omega)\  \text{ for some }\  j \}.$$ Similar to projective case, we denote for a subvariety $E$, $$V_E(X, D):=\{\omega\in H^0(X, \Omega_X^1(\log D)) \mid  E \subset Z(\omega) \}$$ and 
+ $$V_{\textnormal{neg}}(X, D):= \bigcup_E V_E(X, D),$$ where the union runs over all the negative divisor $E$ in $X$ such that $E$ is not contained in $D$. 
+ 
+Define $$T_h^1(X, D):= \bigcup_f f^*H^0(C, \Omega_C^1(\log B)),$$
+where the union runs over all possible surjective morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ ($B$ can be empty), such that $f$ has  connected fibers, and one of the following condition holds when $C$ is projective:
+\begin{itemize}
+\item $g(C)\geq 2$
+\item $g(C)=1$ and $f$ has at least one multiple fiber.
+\end{itemize} 
+{\color{red} (Check the correctness on poles and zeros for $g(C)=0,1$)} 
+ 
+\begin{theorem} \label{thm:codim1quasiprojective} Let $(X, D)$ be a pair consists of an $n$-dimensional smooth complex projective variety $X$ and a simple normal crossing divisor $D$ with irreducible components $\{D_j\}_{j=1}^r$. Then 
+$$
+V^1(X,D)= T^1_h(X, D) \cup V_{\textnormal{neg}}(X, D) \cup V_{\textnormal{bound}}(X, D),
+$$
+and every irreducible component of $V^1(X,D)$ is a linear subvector space of $H^0(X, \Omega_X^1(\log D))$. 
+\end{theorem}
+
+In order to show the above theorem, we first generalize Spurr \cite[Theorem 2]{Sp88} and ideas of the proof to quasi-projective varieties. 
+
+\begin{proposition} \label{Prop:Spurr-no-intersection}
+Let $(X, D)$ be a pair with $X$ a smooth complex projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be an ample divisor on $X$. Suppose $(X, D)$ carries a nontrivial logarithmic 1-form $\omega\in H^0(X, \Omega_X^1(\log D))$  which restricts to zero on an integral divisor $E$ with $E^2\cdot H^{n-2}\geq0,$ and $E\cap D=\emptyset,$ then there is a surjective morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ ($B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(C, \Omega_C^1(\log B))$.
+
+(2) $f$ has connected fibers.
+
+(3) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{proposition}
+
+\begin{proof}
+Firstly, we prove the theorem in the case $\dim X=2$. We may assume that $\omega$ is not everywhere holomorphic, otherwise we are done by \cite[Theorem 1]{Sp88}.
+
+Denote $U=X-D$. Let $\phi: N\to E$ be the normalization map and $\varphi: N\to U$ be the natural map ($E\cap D=\emptyset$). After choosing base points $a\in N$ and $\varphi(a)\in U$, we have the following diagram 
+$$
+\xymatrix{
+ N\ar[r]^{\varphi}\ar[d]^{\alpha_N}& U \ar[d]^{\alpha_U} \\
+  A_N\ar[r]^{\psi} & A_U,}
+$$ where $\alpha_N$ and $\alpha_U$ are albanese maps for the chosen base points $a$ and $\varphi(a)$, and $\psi$ is induced by universal property of albanese map of $N$. Following the construction of $A_U$, we pick a basis $\{\theta_1,\ldots\theta_q\}$ for $H^0(X, \Omega_X^1)$ and $\{\omega_1, \ldots, \omega_r\}\in H^0(X, \Omega_X^1(\log D))$ such that $\{\theta_1, \ldots, \theta_q, \omega_1, \ldots, \omega_r\}$ is a basis of $H^0(X, \Omega_X^1(\log D))$ and $\omega_1=\omega$. Also, we pick basis $\{\gamma_1, \ldots, \gamma_{2q}\}$ for $H_1(X, \mathbb{Z})$ and a basis $\{\delta_1, \ldots, \delta_r\}$ for $\ker\{ H_1(U, \mathbb{Z})\to H_1(X, \mathbb{Z})\}$. Then we have periods as a semi-lattice for $A_U$ $$\Lambda=\sum_{i=1}^{2q}\mathbb{Z}(\int_{\gamma_i}\theta_1, \ldots, \int_{\gamma_i}\omega_r)+\sum_{i=1}^r\mathbb{Z}(\int_{\delta_i}\theta_1, \ldots, \int_{\delta_i}\omega_r).$$ The the semi-albanese map $\alpha_U$ is given by $$\alpha_U(x)=[\sum_{i=1}^q(\int_{\varphi(a)}^x\theta_i)\theta^*_i+\sum_{i=1}^r(\int_{\varphi(a)}^x\omega_i)\omega_i^*]\slash\Lambda,$$ where $\theta_i^*$ and $\omega_i^*$ are the dual bases in $H^0(X, \Omega_X^1(\log D))^{\vee}$.  Now we consider the transpose of the pullback map $$\varphi^{\vee t}: H^0(N, \Omega_N^1)^{\vee}\to H^0(X, \Omega_X^1(\log D))^{\vee},$$ which induces the morphism  $\psi$. Since $\omega|_{E}=\omega_1|_{E}=0$, $\varphi^{\vee}(\omega_1)=0$. Then we get $$\varphi^{\vee t}(H^0(N, \Omega_N^1))\subset \{z_1=0\},$$ where $z_1$ is the coefficient coordinate of $\omega_1^*$. Thus we get a proper subtorus $T_0:=\psi(A_N)$ which is contained in $\{z_1=0\}/\Lambda$.  Defining $T:=A_U/T_0$, we get morphism $\beta: U\to T$.  Since we can pick a point $x\not\in E$ such that $\int_{\varphi(a)}^x\omega_1\not=0$, hence $\beta(U)$ is not constant. Also, $\alpha_U(E)=T_0$, hence $E$ is contracted by the morphism $\beta$.
+
+Claim that $\dim\beta(U)=1$. Otherwise, we get $\beta: U\to \beta(U)$ be a generically finite morphism. Projectivize $\beta(U)$, we get a projective variety $\overline{\beta(U)}$ and rational map $U\dasharrow \overline{\beta(U)}$. Resolving the indeterminant locus, we may get a generically finite morphism $\overline{\beta}:\overline{U}\to\overline{\beta(U)}$ with $\overline{U}$ smooth and projective. %{\color{blue} and $\overline{U}-U$ a simple normal crossing divisor}. 
+Note that resolving the indeterminant locus does not affect $E$, since $E\cap D=\emptyset$. Hence $E^2<0$ in $\overline{U}$ (See e.g., \cite[Theorem 10.1]{KK}). Note that $\overline{U}$ does not need to be $X$. However, $E^2$ being negative only depends on the normal bundle of $E$ in $U$. However, this contradicts the assumption $E^2\geq 0$. 
+
+Taking the Stein factorization, we get the following commutative diagram:
+$$\xymatrix{
+\overline{U} \ar[rd] \ar[r]^f & \overline{ C} \ar[d]  \\
+& \overline{\beta(U)}
+},$$
+ where $\overline{C}$ is smooth, since it is normal and of dimension one. Let $C$ be the image of the map $f|_U$. Then we have the following commutative diagram:
+ $$ \xymatrix{
+U \ar[r]^{f|_U} \ar[d] & C \ar[r] \ar[d] & \beta(U) \ar@{^{(}->}[d] \\ 
+\Alb(U) \ar[r] & \Alb(C) \ar[r] & T }
+ $$
+Notice that the the holomorphic 1-form $dz_1$ over $T$ which pulls back to logarithmic 1-form $\omega$. Therefore to finish the proof, it suffices to show that $T$ is indeed isomorphic to $\Alb(C)$. 
+Note that since $f|_U:U\to C$ is surjective and has connected fibers, the induced map on the first homology groups $H_1(U,\Z) \to H_1(C,\Z)$ is surjective{\color{red}(Check!!!)}. It implies that $\Alb(U) \to \Alb(C)$ is surjective. Now it is clear that all the horizontal maps in the diagram are surjective. 
+%Then we have the following commutative diagram:
+%$$\xymatrix{
+%\overline{C} \ar[rd] \ar[r]^f & \overline{\beta (U)} \ar[d]  \\
+%\Alb(\overline{C})& A(T)
+%}$$
+Since $\beta(E)$ is a point in $T$, so $E$ maps to a point in $\beta(U)$. Thus $E$ maps to a point in $C$. Up to choosing a base point, we get that $ T_0$ is contained in the kernel of $A_U \to A_C$, since $\alpha_U(E)=T_0$. Hence $A_C=T$, i.e., $T$ is the Albanese variety of $C$
+
+
+%Hence $C$ cannot be $\mathbb{P}^1$ or $\mathbb{C}$ and the Albanese map of $C$ is injective. In fact, for positive genus case, this follows from the fact that the Albanese map of a positive genus smooth projective curve is an embedding; while for zero genus case, this is obvious. The case where $C$ being isomorphic to $\C$ is impossible as its image in $T$ has to be just one point.
+
+%Then  $A_C=T$ implies $C$ is isomprhic to $\beta(U)$. Hence $\beta(U)$ and $\overline{\beta(U)}$ are both smooth.
+
+%Again, $\overline{U}$ could be different from $X$. But $H^0(\overline{U},\Omega_{\overline{U}}^1(\log (\overline{U}-U)) )=H^0(X, \Omega_X^1(\log D))$. Then we are done.} 
+The higher dimensional case follows immediately from Lefschetz hyperplane theorem. (TBA more details)
+\end{proof}
+
+\begin{theorem}\label{thm:Spurr-quasi-proj}
+Let $(X, D)$ be a pair with $X$ a complex smooth projective variety and $D$ a simple normal crossing divisor of $X$. Let $H$ be an ample divisor on $X$. Suppose $(X, D)$ carries a nontrivial logarithmic 1-form $\omega\in H^0(X, \Omega_X^1(\log D))$  which restricts to zero on an integral divisor $E$ with $E^2\cdot H^{n-2}\geq0$, then there is a surjective morphism $f: X-D\to C$ to a smooth quasi-projective curve $C=\bar{C}-B$ ($B$ can be empty) with 
+
+(1)  $\omega=f^*\eta$ for some $\eta\in H^0(C, \Omega_C^1(\log B))$.
+
+(2) $f$ has connected fibers.
+
+(3) $E$ is contained in the fiber of $f$ and $E^2\cdot H^{n-2}=0$.
+\end{theorem}
+
+\begin{proof} With out losing of generality, we may assume that $D=\sum_{i=1}^s D_i$ and $E$ intersects each component of $\{D_1, \ldots, D_t\}_{t\leq s}$ nontrivially and does not intersect other components $D':=\sum_{i=t+1}^sD_i$.
+Consider the following commutative diagram of short exact sequences
+$$
+\xymatrix{
+ 0\ar[r]&\Omega_X^1(\log D')\otimes\mathcal{O}_X(-E) \ar[r]\ar[d]& \Omega_X^1(\log D')\ar[r]\ar[d] & \Omega_X^1(\log D')|_{E} \ar[d] \ar[r]&0\\
+   0\ar[r]& \Omega_X^1(\log D)\otimes\mathcal{O}_X(-E)\ar[r]& \Omega_X^1(\log D) \ar[r]& \Omega_X^1(\log D)|_{E}\ar[r] &0
+.  }
+$$Then it induces the following commutative diagram of exact sequences
+$$\label{holo-log-form-compare}
+\xymatrix{
+ H^0(X, \Omega_X^1(\log D')\otimes\mathcal{O}_X(-E)) \ar[r]\ar[d]& H^0(X, \Omega_X^1(\log D'))\ar[r]\ar[d] & H^0(\Omega_X^1(\log D')|_{E}) \ar[d] \\
+   H^0(X, \Omega_X^1(\log D)\otimes\mathcal{O}_X(-E))\ar[r]& H^0(X, \Omega_X^1(\log D)) \ar[r]& H^0(X, \Omega_X^1(\log D)|_{E})
+.  }
+$$
+
+Firstly, we want to show the left vertical arrow is an isomorphism under the assumption that $E$ intersects each component of $\{D_i\}_{i=1}^t$ nontrivially. Now consider the short exact sequence $$0\to\Omega_X^1(\log D')\to \Omega_X^1(log D)\to \nu_*\mathcal{O}_{\widetilde{D}}\to 0,$$ where $\widetilde{D}$ is a disjoint union of $D_1, \ldots, D_t$ and  $\nu: \widetilde{D}\to X$ is the natural map. Then we get the short exact sequence $$0\to\Omega_X^1(\log D')\otimes\mathcal{O}_X(-E)\to \Omega_X^1(log D)\otimes\mathcal{O}_X(-E)\to \nu_*\mathcal{O}_{\widetilde{D}}\otimes\mathcal{O}_X(-E)\to 0.$$ Thus to show left vertical arrow in diagram (\ref{holo-log-form-compare}) is an isomorphism, we just need to show that $$H^0(X, \nu_*\mathcal{O}_{\widetilde{D}}\otimes\mathcal{O}_X(-E))=0.$$ In fact, $$H^0(X, \nu_*\mathcal{O}_{\widetilde{D}}\otimes\mathcal{O}_X(-E))=H^0(\widetilde{D}, \nu^*\mathcal{O}_X(-E)).$$ Since $E$ intersects each component of $\{D_1, \ldots, D_t\}_{t\leq s}$ nontrivially, $\nu^*\mathcal{O}_X(E)=\nu^*\mathcal{O}_X(-E)^{\vee}$ is a nontrivial effective line bundle over each connected component of $\widetilde{D}$. Hence we get $H^0(\widetilde{D}, \nu^*\mathcal{O}_X(-E))=0$. 
+
+Then by chasing in diagram (\ref{holo-log-form-compare}), the logarithmic 1-form $$\omega\in H^0(X, \Omega_X^1(\log D')).$$ Since $D'\cap E=\emptyset$ and $H^0(X, \Omega_X^1(\log D'))\subset H^0(X, \Omega_X^1(\log D))$, the whole theorem follows from Proposition \ref{Prop:Spurr-no-intersection}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:codim1quasiprojective}]
+
+The theorem follows immediately from Theorem \ref{thm:Spurr-quasi-proj}.
+\end{proof}
+
 
 
 
